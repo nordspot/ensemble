@@ -1,72 +1,135 @@
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
 import { HeroSection } from '@/components/landing/hero-section';
-import { FeaturesSection } from '@/components/landing/features-section';
+import { LogoBar } from '@/components/landing/logo-bar';
+import { PlatformSection } from '@/components/landing/platform-section';
+import { FeatureShowcase } from '@/components/landing/feature-showcase';
+import { StatsSection } from '@/components/landing/stats-section';
+import { SwissSection } from '@/components/landing/swiss-section';
+import { CtaSection } from '@/components/landing/cta-section';
+import { LandingFooter } from '@/components/landing/landing-footer';
 
 export default async function LandingPage() {
   const t = await getTranslations('landing');
 
-  const featureTranslations: Record<string, string> = {
-    programTitle: t('programTitle'),
-    programDesc: t('programDesc'),
-    streamingTitle: t('streamingTitle'),
-    streamingDesc: t('streamingDesc'),
-    navigationTitle: t('navigationTitle'),
-    navigationDesc: t('navigationDesc'),
-    networkingTitle: t('networkingTitle'),
-    networkingDesc: t('networkingDesc'),
-    aiTitle: t('aiTitle'),
-    aiDesc: t('aiDesc'),
-    gamificationTitle: t('gamificationTitle'),
-    gamificationDesc: t('gamificationDesc'),
+  const heroTranslations = {
+    navPlatform: t('nav.platform'),
+    navPricing: t('nav.pricing'),
+    navAbout: t('nav.about'),
+    navLogin: t('nav.login'),
+    navDemo: t('nav.demo'),
+    eyebrow: t('hero.eyebrow'),
+    headlineLine1: t('hero.headlineLine1'),
+    headlineLine2: t('hero.headlineLine2'),
+    subtitle: t('hero.subtitle'),
+    ctaPrimary: t('hero.ctaPrimary'),
+    ctaSecondary: t('hero.ctaSecondary'),
+    ctaNote: t('hero.ctaNote'),
+  };
+
+  const platformTranslations = {
+    title: t('platform.title'),
+    subtitle: t('platform.subtitle'),
+    programSessions: t('platform.programSessions'),
+    liveStreaming: t('platform.liveStreaming'),
+    bleNavigation: t('platform.bleNavigation'),
+    aiKnowledge: t('platform.aiKnowledge'),
+    nfcBadges: t('platform.nfcBadges'),
+    realtimeChat: t('platform.realtimeChat'),
+    gamification: t('platform.gamification'),
+    cmeCertificates: t('platform.cmeCertificates'),
+  };
+
+  const featureShowcaseTranslations = {
+    section1Title: t('showcase.section1Title'),
+    section1Items: [
+      t('showcase.section1Item1'),
+      t('showcase.section1Item2'),
+      t('showcase.section1Item3'),
+      t('showcase.section1Item4'),
+    ],
+    section2Title: t('showcase.section2Title'),
+    section2Items: [
+      t('showcase.section2Item1'),
+      t('showcase.section2Item2'),
+      t('showcase.section2Item3'),
+      t('showcase.section2Item4'),
+    ],
+    section3Title: t('showcase.section3Title'),
+    section3Items: [
+      t('showcase.section3Item1'),
+      t('showcase.section3Item2'),
+      t('showcase.section3Item3'),
+      t('showcase.section3Item4'),
+    ],
+  };
+
+  const statsTranslations = {
+    stats: [
+      { value: t('stats.stat1Value'), label: t('stats.stat1Label') },
+      { value: t('stats.stat2Value'), label: t('stats.stat2Label') },
+      { value: t('stats.stat3Value'), label: t('stats.stat3Label') },
+      { value: t('stats.stat4Value'), label: t('stats.stat4Label') },
+    ],
+  };
+
+  const swissTranslations = {
+    title: t('swiss.title'),
+    cards: [
+      { title: t('swiss.card1Title'), description: t('swiss.card1Desc') },
+      { title: t('swiss.card2Title'), description: t('swiss.card2Desc') },
+      { title: t('swiss.card3Title'), description: t('swiss.card3Desc') },
+      { title: t('swiss.card4Title'), description: t('swiss.card4Desc') },
+    ],
+  };
+
+  const ctaTranslations = {
+    headline: t('cta.headline'),
+    subtitle: t('cta.subtitle'),
+    cta: t('cta.button'),
+    alternative: t('cta.alternative'),
+  };
+
+  const footerTranslations = {
+    tagline: t('footer.tagline'),
+    colPlatform: t('footer.colPlatform'),
+    colResources: t('footer.colResources'),
+    colCompany: t('footer.colCompany'),
+    platformLinks: [
+      { label: t('footer.linkFeatures'), href: '#platform' },
+      { label: t('footer.linkPricing'), href: '#stats' },
+      { label: t('footer.linkIntegrations'), href: '#platform' },
+      { label: t('footer.linkSecurity'), href: '#swiss' },
+    ],
+    resourceLinks: [
+      { label: t('footer.linkDocs'), href: '#' },
+      { label: t('footer.linkBlog'), href: '#' },
+      { label: t('footer.linkApi'), href: '#' },
+      { label: t('footer.linkStatus'), href: '#' },
+    ],
+    companyLinks: [
+      { label: t('footer.linkAbout'), href: '#' },
+      { label: t('footer.linkContact'), href: '#' },
+      { label: t('footer.linkCareers'), href: '#' },
+      { label: t('footer.linkPartners'), href: '#' },
+    ],
+    copyright: t('footer.copyright'),
+    legal: [
+      { label: t('footer.impressum'), href: '/impressum' },
+      { label: t('footer.privacy'), href: '/datenschutz' },
+      { label: t('footer.terms'), href: '/agb' },
+    ],
   };
 
   return (
-    <main className="min-h-screen">
-      <HeroSection
-        heroTitle={t('hero')}
-        tagline={t('tagline')}
-        registerLabel={t('register')}
-        learnMoreLabel={t('learnMore')}
-      />
-      <FeaturesSection
-        sectionTitle={t('featuresHeading')}
-        translations={featureTranslations}
-      />
-
-      {/* Bottom CTA */}
-      <section className="relative py-24 sm:py-32 bg-ensemble-50 dark:bg-ensemble-800/30">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-ensemble-900 dark:text-ensemble-50 sm:text-4xl">
-            {t('cta')}
-          </h2>
-          <p className="mt-4 text-lg text-ensemble-500 dark:text-ensemble-400">
-            {t('tagline')}
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/registrieren"
-              className="inline-flex items-center justify-center rounded-xl bg-accent-500 px-10 py-4 text-base font-semibold text-white shadow-lg shadow-accent-500/25 transition-all hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/30 active:scale-[0.98]"
-            >
-              {t('register')}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-ensemble-100 dark:border-ensemble-800 bg-white dark:bg-ensemble-900 py-12">
-        <div className="mx-auto max-w-7xl px-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-          <div className="flex items-center gap-2">
-            <span className="font-heading text-xl font-bold text-ensemble-900 dark:text-ensemble-50">
-              Ensemble
-            </span>
-          </div>
-          <p className="text-sm text-ensemble-400 dark:text-ensemble-500">
-            &copy; {new Date().getFullYear()} Ensemble. Made in Switzerland.
-          </p>
-        </div>
-      </footer>
+    <main className="bg-ensemble-900">
+      <HeroSection translations={heroTranslations} />
+      <LogoBar label={t('logoBar')} />
+      <PlatformSection translations={platformTranslations} />
+      <FeatureShowcase translations={featureShowcaseTranslations} />
+      <StatsSection translations={statsTranslations} />
+      <SwissSection translations={swissTranslations} />
+      <CtaSection translations={ctaTranslations} />
+      <LandingFooter translations={footerTranslations} />
     </main>
   );
 }
