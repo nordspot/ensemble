@@ -371,9 +371,9 @@ export async function GET(request: NextRequest): Promise<Response> {
   // ── BATCH 13: CME Credit Types ─────────────────────────────────────
   const batch13 = [
     db.prepare(
-      `INSERT INTO cme_credit_types (id, congress_id, name, authority, country, max_credits, created_at)
+      `INSERT INTO cme_credit_types (id, congress_id, name, abbreviation, description, accreditation_body, created_at)
        VALUES (?, ?, ?, ?, ?, ?, ?)`
-    ).bind(cmeTypeId, congressId, 'SIWF/FMH Fortbildungscredits', 'FMH', 'CH', 16, now),
+    ).bind(cmeTypeId, congressId, 'SIWF/FMH Fortbildungscredits', 'FMH', 'Schweizerisches Institut für Weiter- und Fortbildung', 'FMH / SIWF', now),
   ];
 
   // ── Execute all batches ────────────────────────────────────────────
@@ -440,7 +440,7 @@ export async function GET(request: NextRequest): Promise<Response> {
         { id: social2Id, name: 'Stadtrundgang Bern' },
       ],
       cmeCreditTypes: [
-        { id: cmeTypeId, name: 'SIWF/FMH Fortbildungscredits', authority: 'FMH' },
+        { id: cmeTypeId, name: 'SIWF/FMH Fortbildungscredits', abbreviation: 'FMH' },
       ],
     }, 201);
   } catch (err) {
