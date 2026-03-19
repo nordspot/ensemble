@@ -53,6 +53,8 @@
   // Environment variables (secrets set via dashboard)
   "vars": {
     "NEXT_PUBLIC_APP_URL": "https://ensemble.events",
-    "NEXT_PUBLIC_APP_NAME": "Ensemble"
+    "NEXT_PUBLIC_APP_NAME": "Ensemble",
+    "AUTH_URL": "https://ensemble.events",
+    "NEXTAUTH_URL": "https://ensemble.events"
   }
 }
