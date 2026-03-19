@@ -5,7 +5,8 @@ import { Link } from '@/i18n/navigation';
 
 interface CtaSectionProps {
   translations: {
-    headline: string;
+    headlineLine1: string;
+    headlineLine2: string;
     subtitle: string;
     cta: string;
     alternative: string;
@@ -26,7 +27,9 @@ export function CtaSection({ translations: t }: CtaSectionProps) {
         transition={{ duration: 0.6 }}
       >
         <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-          {t.headline}
+          {t.headlineLine1}
+          <br />
+          <span className="text-accent-400">{t.headlineLine2}</span>
         </h2>
         <p className="mt-4 text-lg text-ensemble-400">
           {t.subtitle}

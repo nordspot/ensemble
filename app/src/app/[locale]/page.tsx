@@ -27,7 +27,8 @@ export default async function LandingPage() {
   };
 
   const platformTranslations = {
-    title: t('platform.title'),
+    titleLine1: t('platform.titleLine1'),
+    titleLine2: t('platform.titleLine2'),
     subtitle: t('platform.subtitle'),
     programSessions: t('platform.programSessions'),
     liveStreaming: t('platform.liveStreaming'),
@@ -40,21 +41,24 @@ export default async function LandingPage() {
   };
 
   const featureShowcaseTranslations = {
-    section1Title: t('showcase.section1Title'),
+    section1TitleLine1: t('showcase.section1TitleLine1'),
+    section1TitleLine2: t('showcase.section1TitleLine2'),
     section1Items: [
       t('showcase.section1Item1'),
       t('showcase.section1Item2'),
       t('showcase.section1Item3'),
       t('showcase.section1Item4'),
     ],
-    section2Title: t('showcase.section2Title'),
+    section2TitleLine1: t('showcase.section2TitleLine1'),
+    section2TitleLine2: t('showcase.section2TitleLine2'),
     section2Items: [
       t('showcase.section2Item1'),
       t('showcase.section2Item2'),
       t('showcase.section2Item3'),
       t('showcase.section2Item4'),
     ],
-    section3Title: t('showcase.section3Title'),
+    section3TitleLine1: t('showcase.section3TitleLine1'),
+    section3TitleLine2: t('showcase.section3TitleLine2'),
     section3Items: [
       t('showcase.section3Item1'),
       t('showcase.section3Item2'),
@@ -83,7 +87,8 @@ export default async function LandingPage() {
   };
 
   const ctaTranslations = {
-    headline: t('cta.headline'),
+    headlineLine1: t('cta.headlineLine1'),
+    headlineLine2: t('cta.headlineLine2'),
     subtitle: t('cta.subtitle'),
     cta: t('cta.button'),
     alternative: t('cta.alternative'),

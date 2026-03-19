@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 
 interface PlatformSectionProps {
   translations: {
-    title: string;
+    titleLine1: string;
+    titleLine2: string;
     subtitle: string;
     programSessions: string;
     liveStreaming: string;
@@ -222,7 +223,9 @@ export function PlatformSection({ translations: t }: PlatformSectionProps) {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-ensemble-900 sm:text-4xl lg:text-5xl">
-            {t.title}
+            {t.titleLine1}
+            <br />
+            <span className="text-accent-500">{t.titleLine2}</span>
           </h2>
           <p className="mt-4 text-lg text-ensemble-500">
             {t.subtitle}

@@ -558,6 +558,8 @@
     },
     "logoBar": "Vertraut von führenden Kongressveranstaltern",
     "platform": {
+      "titleLine1": "Eine Plattform.",
+      "titleLine2": "Alles drin.",
       "title": "Eine Plattform. Alles drin.",
       "subtitle": "Nicht 10 verschiedene Tools — ein einziges System für den gesamten Kongress-Lebenszyklus.",
       "programSessions": "Programm & Sessions",
@@ -570,16 +572,22 @@
       "cmeCertificates": "CME-Punkte & Zertifikate"
     },
     "showcase": {
+      "section1TitleLine1": "Jede Session.",
+      "section1TitleLine2": "Live. Intelligent.",
       "section1Title": "Jede Session. Live. Intelligent.",
       "section1Item1": "Echtzeit-Transkription",
       "section1Item2": "Live Q&A mit Voting",
       "section1Item3": "Interaktive Umfragen",
       "section1Item4": "Session-Aufzeichnungen",
+      "section2TitleLine1": "Navigation",
+      "section2TitleLine2": "wie im Flughafen.",
       "section2Title": "Navigation wie im Flughafen.",
       "section2Item1": "BLE-Beacon Ortung",
       "section2Item2": "Indoor-Wegfindung",
       "section2Item3": "Raumbelegung live",
       "section2Item4": "Automatischer Check-in",
+      "section3TitleLine1": "KI, die Ihren",
+      "section3TitleLine2": "Kongress versteht.",
       "section3Title": "KI, die Ihren Kongress versteht.",
       "section3Item1": "Kongresswissen durchsuchen",
       "section3Item2": "Vorträge zusammenfassen",
@@ -608,6 +616,8 @@
       "card4Desc": "API-first Design, WebSocket-Echtzeit-Kommunikation und modulare Erweiterbarkeit für jede Anforderung."
     },
     "cta": {
+      "headlineLine1": "Bereit für Ihren",
+      "headlineLine2": "nächsten Kongress?",
       "headline": "Bereit für Ihren nächsten Kongress?",
       "subtitle": "Starten Sie kostenlos und erleben Sie, wie Ensemble Ihren Kongress transformiert.",
       "button": "Jetzt kostenlos starten",

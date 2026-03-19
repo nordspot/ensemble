@@ -4,50 +4,100 @@ import { motion } from 'framer-motion';
 
 interface FeatureShowcaseProps {
   translations: {
-    section1Title: string;
+    section1TitleLine1: string;
+    section1TitleLine2: string;
     section1Items: string[];
-    section2Title: string;
+    section2TitleLine1: string;
+    section2TitleLine2: string;
     section2Items: string[];
-    section3Title: string;
+    section3TitleLine1: string;
+    section3TitleLine2: string;
     section3Items: string[];
   };
 }
 
 function LiveDashboardMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-200 bg-ensemble-50 p-5 shadow-lg ring-1 ring-accent-500/10">
-      {/* Header bar */}
-      <div className="flex items-center gap-2 mb-3">
-        <div className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
-        <span className="text-[10px] font-mono text-accent-500">LIVE</span>
-        <div className="ml-auto flex gap-1">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="h-1.5 w-6 rounded-full bg-ensemble-200" />
+    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
+      {/* Session header */}
+      <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-1.5">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+          </span>
+          <span className="text-[9px] font-semibold text-red-500 uppercase tracking-wider">Live</span>
+        </div>
+        <div className="ml-auto text-[8px] text-ensemble-400 font-mono">09:32</div>
+      </div>
+
+      {/* Session title */}
+      <div className="mb-4">
+        <h4 className="text-[12px] font-semibold text-ensemble-900 leading-tight">
+          Keynote: Die Zukunft der Kardiologie
+        </h4>
+        <p className="text-[10px] text-ensemble-500 mt-0.5">Prof. Dr. Thomas Muller &middot; Grosser Saal</p>
+      </div>
+
+      {/* Transcript preview */}
+      <div className="rounded-lg bg-ensemble-50 p-3 mb-3 border border-ensemble-100">
+        <div className="flex items-center gap-1.5 mb-2">
+          <svg className="h-3 w-3 text-ensemble-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Transkription</span>
+        </div>
+        <div className="space-y-1.5">
+          {[
+            { time: '09:30', text: 'Die interventionelle Kardiologie steht vor einem Paradigmenwechsel...' },
+            { time: '09:31', text: 'Katheterbasierte Verfahren ermoglichen heute minimalinvasive Eingriffe...' },
+            { time: '09:32', text: 'Unsere multizentrische Studie mit 2.400 Patienten zeigt signifikante...' },
+          ].map((line, i) => (
+            <div key={i} className="flex gap-2 items-start">
+              <span className="text-[7px] text-ensemble-400 font-mono mt-0.5 shrink-0 w-7">{line.time}</span>
+              <p className="text-[9px] text-ensemble-700 leading-relaxed">{line.text}</p>
+            </div>
           ))}
         </div>
       </div>
-      {/* Transcript lines */}
-      <div className="space-y-1.5 mb-3">
-        {['Die Ergebnisse der Studie zeigen...', 'Signifikante Verbesserung bei...', 'Im Vergleich zur Kontrollgruppe...'].map((line, i) => (
-          <div key={i} className="flex gap-2 items-start">
-            <span className="text-[8px] text-ensemble-400 font-mono mt-0.5 shrink-0">
-              {`0${i + 1}:${2 + i}${3 + i}`}
-            </span>
-            <div className="text-[10px] text-ensemble-600 leading-tight">{line}</div>
+
+      {/* Q&A sidebar preview */}
+      <div className="rounded-lg bg-ensemble-50 p-3 mb-3 border border-ensemble-100">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Q&A</span>
+          <span className="text-[8px] text-ensemble-400">12 Fragen</span>
+        </div>
+        <div className="space-y-2">
+          {[
+            { q: 'Welche Langzeitdaten liegen zur TAVI vor?', votes: 24 },
+            { q: 'Gibt es Kontraindikationen bei Multimorbiditat?', votes: 18 },
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <div className="flex flex-col items-center shrink-0">
+                <svg className="h-3 w-3 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                </svg>
+                <span className="text-[8px] font-medium text-accent-500">{item.votes}</span>
+              </div>
+              <p className="text-[9px] text-ensemble-700 leading-tight">{item.q}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Reaction bar */}
+      <div className="flex items-center gap-2 pt-1">
+        {[
+          { emoji: '\uD83D\uDC4F', count: 142 },
+          { emoji: '\uD83D\uDCA1', count: 38 },
+          { emoji: '\u2764\uFE0F', count: 67 },
+          { emoji: '\uD83D\uDE4F', count: 12 },
+        ].map((reaction, i) => (
+          <div key={i} className="flex items-center gap-1 rounded-full bg-ensemble-50 border border-ensemble-200 px-2 py-0.5">
+            <span className="text-[10px]">{reaction.emoji}</span>
+            <span className="text-[8px] text-ensemble-500 font-medium">{reaction.count}</span>
           </div>
         ))}
-      </div>
-      {/* Q&A bar */}
-      <div className="rounded-lg bg-ensemble-100 p-2 flex items-center gap-2">
-        <div className="text-[9px] text-ensemble-500">Q&A</div>
-        <div className="h-4 flex-1 rounded bg-white flex items-center px-2">
-          <span className="text-[8px] text-ensemble-400">Frage stellen...</span>
-        </div>
-        <div className="flex gap-0.5">
-          {['24', '8'].map((n, i) => (
-            <span key={i} className="text-[8px] bg-ensemble-200 rounded px-1 py-0.5 text-ensemble-500">{n}</span>
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -55,47 +105,117 @@ function LiveDashboardMockup() {
 
 function IndoorMapMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-200 bg-ensemble-50 p-5 shadow-lg ring-1 ring-accent-500/10">
+    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
       {/* Floor selector */}
-      <div className="flex gap-1 mb-3">
-        {['EG', 'OG1', 'OG2'].map((f, i) => (
-          <div
+      <div className="flex items-center gap-1 mb-4">
+        <span className="text-[8px] text-ensemble-500 font-medium mr-2">Stockwerk:</span>
+        {['EG', 'OG1'].map((f, i) => (
+          <button
             key={f}
-            className={`text-[9px] px-2 py-0.5 rounded ${i === 0 ? 'bg-accent-500/20 text-accent-500' : 'bg-ensemble-200 text-ensemble-500'}`}
+            className={`text-[9px] px-2.5 py-1 rounded-md font-medium transition-colors ${
+              i === 0
+                ? 'bg-accent-500 text-white shadow-sm'
+                : 'bg-ensemble-100 text-ensemble-500 hover:bg-ensemble-200'
+            }`}
           >
             {f}
-          </div>
+          </button>
         ))}
       </div>
-      {/* Map grid */}
-      <div className="relative h-28 rounded-lg bg-ensemble-100 overflow-hidden">
-        <div className="absolute inset-2 grid grid-cols-4 grid-rows-3 gap-1">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div
-              key={i}
-              className={`rounded-sm ${[2, 5, 8].includes(i) ? 'bg-ensemble-300/50' : 'bg-ensemble-200/50'}`}
+
+      {/* SVG Floor Plan */}
+      <div className="relative rounded-lg bg-ensemble-50 border border-ensemble-100 overflow-hidden">
+        <svg viewBox="0 0 400 240" className="w-full h-auto" fill="none">
+          {/* Background grid */}
+          <defs>
+            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgb(226 232 240)" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="400" height="240" fill="url(#grid)" />
+
+          {/* Main Hall */}
+          <rect x="20" y="20" width="180" height="120" rx="4" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1.5" />
+          <text x="110" y="75" textAnchor="middle" className="text-[11px] font-semibold" fill="rgb(71 85 105)">Grosser Saal</text>
+          <text x="110" y="90" textAnchor="middle" className="text-[8px]" fill="rgb(148 163 184)">480 Platze</text>
+          {/* Stage indicator */}
+          <rect x="40" y="30" width="140" height="12" rx="2" fill="rgb(226 232 240)" />
+          <text x="110" y="39" textAnchor="middle" className="text-[7px]" fill="rgb(148 163 184)">Buhne</text>
+
+          {/* Corridor */}
+          <rect x="200" y="40" width="40" height="160" fill="rgb(248 250 252)" stroke="rgb(203 213 225)" strokeWidth="1" strokeDasharray="4 2" />
+          <text x="220" y="125" textAnchor="middle" className="text-[7px]" fill="rgb(203 213 225)" transform="rotate(-90, 220, 125)">Korridor</text>
+
+          {/* Saal A */}
+          <rect x="250" y="20" width="130" height="70" rx="4" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1.5" />
+          <text x="315" y="52" textAnchor="middle" className="text-[10px] font-semibold" fill="rgb(71 85 105)">Saal A</text>
+          <text x="315" y="65" textAnchor="middle" className="text-[8px]" fill="rgb(148 163 184)">120 Platze</text>
+
+          {/* Saal B */}
+          <rect x="250" y="100" width="130" height="60" rx="4" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1.5" />
+          <text x="315" y="128" textAnchor="middle" className="text-[10px] font-semibold" fill="rgb(71 85 105)">Saal B</text>
+          <text x="315" y="141" textAnchor="middle" className="text-[8px]" fill="rgb(148 163 184)">80 Platze</text>
+
+          {/* Registration desk */}
+          <rect x="20" y="180" width="80" height="40" rx="4" fill="rgb(254 243 199)" stroke="rgb(251 191 36)" strokeWidth="1" />
+          <text x="60" y="198" textAnchor="middle" className="text-[8px] font-medium" fill="rgb(161 98 7)">Registration</text>
+          <text x="60" y="210" textAnchor="middle" className="text-[7px]" fill="rgb(202 138 4)">Eingang</text>
+
+          {/* Exhibitor area */}
+          <rect x="120" y="155" width="80" height="65" rx="4" fill="rgb(219 234 254)" stroke="rgb(96 165 250)" strokeWidth="1" />
+          <text x="160" y="172" textAnchor="middle" className="text-[8px] font-medium" fill="rgb(37 99 235)">Aussteller</text>
+          {/* Booth grid */}
+          {[0, 1, 2, 3, 4, 5].map((b) => (
+            <rect
+              key={b}
+              x={130 + (b % 3) * 22}
+              y={178 + Math.floor(b / 3) * 18}
+              width="16"
+              height="12"
+              rx="2"
+              fill="rgb(191 219 254)"
+              stroke="rgb(147 197 253)"
+              strokeWidth="0.5"
             />
           ))}
-        </div>
-        {/* Blue dot */}
-        <div className="absolute top-1/2 left-[40%] -translate-x-1/2 -translate-y-1/2">
-          <span className="block h-4 w-4 rounded-full bg-blue-500/30 animate-ping absolute -top-0.5 -left-0.5" />
-          <span className="block h-3 w-3 rounded-full bg-blue-500 border-2 border-blue-300 relative" />
-        </div>
-        {/* Route line */}
-        <svg className="absolute inset-0" viewBox="0 0 200 112" fill="none">
+
+          {/* You are here - pulsing blue dot */}
+          <circle cx="160" cy="140" r="10" fill="rgb(59 130 246)" opacity="0.15">
+            <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.2;0.05;0.2" dur="2s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="160" cy="140" r="5" fill="rgb(59 130 246)" stroke="white" strokeWidth="2" />
+
+          {/* Route line from dot to Saal A */}
           <path
-            d="M80 56 L120 56 L120 28 L160 28"
-            stroke="rgba(96,165,250,0.4)"
+            d="M165 140 L220 140 L220 55 L250 55"
+            stroke="rgb(59 130 246)"
             strokeWidth="2"
-            strokeDasharray="4 3"
-          />
+            strokeDasharray="6 4"
+            opacity="0.6"
+          >
+            <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.5s" repeatCount="indefinite" />
+          </path>
+
+          {/* Route destination marker */}
+          <circle cx="250" cy="55" r="4" fill="rgb(59 130 246)" opacity="0.3" />
+          <circle cx="250" cy="55" r="2" fill="rgb(59 130 246)" />
         </svg>
       </div>
-      {/* Destination */}
-      <div className="mt-2 flex items-center gap-2">
-        <div className="h-1.5 w-1.5 rounded-full bg-accent-500" />
-        <span className="text-[9px] text-ensemble-500">Saal 3 &middot; 2 Min</span>
+
+      {/* Navigation info */}
+      <div className="mt-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="h-2 w-2 rounded-full bg-blue-500" />
+          <span className="text-[9px] text-ensemble-600 font-medium">Ihr Standort</span>
+        </div>
+        <div className="flex items-center gap-1.5 text-[9px] text-ensemble-500">
+          <svg className="h-3 w-3 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span>Saal A &middot; 2 Min Fussweg</span>
+        </div>
       </div>
     </div>
   );
@@ -103,37 +223,75 @@ function IndoorMapMockup() {
 
 function AiChatMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-200 bg-ensemble-50 p-5 shadow-lg ring-1 ring-accent-500/10">
-      {/* Question */}
-      <div className="flex gap-2 items-start mb-3">
-        <div className="h-5 w-5 rounded-full bg-ensemble-300/60 shrink-0 mt-0.5" />
-        <div className="rounded-lg bg-ensemble-200 px-3 py-1.5 text-[10px] text-ensemble-700">
-          Welche Studien wurden heute zu Immuntherapie vorgestellt?
-        </div>
-      </div>
-      {/* AI answer */}
-      <div className="flex gap-2 items-start">
-        <div className="h-5 w-5 rounded bg-accent-500/20 shrink-0 mt-0.5 flex items-center justify-center">
-          <svg viewBox="0 0 16 16" className="h-3 w-3 text-accent-500" fill="currentColor">
-            <circle cx="8" cy="8" r="3" />
-            <circle cx="8" cy="2" r="1" />
-            <circle cx="8" cy="14" r="1" />
-            <circle cx="2" cy="8" r="1" />
-            <circle cx="14" cy="8" r="1" />
+    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
+      {/* Chat header */}
+      <div className="flex items-center gap-2 mb-4 pb-3 border-b border-ensemble-100">
+        <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
+          <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-white" fill="currentColor">
+            <circle cx="8" cy="8" r="2.5" />
+            <circle cx="8" cy="2.5" r="1.2" />
+            <circle cx="8" cy="13.5" r="1.2" />
+            <circle cx="2.5" cy="8" r="1.2" />
+            <circle cx="13.5" cy="8" r="1.2" />
           </svg>
         </div>
-        <div className="rounded-lg bg-ensemble-100 px-3 py-2 text-[10px] text-ensemble-700 leading-relaxed">
-          <p>Heute wurden 3 relevante Studien vorgestellt:</p>
-          <ol className="mt-1 ml-3 space-y-0.5 list-decimal">
-            <li>CheckMate-901 (Saal 1, 09:30)</li>
-            <li>KEYNOTE-789 (Saal 2, 11:00)</li>
-            <li>IMbrave150 Update (Poster #42)</li>
-          </ol>
-          {/* Sources */}
-          <div className="mt-2 flex gap-1">
-            {['Abstract #12', 'Session B3'].map((s, i) => (
-              <span key={i} className="text-[8px] bg-ensemble-200 rounded px-1.5 py-0.5 text-ensemble-500">{s}</span>
-            ))}
+        <div>
+          <span className="text-[10px] font-semibold text-ensemble-900">Ensemble KI-Assistent</span>
+          <div className="flex items-center gap-1">
+            <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+            <span className="text-[8px] text-ensemble-400">Bereit</span>
+          </div>
+        </div>
+      </div>
+
+      {/* User question */}
+      <div className="flex gap-2 items-start mb-4">
+        <div className="h-6 w-6 rounded-full bg-ensemble-200 shrink-0 flex items-center justify-center">
+          <span className="text-[8px] font-medium text-ensemble-600">TM</span>
+        </div>
+        <div className="rounded-xl rounded-tl-sm bg-ensemble-100 px-3.5 py-2 text-[10px] text-ensemble-800 leading-relaxed">
+          Welche neuen Ergebnisse zur katheterbasierten Mitralklappentherapie wurden heute prasentiert?
+        </div>
+      </div>
+
+      {/* AI response */}
+      <div className="flex gap-2 items-start mb-3">
+        <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 shrink-0 flex items-center justify-center">
+          <svg viewBox="0 0 16 16" className="h-3 w-3 text-white" fill="currentColor">
+            <circle cx="8" cy="8" r="2" />
+          </svg>
+        </div>
+        <div className="rounded-xl rounded-tl-sm bg-accent-500/5 border border-accent-500/10 px-3.5 py-2.5 text-[10px] text-ensemble-800 leading-relaxed flex-1">
+          <p className="font-medium mb-1.5">Heute wurden 3 relevante Prasentationen vorgestellt:</p>
+          <ul className="space-y-1.5 ml-0.5">
+            <li className="flex gap-2">
+              <span className="text-accent-500 font-bold shrink-0">&bull;</span>
+              <span><strong>CLASP IID-Studie</strong> (09:30, Grosser Saal): Signifikante Reduktion der Mitralregurgitation um 72% nach 2 Jahren</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-accent-500 font-bold shrink-0">&bull;</span>
+              <span><strong>EXPAND-Registerstudie</strong> (11:00, Saal A): Langzeitdaten zu TEER bei 1.800 Patienten</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-accent-500 font-bold shrink-0">&bull;</span>
+              <span><strong>Poster #47</strong>: Neuer Device-Prototyp fur sekundare MR</span>
+            </li>
+          </ul>
+
+          {/* Source badges */}
+          <div className="mt-3 pt-2 border-t border-accent-500/10">
+            <span className="text-[8px] text-ensemble-400 font-medium uppercase tracking-wider">Quellen:</span>
+            <div className="flex flex-wrap gap-1 mt-1">
+              {[
+                { label: 'Abstract #12', color: 'bg-accent-500/10 text-accent-600' },
+                { label: 'Session A1', color: 'bg-ensemble-100 text-ensemble-600' },
+                { label: 'Poster #47', color: 'bg-blue-50 text-blue-600' },
+              ].map((s, i) => (
+                <span key={i} className={`text-[8px] font-medium rounded-md px-2 py-0.5 ${s.color}`}>
+                  {s.label}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -142,12 +300,14 @@ function AiChatMockup() {
 }
 
 function FeatureBlock({
-  title,
+  titleLine1,
+  titleLine2,
   items,
   visual,
   reverse,
 }: {
-  title: string;
+  titleLine1: string;
+  titleLine2: string;
   items: string[];
   visual: React.ReactNode;
   reverse: boolean;
@@ -175,7 +335,9 @@ function FeatureBlock({
         transition={{ duration: 0.6, delay: 0.1 }}
       >
         <h3 className="font-heading text-2xl font-bold text-ensemble-900 sm:text-3xl">
-          {title}
+          {titleLine1}
+          <br />
+          <span className="text-accent-500">{titleLine2}</span>
         </h3>
         <ul className="mt-6 space-y-3">
           {items.map((item, i) => (
@@ -192,9 +354,9 @@ function FeatureBlock({
 
 export function FeatureShowcase({ translations: t }: FeatureShowcaseProps) {
   const sections = [
-    { title: t.section1Title, items: t.section1Items, visual: <LiveDashboardMockup /> },
-    { title: t.section2Title, items: t.section2Items, visual: <IndoorMapMockup /> },
-    { title: t.section3Title, items: t.section3Items, visual: <AiChatMockup /> },
+    { titleLine1: t.section1TitleLine1, titleLine2: t.section1TitleLine2, items: t.section1Items, visual: <LiveDashboardMockup /> },
+    { titleLine1: t.section2TitleLine1, titleLine2: t.section2TitleLine2, items: t.section2Items, visual: <IndoorMapMockup /> },
+    { titleLine1: t.section3TitleLine1, titleLine2: t.section3TitleLine2, items: t.section3Items, visual: <AiChatMockup /> },
   ];
 
   return (
@@ -204,7 +366,8 @@ export function FeatureShowcase({ translations: t }: FeatureShowcaseProps) {
           <FeatureBlock
             key={i}
             index={i}
-            title={section.title}
+            titleLine1={section.titleLine1}
+            titleLine2={section.titleLine2}
             items={section.items}
             visual={section.visual}
             reverse={i % 2 === 1}
