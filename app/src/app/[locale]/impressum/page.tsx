@@ -32,7 +32,7 @@ export default function ImpressumPage() {
         <div className="prose prose-ensemble max-w-none dark:prose-invert">
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-ensemble-900 dark:text-ensemble-50">
-              Angaben gemaess Art. 3 Abs. 1 lit. s UWG
+              Angaben gemäß Art. 3 Abs. 1 lit. s UWG
             </h2>
             <div className="mt-4 rounded-xl border border-ensemble-200 bg-ensemble-50/50 p-6 dark:border-ensemble-700 dark:bg-ensemble-900/50">
               <p className="text-ensemble-700 dark:text-ensemble-300">
@@ -53,7 +53,7 @@ export default function ImpressumPage() {
               Vertretungsberechtigte Person
             </h2>
             <p className="mt-2 text-ensemble-700 dark:text-ensemble-300">
-              Daniel, Mitgruender und Geschaeftsfuehrer
+              Daniel, Mitgründer und Geschäftsführer
             </p>
           </section>
 
@@ -62,7 +62,7 @@ export default function ImpressumPage() {
               Inhaltliche Verantwortung
             </h2>
             <p className="mt-2 text-ensemble-700 dark:text-ensemble-300">
-              Verantwortlich fuer den Inhalt dieser Webseite:<br />
+              Verantwortlich für den Inhalt dieser Webseite:<br />
               Daniel, Nord GmbH, Ittigen, Schweiz
             </p>
           </section>
@@ -72,12 +72,12 @@ export default function ImpressumPage() {
               Haftungsausschluss
             </h2>
             <p className="mt-2 text-ensemble-600 dark:text-ensemble-400">
-              Die Inhalte dieser Webseite wurden mit groesster Sorgfalt erstellt. Fuer die Richtigkeit,
-              Vollstaendigkeit und Aktualitaet der Inhalte koennen wir jedoch keine Gewaehr uebernehmen.
-              Als Diensteanbieter sind wir fuer eigene Inhalte auf diesen Seiten nach den allgemeinen
-              Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, uebermittelte oder gespeicherte
-              fremde Informationen zu ueberwachen oder nach Umstaenden zu forschen, die auf eine
-              rechtswidrige Taetigkeit hinweisen.
+              Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+              Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+              Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen
+              Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte
+              fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine
+              rechtswidrige Tätigkeit hinweisen.
             </p>
           </section>
 
@@ -87,8 +87,8 @@ export default function ImpressumPage() {
             </h2>
             <p className="mt-2 text-ensemble-600 dark:text-ensemble-400">
               Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
-              dem schweizerischen Urheberrecht. Die Vervielfaeltigung, Bearbeitung, Verbreitung und
-              jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes beduerfen der
+              dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und
+              jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der
               schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
             </p>
           </section>

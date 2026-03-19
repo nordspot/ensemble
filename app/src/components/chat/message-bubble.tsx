@@ -190,7 +190,7 @@ export function MessageBubble({
             <button
               onClick={onDelete}
               className="rounded p-1 text-ensemble-400 hover:bg-red-50 hover:text-red-500 dark:hover:bg-red-950 dark:hover:text-red-400"
-              title="Loeschen"
+              title="Löschen"
             >
               <svg
                 className="h-3.5 w-3.5"

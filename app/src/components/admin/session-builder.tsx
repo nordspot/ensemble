@@ -110,7 +110,7 @@ const MOCK_ROOMS = [
 const MOCK_SESSIONS: SessionEntry[] = [
   {
     id: 's1',
-    title: 'Eroeffnungskeynote',
+    title: 'Eröffnungskeynote',
     session_type: 'keynote',
     track_id: 'track-3',
     room_id: 'room-1',

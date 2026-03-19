@@ -216,7 +216,7 @@ export default function NetworkingPage() {
           )}
           {beacon.isScanning && beacon.nearbyBeacons.length > 0 && (
             <p className="mt-2 text-xs text-accent-500">
-              {beacon.nearbyBeacons.length} Geraete in der Naehe
+              {beacon.nearbyBeacons.length} Geräte in der Nähe
             </p>
           )}
           <Button

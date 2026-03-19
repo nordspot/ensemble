@@ -8,7 +8,7 @@ export default function ProfilPage() {
           Mein Profil
         </h1>
         <p className="mt-1 text-sm text-ensemble-500 dark:text-ensemble-400">
-          Verwalten Sie Ihre persoenlichen Informationen und Einstellungen.
+          Verwalten Sie Ihre persönlichen Informationen und Einstellungen.
         </p>
       </div>
 

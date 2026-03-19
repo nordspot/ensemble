@@ -28,12 +28,12 @@ interface SpeakerEntry {
 const MOCK_SPEAKERS: SpeakerEntry[] = [
   {
     id: 'sp1',
-    name: 'Prof. Dr. Anna Mueller',
-    organization: 'Universitaetsspital Zuerich',
+    name: 'Prof. Dr. Anna Müller',
+    organization: 'Universitätsspital Zürich',
     email: 'a.mueller@usz.ch',
     disclosureSubmitted: true,
     presentationUploaded: true,
-    sessions: [{ id: 's1', title: 'Eroeffnungskeynote' }],
+    sessions: [{ id: 's1', title: 'Eröffnungskeynote' }],
   },
   {
     id: 'sp2',
@@ -47,7 +47,7 @@ const MOCK_SPEAKERS: SpeakerEntry[] = [
   {
     id: 'sp3',
     name: 'PD Dr. Lisa Weber',
-    organization: 'ETH Zuerich',
+    organization: 'ETH Zürich',
     email: 'l.weber@ethz.ch',
     disclosureSubmitted: false,
     presentationUploaded: false,

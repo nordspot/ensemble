@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { LoginForm } from '@/components/auth/login-form';
+import { DemoAccounts } from '@/components/auth/demo-accounts';
 
 export default async function AnmeldenPage() {
   const t = await getTranslations('auth');
@@ -51,6 +52,9 @@ export default async function AnmeldenPage() {
             }}
           />
         </div>
+
+        {/* Demo Accounts */}
+        <DemoAccounts />
 
         {/* Footer */}
         <p className="mt-8 text-center text-xs text-ensemble-400 dark:text-ensemble-500">

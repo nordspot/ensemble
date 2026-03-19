@@ -198,7 +198,7 @@ export function SessionDetail({
                 <Button asChild className="gap-1.5">
                   <a href={session.livestream_url} target="_blank" rel="noopener noreferrer">
                     <Radio className="h-4 w-4" />
-                    Zur Live-Uebertragung
+                    Zur Live-Übertragung
                   </a>
                 </Button>
               )}

@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
     if (!parsed.success) {
       const firstError = parsed.error.errors[0];
-      return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungueltige Eingabe');
+      return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungültige Eingabe');
     }
 
     const { full_name, email, password } = parsed.data;

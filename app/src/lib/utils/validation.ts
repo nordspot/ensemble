@@ -4,7 +4,7 @@ export const emailSchema = z.string().email('Ungültige E-Mail-Adresse');
 
 export const passwordSchema = z.string()
   .min(8, 'Mindestens 8 Zeichen')
-  .regex(/[A-Z]/, 'Mindestens ein Grossbuchstabe')
+  .regex(/[A-Z]/, 'Mindestens ein Großbuchstabe')
   .regex(/[0-9]/, 'Mindestens eine Zahl');
 
 export const slugSchema = z.string()

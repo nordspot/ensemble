@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
   const rateCheck = checkRateLimit(`ai:${auth.userId}`, RATE_LIMITS.ai);
   if (!rateCheck.allowed) {
     return ERRORS.RATE_LIMITED(
-      'KI-Anfragenlimit erreicht. Bitte versuchen Sie es spaeter erneut.',
+      'KI-Anfragenlimit erreicht. Bitte versuchen Sie es später erneut.',
     );
   }
 

@@ -56,9 +56,9 @@ async function fetchDashboardData(): Promise<{
       points: 840,
     },
     recentActivity: [
-      { id: '1', text: 'Neue Session "KI in der Medizin" hinzugefuegt', time: 'vor 2 Stunden' },
+      { id: '1', text: 'Neue Session "KI in der Medizin" hinzugefügt', time: 'vor 2 Stunden' },
       { id: '2', text: 'Poster-Einreichung genehmigt', time: 'vor 5 Stunden' },
-      { id: '3', text: 'Networking-Match mit Dr. Mueller', time: 'gestern' },
+      { id: '3', text: 'Networking-Match mit Dr. Müller', time: 'gestern' },
       { id: '4', text: 'Badge "Erster Beitrag" erhalten', time: 'gestern' },
     ],
     isNewUser: false,
@@ -85,8 +85,8 @@ export default async function DashboardPage() {
               Willkommen bei Ensemble!
             </h2>
             <p className="mt-2 max-w-xl text-white/80">
-              Erstellen Sie Ihren ersten Kongress oder melden Sie sich fuer einen an.
-              Vervollstaendigen Sie Ihr Profil, um das Beste aus der Plattform herauszuholen.
+              Erstellen Sie Ihren ersten Kongress oder melden Sie sich für einen an.
+              Vervollständigen Sie Ihr Profil, um das Beste aus der Plattform herauszuholen.
             </p>
           </div>
           <CardContent className="p-6 sm:p-8">
@@ -101,10 +101,10 @@ export default async function DashboardPage() {
                   </svg>
                 </div>
                 <h3 className="mt-3 font-semibold text-ensemble-900 dark:text-ensemble-50">
-                  Profil vervollstaendigen
+                  Profil vervollständigen
                 </h3>
                 <p className="mt-1 text-xs text-ensemble-500 dark:text-ensemble-400">
-                  Fachgebiet, Organisation und Biografie hinzufuegen
+                  Fachgebiet, Organisation und Biografie hinzufügen
                 </p>
               </Link>
 
@@ -200,7 +200,7 @@ export default async function DashboardPage() {
           {t('dashboard.welcomeBack')}
         </h1>
         <p className="mt-1 text-ensemble-500 dark:text-ensemble-400">
-          Hier ist eine Uebersicht Ihrer aktuellen Aktivitaeten.
+          Hier ist eine Übersicht Ihrer aktuellen Aktivitäten.
         </p>
       </div>
 

@@ -56,7 +56,7 @@ export function ContactForm() {
       const result = (await response.json()) as { ok: boolean; error?: { message: string } };
 
       if (response.status === 429) {
-        toast.error('Zu viele Anfragen. Bitte versuchen Sie es spaeter erneut.');
+        toast.error('Zu viele Anfragen. Bitte versuchen Sie es später erneut.');
         return;
       }
 
@@ -67,7 +67,7 @@ export function ContactForm() {
 
       setIsSuccess(true);
     } catch {
-      toast.error('Ein Fehler ist aufgetreten. Bitte versuchen Sie es spaeter erneut.');
+      toast.error('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
     } finally {
       setIsLoading(false);
     }
@@ -85,7 +85,7 @@ export function ContactForm() {
           Nachricht gesendet
         </h3>
         <p className="mt-2 text-sm text-green-600/80 dark:text-green-400/80">
-          Vielen Dank fuer Ihre Nachricht. Wir werden uns so schnell wie moeglich bei Ihnen melden.
+          Vielen Dank für Ihre Nachricht. Wir werden uns so schnell wie möglich bei Ihnen melden.
         </p>
       </div>
     );

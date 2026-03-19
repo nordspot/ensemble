@@ -109,7 +109,7 @@ export function AppSidebar() {
         <button
           onClick={() => setSidebarOpen(false)}
           className="rounded-lg p-1.5 text-ensemble-400 transition hover:bg-ensemble-100 hover:text-ensemble-600 dark:hover:bg-ensemble-800 dark:hover:text-ensemble-300 lg:hidden"
-          aria-label="Sidebar schliessen"
+          aria-label="Sidebar schließen"
         >
           <X className="h-5 w-5" />
         </button>

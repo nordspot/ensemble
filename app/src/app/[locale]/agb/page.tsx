@@ -26,9 +26,9 @@ export default function AGBPage() {
       {/* Content */}
       <main className="mx-auto max-w-4xl px-4 py-12">
         <h1 className="mb-2 text-3xl font-bold tracking-tight text-ensemble-900 dark:text-ensemble-50">
-          Allgemeine Geschaeftsbedingungen (AGB)
+          Allgemeine Geschäftsbedingungen (AGB)
         </h1>
-        <p className="mb-8 text-sm text-ensemble-400">Gueltig ab: 19. Maerz 2026</p>
+        <p className="mb-8 text-sm text-ensemble-400">Gültig ab: 19. März 2026</p>
 
         <div className="space-y-8 text-ensemble-600 dark:text-ensemble-400">
           {/* 1. Geltungsbereich */}
@@ -37,7 +37,7 @@ export default function AGBPage() {
               1. Geltungsbereich
             </h2>
             <p>
-              Diese Allgemeinen Geschaeftsbedingungen gelten fuer die Nutzung der Plattform
+              Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung der Plattform
               &quot;Ensemble&quot; (nachfolgend &quot;Plattform&quot;), betrieben von der Nord GmbH,
               Ittigen, Schweiz (nachfolgend &quot;Betreiber&quot;). Mit der Registrierung akzeptieren
               Sie diese AGB.
@@ -70,16 +70,16 @@ export default function AGBPage() {
               3. Registrierung und Konto
             </h2>
             <p>
-              3.1 Fuer die Nutzung der Plattform ist eine Registrierung mit korrekten und vollstaendigen
+              3.1 Für die Nutzung der Plattform ist eine Registrierung mit korrekten und vollständigen
               Angaben erforderlich. Sie sind verpflichtet, Ihre Zugangsdaten vertraulich zu behandeln.
             </p>
             <p className="mt-2">
-              3.2 Sie sind fuer alle Aktivitaeten verantwortlich, die unter Ihrem Konto stattfinden.
-              Bei Verdacht auf unbefugte Nutzung sind Sie verpflichtet, uns unverzueglich zu informieren.
+              3.2 Sie sind für alle Aktivitäten verantwortlich, die unter Ihrem Konto stattfinden.
+              Bei Verdacht auf unbefugte Nutzung sind Sie verpflichtet, uns unverzüglich zu informieren.
             </p>
             <p className="mt-2">
-              3.3 Der Betreiber behaelt sich das Recht vor, Konten bei Verstoss gegen diese AGB zu
-              sperren oder zu loeschen.
+              3.3 Der Betreiber behält sich das Recht vor, Konten bei Verstoß gegen diese AGB zu
+              sperren oder zu löschen.
             </p>
           </section>
 
@@ -90,11 +90,11 @@ export default function AGBPage() {
             </h2>
             <p>Als Nutzer verpflichten Sie sich:</p>
             <ul className="mt-2 list-inside list-disc space-y-1">
-              <li>Keine rechtswidrigen, belaestigenden oder diskriminierenden Inhalte zu veroeffentlichen</li>
+              <li>Keine rechtswidrigen, belästigenden oder diskriminierenden Inhalte zu veröffentlichen</li>
               <li>Geistiges Eigentum Dritter zu respektieren</li>
-              <li>Keine automatisierten Zugriffe (Bots, Scraper) auf die Plattform durchzufuehren</li>
+              <li>Keine automatisierten Zugriffe (Bots, Scraper) auf die Plattform durchzuführen</li>
               <li>Keine Schadsoftware oder Spam zu verbreiten</li>
-              <li>Die Plattform nicht in einer Weise zu nutzen, die deren Betrieb beeintraechtigt</li>
+              <li>Die Plattform nicht in einer Weise zu nutzen, die deren Betrieb beeinträchtigt</li>
             </ul>
           </section>
 
@@ -104,17 +104,17 @@ export default function AGBPage() {
               5. Zahlungsbedingungen
             </h2>
             <p>
-              5.1 Die Registrierung auf der Plattform ist kostenlos. Fuer die Teilnahme an
+              5.1 Die Registrierung auf der Plattform ist kostenlos. Für die Teilnahme an
               kostenpflichtigen Kongressen gelten die vom jeweiligen Organisator festgelegten Preise.
             </p>
             <p className="mt-2">
-              5.2 Zahlungen werden ueber sichere Zahlungsdienstleister abgewickelt. Alle Preise
-              verstehen sich in der jeweiligen Kongresswaehrung (standardmaessig CHF) und sind, wo
+              5.2 Zahlungen werden über sichere Zahlungsdienstleister abgewickelt. Alle Preise
+              verstehen sich in der jeweiligen Kongresswährung (standardmäßig CHF) und sind, wo
               anwendbar, inklusive Mehrwertsteuer.
             </p>
             <p className="mt-2">
               5.3 Rechnungen werden elektronisch zugestellt. Zahlungen sind innerhalb von 14 Tagen
-              nach Rechnungsstellung faellig, sofern nicht anders vereinbart.
+              nach Rechnungsstellung fällig, sofern nicht anders vereinbart.
             </p>
           </section>
 
@@ -124,42 +124,42 @@ export default function AGBPage() {
               6. Geistiges Eigentum
             </h2>
             <p>
-              6.1 Alle Rechte an der Plattform, einschliesslich Design, Code, Marken und Logos,
-              gehoeren dem Betreiber oder seinen Lizenzgebern.
+              6.1 Alle Rechte an der Plattform, einschließlich Design, Code, Marken und Logos,
+              gehören dem Betreiber oder seinen Lizenzgebern.
             </p>
             <p className="mt-2">
-              6.2 Inhalte, die Sie auf der Plattform hochladen (Poster, Abstracts, Praesentationen),
-              verbleiben in Ihrem Eigentum. Sie gewaehren dem Betreiber eine nicht-exklusive Lizenz
+              6.2 Inhalte, die Sie auf der Plattform hochladen (Poster, Abstracts, Präsentationen),
+              verbleiben in Ihrem Eigentum. Sie gewähren dem Betreiber eine nicht-exklusive Lizenz
               zur Anzeige und Bereitstellung innerhalb der Plattform.
             </p>
             <p className="mt-2">
-              6.3 Diese Lizenz endet, wenn Sie den jeweiligen Inhalt loeschen oder Ihr Konto schliessen.
+              6.3 Diese Lizenz endet, wenn Sie den jeweiligen Inhalt löschen oder Ihr Konto schließen.
             </p>
           </section>
 
-          {/* 7. Haftungsbeschraenkung */}
+          {/* 7. Haftungsbeschränkung */}
           <section>
             <h2 className="mb-3 text-xl font-semibold text-ensemble-900 dark:text-ensemble-50">
-              7. Haftungsbeschraenkung
+              7. Haftungsbeschränkung
             </h2>
             <p>
-              7.1 Der Betreiber haftet nicht fuer Schaeden, die aus der Nutzung oder Nichtverfuegbarkeit
-              der Plattform entstehen, soweit gesetzlich zulaessig.
+              7.1 Der Betreiber haftet nicht für Schäden, die aus der Nutzung oder Nichtverfügbarkeit
+              der Plattform entstehen, soweit gesetzlich zulässig.
             </p>
             <p className="mt-2">
-              7.2 Die Haftung fuer leichte Fahrlaessigkeit wird ausgeschlossen, soweit keine wesentlichen
+              7.2 Die Haftung für leichte Fahrlässigkeit wird ausgeschlossen, soweit keine wesentlichen
               Vertragspflichten verletzt werden.
             </p>
             <p className="mt-2">
-              7.3 Der Betreiber uebernimmt keine Garantie fuer die ununterbrochene Verfuegbarkeit der
-              Plattform und behaelt sich Wartungsarbeiten vor.
+              7.3 Der Betreiber übernimmt keine Garantie für die ununterbrochene Verfügbarkeit der
+              Plattform und behält sich Wartungsarbeiten vor.
             </p>
           </section>
 
-          {/* 8. Stornierung und Ruecktritt */}
+          {/* 8. Stornierung und Rücktritt */}
           <section>
             <h2 className="mb-3 text-xl font-semibold text-ensemble-900 dark:text-ensemble-50">
-              8. Stornierung und Ruecktritt
+              8. Stornierung und Rücktritt
             </h2>
             <p>
               8.1 Die Stornierung einer Kongressregistrierung richtet sich nach den Bedingungen des
@@ -169,26 +169,26 @@ export default function AGBPage() {
               8.2 Sofern nicht anders angegeben, gilt folgende Stornierungsregelung:
             </p>
             <ul className="mt-2 list-inside list-disc space-y-1">
-              <li>Bis 30 Tage vor Kongressbeginn: volle Rueckerstattung</li>
-              <li>15-30 Tage vor Kongressbeginn: 50% Rueckerstattung</li>
-              <li>Weniger als 15 Tage vor Kongressbeginn: keine Rueckerstattung</li>
+              <li>Bis 30 Tage vor Kongressbeginn: volle Rückerstattung</li>
+              <li>15-30 Tage vor Kongressbeginn: 50% Rückerstattung</li>
+              <li>Weniger als 15 Tage vor Kongressbeginn: keine Rückerstattung</li>
             </ul>
             <p className="mt-2">
-              8.3 Bei Absage eines Kongresses durch den Organisator erhalten Sie eine volle Rueckerstattung.
+              8.3 Bei Absage eines Kongresses durch den Organisator erhalten Sie eine volle Rückerstattung.
             </p>
           </section>
 
-          {/* 9. Kuendigung */}
+          {/* 9. Kündigung */}
           <section>
             <h2 className="mb-3 text-xl font-semibold text-ensemble-900 dark:text-ensemble-50">
-              9. Kuendigung
+              9. Kündigung
             </h2>
             <p>
-              9.1 Sie koennen Ihr Konto jederzeit ueber Ihre Profileinstellungen loeschen.
+              9.1 Sie können Ihr Konto jederzeit über Ihre Profileinstellungen löschen.
             </p>
             <p className="mt-2">
-              9.2 Der Betreiber kann das Nutzungsverhaeltnis mit einer Frist von 30 Tagen kuendigen.
-              Bei schwerwiegenden Verstoessen ist eine fristlose Kuendigung moeglich.
+              9.2 Der Betreiber kann das Nutzungsverhältnis mit einer Frist von 30 Tagen kündigen.
+              Bei schwerwiegenden Verstößen ist eine fristlose Kündigung möglich.
             </p>
           </section>
 
@@ -199,11 +199,11 @@ export default function AGBPage() {
             </h2>
             <div className="rounded-xl border border-ensemble-200 bg-ensemble-50/50 p-5 dark:border-ensemble-700 dark:bg-ensemble-900/50">
               <p className="font-medium text-ensemble-700 dark:text-ensemble-300">
-                Es gilt ausschliesslich schweizerisches Recht unter Ausschluss der Kollisionsnormen
+                Es gilt ausschließlich schweizerisches Recht unter Ausschluss der Kollisionsnormen
                 und des UN-Kaufrechts.
               </p>
               <p className="mt-2 font-medium text-ensemble-700 dark:text-ensemble-300">
-                Ausschliesslicher Gerichtsstand ist Bern, Schweiz.
+                Ausschließlicher Gerichtsstand ist Bern, Schweiz.
               </p>
             </div>
           </section>
@@ -214,13 +214,13 @@ export default function AGBPage() {
               11. Schlussbestimmungen
             </h2>
             <p>
-              11.1 Sollte eine Bestimmung dieser AGB unwirksam sein, bleiben die uebrigen Bestimmungen
-              davon unberuehrt.
+              11.1 Sollte eine Bestimmung dieser AGB unwirksam sein, bleiben die übrigen Bestimmungen
+              davon unberührt.
             </p>
             <p className="mt-2">
-              11.2 Der Betreiber behaelt sich das Recht vor, diese AGB jederzeit zu aendern.
-              Aenderungen werden per E-Mail oder auf der Plattform mitgeteilt. Bei wesentlichen
-              Aenderungen werden Sie um erneute Zustimmung gebeten.
+              11.2 Der Betreiber behält sich das Recht vor, diese AGB jederzeit zu ändern.
+              Änderungen werden per E-Mail oder auf der Plattform mitgeteilt. Bei wesentlichen
+              Änderungen werden Sie um erneute Zustimmung gebeten.
             </p>
           </section>
         </div>

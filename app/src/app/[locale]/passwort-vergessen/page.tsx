@@ -30,7 +30,7 @@ export default function PasswortVergessenPage() {
               Passwort vergessen?
             </h2>
             <p className="mt-1 text-sm text-ensemble-500 dark:text-ensemble-400">
-              Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zuruecksetzen Ihres Passworts.
+              Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.
             </p>
           </div>
 

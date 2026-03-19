@@ -3,7 +3,7 @@
     "actions": {
       "save": "Speichern",
       "cancel": "Abbrechen",
-      "delete": "Loeschen",
+      "delete": "Löschen",
       "edit": "Bearbeiten",
       "search": "Suchen",
       "filter": "Filtern",
@@ -22,15 +22,15 @@
       "active": "Aktiv",
       "inactive": "Inaktiv",
       "pending": "Ausstehend",
-      "confirmed": "Bestaetigt",
+      "confirmed": "Bestätigt",
       "cancelled": "Abgesagt"
     },
     "errors": {
       "required": "Dieses Feld ist erforderlich",
-      "invalid": "Ungueltige Eingabe",
+      "invalid": "Ungültige Eingabe",
       "notFound": "Nicht gefunden",
       "unauthorized": "Nicht autorisiert",
-      "serverError": "Serverfehler, bitte versuchen Sie es spaeter erneut"
+      "serverError": "Serverfehler, bitte versuchen Sie es später erneut"
     },
     "nav": {
       "home": "Startseite",
@@ -54,7 +54,7 @@
       "search": "Suchen"
     },
     "dashboard": {
-      "welcomeBack": "Willkommen zurueck",
+      "welcomeBack": "Willkommen zurück",
       "myCongresses": "Meine Kongresse",
       "upcomingSessions": "Anstehende Sessions",
       "messages": "Nachrichten",
@@ -62,8 +62,8 @@
       "quickActions": "Schnellaktionen",
       "createCongress": "Kongress erstellen",
       "editProfile": "Profil bearbeiten",
-      "recentActivity": "Letzte Aktivitaeten",
-      "noActivity": "Noch keine Aktivitaeten"
+      "recentActivity": "Letzte Aktivitäten",
+      "noActivity": "Noch keine Aktivitäten"
     }
   },
   "auth": {
@@ -73,14 +73,14 @@
     "registerSubtitle": "Erstellen Sie Ihr Ensemble-Konto",
     "logout": "Abmelden",
     "forgotPassword": "Passwort vergessen?",
-    "resetPassword": "Passwort zuruecksetzen",
-    "fullName": "Vollstaendiger Name",
+    "resetPassword": "Passwort zurücksetzen",
+    "fullName": "Vollständiger Name",
     "fullNamePlaceholder": "Max Muster",
     "email": "E-Mail-Adresse",
     "emailPlaceholder": "name@beispiel.ch",
     "password": "Passwort",
     "passwordPlaceholder": "Mindestens 8 Zeichen",
-    "confirmPassword": "Passwort bestaetigen",
+    "confirmPassword": "Passwort bestätigen",
     "confirmPasswordPlaceholder": "Passwort wiederholen",
     "magicLink": "Anmeldelink per E-Mail senden",
     "orContinueWith": "Oder weiter mit",
@@ -88,18 +88,18 @@
     "hasAccount": "Schon ein Konto?",
     "passwordRequirements": "Passwortanforderungen",
     "passwordMinLength": "Mindestens 8 Zeichen",
-    "passwordUppercase": "Mindestens ein Grossbuchstabe",
+    "passwordUppercase": "Mindestens ein Großbuchstabe",
     "passwordNumber": "Mindestens eine Zahl",
-    "passwordsDoNotMatch": "Passwoerter stimmen nicht ueberein",
-    "registrationSuccess": "Konto erfolgreich erstellt. Sie koennen sich jetzt anmelden.",
+    "passwordsDoNotMatch": "Passwörter stimmen nicht überein",
+    "registrationSuccess": "Konto erfolgreich erstellt. Sie können sich jetzt anmelden.",
     "registrationError": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "loginError": "Anmeldung fehlgeschlagen. Bitte pruefen Sie Ihre Zugangsdaten.",
+    "loginError": "Anmeldung fehlgeschlagen. Bitte prüfen Sie Ihre Zugangsdaten.",
     "emailInUse": "Diese E-Mail-Adresse wird bereits verwendet."
   },
   "congress": {
     "create": "Kongress erstellen",
     "edit": "Kongress bearbeiten",
-    "publish": "Kongress veroeffentlichen",
+    "publish": "Kongress veröffentlichen",
     "archive": "Kongress archivieren",
     "roles": {
       "organizer": "Organisator",
@@ -123,12 +123,12 @@
     "trackFilter": "Track filtern",
     "searchPlaceholder": "Sessions durchsuchen...",
     "noSessions": "Keine Sessions gefunden",
-    "noSessionsDescription": "Fuer den ausgewaehlten Zeitraum oder Filter sind keine Sessions vorhanden.",
-    "addToCalendar": "Zum Kalender hinzufuegen",
+    "noSessionsDescription": "Für den ausgewählten Zeitraum oder Filter sind keine Sessions vorhanden.",
+    "addToCalendar": "Zum Kalender hinzufügen",
     "mySchedule": "Mein Programm",
     "myScheduleEmpty": "Noch keine Sessions gemerkt",
-    "myScheduleEmptyDescription": "Merken Sie sich Sessions aus dem Programm, um Ihren persoenlichen Zeitplan zu erstellen.",
-    "addToMySchedule": "Zum Programm hinzufuegen",
+    "myScheduleEmptyDescription": "Merken Sie sich Sessions aus dem Programm, um Ihren persönlichen Zeitplan zu erstellen.",
+    "addToMySchedule": "Zum Programm hinzufügen",
     "removeFromMySchedule": "Aus Programm entfernen",
     "sessionDetail": "Session-Details",
     "speakers": "Referenten",
@@ -137,8 +137,8 @@
     "cmeCredits": "CME-Punkte",
     "bookmark": "Merken",
     "bookmarked": "Gemerkt",
-    "relatedSessions": "Aehnliche Sessions",
-    "conflicts": "Terminueberschneidungen"
+    "relatedSessions": "Ähnliche Sessions",
+    "conflicts": "Terminüberschneidungen"
   },
   "session": {
     "types": {
@@ -159,7 +159,7 @@
     "feedback": "Feedback"
   },
   "chat": {
-    "channels": "Kanaele",
+    "channels": "Kanäle",
     "directMessages": "Direkt",
     "sessionChats": "Sitzungen",
     "newMessage": "Neue Nachricht",
@@ -173,7 +173,7 @@
     "send": "Senden",
     "typing": "schreibt",
     "noMessages": "Noch keine Nachrichten",
-    "selectConversation": "Waehlen Sie eine Unterhaltung aus"
+    "selectConversation": "Wählen Sie eine Unterhaltung aus"
   },
   "map": {
     "floors": "Stockwerke",
@@ -187,15 +187,15 @@
     "form": "Anmeldeformular",
     "tickets": "Tickets",
     "payment": "Bezahlung",
-    "confirmation": "Bestaetigung",
-    "earlyBird": "Fruehbucher",
+    "confirmation": "Bestätigung",
+    "earlyBird": "Frühbucher",
     "regular": "Standard",
     "vip": "VIP",
     "virtual": "Virtuell",
     "title": "Kongress-Anmeldung",
     "subtitle": "Sichern Sie sich Ihren Platz",
     "steps": {
-      "personal": "Persoenliche Daten",
+      "personal": "Persönliche Daten",
       "ticket": "Ticket-Auswahl",
       "sessions": "Sessions vormerken",
       "review": "Zusammenfassung"
@@ -213,13 +213,13 @@
       "organizationPlaceholder": "Firma / Klinik",
       "title": "Titel",
       "titlePlaceholder": "Dr. med.",
-      "dietary": "Ernaehrungsbeduerfnisse",
+      "dietary": "Ernährungsbedürfnisse",
       "dietaryPlaceholder": "Vegetarisch, Allergien etc.",
       "accessibility": "Barrierefreiheit",
-      "accessibilityPlaceholder": "Rollstuhl, Hoerhilfe etc."
+      "accessibilityPlaceholder": "Rollstuhl, Hörhilfe etc."
     },
     "ticketTypes": {
-      "early_bird": "Fruehbucher",
+      "early_bird": "Frühbucher",
       "standard": "Standard",
       "vip": "VIP",
       "virtual": "Virtuell"
@@ -230,20 +230,20 @@
       "vip": "Premium-Zugang mit exklusiven Events",
       "virtual": "Online-Teilnahme mit Livestream"
     },
-    "noBookableSessions": "Momentan sind keine buchbaren Sessions verfuegbar.",
-    "sessionsSelected": "Sessions ausgewaehlt",
+    "noBookableSessions": "Momentan sind keine buchbaren Sessions verfügbar.",
+    "sessionsSelected": "Sessions ausgewählt",
     "total": "Gesamtbetrag",
-    "back": "Zurueck",
+    "back": "Zurück",
     "next": "Weiter",
     "toPayment": "Zur Zahlung",
     "submitting": "Wird gesendet...",
     "successTitle": "Anmeldung erfolgreich!",
-    "successMessage": "Vielen Dank fuer Ihre Anmeldung. Sie erhalten in Kuerze eine Bestaetigungs-E-Mail."
+    "successMessage": "Vielen Dank für Ihre Anmeldung. Sie erhalten in Kürze eine Bestätigungs-E-Mail."
   },
   "admin": {
     "dashboard": {
       "title": "Admin-Dashboard",
-      "subtitle": "Uebersicht ueber alle Kongresse und Benutzer"
+      "subtitle": "Übersicht über alle Kongresse und Benutzer"
     },
     "stats": {
       "totalCongresses": "Kongresse gesamt",
@@ -256,7 +256,7 @@
     },
     "status": {
       "draft": "Entwurf",
-      "published": "Veroeffentlicht",
+      "published": "Veröffentlicht",
       "live": "Live",
       "completed": "Abgeschlossen",
       "archived": "Archiviert"
@@ -288,19 +288,19 @@
     },
     "createCongress": {
       "title": "Neuen Kongress erstellen",
-      "subtitle": "Erfassen Sie die Grunddaten fuer Ihren neuen Kongress",
+      "subtitle": "Erfassen Sie die Grunddaten für Ihren neuen Kongress",
       "submit": "Kongress erstellen",
       "success": "Kongress erfolgreich erstellt",
       "sections": {
         "basic": "Grunddaten",
         "dates": "Datum",
         "venue": "Veranstaltungsort",
-        "pricing": "Preise & Kapazitaet"
+        "pricing": "Preise & Kapazität"
       },
       "fields": {
         "name": "Name",
         "namePlaceholder": "z.B. Swiss Medical Congress 2026",
-        "slug": "URL-Kuerzel",
+        "slug": "URL-Kürzel",
         "slugHint": "Wird automatisch aus dem Namen generiert",
         "subtitle": "Untertitel",
         "subtitlePlaceholder": "Kurzbeschreibung des Kongresses",
@@ -316,10 +316,10 @@
         "venueCity": "Stadt",
         "venueCountry": "Land (ISO-Code)",
         "maxAttendees": "Max. Teilnehmer",
-        "currency": "Waehrung",
-        "earlyBirdPrice": "Fruehbucherpreis",
-        "regularPrice": "Regulaerer Preis",
-        "priceHint": "Betrag in Waehrungseinheiten (z.B. 290.00)"
+        "currency": "Währung",
+        "earlyBirdPrice": "Frühbucherpreis",
+        "regularPrice": "Regulärer Preis",
+        "priceHint": "Betrag in Währungseinheiten (z.B. 290.00)"
       },
       "errors": {
         "endBeforeStart": "Das Enddatum muss nach dem Startdatum liegen",
@@ -336,7 +336,7 @@
       "quickActions": "Schnellaktionen",
       "actions": {
         "edit": "Bearbeiten",
-        "publish": "Veroeffentlichen",
+        "publish": "Veröffentlichen",
         "manageSessions": "Sessions verwalten",
         "manageSpeakers": "Referenten verwalten",
         "settings": "Einstellungen"
@@ -348,16 +348,16 @@
       "sessionsCount": "Sessions",
       "createSession": "Neue Session erstellen",
       "editSession": "Session bearbeiten",
-      "deleteSession": "Session loeschen",
+      "deleteSession": "Session löschen",
       "sessionCreated": "Session erfolgreich erstellt",
       "sessionUpdated": "Session erfolgreich aktualisiert",
-      "sessionDeleted": "Session erfolgreich geloescht",
+      "sessionDeleted": "Session erfolgreich gelöscht",
       "noSessions": "Noch keine Sessions vorhanden",
       "conflictsDetected": "Raumkonflikte erkannt",
-      "formDescription": "Fuellen Sie die Felder aus, um eine Session zu erstellen oder zu bearbeiten.",
+      "formDescription": "Füllen Sie die Felder aus, um eine Session zu erstellen oder zu bearbeiten.",
       "fields": {
         "title": "Titel",
-        "titlePlaceholder": "z.B. Eroeffnungskeynote",
+        "titlePlaceholder": "z.B. Eröffnungskeynote",
         "subtitle": "Untertitel",
         "type": "Typ",
         "track": "Track",
@@ -391,20 +391,20 @@
     },
     "speakerAdmin": {
       "title": "Referenten verwalten",
-      "subtitle": "Uebersicht aller Referenten und deren Status",
+      "subtitle": "Übersicht aller Referenten und deren Status",
       "inviteSpeaker": "Speaker einladen",
       "totalSpeakers": "Referenten gesamt",
       "disclosuresSubmitted": "Offenlegungen eingereicht",
-      "presentationsUploaded": "Praesentationen hochgeladen",
+      "presentationsUploaded": "Präsentationen hochgeladen",
       "speakerList": "Referentenliste",
       "disclosureOk": "Offenlegung eingereicht",
       "disclosurePending": "Offenlegung ausstehend",
-      "presentationOk": "Praesentation hochgeladen",
-      "presentationPending": "Praesentation ausstehend"
+      "presentationOk": "Präsentation hochgeladen",
+      "presentationPending": "Präsentation ausstehend"
     },
     "settings": {
       "title": "Kongress-Einstellungen",
-      "subtitle": "Verwalten Sie alle Einstellungen fuer diesen Kongress",
+      "subtitle": "Verwalten Sie alle Einstellungen für diesen Kongress",
       "saved": "Einstellungen gespeichert",
       "saveFailed": "Fehler beim Speichern",
       "sections": {
@@ -413,11 +413,11 @@
         "features": "Funktionen",
         "branding": "Branding"
       },
-      "registrationOpen": "Anmeldung geoeffnet",
+      "registrationOpen": "Anmeldung geöffnet",
       "registrationDeadline": "Anmeldeschluss",
-      "earlyBirdDeadline": "Fruehbucher-Frist",
-      "earlyBirdPrice": "Fruehbucherpreis (CHF)",
-      "regularPrice": "Regulaerer Preis (CHF)",
+      "earlyBirdDeadline": "Frühbucher-Frist",
+      "earlyBirdPrice": "Frühbucherpreis (CHF)",
+      "regularPrice": "Regulärer Preis (CHF)",
       "features": {
         "qa": "Fragen & Antworten (Q&A)",
         "polls": "Live-Abstimmungen",
@@ -428,21 +428,21 @@
       "logoHint": "Empfohlen: PNG oder SVG, mind. 256x256px",
       "accentColor": "Akzentfarbe",
       "dangerZone": "Gefahrenzone",
-      "dangerZoneDescription": "Unwiderrufliche Aktionen fuer diesen Kongress",
-      "deleteWarning": "Das Loeschen eines Kongresses entfernt alle zugehoerigen Daten unwiderruflich. Diese Aktion kann nicht rueckgaengig gemacht werden.",
-      "deleteConfirmLabel": "Geben Sie \"{name}\" ein, um zu bestaetigen",
-      "deleteCongress": "Kongress endgueltig loeschen",
-      "deleted": "Kongress wurde geloescht",
-      "deleteFailed": "Fehler beim Loeschen des Kongresses"
+      "dangerZoneDescription": "Unwiderrufliche Aktionen für diesen Kongress",
+      "deleteWarning": "Das Löschen eines Kongresses entfernt alle zugehörigen Daten unwiderruflich. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "deleteConfirmLabel": "Geben Sie \"{name}\" ein, um zu bestätigen",
+      "deleteCongress": "Kongress endgültig löschen",
+      "deleted": "Kongress wurde gelöscht",
+      "deleteFailed": "Fehler beim Löschen des Kongresses"
     },
     "attendees": {
       "title": "Teilnehmer",
-      "subtitle": "Uebersicht aller Anmeldungen fuer diesen Kongress",
+      "subtitle": "Übersicht aller Anmeldungen für diesen Kongress",
       "searchPlaceholder": "Nach Name oder E-Mail suchen...",
       "loading": "Wird geladen...",
       "noResults": "Keine Teilnehmer gefunden",
       "showing": "Zeige {from}-{to} von {total}",
-      "prev": "Zurueck",
+      "prev": "Zurück",
       "next": "Weiter",
       "registeredAt": "Anmeldedatum"
     },
@@ -465,7 +465,7 @@
   },
   "congressOverview": {
     "welcome": "Kongress-Dashboard",
-    "overviewSubtitle": "Ueberblick und Schnellzugriff",
+    "overviewSubtitle": "Überblick und Schnellzugriff",
     "statusDraft": "Entwurf",
     "stats": {
       "registered": "Angemeldet",
@@ -479,10 +479,10 @@
       "checkin": "Check-in",
       "map": "Zur Karte"
     },
-    "upcomingSessions": "Naechste Sessions",
+    "upcomingSessions": "Nächste Sessions",
     "noUpcomingSessions": "Keine anstehenden Sessions",
-    "announcements": "Ankuendigungen",
-    "noAnnouncements": "Noch keine Ankuendigungen"
+    "announcements": "Ankündigungen",
+    "noAnnouncements": "Noch keine Ankündigungen"
   },
   "exhibitor": {
     "booth": "Messestand",
@@ -513,7 +513,7 @@
     "expand": "Aufklappen",
     "collapse": "Zuklappen",
     "goToContext": "Zum Kontext",
-    "noSources": "Keine Quellen verfuegbar",
+    "noSources": "Keine Quellen verfügbar",
     "thinking": "Denkt nach..."
   },
   "notifications": {
@@ -528,13 +528,13 @@
     "sessions": "Sessions",
     "biography": "Biografie",
     "disclosures": "Interessenkonflikte",
-    "uploadPresentation": "Praesentation hochladen",
-    "uploadDeadline": "Bitte laden Sie Ihre Praesentation vor Ablauf der Frist hoch.",
-    "disclosureRequired": "Die Offenlegung von Interessenkonflikten ist fuer alle Referenten erforderlich.",
+    "uploadPresentation": "Präsentation hochladen",
+    "uploadDeadline": "Bitte laden Sie Ihre Präsentation vor Ablauf der Frist hoch.",
+    "disclosureRequired": "Die Offenlegung von Interessenkonflikten ist für alle Referenten erforderlich.",
     "noDisclosures": "Keine Interessenkonflikte gemeldet",
     "hasConflicts": "Interessenkonflikte vorhanden",
     "noConflicts": "Keine Konflikte",
-    "uploadSuccess": "Praesentation erfolgreich hochgeladen.",
+    "uploadSuccess": "Präsentation erfolgreich hochgeladen.",
     "noSpeakers": "Noch keine Referenten eingetragen.",
     "noResults": "Keine Referenten gefunden.",
     "submitDisclosure": "Offenlegung einreichen"
@@ -543,7 +543,7 @@
     "nav": {
       "platform": "Plattform",
       "pricing": "Preise",
-      "about": "Ueber uns",
+      "about": "Über uns",
       "login": "Anmelden",
       "demo": "Demo buchen"
     },
@@ -551,15 +551,15 @@
       "eyebrow": "Die Kongress-Plattform der Schweiz",
       "headlineLine1": "Der gesamte Kongress.",
       "headlineLine2": "Ein System.",
-      "subtitle": "Von der Anmeldung bis zum Zertifikat — Ensemble vereint alle Werkzeuge, die ein professioneller Kongress braucht. KI-gestuetzt. In Echtzeit. Swiss-made.",
+      "subtitle": "Von der Anmeldung bis zum Zertifikat — Ensemble vereint alle Werkzeuge, die ein professioneller Kongress braucht. KI-gestützt. In Echtzeit. Swiss-made.",
       "ctaPrimary": "Kostenlos starten",
       "ctaSecondary": "Plattform entdecken",
       "ctaNote": "Keine Kreditkarte erforderlich · Setup in 10 Minuten"
     },
-    "logoBar": "Vertraut von fuehrenden Kongressveranstaltern",
+    "logoBar": "Vertraut von führenden Kongressveranstaltern",
     "platform": {
       "title": "Eine Plattform. Alles drin.",
-      "subtitle": "Nicht 10 verschiedene Tools — ein einziges System fuer den gesamten Kongress-Lebenszyklus.",
+      "subtitle": "Nicht 10 verschiedene Tools — ein einziges System für den gesamten Kongress-Lebenszyklus.",
       "programSessions": "Programm & Sessions",
       "liveStreaming": "Live Streaming & Transkription",
       "bleNavigation": "BLE Indoor-Navigation",
@@ -582,9 +582,9 @@
       "section2Item4": "Automatischer Check-in",
       "section3Title": "KI, die Ihren Kongress versteht.",
       "section3Item1": "Kongresswissen durchsuchen",
-      "section3Item2": "Vortraege zusammenfassen",
+      "section3Item2": "Vorträge zusammenfassen",
       "section3Item3": "Intelligente Empfehlungen",
-      "section3Item4": "Mehrsprachige Uebersetzung"
+      "section3Item4": "Mehrsprachige Übersetzung"
     },
     "stats": {
       "stat1Value": "50+",
@@ -601,17 +601,17 @@
       "card1Title": "Daten in der Schweiz",
       "card1Desc": "DSGVO- und nDSG-konform. Alle Daten werden in der Schweiz und der EU gehostet — keine Drittland-Transfers.",
       "card2Title": "Zero-Knowledge Tracking",
-      "card2Desc": "Keine Cookies, kein Tracking. Datenschutzfreundliche Analysen ausschliesslich ueber Cloudflare Web Analytics.",
+      "card2Desc": "Keine Cookies, kein Tracking. Datenschutzfreundliche Analysen ausschließlich über Cloudflare Web Analytics.",
       "card3Title": "Enterprise-Sicherheit",
-      "card3Desc": "Auth.js-Authentifizierung, Rate Limiting, Audit Logs und Ende-zu-Ende-Verschluesselung fuer sensible Daten.",
+      "card3Desc": "Auth.js-Authentifizierung, Rate Limiting, Audit Logs und Ende-zu-Ende-Verschlüsselung für sensible Daten.",
       "card4Title": "Offene Architektur",
-      "card4Desc": "API-first Design, WebSocket-Echtzeit-Kommunikation und modulare Erweiterbarkeit fuer jede Anforderung."
+      "card4Desc": "API-first Design, WebSocket-Echtzeit-Kommunikation und modulare Erweiterbarkeit für jede Anforderung."
     },
     "cta": {
-      "headline": "Bereit fuer Ihren naechsten Kongress?",
+      "headline": "Bereit für Ihren nächsten Kongress?",
       "subtitle": "Starten Sie kostenlos und erleben Sie, wie Ensemble Ihren Kongress transformiert.",
       "button": "Jetzt kostenlos starten",
-      "alternative": "Oder kontaktieren Sie uns fuer eine persoenliche Demo"
+      "alternative": "Oder kontaktieren Sie uns für eine persönliche Demo"
     },
     "footer": {
       "tagline": "Wo Expertise zusammenkommt.",
@@ -626,7 +626,7 @@
       "linkBlog": "Blog",
       "linkApi": "API",
       "linkStatus": "Status",
-      "linkAbout": "Ueber uns",
+      "linkAbout": "Über uns",
       "linkContact": "Kontakt",
       "linkCareers": "Karriere",
       "linkPartners": "Partner",
@@ -668,24 +668,24 @@
     },
     "dashboard": {
       "title": "Live-Dashboard",
-      "subtitle": "Echtzeit-Uebersicht ueber alle laufenden Sessions",
+      "subtitle": "Echtzeit-Übersicht über alle laufenden Sessions",
       "liveNow": "Jetzt live",
       "noLiveSessions": "Momentan keine Live-Sessions",
       "comingSoon": "Gleich",
-      "noUpcoming": "Keine Sessions in den naechsten 30 Minuten",
+      "noUpcoming": "Keine Sessions in den nächsten 30 Minuten",
       "quickActions": "Schnellaktionen",
       "actionCheckin": "Check-in",
       "actionQA": "Q&A",
       "actionMap": "Karte",
-      "announcements": "Ankuendigungen",
-      "noAnnouncements": "Noch keine Ankuendigungen",
+      "announcements": "Ankündigungen",
+      "noAnnouncements": "Noch keine Ankündigungen",
       "watchStream": "Stream ansehen",
       "roomOccupancy": "Raumbelegung"
     },
     "stream": {
       "defaultTitle": "Live-Stream",
-      "unavailable": "Stream nicht verfuegbar",
-      "unavailableHint": "Der Stream wird in Kuerze gestartet oder ist bereits beendet.",
+      "unavailable": "Stream nicht verfügbar",
+      "unavailableHint": "Der Stream wird in Kürze gestartet oder ist bereits beendet.",
       "qualityAuto": "Automatisch",
       "tabQA": "Q&A",
       "tabPoll": "Abstimmung"
@@ -696,13 +696,13 @@
       "autoScroll": "Auto-Scroll",
       "searchPlaceholder": "Im Transkript suchen...",
       "noResults": "Keine Treffer",
-      "empty": "Noch kein Transkript verfuegbar",
+      "empty": "Noch kein Transkript verfügbar",
       "scrollToLatest": "Zum Neuesten",
       "jumpTo": "Zur Stelle springen",
       "sessionInfo": "Session-Info",
-      "timeNotAvailable": "Zeit nicht verfuegbar",
-      "roomNotAvailable": "Raum nicht verfuegbar",
-      "speakerNotAvailable": "Referent nicht verfuegbar",
+      "timeNotAvailable": "Zeit nicht verfügbar",
+      "roomNotAvailable": "Raum nicht verfügbar",
+      "speakerNotAvailable": "Referent nicht verfügbar",
       "transcriptHint": "Das Transkript wird in Echtzeit erstellt und kann Ungenauigkeiten enthalten."
     }
   },
@@ -714,14 +714,14 @@
     "myPhotos": "Meine Fotos",
     "myPhotosTitle": "Meine Fotos",
     "myPhotosSubtitle": "Verwalten Sie Ihre hochgeladenen Fotos",
-    "backToGallery": "Zurueck zur Galerie",
+    "backToGallery": "Zurück zur Galerie",
     "filterAll": "Alle",
     "filterFeatured": "Highlights",
-    "public": "Oeffentlich",
+    "public": "Öffentlich",
     "private": "Privat",
-    "makePublic": "Oeffentlich machen",
+    "makePublic": "Öffentlich machen",
     "makePrivate": "Privat machen",
-    "deletePhoto": "Foto loeschen",
+    "deletePhoto": "Foto löschen",
     "noOwnPhotos": "Sie haben noch keine Fotos hochgeladen",
     "uploadButton": "Fotos hochladen",
     "hideUpload": "Upload ausblenden",
@@ -737,12 +737,12 @@
   "onDemand": {
     "title": "Aufzeichnungen",
     "subtitle": "Sessions als On-Demand-Videos ansehen",
-    "empty": "Noch keine Aufzeichnungen verfuegbar",
+    "empty": "Noch keine Aufzeichnungen verfügbar",
     "emptyHint": "Aufzeichnungen werden nach den Live-Sessions bereitgestellt."
   },
   "articles": {
     "title": "Artikel",
-    "subtitle": "Wissenschaftliche Beitraege und Dokumente",
+    "subtitle": "Wissenschaftliche Beiträge und Dokumente",
     "empty": "Noch keine Artikel eingereicht",
     "emptyHint": "Reichen Sie den ersten Artikel ein.",
     "submit": "Artikel einreichen",
@@ -753,14 +753,14 @@
     "fieldTitlePlaceholder": "Titel des Artikels",
     "fieldSummary": "Zusammenfassung",
     "fieldSummaryPlaceholder": "Kurze Zusammenfassung des Artikels...",
-    "fieldKeywords": "Stichwoerter",
+    "fieldKeywords": "Stichwörter",
     "keywordPlaceholder": "Stichwort eingeben...",
-    "addKeyword": "Hinzufuegen",
+    "addKeyword": "Hinzufügen",
     "fieldFile": "Datei",
     "fileDropzone": "Datei hierher ziehen oder klicken",
     "fileDropzoneHint": "PDF, DOCX oder Markdown, max. {maxMb} MB",
-    "invalidFileType": "Ungueltiger Dateityp. Erlaubt: PDF, DOCX, Markdown.",
-    "fileTooLarge": "Datei zu gross. Maximum: {maxMb} MB.",
+    "invalidFileType": "Ungültiger Dateityp. Erlaubt: PDF, DOCX, Markdown.",
+    "fileTooLarge": "Datei zu groß. Maximum: {maxMb} MB.",
     "cancel": "Abbrechen",
     "submitButton": "Einreichen",
     "submitError": "Fehler beim Einreichen des Artikels"
@@ -782,50 +782,50 @@
   },
   "beacon": {
     "title": "Standortdienste",
-    "privacyExplanation": "Aktivieren Sie Bluetooth-Beacons fuer Indoor-Navigation und standortbasierte Funktionen. Ihre Position wird nur gemaess der gewaehlten Datenschutzstufe geteilt.",
+    "privacyExplanation": "Aktivieren Sie Bluetooth-Beacons für Indoor-Navigation und standortbasierte Funktionen. Ihre Position wird nur gemäß der gewählten Datenschutzstufe geteilt.",
     "privacyLevel": "Datenschutzstufe",
     "privacyOff": "Aus",
     "privacyNavigation": "Navigation",
-    "privacyFull": "Vollstaendig",
+    "privacyFull": "Vollständig",
     "startScanning": "Standort aktivieren",
     "stopScanning": "Standort deaktivieren",
     "scanning": "Suche nach Beacons...",
     "beaconsFound": "{count} Beacons gefunden",
     "currentZone": "Aktueller Bereich",
-    "notSupported": "Bluetooth wird von diesem Browser nicht unterstuetzt.",
-    "batteryWarning": "Bluetooth-Scanning kann den Akkuverbrauch leicht erhoehen.",
+    "notSupported": "Bluetooth wird von diesem Browser nicht unterstützt.",
+    "batteryWarning": "Bluetooth-Scanning kann den Akkuverbrauch leicht erhöhen.",
     "map": {
-      "title": "Gebaeudekarte",
+      "title": "Gebäudekarte",
       "subtitle": "Interaktive Karte mit Indoor-Navigation",
       "status": {
-        "available": "Verfuegbar",
-        "in-session": "Session laeuft",
+        "available": "Verfügbar",
+        "in-session": "Session läuft",
         "full": "Voll"
       }
     },
     "wayfinder": {
       "navigateTo": "Navigieren zu...",
-      "selectDestination": "Ziel auswaehlen",
+      "selectDestination": "Ziel auswählen",
       "startNavigation": "Navigation starten",
       "cancel": "Abbrechen",
       "positionRequired": "Ihr Standort muss zuerst erkannt werden."
     },
     "nearby": {
-      "title": "{count} Personen in deiner Naehe",
-      "empty": "Keine Personen in der Naehe",
-      "requiresFull": "Aktivieren Sie die Datenschutzstufe \"Vollstaendig\", um Personen in Ihrer Naehe zu sehen.",
-      "optInNotice": "Nur Personen, die ebenfalls die vollstaendige Standortfreigabe aktiviert haben, werden angezeigt."
+      "title": "{count} Personen in deiner Nähe",
+      "empty": "Keine Personen in der Nähe",
+      "requiresFull": "Aktivieren Sie die Datenschutzstufe \"Vollständig\", um Personen in Ihrer Nähe zu sehen.",
+      "optInNotice": "Nur Personen, die ebenfalls die vollständige Standortfreigabe aktiviert haben, werden angezeigt."
     },
     "occupancy": {
       "title": "Raumbelegung",
-      "empty": "Keine Raumdaten verfuegbar"
+      "empty": "Keine Raumdaten verfügbar"
     }
   },
   "nfc": {
     "title": "Badge scannen",
     "scanBadge": "Badge scannen",
     "reading": "Lese NFC-Tag...",
-    "notSupported": "NFC wird von diesem Browser nicht unterstuetzt.",
+    "notSupported": "NFC wird von diesem Browser nicht unterstützt.",
     "qrFallback": "QR-Code scannen",
     "saveContact": "Kontakt speichern",
     "saving": "Wird gespeichert...",
@@ -834,7 +834,7 @@
   },
   "exhibition": {
     "title": "Ausstellung",
-    "subtitle": "Aussteller und Messstaende",
+    "subtitle": "Aussteller und Messestände",
     "searchPlaceholder": "Aussteller suchen...",
     "mapView": "Kartenansicht",
     "empty": "Noch keine Aussteller vorhanden",
@@ -850,11 +850,11 @@
     "leads": "Kontakte",
     "noLeads": "Noch keine Kontakte erfasst",
     "exportLeads": "Kontakte exportieren",
-    "notesPlaceholder": "Notizen hinzufuegen...",
+    "notesPlaceholder": "Notizen hinzufügen...",
     "rating": "Bewertung",
     "saveLead": "Kontakt speichern",
     "saving": "Wird gespeichert...",
-    "noData": "Keine Daten verfuegbar"
+    "noData": "Keine Daten verfügbar"
   },
   "cme": {
     "title": "Fortbildungspunkte",
@@ -863,7 +863,7 @@
     "credits": "Punkte",
     "downloadCertificate": "Zertifikat herunterladen",
     "missingEvaluations": "Fehlende Evaluationen",
-    "missingEvaluationsHint": "{count} Sessions muessen noch evaluiert werden, um CME-Punkte zu erhalten.",
+    "missingEvaluationsHint": "{count} Sessions müssen noch evaluiert werden, um CME-Punkte zu erhalten.",
     "sessionCredits": "Sessions und Punkte",
     "noSessions": "Noch keine Sessions besucht",
     "status": {
@@ -873,7 +873,7 @@
     },
     "evaluateSession": "Session evaluieren",
     "categories": {
-      "contentQuality": "Inhaltsqualitaet",
+      "contentQuality": "Inhaltsqualität",
       "speakerEffectiveness": "Referent/in",
       "relevance": "Relevanz",
       "organization": "Organisation"
@@ -887,7 +887,7 @@
   },
   "analytics": {
     "title": "Analytics",
-    "subtitle": "Statistiken und Auswertungen fuer diesen Kongress",
+    "subtitle": "Statistiken und Auswertungen für diesen Kongress",
     "exportCsv": "CSV exportieren",
     "exportPdf": "PDF exportieren",
     "stats": {
@@ -908,7 +908,7 @@
     "speaker": "Referent",
     "sessions": "Sessions",
     "avgRating": "Bewertung",
-    "noData": "Keine Daten verfuegbar"
+    "noData": "Keine Daten verfügbar"
   },
   "gamification": {
     "title": "Gamification",
@@ -916,12 +916,12 @@
     "points": "Punkte",
     "totalPoints": "Gesammelte Punkte",
     "achievements": "Abzeichen",
-    "noAchievements": "Noch keine Abzeichen verfuegbar",
+    "noAchievements": "Noch keine Abzeichen verfügbar",
     "locked": "Gesperrt",
     "leaderboard": "Bestenliste",
     "daily": "Heute",
     "overall": "Gesamt",
-    "noEntries": "Noch keine Eintraege",
+    "noEntries": "Noch keine Einträge",
     "you": "Du",
     "pts": "Pkt.",
     "tiers": {
@@ -931,7 +931,7 @@
       "diamond": "Diamant"
     },
     "pointsToNext": "Noch {points} Punkte bis {tier}",
-    "recentActivity": "Letzte Aktivitaeten",
+    "recentActivity": "Letzte Aktivitäten",
     "reasons": {
       "referral": "Empfehlung",
       "checkin": "Check-in",
@@ -940,7 +940,7 @@
       "networking": "Networking",
       "photo": "Foto hochgeladen",
       "registration": "Anmeldung",
-      "profile": "Profil vervollstaendigt",
+      "profile": "Profil vervollständigt",
       "exhibitor_visit": "Aussteller besucht"
     },
     "referral": "Empfehlungslink",
@@ -952,20 +952,20 @@
   },
   "networking": {
     "title": "Networking",
-    "subtitle": "Kontakte knuepfen und vernetzen",
+    "subtitle": "Kontakte knüpfen und vernetzen",
     "findAttendees": "Teilnehmer finden",
     "searchPlaceholder": "Nach Name oder Organisation suchen...",
     "searchHint": "Suchen Sie nach Teilnehmern, um sich zu vernetzen.",
     "nfcTap": "NFC-Kontaktaustausch",
-    "nfcHint": "Halten Sie Ihr Geraet an ein anderes Badge, um Kontaktdaten auszutauschen.",
+    "nfcHint": "Halten Sie Ihr Gerät an ein anderes Badge, um Kontaktdaten auszutauschen.",
     "tapToConnect": "Tippen zum Verbinden",
     "myContacts": "Meine Kontakte",
     "exportContacts": "Kontakte exportieren",
     "noContacts": "Noch keine Kontakte gespeichert",
-    "nearbyPeople": "Personen in der Naehe",
-    "nearbyHint": "Aktivieren Sie Bluetooth, um Personen in Ihrer Naehe zu sehen.",
+    "nearbyPeople": "Personen in der Nähe",
+    "nearbyHint": "Aktivieren Sie Bluetooth, um Personen in Ihrer Nähe zu sehen.",
     "enableBluetooth": "Bluetooth aktivieren",
-    "nfcNotSupported": "NFC wird von diesem Browser nicht unterstuetzt."
+    "nfcNotSupported": "NFC wird von diesem Browser nicht unterstützt."
   },
   "social": {
     "title": "Social Events",
@@ -975,7 +975,7 @@
     "types": {
       "dinner": "Abendessen",
       "reception": "Empfang",
-      "tour": "Fuehrung",
+      "tour": "Führung",
       "sport": "Sport",
       "cultural": "Kulturell"
     }
@@ -993,11 +993,11 @@
       "satisfaction": "Zufriedenheit"
     },
     "recordings": "Aufzeichnungen",
-    "noRecordings": "Noch keine Aufzeichnungen verfuegbar",
+    "noRecordings": "Noch keine Aufzeichnungen verfügbar",
     "contentLibrary": "Inhaltsbibliothek",
-    "noContent": "Noch keine Inhalte verfuegbar",
+    "noContent": "Noch keine Inhalte verfügbar",
     "feedbackSummary": "Feedback-Zusammenfassung",
-    "noFeedback": "Noch keine Feedback-Daten verfuegbar"
+    "noFeedback": "Noch keine Feedback-Daten verfügbar"
   },
   "setupChecklist": {
     "title": "Kongress-Einrichtung",
@@ -1005,23 +1005,23 @@
     "basicInfo": "Grunddaten (Name, Datum, Ort)",
     "sessions": "Programm (mind. 1 Session)",
     "speakers": "Referenten (mind. 1 Referent)",
-    "registration": "Anmeldung geoeffnet",
-    "rooms": "Raeume (mind. 1 Raum)",
+    "registration": "Anmeldung geöffnet",
+    "rooms": "Räume (mind. 1 Raum)",
     "branding": "Branding (Logo hochgeladen)",
     "required": "Erforderlich",
-    "publish": "Veroeffentlichen",
-    "publishHint": "Alle erforderlichen Schritte muessen abgeschlossen sein, um den Kongress zu veroeffentlichen."
+    "publish": "Veröffentlichen",
+    "publishHint": "Alle erforderlichen Schritte müssen abgeschlossen sein, um den Kongress zu veröffentlichen."
   },
   "onboarding": {
     "title": "Erstellen Sie Ihren ersten Kongress",
     "description": "Willkommen bei Ensemble! Starten Sie mit der Erstellung eines neuen Kongresses oder durchsuchen Sie bestehende Veranstaltungen.",
     "createCongress": "Kongress erstellen",
     "browseCongresses": "Kongresse durchsuchen",
-    "dismiss": "Schliessen"
+    "dismiss": "Schließen"
   },
   "emptyState": {
     "noSessions": "Noch keine Sessions",
-    "noSessionsDesc": "Erstellen Sie die erste Session fuer diesen Kongress.",
+    "noSessionsDesc": "Erstellen Sie die erste Session für diesen Kongress.",
     "noSpeakers": "Noch keine Referenten",
     "noSpeakersDesc": "Laden Sie den ersten Referenten ein.",
     "addFirst": "Ersten Eintrag erstellen",

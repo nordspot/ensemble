@@ -30,8 +30,8 @@ const demoCongresses = [
     slug: 'digital-health-summit',
     start_date: '2026-09-22',
     end_date: '2026-09-23',
-    venue_city: 'Zuerich',
-    venue_name: 'ETH Zuerich',
+    venue_city: 'Zürich',
+    venue_name: 'ETH Zürich',
     status: 'draft',
     role: 'organizer',
     registered_count: 0,
@@ -53,7 +53,7 @@ const demoCongresses = [
 function getStatusLabel(status: string): string {
   const map: Record<string, string> = {
     draft: 'Entwurf',
-    published: 'Veroeffentlicht',
+    published: 'Veröffentlicht',
     active: 'Aktiv',
     completed: 'Abgeschlossen',
     archived: 'Archiviert',
@@ -174,7 +174,7 @@ export default async function KongressePage() {
               Noch keine Kongresse
             </h3>
             <p className="mx-auto mt-2 max-w-md text-sm text-ensemble-500 dark:text-ensemble-400">
-              Erstellen Sie Ihren ersten Kongress oder melden Sie sich fuer einen veroeffentlichten Kongress an.
+              Erstellen Sie Ihren ersten Kongress oder melden Sie sich für einen veröffentlichten Kongress an.
             </p>
             <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Button asChild>

@@ -89,7 +89,7 @@ export async function PATCH(request: NextRequest) {
 
     if (!parsed.success) {
       const firstError = parsed.error.errors[0];
-      return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungueltige Eingabe');
+      return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungültige Eingabe');
     }
 
     const data = parsed.data;

@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     if (!parsed.success) {
       const firstError = parsed.error.errors[0];
-      return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungueltige Eingabe');
+      return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungültige Eingabe');
     }
 
     const { token, password } = parsed.data;
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
       .first<{ id: string; user_id: string; expires_at: string; used: number }>();
 
     if (!resetToken) {
-      return ERRORS.VALIDATION_ERROR('Ungueltiger oder abgelaufener Link.');
+      return ERRORS.VALIDATION_ERROR('Ungültiger oder abgelaufener Link.');
     }
 
     if (resetToken.used === 1) {

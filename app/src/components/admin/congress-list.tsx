@@ -41,7 +41,7 @@ const STATUS_OPTIONS: CongressStatus[] = ['draft', 'published', 'live', 'complet
 // Placeholder data -- replace with API call
 const MOCK_CONGRESSES: CongressListItem[] = [
   { id: '1', name: 'Swiss Medical Congress 2026', slug: 'smc-2026', start_date: '2026-03-20', end_date: '2026-03-22', status: 'live', registrations: 342, venue_city: 'Bern' },
-  { id: '2', name: 'Engineering Summit Zurich', slug: 'esz-2026', start_date: '2026-05-15', end_date: '2026-05-17', status: 'published', registrations: 128, venue_city: 'Zuerich' },
+  { id: '2', name: 'Engineering Summit Zurich', slug: 'esz-2026', start_date: '2026-05-15', end_date: '2026-05-17', status: 'published', registrations: 128, venue_city: 'Zürich' },
   { id: '3', name: 'Legal Tech Conference', slug: 'ltc-2026', start_date: '2026-06-10', end_date: '2026-06-11', status: 'draft', registrations: 0, venue_city: 'Basel' },
   { id: '4', name: 'Academic Research Days', slug: 'ard-2026', start_date: '2026-01-12', end_date: '2026-01-14', status: 'completed', registrations: 567, venue_city: 'Lausanne' },
   { id: '5', name: 'Scientific Symposium Geneva', slug: 'ssg-2026', start_date: '2026-09-01', end_date: '2026-09-03', status: 'draft', registrations: 0, venue_city: 'Genf' },

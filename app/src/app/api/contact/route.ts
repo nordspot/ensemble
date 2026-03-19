@@ -6,7 +6,7 @@ import type { D1Database } from '@/lib/db/client';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name muss mindestens 2 Zeichen haben').max(100),
-  email: z.string().email('Ungueltige E-Mail-Adresse'),
+  email: z.string().email('Ungültige E-Mail-Adresse'),
   subject: z.string().min(2, 'Betreff muss mindestens 2 Zeichen haben').max(200),
   message: z.string().min(10, 'Nachricht muss mindestens 10 Zeichen haben').max(5000),
 });
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
                request.headers.get('x-forwarded-for') ||
                'unknown';
     if (isRateLimited(ip)) {
-      return ERRORS.RATE_LIMITED('Zu viele Anfragen. Bitte versuchen Sie es spaeter erneut.');
+      return ERRORS.RATE_LIMITED('Zu viele Anfragen. Bitte versuchen Sie es später erneut.');
     }
 
     const body: unknown = await request.json();
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
 
     if (!parsed.success) {
       const firstError = parsed.error.errors[0];
-      return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungueltige Eingabe');
+      return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungültige Eingabe');
     }
 
     const { name, email, subject, message } = parsed.data;

@@ -31,16 +31,16 @@ export default function CmePage() {
         URL.revokeObjectURL(url);
       } else if (res.status === 404) {
         setMessage(
-          'Das Zertifikat wurde noch nicht erstellt. Bitte schliessen Sie zuerst alle erforderlichen Evaluationen ab.',
+          'Das Zertifikat wurde noch nicht erstellt. Bitte schließen Sie zuerst alle erforderlichen Evaluationen ab.',
         );
       } else {
         setMessage(
-          'Zertifikat konnte nicht heruntergeladen werden. Bitte versuchen Sie es spaeter erneut.',
+          'Zertifikat konnte nicht heruntergeladen werden. Bitte versuchen Sie es später erneut.',
         );
       }
     } catch {
       setMessage(
-        'Zertifikat konnte nicht heruntergeladen werden. Bitte versuchen Sie es spaeter erneut.',
+        'Zertifikat konnte nicht heruntergeladen werden. Bitte versuchen Sie es später erneut.',
       );
     } finally {
       setDownloading(false);

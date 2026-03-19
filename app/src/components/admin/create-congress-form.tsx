@@ -296,7 +296,7 @@ export function CreateCongressForm() {
               <Input
                 value={form.venue_city ?? ''}
                 onChange={(e) => updateField('venue_city', e.target.value)}
-                placeholder="Zuerich"
+                placeholder="Zürich"
               />
             </div>
             <div>

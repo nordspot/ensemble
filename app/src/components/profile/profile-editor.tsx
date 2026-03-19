@@ -112,10 +112,10 @@ export function ProfileEditor() {
       const response = await fetch('/api/profile', { method: 'DELETE' });
       const result = (await response.json()) as { ok: boolean };
       if (result.ok) {
-        toast.success('Konto wurde geloescht.');
+        toast.success('Konto wurde gelöscht.');
         window.location.href = '/';
       } else {
-        toast.error('Konto konnte nicht geloescht werden.');
+        toast.error('Konto konnte nicht gelöscht werden.');
       }
     } catch {
       toast.error('Ein Fehler ist aufgetreten.');
@@ -168,7 +168,7 @@ export function ProfileEditor() {
               JPG, PNG oder GIF. Max. 2 MB.
             </p>
             <Button type="button" variant="outline" size="sm" className="mt-2">
-              Bild aendern
+              Bild ändern
             </Button>
           </div>
         </div>
@@ -177,12 +177,12 @@ export function ProfileEditor() {
       {/* Personal Information */}
       <div className="rounded-xl border border-ensemble-200 bg-white p-6 dark:border-ensemble-700 dark:bg-ensemble-900">
         <h3 className="mb-4 text-lg font-semibold text-ensemble-900 dark:text-ensemble-50">
-          Persoenliche Informationen
+          Persönliche Informationen
         </h3>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <label htmlFor="full_name" className="text-sm font-medium text-ensemble-700 dark:text-ensemble-300">
-              Vollstaendiger Name *
+              Vollständiger Name *
             </label>
             <Input id="full_name" name="full_name" defaultValue={profile.full_name ?? ''} required />
           </div>
@@ -197,7 +197,7 @@ export function ProfileEditor() {
               E-Mail
             </label>
             <Input id="email_display" value={profile.email} disabled className="bg-ensemble-50 dark:bg-ensemble-800/50" />
-            <p className="text-xs text-ensemble-400">E-Mail-Adresse kann nicht geaendert werden.</p>
+            <p className="text-xs text-ensemble-400">E-Mail-Adresse kann nicht geändert werden.</p>
           </div>
           <div className="space-y-2">
             <label htmlFor="phone" className="text-sm font-medium text-ensemble-700 dark:text-ensemble-300">
@@ -218,7 +218,7 @@ export function ProfileEditor() {
             <label htmlFor="organization_name" className="text-sm font-medium text-ensemble-700 dark:text-ensemble-300">
               Organisation
             </label>
-            <Input id="organization_name" name="organization_name" placeholder="z.B. Universitaetsspital Bern" defaultValue={profile.organization_name ?? ''} />
+            <Input id="organization_name" name="organization_name" placeholder="z.B. Universitätsspital Bern" defaultValue={profile.organization_name ?? ''} />
           </div>
           <div className="space-y-2">
             <label htmlFor="department" className="text-sm font-medium text-ensemble-700 dark:text-ensemble-300">
@@ -254,13 +254,13 @@ export function ProfileEditor() {
         </h3>
         <div className="space-y-2">
           <label htmlFor="bio" className="text-sm font-medium text-ensemble-700 dark:text-ensemble-300">
-            Ueber Sie
+            Über Sie
           </label>
           <Textarea
             id="bio"
             name="bio"
             rows={4}
-            placeholder="Erzaehlen Sie etwas ueber sich..."
+            placeholder="Erzählen Sie etwas über sich..."
             defaultValue={profile.bio ?? ''}
             maxLength={2000}
           />
@@ -271,7 +271,7 @@ export function ProfileEditor() {
       {/* Online Presence */}
       <div className="rounded-xl border border-ensemble-200 bg-white p-6 dark:border-ensemble-700 dark:bg-ensemble-900">
         <h3 className="mb-4 text-lg font-semibold text-ensemble-900 dark:text-ensemble-50">
-          Online-Praesenz
+          Online-Präsenz
         </h3>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
@@ -312,14 +312,14 @@ export function ProfileEditor() {
               className="flex h-10 w-full rounded-lg border border-ensemble-200 bg-white px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 dark:border-ensemble-700 dark:bg-ensemble-900 dark:text-ensemble-50"
             >
               <option value="de">Deutsch</option>
-              <option value="fr">Franzoesisch</option>
+              <option value="fr">Französisch</option>
               <option value="it">Italienisch</option>
               <option value="en">English</option>
             </select>
           </div>
           <div className="space-y-2">
             <label htmlFor="dietary_requirements" className="text-sm font-medium text-ensemble-700 dark:text-ensemble-300">
-              Ernaehrungsbeduerfnisse
+              Ernährungsbedürfnisse
             </label>
             <Input id="dietary_requirements" name="dietary_requirements" placeholder="z.B. vegetarisch, vegan, glutenfrei" defaultValue={profile.dietary_requirements ?? ''} />
           </div>
@@ -327,7 +327,7 @@ export function ProfileEditor() {
             <label htmlFor="accessibility_needs" className="text-sm font-medium text-ensemble-700 dark:text-ensemble-300">
               Barrierefreiheit
             </label>
-            <Input id="accessibility_needs" name="accessibility_needs" placeholder="z.B. Rollstuhlzugang, Hoerhilfe" defaultValue={profile.accessibility_needs ?? ''} />
+            <Input id="accessibility_needs" name="accessibility_needs" placeholder="z.B. Rollstuhlzugang, Hörhilfe" defaultValue={profile.accessibility_needs ?? ''} />
           </div>
         </div>
       </div>
@@ -350,7 +350,7 @@ export function ProfileEditor() {
                 BLE-Standortbestimmung aktivieren
               </span>
               <p className="text-xs text-ensemble-400">
-                Ermoeglicht Indoor-Navigation und Standort-basierte Dienste waehrend Kongressen.
+                Ermöglicht Indoor-Navigation und Standort-basierte Dienste während Kongressen.
               </p>
             </div>
           </label>
@@ -366,7 +366,7 @@ export function ProfileEditor() {
                 Push-Benachrichtigungen
               </span>
               <p className="text-xs text-ensemble-400">
-                Erhalten Sie Benachrichtigungen ueber Session-Aenderungen, Nachrichten und Updates.
+                Erhalten Sie Benachrichtigungen über Session-Änderungen, Nachrichten und Updates.
               </p>
             </div>
           </label>
@@ -385,7 +385,7 @@ export function ProfileEditor() {
               Speichern...
             </span>
           ) : (
-            'Aenderungen speichern'
+            'Änderungen speichern'
           )}
         </Button>
       </div>
@@ -396,7 +396,7 @@ export function ProfileEditor() {
           Gefahrenzone
         </h3>
         <p className="mb-4 text-sm text-red-600/80 dark:text-red-400/80">
-          Das Loeschen Ihres Kontos ist unwiderruflich. Alle Ihre Daten werden permanent entfernt.
+          Das Löschen Ihres Kontos ist unwiderruflich. Alle Ihre Daten werden permanent entfernt.
         </p>
         {showDeleteConfirm ? (
           <div className="flex items-center gap-3">
@@ -406,7 +406,7 @@ export function ProfileEditor() {
               size="sm"
               onClick={handleDelete}
             >
-              Ja, Konto endgueltig loeschen
+              Ja, Konto endgültig löschen
             </Button>
             <Button
               type="button"
@@ -425,7 +425,7 @@ export function ProfileEditor() {
             className="border-red-300 text-red-600 hover:bg-red-100 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-950/50"
             onClick={() => setShowDeleteConfirm(true)}
           >
-            Konto loeschen
+            Konto löschen
           </Button>
         )}
       </div>

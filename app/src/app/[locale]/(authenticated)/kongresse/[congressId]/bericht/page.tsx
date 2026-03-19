@@ -51,7 +51,7 @@ export default function ReportPage() {
       a.click();
       URL.revokeObjectURL(url);
     } catch {
-      setError('Bericht konnte nicht heruntergeladen werden. Bitte versuchen Sie es spaeter erneut.');
+      setError('Bericht konnte nicht heruntergeladen werden. Bitte versuchen Sie es später erneut.');
     } finally {
       setDownloading(false);
     }

@@ -58,16 +58,16 @@ export function ForgotPasswordForm() {
           E-Mail gesendet
         </h3>
         <p className="text-sm text-ensemble-500 dark:text-ensemble-400">
-          Falls ein Konto mit dieser E-Mail-Adresse existiert, wurde eine E-Mail mit einem Link zum Zuruecksetzen des Passworts gesendet.
+          Falls ein Konto mit dieser E-Mail-Adresse existiert, wurde eine E-Mail mit einem Link zum Zurücksetzen des Passworts gesendet.
         </p>
         <p className="text-sm text-ensemble-500 dark:text-ensemble-400">
-          Bitte pruefen Sie auch Ihren Spam-Ordner.
+          Bitte prüfen Sie auch Ihren Spam-Ordner.
         </p>
         <Link
           href="/anmelden"
           className="mt-4 inline-block text-sm font-medium text-accent-500 hover:text-accent-600 dark:text-accent-400"
         >
-          Zurueck zur Anmeldung
+          Zurück zur Anmeldung
         </Link>
       </div>
     );
@@ -117,7 +117,7 @@ export function ForgotPasswordForm() {
             Link anfordern...
           </span>
         ) : (
-          'Link zum Zuruecksetzen anfordern'
+          'Link zum Zurücksetzen anfordern'
         )}
       </Button>
 
@@ -126,7 +126,7 @@ export function ForgotPasswordForm() {
           href="/anmelden"
           className="font-medium text-accent-500 hover:text-accent-600 dark:text-accent-400"
         >
-          Zurueck zur Anmeldung
+          Zurück zur Anmeldung
         </Link>
       </div>
     </form>

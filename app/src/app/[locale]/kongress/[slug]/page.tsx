@@ -9,9 +9,9 @@ function getCongressBySlug(slug: string) {
     id: 'demo-1',
     name: 'Schweizerischer Kardiologie-Kongress 2026',
     slug,
-    subtitle: 'Innovationen in der kardiovaskulaeren Medizin',
+    subtitle: 'Innovationen in der kardiovaskulären Medizin',
     description:
-      'Der jaehrliche Schweizerische Kardiologie-Kongress bringt fuehrende Expertinnen und Experten aus der kardiovaskulaeren Medizin zusammen. Drei Tage voller Wissensaustausch, Networking und Fortbildung erwarten Sie in Bern.',
+      'Der jährliche Schweizerische Kardiologie-Kongress bringt führende Expertinnen und Experten aus der kardiovaskulären Medizin zusammen. Drei Tage voller Wissensaustausch, Networking und Fortbildung erwarten Sie in Bern.',
     start_date: '2026-06-15',
     end_date: '2026-06-17',
     venue_name: 'Kursaal Bern',
@@ -31,31 +31,31 @@ function getCongressBySlug(slug: string) {
       {
         id: 's1',
         title: 'Keynote: Die Zukunft der interventionellen Kardiologie',
-        speaker: 'Prof. Dr. Anna Mueller',
+        speaker: 'Prof. Dr. Anna Müller',
         time: 'Mo, 15. Juni 2026 - 09:00',
         type: 'keynote',
       },
       {
         id: 's2',
-        title: 'Workshop: KI-gestuetzte EKG-Analyse',
+        title: 'Workshop: KI-gestützte EKG-Analyse',
         speaker: 'Dr. Thomas Weber',
         time: 'Di, 16. Juni 2026 - 14:00',
         type: 'workshop',
       },
       {
         id: 's3',
-        title: 'Panel: Praezisionsmedizin in der Herzchirurgie',
+        title: 'Panel: Präzisionsmedizin in der Herzchirurgie',
         speaker: 'Diverse Referierende',
         time: 'Mi, 17. Juni 2026 - 10:00',
         type: 'panel',
       },
     ],
     speakers: [
-      { id: 'sp1', name: 'Prof. Dr. Anna Mueller', title: 'Chefaerztin Kardiologie', org: 'Inselspital Bern' },
-      { id: 'sp2', name: 'Dr. Thomas Weber', title: 'Leiter KI-Forschung', org: 'ETH Zuerich' },
+      { id: 'sp1', name: 'Prof. Dr. Anna Müller', title: 'Chefärztin Kardiologie', org: 'Inselspital Bern' },
+      { id: 'sp2', name: 'Dr. Thomas Weber', title: 'Leiter KI-Forschung', org: 'ETH Zürich' },
       { id: 'sp3', name: 'Prof. Dr. Maria Rossi', title: 'Herzchirurgin', org: 'CHUV Lausanne' },
-      { id: 'sp4', name: 'Dr. Lukas Berger', title: 'Kardiologe', org: 'USZ Zuerich' },
-      { id: 'sp5', name: 'Prof. Dr. Sarah Klein', title: 'Forschungsleiterin', org: 'Universitaet Basel' },
+      { id: 'sp4', name: 'Dr. Lukas Berger', title: 'Kardiologe', org: 'USZ Zürich' },
+      { id: 'sp5', name: 'Prof. Dr. Sarah Klein', title: 'Forschungsleiterin', org: 'Universität Basel' },
       { id: 'sp6', name: 'Dr. Marco Fontana', title: 'Interventioneller Kardiologe', org: 'Cardiocentro Lugano' },
     ],
   };
@@ -260,7 +260,7 @@ export default async function KongressPublicPage({
                 </div>
               )}
               <div className="mt-3">
-                <p className="text-xs text-ensemble-400">Regulaerer Preis</p>
+                <p className="text-xs text-ensemble-400">Regulärer Preis</p>
                 <p className="text-xl font-bold text-ensemble-900 dark:text-ensemble-50">
                   {formatPrice(congress.regular_price_cents, congress.currency)}
                 </p>
@@ -297,7 +297,7 @@ export default async function KongressPublicPage({
             Sichern Sie sich Ihren Platz
           </h2>
           <p className="mx-auto mt-2 max-w-xl text-ensemble-500 dark:text-ensemble-400">
-            Werden Sie Teil des {congress.name} und vernetzen Sie sich mit fuehrenden Expertinnen und Experten.
+            Werden Sie Teil des {congress.name} und vernetzen Sie sich mit führenden Expertinnen und Experten.
           </p>
           <Button className="mt-6" size="lg">
             Jetzt anmelden
