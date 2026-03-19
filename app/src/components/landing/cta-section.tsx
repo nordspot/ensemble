@@ -11,6 +11,7 @@ interface CtaSectionProps {
     subtitle: string;
     cta: string;
     alternative: string;
+    allFeaturesLink?: string;
   };
 }
 
@@ -55,6 +56,18 @@ export function CtaSection({ translations: t }: CtaSectionProps) {
             {t.alternative}
           </Link>
         </div>
+
+        {t.allFeaturesLink && (
+          <div className="mt-8">
+            <Link
+              href="/funktionen"
+              className="inline-flex items-center gap-2 text-sm font-medium text-accent-500 hover:text-accent-600 transition-colors group"
+            >
+              {t.allFeaturesLink}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+        )}
       </motion.div>
     </section>
   );

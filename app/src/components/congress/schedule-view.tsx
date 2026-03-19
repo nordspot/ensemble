@@ -73,7 +73,7 @@ export function ScheduleView({ congressId }: ScheduleViewProps) {
           setSpeakerMap(data.data?.speakerMap ?? {});
         }
       } catch {
-        // Silently handle — empty state will show
+        // Silently handle - empty state will show
         if (!cancelled) {
           setSessions([]);
         }

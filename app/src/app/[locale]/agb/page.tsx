@@ -50,10 +50,10 @@ export default function AGBPage() {
               2. Leistungsbeschreibung
             </h2>
             <p>
-              Ensemble ist eine digitale Kongressplattform, die folgende Dienste anbietet:
+              Ensemble ist eine digitale Fachkongress-Plattform, die folgende Dienste anbietet:
             </p>
             <ul className="mt-2 list-inside list-disc space-y-1">
-              <li>Organisation und Verwaltung von Kongressen und Fachveranstaltungen</li>
+              <li>Organisation und Verwaltung von Fachkongressen und Fachveranstaltungen</li>
               <li>Teilnehmerregistrierung und Ticketing</li>
               <li>Programmplanung und Session-Verwaltung</li>
               <li>Networking-Funktionen und Messaging</li>
@@ -105,7 +105,7 @@ export default function AGBPage() {
             </h2>
             <p>
               5.1 Die Registrierung auf der Plattform ist kostenlos. Für die Teilnahme an
-              kostenpflichtigen Kongressen gelten die vom jeweiligen Organisator festgelegten Preise.
+              kostenpflichtigen Fachkongressen gelten die vom jeweiligen Organisator festgelegten Preise.
             </p>
             <p className="mt-2">
               5.2 Zahlungen werden über sichere Zahlungsdienstleister abgewickelt. Alle Preise
@@ -162,19 +162,19 @@ export default function AGBPage() {
               8. Stornierung und Rücktritt
             </h2>
             <p>
-              8.1 Die Stornierung einer Kongressregistrierung richtet sich nach den Bedingungen des
-              jeweiligen Kongressorganisators.
+              8.1 Die Stornierung einer Fachkongress-Registrierung richtet sich nach den Bedingungen des
+              jeweiligen Fachkongressorganisators.
             </p>
             <p className="mt-2">
               8.2 Sofern nicht anders angegeben, gilt folgende Stornierungsregelung:
             </p>
             <ul className="mt-2 list-inside list-disc space-y-1">
-              <li>Bis 30 Tage vor Kongressbeginn: volle Rückerstattung</li>
-              <li>15-30 Tage vor Kongressbeginn: 50% Rückerstattung</li>
-              <li>Weniger als 15 Tage vor Kongressbeginn: keine Rückerstattung</li>
+              <li>Bis 30 Tage vor Fachkongressbeginn: volle Rückerstattung</li>
+              <li>15-30 Tage vor Fachkongressbeginn: 50% Rückerstattung</li>
+              <li>Weniger als 15 Tage vor Fachkongressbeginn: keine Rückerstattung</li>
             </ul>
             <p className="mt-2">
-              8.3 Bei Absage eines Kongresses durch den Organisator erhalten Sie eine volle Rückerstattung.
+              8.3 Bei Absage eines Fachkongresses durch den Organisator erhalten Sie eine volle Rückerstattung.
             </p>
           </section>
 

@@ -87,7 +87,7 @@ function DashboardPreview() {
             {/* Header row */}
             <div className="flex items-center gap-2 mb-3">
               <div className="flex items-center gap-1.5">
-                <h4 className="text-[10px] sm:text-[11px] font-semibold text-ensemble-900">Kongress-Programm</h4>
+                <h4 className="text-[10px] sm:text-[11px] font-semibold text-ensemble-900">Programm</h4>
                 <span className="text-[7px] bg-accent-500/10 text-accent-500 font-medium px-1.5 py-0.5 rounded-full">Tag 1</span>
               </div>
               <div className="ml-auto flex gap-1">

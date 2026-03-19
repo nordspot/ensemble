@@ -268,7 +268,7 @@ export function IndoorMap({
             />
           )}
 
-          {/* User position — pulsing blue dot */}
+          {/* User position - pulsing blue dot */}
           {userPosition && userPosition.floor === activeFloor && (
             <g>
               <circle

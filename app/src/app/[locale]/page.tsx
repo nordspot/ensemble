@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { HeroSection } from '@/components/landing/hero-section';
 import { LogoBar } from '@/components/landing/logo-bar';
-import { PlatformSection } from '@/components/landing/platform-section';
 import { FeatureShowcase } from '@/components/landing/feature-showcase';
 import { StatsSection } from '@/components/landing/stats-section';
 import { SwissSection } from '@/components/landing/swiss-section';
@@ -24,20 +23,6 @@ export default async function LandingPage() {
     ctaPrimary: t('hero.ctaPrimary'),
     ctaSecondary: t('hero.ctaSecondary'),
     ctaNote: t('hero.ctaNote'),
-  };
-
-  const platformTranslations = {
-    titleLine1: t('platform.titleLine1'),
-    titleLine2: t('platform.titleLine2'),
-    subtitle: t('platform.subtitle'),
-    programSessions: t('platform.programSessions'),
-    liveStreaming: t('platform.liveStreaming'),
-    bleNavigation: t('platform.bleNavigation'),
-    aiKnowledge: t('platform.aiKnowledge'),
-    nfcBadges: t('platform.nfcBadges'),
-    realtimeChat: t('platform.realtimeChat'),
-    gamification: t('platform.gamification'),
-    cmeCertificates: t('platform.cmeCertificates'),
   };
 
   const featureShowcaseTranslations = {
@@ -65,6 +50,23 @@ export default async function LandingPage() {
       t('showcase.section3Item3'),
       t('showcase.section3Item4'),
     ],
+    section4TitleLine1: t('showcase.section4TitleLine1'),
+    section4TitleLine2: t('showcase.section4TitleLine2'),
+    section4Items: [
+      t('showcase.section4Item1'),
+      t('showcase.section4Item2'),
+      t('showcase.section4Item3'),
+      t('showcase.section4Item4'),
+    ],
+    section5TitleLine1: t('showcase.section5TitleLine1'),
+    section5TitleLine2: t('showcase.section5TitleLine2'),
+    section5Items: [
+      t('showcase.section5Item1'),
+      t('showcase.section5Item2'),
+      t('showcase.section5Item3'),
+      t('showcase.section5Item4'),
+    ],
+    allFeaturesLink: t('showcase.allFeaturesLink'),
   };
 
   const statsTranslations = {
@@ -92,6 +94,7 @@ export default async function LandingPage() {
     subtitle: t('cta.subtitle'),
     cta: t('cta.button'),
     alternative: t('cta.alternative'),
+    allFeaturesLink: t('showcase.allFeaturesLink'),
   };
 
   const footerTranslations = {
@@ -129,7 +132,6 @@ export default async function LandingPage() {
     <main className="bg-white overflow-x-hidden">
       <HeroSection translations={heroTranslations} />
       <LogoBar label={t('logoBar')} />
-      <PlatformSection translations={platformTranslations} />
       <FeatureShowcase translations={featureShowcaseTranslations} />
       <StatsSection translations={statsTranslations} />
       <SwissSection translations={swissTranslations} />

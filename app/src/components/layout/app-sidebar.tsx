@@ -140,7 +140,7 @@ export function AppSidebar() {
           <>
             <div className="my-4 border-t border-ensemble-100 dark:border-ensemble-800" />
             <p className="mb-2 px-3 text-xs font-medium uppercase tracking-wider text-ensemble-400 dark:text-ensemble-500">
-              Kongress
+              Fachkongress
             </p>
             <div className="space-y-1">
               {congressNav.map((item) => (

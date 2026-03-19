@@ -76,7 +76,7 @@ export async function listPublishedCongresses(db: D1Database): Promise<Congress[
   return rows.map(rowToCongress);
 }
 
-// CreateCongressInput — subset of fields needed to create
+// CreateCongressInput - subset of fields needed to create
 export interface CreateCongressInput {
   organization_id: string;
   name: string;

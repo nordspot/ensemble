@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 
 const pageTitles: Record<string, string> = {
   '/dashboard': 'Dashboard',
-  '/kongresse': 'Kongresse',
+  '/kongresse': 'Fachkongresse',
   '/profil': 'Profil',
   '/einstellungen': 'Einstellungen',
 };

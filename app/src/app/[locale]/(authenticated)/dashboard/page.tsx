@@ -85,7 +85,7 @@ export default async function DashboardPage() {
               Willkommen bei Ensemble!
             </h2>
             <p className="mt-2 max-w-xl text-white/80">
-              Erstellen Sie Ihren ersten Kongress oder melden Sie sich für einen an.
+              Erstellen Sie Ihren ersten Fachkongress oder melden Sie sich für einen an.
               Vervollständigen Sie Ihr Profil, um das Beste aus der Plattform herauszuholen.
             </p>
           </div>
@@ -118,7 +118,7 @@ export default async function DashboardPage() {
                   </svg>
                 </div>
                 <h3 className="mt-3 font-semibold text-ensemble-900 dark:text-ensemble-50">
-                  Kongress erstellen
+                  Fachkongress erstellen
                 </h3>
                 <p className="mt-1 text-xs text-ensemble-500 dark:text-ensemble-400">
                   Organisieren Sie Ihre eigene Veranstaltung
@@ -135,7 +135,7 @@ export default async function DashboardPage() {
                   </svg>
                 </div>
                 <h3 className="mt-3 font-semibold text-ensemble-900 dark:text-ensemble-50">
-                  Kongresse entdecken
+                  Fachkongresse entdecken
                 </h3>
                 <p className="mt-1 text-xs text-ensemble-500 dark:text-ensemble-400">
                   Finden und besuchen Sie Fachveranstaltungen

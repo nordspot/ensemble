@@ -75,15 +75,15 @@ export default function DatenschutzPage() {
             </h3>
             <p>
               Wenn Sie die BLE-Standortbestimmung in Ihrem Profil aktivieren, erfassen wir während
-              Kongressen Ihren ungefähren Standort innerhalb des Veranstaltungsortes. Diese Funktion
+              Fachkongressen Ihren ungefähren Standort innerhalb des Veranstaltungsortes. Diese Funktion
               ist standardmäßig deaktiviert und erfordert Ihre ausdrückliche Einwilligung.
             </p>
 
             <h3 className="mb-2 mt-4 font-semibold text-ensemble-700 dark:text-ensemble-300">
-              2.4 Kongress-bezogene Daten
+              2.4 Fachkongress-bezogene Daten
             </h3>
             <p>
-              Registrierungen für Kongresse, Session-Buchungen, Check-ins, Chat-Nachrichten, Poster-Einreichungen
+              Registrierungen für Fachkongresse, Session-Buchungen, Check-ins, Chat-Nachrichten, Poster-Einreichungen
               und Gamification-Punkte werden für die Bereitstellung der Kongressdienste gespeichert.
             </p>
           </section>
@@ -115,7 +115,7 @@ export default function DatenschutzPage() {
               Daten in unserem Auftrag und gemäß unseren Weisungen.
             </p>
             <p className="mt-2">
-              <strong>Kongress-Organisatoren:</strong> Wenn Sie sich für einen Kongress registrieren,
+              <strong>Fachkongress-Organisatoren:</strong> Wenn Sie sich für einen Fachkongress registrieren,
               werden Ihre Registrierungsdaten dem jeweiligen Organisator zur Verfügung gestellt.
             </p>
           </section>
@@ -167,8 +167,8 @@ export default function DatenschutzPage() {
             </h2>
             <ul className="list-inside list-disc space-y-1">
               <li><strong>Kontodaten:</strong> So lange Ihr Konto besteht, plus 30 Tage nach Löschung.</li>
-              <li><strong>Kongressdaten:</strong> 2 Jahre nach Ende des jeweiligen Kongresses.</li>
-              <li><strong>Standortdaten (BLE):</strong> Werden nach Ende des jeweiligen Kongresses automatisch gelöscht.</li>
+              <li><strong>Kongressdaten:</strong> 2 Jahre nach Ende des jeweiligen Fachkongresses.</li>
+              <li><strong>Standortdaten (BLE):</strong> Werden nach Ende des jeweiligen Fachkongresses automatisch gelöscht.</li>
               <li><strong>Server-Logs:</strong> 90 Tage.</li>
               <li><strong>Kontaktanfragen:</strong> 1 Jahr nach Abschluss der Anfrage.</li>
             </ul>

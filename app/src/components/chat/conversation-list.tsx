@@ -55,7 +55,7 @@ export function ConversationList({
           setConversations(json.data);
         }
       } catch {
-        // Silently fail — will show empty list
+        // Silently fail - will show empty list
       } finally {
         if (!cancelled) setIsLoading(false);
       }

@@ -14,7 +14,7 @@ import { Button } from '@/components/ui/button';
 const demoCongresses = [
   {
     id: 'demo-1',
-    name: 'Schweizerischer Kardiologie-Kongress 2026',
+    name: 'Schweizerischer Kardiologie-Fachkongress 2026',
     slug: 'kardiologie-2026',
     start_date: '2026-06-15',
     end_date: '2026-06-17',
@@ -92,10 +92,10 @@ export default async function KongressePage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-ensemble-900 dark:text-ensemble-50">
-            Meine Kongresse
+            Meine Fachkongresse
           </h1>
           <p className="mt-1 text-sm text-ensemble-500 dark:text-ensemble-400">
-            Verwalten Sie Ihre Kongresse oder entdecken Sie neue Veranstaltungen.
+            Verwalten Sie Ihre Fachkongresse oder entdecken Sie neue Veranstaltungen.
           </p>
         </div>
         {hasOrganizerRole && (
@@ -104,7 +104,7 @@ export default async function KongressePage() {
               <svg className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
-              Neuen Kongress erstellen
+              Neuen Fachkongress erstellen
             </Link>
           </Button>
         )}
@@ -171,17 +171,17 @@ export default async function KongressePage() {
               </svg>
             </div>
             <h3 className="text-lg font-semibold text-ensemble-900 dark:text-ensemble-50">
-              Noch keine Kongresse
+              Noch keine Fachkongresse
             </h3>
             <p className="mx-auto mt-2 max-w-md text-sm text-ensemble-500 dark:text-ensemble-400">
-              Erstellen Sie Ihren ersten Kongress oder melden Sie sich für einen veröffentlichten Kongress an.
+              Erstellen Sie Ihren ersten Fachkongress oder melden Sie sich für einen veröffentlichten Fachkongress an.
             </p>
             <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Button asChild>
-                <Link href="/kongresse/neu">Kongress erstellen</Link>
+                <Link href="/kongresse/neu">Fachkongress erstellen</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/">Kongresse entdecken</Link>
+                <Link href="/">Fachkongresse entdecken</Link>
               </Button>
             </div>
           </CardContent>

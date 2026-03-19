@@ -350,7 +350,7 @@ export function ProfileEditor() {
                 BLE-Standortbestimmung aktivieren
               </span>
               <p className="text-xs text-ensemble-400">
-                Ermöglicht Indoor-Navigation und Standort-basierte Dienste während Kongressen.
+                Ermöglicht Indoor-Navigation und Standort-basierte Dienste während Fachkongressen.
               </p>
             </div>
           </label>

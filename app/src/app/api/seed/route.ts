@@ -32,7 +32,7 @@ export async function GET(request: NextRequest): Promise<Response> {
     return ERRORS.INTERNAL_ERROR('Database not available');
   }
 
-  // 2. Idempotency check — does the demo org already exist?
+  // 2. Idempotency check - does the demo org already exist?
   const existing = await db
     .prepare("SELECT id FROM organizations WHERE slug = 'smcf'")
     .first<{ id: string }>();
@@ -217,7 +217,7 @@ export async function GET(request: NextRequest): Promise<Response> {
   const sessionInsert = `INSERT INTO sessions (id, congress_id, track_id, room_id, title, description, session_type, start_time, end_time, status, cme_credits, sort_order, settings, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'scheduled', ?, ?, '{}', ?, ?)`;
 
   const batch6 = [
-    // Day 1 — June 15
+    // Day 1 - June 15
     db.prepare(sessionInsert).bind(sess1Id, congressId, track1Id, room1Id,
       'Eröffnung: Die Zukunft der Kardiologie',
       'Eröffnungskeynote mit einem umfassenden Überblick über die neuesten Entwicklungen und Zukunftsperspektiven der Kardiologie. Prof. Müller beleuchtet bahnbrechende Fortschritte in der interventionellen Therapie.',
@@ -243,7 +243,7 @@ export async function GET(request: NextRequest): Promise<Response> {
       'Panel-Diskussion zu innovativen pharmakologischen und Device-basierten Therapien bei Herzinsuffizienz. SGLT2-Inhibitoren, kardiale Kontraktilitätsmodulation und neue Biomarker.',
       'panel', '2026-06-15T14:00:00', '2026-06-15T15:30:00', 1.5, 4, now, now),
 
-    // Day 2 — June 16
+    // Day 2 - June 16
     db.prepare(sessionInsert).bind(sess6Id, congressId, track3Id, room1Id,
       'Vorhofflimmern: Update 2026',
       'Umfassende Keynote zu den neuesten Guidelines, Ablationsstrategien und antikoagulatorischen Therapiekonzepten bei Vorhofflimmern.',
@@ -264,7 +264,7 @@ export async function GET(request: NextRequest): Promise<Response> {
       'Präsentation ausgewählter Poster zu aktuellen Forschungsprojekten aus dem Bereich kardiovaskuläre Grundlagenforschung und translationale Medizin.',
       'poster', '2026-06-16T14:30:00', '2026-06-16T16:00:00', 1, 3, now, now),
 
-    // Day 3 — June 17
+    // Day 3 - June 17
     db.prepare(sessionInsert).bind(sess10Id, congressId, track4Id, room1Id,
       'Prävention kardiovaskulärer Erkrankungen',
       'Symposium zu Risikostratifizierung, Lebensstilinterventionen und neuen Präventionsstrategien. Von der Primärprävention bis zur kardialen Rehabilitation.',
@@ -277,25 +277,25 @@ export async function GET(request: NextRequest): Promise<Response> {
 
     db.prepare(sessionInsert).bind(sess12Id, congressId, null, room1Id,
       'Abschluss-Apéro & Networking',
-      'Gemütlicher Ausklang des Kongresses mit Apéro riche, Networking-Gelegenheiten und Vergabe des Best-Poster-Awards.',
+      'Gemütlicher Ausklang des Fachkongresses mit Apéro riche, Networking-Gelegenheiten und Vergabe des Best-Poster-Awards.',
       'social', '2026-06-17T12:00:00', '2026-06-17T13:00:00', 0, 2, now, now),
   ];
 
   // ── BATCH 7: Session Speakers ──────────────────────────────────────
   const ssInsert = `INSERT INTO session_speakers (id, session_id, user_id, role, sort_order, created_at) VALUES (?, ?, ?, ?, ?, ?)`;
   const batch7 = [
-    db.prepare(ssInsert).bind(ss1Id, sess1Id, speaker1Id, 'speaker', 0, now),    // Keynote 1 — Müller
-    db.prepare(ssInsert).bind(ss2Id, sess2Id, speaker2Id, 'speaker', 0, now),    // TAVI — Fischer
-    db.prepare(ssInsert).bind(ss3Id, sess3Id, speaker3Id, 'speaker', 0, now),    // KI-EKG — Dubois
-    db.prepare(ssInsert).bind(ss4Id, sess4Id, speaker1Id, 'speaker', 0, now),    // Workshop — Müller
-    db.prepare(ssInsert).bind(ss5aId, sess5Id, speaker2Id, 'panelist', 0, now),  // Panel HI — Fischer
-    db.prepare(ssInsert).bind(ss5bId, sess5Id, speaker3Id, 'panelist', 1, now),  // Panel HI — Dubois
-    db.prepare(ssInsert).bind(ss6Id, sess6Id, speaker2Id, 'speaker', 0, now),    // Keynote 2 — Fischer
-    db.prepare(ssInsert).bind(ss7Id, sess7Id, speaker3Id, 'speaker', 0, now),    // Bildgebung — Dubois
-    db.prepare(ssInsert).bind(ss8Id, sess8Id, speaker1Id, 'speaker', 0, now),    // Telemedizin — Müller
-    db.prepare(ssInsert).bind(ss10Id, sess10Id, speaker2Id, 'speaker', 0, now),  // Prävention — Fischer
-    db.prepare(ssInsert).bind(ss11aId, sess11Id, speaker1Id, 'panelist', 0, now), // Digital — Müller
-    db.prepare(ssInsert).bind(ss11bId, sess11Id, speaker3Id, 'panelist', 1, now), // Digital — Dubois
+    db.prepare(ssInsert).bind(ss1Id, sess1Id, speaker1Id, 'speaker', 0, now),    // Keynote 1 - Müller
+    db.prepare(ssInsert).bind(ss2Id, sess2Id, speaker2Id, 'speaker', 0, now),    // TAVI - Fischer
+    db.prepare(ssInsert).bind(ss3Id, sess3Id, speaker3Id, 'speaker', 0, now),    // KI-EKG - Dubois
+    db.prepare(ssInsert).bind(ss4Id, sess4Id, speaker1Id, 'speaker', 0, now),    // Workshop - Müller
+    db.prepare(ssInsert).bind(ss5aId, sess5Id, speaker2Id, 'panelist', 0, now),  // Panel HI - Fischer
+    db.prepare(ssInsert).bind(ss5bId, sess5Id, speaker3Id, 'panelist', 1, now),  // Panel HI - Dubois
+    db.prepare(ssInsert).bind(ss6Id, sess6Id, speaker2Id, 'speaker', 0, now),    // Keynote 2 - Fischer
+    db.prepare(ssInsert).bind(ss7Id, sess7Id, speaker3Id, 'speaker', 0, now),    // Bildgebung - Dubois
+    db.prepare(ssInsert).bind(ss8Id, sess8Id, speaker1Id, 'speaker', 0, now),    // Telemedizin - Müller
+    db.prepare(ssInsert).bind(ss10Id, sess10Id, speaker2Id, 'speaker', 0, now),  // Prävention - Fischer
+    db.prepare(ssInsert).bind(ss11aId, sess11Id, speaker1Id, 'panelist', 0, now), // Digital - Müller
+    db.prepare(ssInsert).bind(ss11bId, sess11Id, speaker3Id, 'panelist', 1, now), // Digital - Dubois
   ];
 
   // ── BATCH 8: Registrations ─────────────────────────────────────────
@@ -323,11 +323,11 @@ export async function GET(request: NextRequest): Promise<Response> {
   const exhibInsert = `INSERT INTO exhibitors (id, congress_id, organization_name, booth_number, booth_size, description, website, contact_email, products, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
   const batch10 = [
     db.prepare(exhibInsert).bind(exhib1Id, congressId, 'MedTech Solutions AG', 'A1', 'large',
-      'Innovative Medizinprodukte für die Kardiologie — von implantierbaren Defibrillatoren bis zu Herzunterstützungssystemen.',
+      'Innovative Medizinprodukte für die Kardiologie: von implantierbaren Defibrillatoren bis zu Herzunterstützungssystemen.',
       'https://medtech-solutions.example.ch', 'info@medtech-solutions.example.ch',
       '["Implantierbare Defibrillatoren","Herzschrittmacher","Monitoring-Systeme"]', now),
     db.prepare(exhibInsert).bind(exhib2Id, congressId, 'CardioTech GmbH', 'A2', 'medium',
-      'Katheter- und Stentsysteme der nächsten Generation — bioresorbierbare Scaffolds und Drug-Eluting-Stents.',
+      'Katheter- und Stentsysteme der nächsten Generation: bioresorbierbare Scaffolds und Drug-Eluting-Stents.',
       'https://cardiotech.example.ch', 'kontakt@cardiotech.example.ch',
       '["Stentsysteme","Ballonkatheter","Guidewires"]', now),
     db.prepare(exhibInsert).bind(exhib3Id, congressId, 'DigiHealth AG', 'B1', 'small',
@@ -340,15 +340,15 @@ export async function GET(request: NextRequest): Promise<Response> {
   const sponsorInsert = `INSERT INTO sponsors (id, congress_id, name, tier, description, website, benefits, sort_order, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
   const batch11 = [
     db.prepare(sponsorInsert).bind(sponsor1Id, congressId, 'Novartis', 'platinum',
-      'Globaler Partner der Herzmedizin — Forschung und Innovation für bessere kardiovaskuläre Therapien.',
+      'Globaler Partner der Herzmedizin. Forschung und Innovation für bessere kardiovaskuläre Therapien.',
       'https://novartis.com',
       '["Logo auf Hauptbühne","Eröffnungsrede","Exklusiver Empfangsbereich","Ganzseitige Anzeige im Programmheft"]', 0, now),
     db.prepare(sponsorInsert).bind(sponsor2Id, congressId, 'Roche Diagnostics', 'gold',
-      'Diagnostik für die Kardiologie — Hochsensitive Troponin-Tests und Point-of-Care-Lösungen.',
+      'Diagnostik für die Kardiologie. Hochsensitive Troponin-Tests und Point-of-Care-Lösungen.',
       'https://diagnostics.roche.com',
       '["Logo im Foyer","Symposiums-Slot","Halbe Seite im Programmheft"]', 1, now),
     db.prepare(sponsorInsert).bind(sponsor3Id, congressId, 'Medtronic', 'silver',
-      'Technologie für ein besseres Leben — Herzschrittmacher, Defibrillatoren und kardiale Resynchronisation.',
+      'Technologie für ein besseres Leben. Herzschrittmacher, Defibrillatoren und kardiale Resynchronisation.',
       'https://medtronic.com',
       '["Logo auf Website","Stand im Ausstellungsbereich"]', 2, now),
   ];

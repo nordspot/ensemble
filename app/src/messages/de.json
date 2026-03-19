@@ -35,7 +35,7 @@
     "nav": {
       "home": "Startseite",
       "dashboard": "Dashboard",
-      "congresses": "Kongresse",
+      "congresses": "Fachkongresse",
       "schedule": "Programm",
       "live": "Live",
       "networking": "Networking",
@@ -55,12 +55,12 @@
     },
     "dashboard": {
       "welcomeBack": "Willkommen zurück",
-      "myCongresses": "Meine Kongresse",
+      "myCongresses": "Meine Fachkongresse",
       "upcomingSessions": "Anstehende Sessions",
       "messages": "Nachrichten",
       "points": "Punkte",
       "quickActions": "Schnellaktionen",
-      "createCongress": "Kongress erstellen",
+      "createCongress": "Fachkongress erstellen",
       "editProfile": "Profil bearbeiten",
       "recentActivity": "Letzte Aktivitäten",
       "noActivity": "Noch keine Aktivitäten"
@@ -97,10 +97,10 @@
     "emailInUse": "Diese E-Mail-Adresse wird bereits verwendet."
   },
   "congress": {
-    "create": "Kongress erstellen",
-    "edit": "Kongress bearbeiten",
-    "publish": "Kongress veröffentlichen",
-    "archive": "Kongress archivieren",
+    "create": "Fachkongress erstellen",
+    "edit": "Fachkongress bearbeiten",
+    "publish": "Fachkongress veröffentlichen",
+    "archive": "Fachkongress archivieren",
     "roles": {
       "organizer": "Organisator",
       "speaker": "Referent",
@@ -192,7 +192,7 @@
     "regular": "Standard",
     "vip": "VIP",
     "virtual": "Virtuell",
-    "title": "Kongress-Anmeldung",
+    "title": "Fachkongress-Anmeldung",
     "subtitle": "Sichern Sie sich Ihren Platz",
     "steps": {
       "personal": "Persönliche Daten",
@@ -243,10 +243,10 @@
   "admin": {
     "dashboard": {
       "title": "Admin-Dashboard",
-      "subtitle": "Übersicht über alle Kongresse und Benutzer"
+      "subtitle": "Übersicht über alle Fachkongresse und Benutzer"
     },
     "stats": {
-      "totalCongresses": "Kongresse gesamt",
+      "totalCongresses": "Fachkongresse gesamt",
       "totalUsers": "Benutzer gesamt",
       "totalRevenue": "Gesamtumsatz",
       "activeEvents": "Aktive Events"
@@ -262,7 +262,7 @@
       "archived": "Archiviert"
     },
     "actions": {
-      "createCongress": "Neuen Kongress erstellen",
+      "createCongress": "Neuen Fachkongress erstellen",
       "manageUsers": "Benutzer verwalten",
       "viewAll": "Alle anzeigen"
     },
@@ -279,18 +279,18 @@
       "other": "Andere"
     },
     "congresses": {
-      "title": "Kongresse verwalten",
-      "subtitle": "Alle Kongresse Ihrer Organisation",
-      "searchPlaceholder": "Kongress suchen...",
+      "title": "Fachkongresse verwalten",
+      "subtitle": "Alle Fachkongresse Ihrer Organisation",
+      "searchPlaceholder": "Fachkongress suchen...",
       "filterStatus": "Status filtern",
       "allStatuses": "Alle Status",
-      "noCongresses": "Noch keine Kongresse vorhanden"
+      "noCongresses": "Noch keine Fachkongresse vorhanden"
     },
     "createCongress": {
-      "title": "Neuen Kongress erstellen",
-      "subtitle": "Erfassen Sie die Grunddaten für Ihren neuen Kongress",
-      "submit": "Kongress erstellen",
-      "success": "Kongress erfolgreich erstellt",
+      "title": "Neuen Fachkongress erstellen",
+      "subtitle": "Erfassen Sie die Grunddaten für Ihren neuen Fachkongress",
+      "submit": "Fachkongress erstellen",
+      "success": "Fachkongress erfolgreich erstellt",
       "sections": {
         "basic": "Grunddaten",
         "dates": "Datum",
@@ -303,10 +303,10 @@
         "slug": "URL-Kürzel",
         "slugHint": "Wird automatisch aus dem Namen generiert",
         "subtitle": "Untertitel",
-        "subtitlePlaceholder": "Kurzbeschreibung des Kongresses",
+        "subtitlePlaceholder": "Kurzbeschreibung des Fachkongresses",
         "discipline": "Fachgebiet",
         "description": "Beschreibung",
-        "descriptionPlaceholder": "Beschreiben Sie den Kongress...",
+        "descriptionPlaceholder": "Beschreiben Sie den Fachkongress...",
         "startDate": "Startdatum",
         "endDate": "Enddatum",
         "venueName": "Veranstaltungsort",
@@ -323,7 +323,7 @@
       },
       "errors": {
         "endBeforeStart": "Das Enddatum muss nach dem Startdatum liegen",
-        "generic": "Fehler beim Erstellen des Kongresses"
+        "generic": "Fehler beim Erstellen des Fachkongresses"
       }
     },
     "congressDetail": {
@@ -403,8 +403,8 @@
       "presentationPending": "Präsentation ausstehend"
     },
     "settings": {
-      "title": "Kongress-Einstellungen",
-      "subtitle": "Verwalten Sie alle Einstellungen für diesen Kongress",
+      "title": "Fachkongress-Einstellungen",
+      "subtitle": "Verwalten Sie alle Einstellungen für diesen Fachkongress",
       "saved": "Einstellungen gespeichert",
       "saveFailed": "Fehler beim Speichern",
       "sections": {
@@ -428,16 +428,16 @@
       "logoHint": "Empfohlen: PNG oder SVG, mind. 256x256px",
       "accentColor": "Akzentfarbe",
       "dangerZone": "Gefahrenzone",
-      "dangerZoneDescription": "Unwiderrufliche Aktionen für diesen Kongress",
-      "deleteWarning": "Das Löschen eines Kongresses entfernt alle zugehörigen Daten unwiderruflich. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "dangerZoneDescription": "Unwiderrufliche Aktionen für diesen Fachkongress",
+      "deleteWarning": "Das Löschen eines Fachkongresses entfernt alle zugehörigen Daten unwiderruflich. Diese Aktion kann nicht rückgängig gemacht werden.",
       "deleteConfirmLabel": "Geben Sie \"{name}\" ein, um zu bestätigen",
-      "deleteCongress": "Kongress endgültig löschen",
-      "deleted": "Kongress wurde gelöscht",
-      "deleteFailed": "Fehler beim Löschen des Kongresses"
+      "deleteCongress": "Fachkongress endgültig löschen",
+      "deleted": "Fachkongress wurde gelöscht",
+      "deleteFailed": "Fehler beim Löschen des Fachkongresses"
     },
     "attendees": {
       "title": "Teilnehmer",
-      "subtitle": "Übersicht aller Anmeldungen für diesen Kongress",
+      "subtitle": "Übersicht aller Anmeldungen für diesen Fachkongress",
       "searchPlaceholder": "Nach Name oder E-Mail suchen...",
       "loading": "Wird geladen...",
       "noResults": "Keine Teilnehmer gefunden",
@@ -464,7 +464,7 @@
     "notCheckedIn": "Nicht eingecheckt"
   },
   "congressOverview": {
-    "welcome": "Kongress-Dashboard",
+    "welcome": "Fachkongress-Dashboard",
     "overviewSubtitle": "Überblick und Schnellzugriff",
     "statusDraft": "Entwurf",
     "stats": {
@@ -502,7 +502,7 @@
   },
   "knowledge": {
     "title": "Wissensbasis",
-    "subtitle": "Stellen Sie Fragen zum wissenschaftlichen Inhalt dieses Kongresses",
+    "subtitle": "Stellen Sie Fragen zum wissenschaftlichen Inhalt dieses Fachkongresses",
     "placeholder": "Ihre Frage eingeben...",
     "send": "Senden",
     "sources": "Quellen",
@@ -548,20 +548,20 @@
       "demo": "Demo buchen"
     },
     "hero": {
-      "eyebrow": "Die Kongress-Plattform der Schweiz",
+      "eyebrow": "Die Fachkongress-Plattform der Schweiz",
       "headlineLine1": "Der gesamte Fachkongress.",
       "headlineLine2": "Ein System.",
-      "subtitle": "Von der Anmeldung bis zum Zertifikat — Ensemble vereint alle Werkzeuge, die ein professioneller Kongress braucht. KI-gestützt. In Echtzeit. Swiss-made.",
+      "subtitle": "Von der Anmeldung bis zum Zertifikat. Ensemble vereint alle Werkzeuge, die ein professioneller Fachkongress braucht. KI-gestützt. In Echtzeit. Swiss-made.",
       "ctaPrimary": "Kostenlos starten",
       "ctaSecondary": "Plattform entdecken",
       "ctaNote": "Keine Kreditkarte erforderlich · Setup in 10 Minuten"
     },
-    "logoBar": "Vertraut von führenden Kongressveranstaltern",
+    "logoBar": "Vertraut von führenden Fachkongressveranstaltern",
     "platform": {
       "titleLine1": "Eine Plattform.",
       "titleLine2": "Alles drin.",
       "title": "Eine Plattform. Alles drin.",
-      "subtitle": "Nicht 10 verschiedene Tools — ein einziges System für den gesamten Kongress-Lebenszyklus.",
+      "subtitle": "Nicht 10 verschiedene Tools, sondern ein einziges System für den gesamten Fachkongress-Lebenszyklus.",
       "programSessions": "Programm & Sessions",
       "liveStreaming": "Live Streaming & Transkription",
       "bleNavigation": "BLE Indoor-Navigation",
@@ -587,12 +587,27 @@
       "section2Item3": "Raumbelegung live",
       "section2Item4": "Automatischer Check-in",
       "section3TitleLine1": "KI, die Ihren",
-      "section3TitleLine2": "Kongress versteht.",
-      "section3Title": "KI, die Ihren Kongress versteht.",
+      "section3TitleLine2": "Fachkongress versteht.",
+      "section3Title": "KI, die Ihren Fachkongress versteht.",
       "section3Item1": "Kongresswissen durchsuchen",
       "section3Item2": "Vorträge zusammenfassen",
       "section3Item3": "Intelligente Empfehlungen",
-      "section3Item4": "Mehrsprachige Übersetzung"
+      "section3Item4": "Mehrsprachige Übersetzung",
+      "section4TitleLine1": "Anmeldung bis Badge.",
+      "section4TitleLine2": "Automatisiert.",
+      "section4Title": "Anmeldung bis Badge. Automatisiert.",
+      "section4Item1": "Online-Registrierung",
+      "section4Item2": "Mehrere Tickettypen",
+      "section4Item3": "QR-Code Badges",
+      "section4Item4": "NFC Check-in",
+      "section5TitleLine1": "Engagement,",
+      "section5TitleLine2": "das begeistert.",
+      "section5Title": "Engagement, das begeistert.",
+      "section5Item1": "Punkte und Ranglisten",
+      "section5Item2": "Empfehlungsprogramm",
+      "section5Item3": "NFC-Kontakttausch",
+      "section5Item4": "Fortbildungspunkte",
+      "allFeaturesLink": "Alle 50+ Funktionen entdecken"
     },
     "stats": {
       "stat1Value": "50+",
@@ -607,7 +622,7 @@
     "swiss": {
       "title": "Swiss Made. Swiss Hosted. Swiss Values.",
       "card1Title": "Daten in der Schweiz",
-      "card1Desc": "DSGVO- und nDSG-konform. Alle Daten werden in der Schweiz und der EU gehostet — keine Drittland-Transfers.",
+      "card1Desc": "DSGVO- und nDSG-konform. Alle Daten werden in der Schweiz und der EU gehostet. Keine Drittland-Transfers.",
       "card2Title": "Zero-Knowledge Tracking",
       "card2Desc": "Keine Cookies, kein Tracking. Datenschutzfreundliche Analysen ausschließlich über Cloudflare Web Analytics.",
       "card3Title": "Enterprise-Sicherheit",
@@ -617,9 +632,9 @@
     },
     "cta": {
       "headlineLine1": "Bereit für Ihren",
-      "headlineLine2": "nächsten Kongress?",
-      "headline": "Bereit für Ihren nächsten Kongress?",
-      "subtitle": "Starten Sie kostenlos und erleben Sie, wie Ensemble Ihren Kongress transformiert.",
+      "headlineLine2": "nächsten Fachkongress?",
+      "headline": "Bereit für Ihren nächsten Fachkongress?",
+      "subtitle": "Starten Sie kostenlos und erleben Sie, wie Ensemble Ihren Fachkongress transformiert.",
       "button": "Jetzt kostenlos starten",
       "alternative": "Oder kontaktieren Sie uns für eine persönliche Demo"
     },
@@ -718,9 +733,9 @@
   },
   "gallery": {
     "title": "Galerie",
-    "subtitle": "Fotos aus dem Kongress",
+    "subtitle": "Fotos aus dem Fachkongress",
     "empty": "Noch keine Fotos vorhanden",
-    "photoAlt": "Kongressfoto",
+    "photoAlt": "Fachkongressfoto",
     "myPhotos": "Meine Fotos",
     "myPhotosTitle": "Meine Fotos",
     "myPhotosSubtitle": "Verwalten Sie Ihre hochgeladenen Fotos",
@@ -897,7 +912,7 @@
   },
   "analytics": {
     "title": "Analytics",
-    "subtitle": "Statistiken und Auswertungen für diesen Kongress",
+    "subtitle": "Statistiken und Auswertungen für diesen Fachkongress",
     "exportCsv": "CSV exportieren",
     "exportPdf": "PDF exportieren",
     "stats": {
@@ -954,7 +969,7 @@
       "exhibitor_visit": "Aussteller besucht"
     },
     "referral": "Empfehlungslink",
-    "shareTitle": "Ensemble-Kongress",
+    "shareTitle": "Ensemble-Fachkongress",
     "share": "Teilen",
     "clicks": "Klicks",
     "conversions": "Anmeldungen",
@@ -991,11 +1006,11 @@
     }
   },
   "report": {
-    "title": "Kongressbericht",
+    "title": "Fachkongressbericht",
     "subtitle": "Zusammenfassung und Ergebnisse",
     "downloadReport": "Bericht herunterladen",
     "executiveSummary": "KI-Zusammenfassung",
-    "summaryPlaceholder": "Die KI-generierte Zusammenfassung wird nach Abschluss des Kongresses erstellt.",
+    "summaryPlaceholder": "Die KI-generierte Zusammenfassung wird nach Abschluss des Fachkongresses erstellt.",
     "stats": {
       "attendees": "Teilnehmer",
       "sessions": "Sessions",
@@ -1010,7 +1025,7 @@
     "noFeedback": "Noch keine Feedback-Daten verfügbar"
   },
   "setupChecklist": {
-    "title": "Kongress-Einrichtung",
+    "title": "Fachkongress-Einrichtung",
     "progress": "{completed} von {total} Schritten abgeschlossen",
     "basicInfo": "Grunddaten (Name, Datum, Ort)",
     "sessions": "Programm (mind. 1 Session)",
@@ -1020,18 +1035,18 @@
     "branding": "Branding (Logo hochgeladen)",
     "required": "Erforderlich",
     "publish": "Veröffentlichen",
-    "publishHint": "Alle erforderlichen Schritte müssen abgeschlossen sein, um den Kongress zu veröffentlichen."
+    "publishHint": "Alle erforderlichen Schritte müssen abgeschlossen sein, um den Fachkongress zu veröffentlichen."
   },
   "onboarding": {
-    "title": "Erstellen Sie Ihren ersten Kongress",
-    "description": "Willkommen bei Ensemble! Starten Sie mit der Erstellung eines neuen Kongresses oder durchsuchen Sie bestehende Veranstaltungen.",
-    "createCongress": "Kongress erstellen",
-    "browseCongresses": "Kongresse durchsuchen",
+    "title": "Erstellen Sie Ihren ersten Fachkongress",
+    "description": "Willkommen bei Ensemble! Starten Sie mit der Erstellung eines neuen Fachkongresses oder durchsuchen Sie bestehende Veranstaltungen.",
+    "createCongress": "Fachkongress erstellen",
+    "browseCongresses": "Fachkongresse durchsuchen",
     "dismiss": "Schließen"
   },
   "emptyState": {
     "noSessions": "Noch keine Sessions",
-    "noSessionsDesc": "Erstellen Sie die erste Session für diesen Kongress.",
+    "noSessionsDesc": "Erstellen Sie die erste Session für diesen Fachkongress.",
     "noSpeakers": "Noch keine Referenten",
     "noSpeakersDesc": "Laden Sie den ersten Referenten ein.",
     "addFirst": "Ersten Eintrag erstellen",
@@ -1039,5 +1054,362 @@
   },
   "helpTooltips": {
     "learnMore": "Mehr erfahren"
+  },
+  "funktionen": {
+    "title": "Alle Funktionen",
+    "subtitle": "Alles, was Ihr Fachkongress braucht -- von der Registrierung bis zum Zertifikat.",
+    "ctaTitle": "Bereit?",
+    "ctaSubtitle": "Starten Sie kostenlos und erleben Sie, wie Ensemble Ihren Fachkongress transformiert.",
+    "ctaButton": "Jetzt kostenlos starten",
+    "domains": {
+      "programm": {
+        "name": "Programm & Sessions",
+        "features": {
+          "dragDrop": {
+            "name": "Programmplanung mit Drag-and-Drop",
+            "description": "Erstellen und organisieren Sie Ihr Programm intuitiv per Drag-and-Drop im visuellen Zeitraster."
+          },
+          "multiTrack": {
+            "name": "Multi-Track Parallelsessions",
+            "description": "Verwalten Sie beliebig viele parallele Tracks und Raumzuordnungen in einer Ansicht."
+          },
+          "conflicts": {
+            "name": "Konflikt-Erkennung",
+            "description": "Automatische Erkennung von Raum- und Referentenkonflikten bei der Programmplanung."
+          },
+          "personalSchedule": {
+            "name": "Persönlicher Zeitplan",
+            "description": "Teilnehmer erstellen ihren individuellen Zeitplan mit Lesezeichen und Erinnerungen."
+          },
+          "ical": {
+            "name": "iCal-Export und Kalender-Sync",
+            "description": "Sessions direkt in Google Calendar, Outlook oder Apple Kalender exportieren."
+          },
+          "sessionTypes": {
+            "name": "Session-Typen",
+            "description": "Keynote, Workshop, Poster, Panel, Live-OP und weitere konfigurierbare Session-Formate."
+          }
+        }
+      },
+      "registrierung": {
+        "name": "Registrierung & Ticketing",
+        "features": {
+          "formBuilder": {
+            "name": "Online-Registrierung mit Formular-Builder",
+            "description": "Erstellen Sie massgeschneiderte Anmeldeformulare mit konfigurierbaren Feldern und Validierung."
+          },
+          "ticketTypes": {
+            "name": "Mehrere Tickettypen und Preisstufen",
+            "description": "Standard, VIP, Virtuell, Studenten -- definieren Sie beliebige Ticket-Kategorien mit eigenen Preisen."
+          },
+          "earlyBird": {
+            "name": "Frühbucher-Preise mit Countdown",
+            "description": "Automatische Preisumschaltung nach Ablauf der Frühbucherfrist mit Live-Countdown."
+          },
+          "groupReg": {
+            "name": "Gruppenregistrierung per CSV",
+            "description": "Registrieren Sie ganze Delegationen per CSV-Import mit automatischer Bestätigung."
+          },
+          "waitlist": {
+            "name": "Warteliste mit Auto-Nachrücker",
+            "description": "Automatische Wartelisten-Verwaltung mit Benachrichtigung bei Platzverfügbarkeit."
+          },
+          "payment": {
+            "name": "Zahlungsabwicklung",
+            "description": "Integration mit Stripe und NordPay für sichere Online-Zahlungen in CHF und EUR."
+          }
+        }
+      },
+      "live": {
+        "name": "Live-Event",
+        "features": {
+          "transcription": {
+            "name": "Echtzeit-Transkription",
+            "description": "Automatische Verschriftlichung aller Vorträge in Echtzeit mit Whisper AI."
+          },
+          "qa": {
+            "name": "Live Q&A mit Upvoting",
+            "description": "Teilnehmer stellen Fragen, die Community stimmt ab -- die besten Fragen steigen nach oben."
+          },
+          "polls": {
+            "name": "Interaktive Umfragen und Wortwolken",
+            "description": "Live-Abstimmungen, Multiple-Choice und Freitext-Wortwolken während der Session."
+          },
+          "streaming": {
+            "name": "Live-Streaming",
+            "description": "HLS- und WebRTC-basiertes Streaming für Remote-Teilnehmer in bester Qualität."
+          },
+          "reactions": {
+            "name": "Emoji-Reaktionen in Echtzeit",
+            "description": "Sofortiges Feedback der Teilnehmer mit Emoji-Reaktionen, die über den Bildschirm fliegen."
+          },
+          "ratings": {
+            "name": "Session-Bewertungen",
+            "description": "Detaillierte Bewertungen nach jeder Session für Qualitätssicherung und Referenten-Feedback."
+          }
+        }
+      },
+      "navigation": {
+        "name": "Indoor-Navigation",
+        "features": {
+          "ble": {
+            "name": "BLE-Beacon Indoor-Ortung",
+            "description": "Präzise Echtzeit-Positionierung im Gebäude mittels Bluetooth Low Energy Beacons."
+          },
+          "floorplan": {
+            "name": "SVG-Gebäudeplan mit Räumen",
+            "description": "Interaktiver Gebäudeplan mit Rauminformationen, Stockwerk-Wechsel und Zoom."
+          },
+          "pathfinding": {
+            "name": "Dijkstra-Wegfindung",
+            "description": "Kürzester Weg zum nächsten Vortrag, Raum oder Messestand mit animierter Route."
+          },
+          "occupancy": {
+            "name": "Raumbelegung in Echtzeit",
+            "description": "Live-Anzeige der Auslastung jedes Raums -- sehen Sie sofort, wo Plätze frei sind."
+          },
+          "checkin": {
+            "name": "Automatischer Session-Check-in",
+            "description": "Beim Betreten eines Raums wird die Anwesenheit automatisch per Beacon registriert."
+          },
+          "accessible": {
+            "name": "Barrierefreie Routen",
+            "description": "Rollstuhlgerechte Wegführung mit Aufzügen und stufenlosen Wegen."
+          }
+        }
+      },
+      "networking": {
+        "name": "Networking & Kontakte",
+        "features": {
+          "nfc": {
+            "name": "NFC-Badge Kontakttausch",
+            "description": "Kontaktdaten austauschen durch einfaches Zusammenhalten der NFC-Badges."
+          },
+          "qr": {
+            "name": "QR-Code Fallback",
+            "description": "Für Geräte ohne NFC: QR-Code scannen für sofortigen Kontakttausch."
+          },
+          "nearby": {
+            "name": "Personen in der Nähe",
+            "description": "Sehen Sie, wer sich gerade in Ihrer Nähe befindet -- ideal für spontanes Networking."
+          },
+          "directory": {
+            "name": "Teilnehmer-Verzeichnis",
+            "description": "Durchsuchbares Verzeichnis aller Teilnehmer mit Profil und Organisation."
+          },
+          "dm": {
+            "name": "Direktnachrichten",
+            "description": "Private Nachrichten an andere Teilnehmer senden -- direkt aus dem Profil oder Verzeichnis."
+          },
+          "vcard": {
+            "name": "Kontakt-Export (vCard)",
+            "description": "Exportieren Sie Ihre gesammelten Kontakte als vCard-Datei für Outlook und CRM-Systeme."
+          }
+        }
+      },
+      "chat": {
+        "name": "Chat & Kommunikation",
+        "features": {
+          "realtime": {
+            "name": "Echtzeit-Chat",
+            "description": "Sofortnachrichten über Cloudflare Durable Objects -- unter 50ms Latenz weltweit."
+          },
+          "channels": {
+            "name": "Gruppen- und Sessionkanäle",
+            "description": "Automatische Chat-Kanäle für jede Session, jeden Track und benutzerdefinierte Gruppen."
+          },
+          "directMessages": {
+            "name": "Direktnachrichten",
+            "description": "Private 1:1-Kommunikation zwischen Teilnehmern, Referenten und Organisatoren."
+          },
+          "files": {
+            "name": "Datei- und Bildversand",
+            "description": "Teilen Sie Präsentationen, Bilder und Dokumente direkt im Chat."
+          },
+          "moderation": {
+            "name": "Moderationstools",
+            "description": "Nachrichten melden, stummschalten und moderieren -- automatisch und manuell."
+          },
+          "push": {
+            "name": "Push-Benachrichtigungen",
+            "description": "Web-Push und In-App-Benachrichtigungen für neue Nachrichten und Ankündigungen."
+          }
+        }
+      },
+      "ausstellung": {
+        "name": "Ausstellung & Sponsoren",
+        "features": {
+          "directory": {
+            "name": "Aussteller-Verzeichnis mit Profilen",
+            "description": "Aussteller präsentieren sich mit Logo, Beschreibung, Produkten und Kontaktdaten."
+          },
+          "leads": {
+            "name": "Lead-Erfassung per NFC/QR",
+            "description": "Besucher-Kontakte am Messestand erfassen -- per Badge-Scan mit Notizen und Bewertung."
+          },
+          "catalogs": {
+            "name": "Produkt-Kataloge",
+            "description": "Digitale Produktkataloge mit Bildern, Beschreibungen und Download-Links."
+          },
+          "sponsorTiers": {
+            "name": "Sponsor-Sichtbarkeit (Tiers)",
+            "description": "Gold, Silber, Bronze -- Sponsoren erhalten abgestufte Sichtbarkeit in der gesamten App."
+          },
+          "floorplan": {
+            "name": "Standplan mit Booth-Nummern",
+            "description": "Interaktiver Ausstellungsplan mit Standnummern, Kategorien und Wegführung."
+          },
+          "leadExport": {
+            "name": "Lead-Export als CSV",
+            "description": "Alle erfassten Kontakte als CSV exportieren -- bereit für CRM-Import."
+          }
+        }
+      },
+      "ki": {
+        "name": "KI & Wissen",
+        "features": {
+          "rag": {
+            "name": "RAG-Wissensdatenbank",
+            "description": "Retrieval-Augmented Generation über alle Kongressinhalte, Abstracts und Präsentationen."
+          },
+          "search": {
+            "name": "Kongresswissen durchsuchen",
+            "description": "Stellen Sie Fragen in natürlicher Sprache und erhalten Sie präzise Antworten aus dem Kongresswissen."
+          },
+          "summaries": {
+            "name": "KI-Zusammenfassungen",
+            "description": "Automatische Zusammenfassungen von Sessions, Vorträgen und ganzen Kongresstagen."
+          },
+          "translation": {
+            "name": "Mehrsprachige Übersetzung",
+            "description": "KI-gestützte Echtzeit-Übersetzung von Inhalten in Deutsch, Französisch, Italienisch und Englisch."
+          },
+          "recommendations": {
+            "name": "Intelligente Empfehlungen",
+            "description": "Personalisierte Session-Empfehlungen basierend auf Interessen und Besuchsverhalten."
+          },
+          "citations": {
+            "name": "Quellen-Zitierung",
+            "description": "Jede KI-Antwort mit Quellenangaben -- verlinkt direkt zu Abstracts und Sessions."
+          }
+        }
+      },
+      "gamification": {
+        "name": "Gamification",
+        "features": {
+          "points": {
+            "name": "Punktesystem für Engagement",
+            "description": "Punkte für Check-ins, Fragen, Networking, Umfragen und weitere Kongress-Aktivitäten."
+          },
+          "leaderboard": {
+            "name": "Ranglisten",
+            "description": "Tägliche und Gesamt-Ranglisten fördern freundschaftlichen Wettbewerb."
+          },
+          "achievements": {
+            "name": "Achievements und Badges",
+            "description": "Digitale Abzeichen für Meilensteine wie Erste Frage, Netzwerker oder Frühaufsteher."
+          },
+          "referral": {
+            "name": "Empfehlungsprogramm",
+            "description": "Teilnehmer empfehlen Kollegen -- mit Tracking und Bonus-Punkten für erfolgreiche Anmeldungen."
+          },
+          "tiers": {
+            "name": "Belohnungsstufen",
+            "description": "Bronze, Silber, Gold, Diamant -- steigende Stufen mit exklusiven Belohnungen."
+          },
+          "teams": {
+            "name": "Team-Wettbewerbe",
+            "description": "Abteilungen oder Kliniken treten als Team an -- gemeinsam Punkte sammeln."
+          }
+        }
+      },
+      "cme": {
+        "name": "CME / Fortbildung",
+        "features": {
+          "creditTypes": {
+            "name": "Mehrere Credit-Typen",
+            "description": "Unterstützung für FMH, ACCME, EAU und weitere Akkreditierungssysteme."
+          },
+          "attendance": {
+            "name": "Automatische Anwesenheitsprüfung",
+            "description": "BLE-Beacons und Session-Check-in verifizieren die Anwesenheit automatisch."
+          },
+          "evaluations": {
+            "name": "Session-Evaluationen",
+            "description": "Pflicht-Evaluationen nach jeder Session als Voraussetzung für CME-Punkte."
+          },
+          "certificates": {
+            "name": "Zertifikat-Generierung (PDF)",
+            "description": "Automatische Erstellung von Fortbildungszertifikaten als PDF mit QR-Code."
+          },
+          "qrVerify": {
+            "name": "QR-Verifizierungscode",
+            "description": "Jedes Zertifikat enthält einen QR-Code zur Echtheitsprüfung."
+          },
+          "dashboard": {
+            "name": "Fortbildungs-Dashboard",
+            "description": "Übersicht aller besuchten Sessions, gesammelten Punkte und Zertifikate."
+          }
+        }
+      },
+      "medien": {
+        "name": "Medien & Inhalte",
+        "features": {
+          "gallery": {
+            "name": "Foto-Galerie mit Lightbox",
+            "description": "Gemeinsame Foto-Galerie für Teilnehmer und Organisatoren mit Vollbild-Ansicht."
+          },
+          "poster": {
+            "name": "Poster-Sessions (ePoster)",
+            "description": "Digitale Poster-Ausstellung mit Zoom, Abstimmung und Kommentaren."
+          },
+          "articles": {
+            "name": "Artikel- und Paper-Upload",
+            "description": "Wissenschaftliche Beiträge einreichen und durchsuchen -- mit Stichwort-Tags."
+          },
+          "onDemand": {
+            "name": "On-Demand Aufzeichnungen",
+            "description": "Verpasste Sessions als Video-on-Demand nachschauen -- nach dem Fachkongress."
+          },
+          "podcam": {
+            "name": "PodCam Video-Interviews",
+            "description": "Kurze Video-Interviews mit Referenten und Teilnehmern direkt vor Ort aufnehmen."
+          },
+          "library": {
+            "name": "Dokumenten-Bibliothek",
+            "description": "Zentrale Ablage für Präsentationen, Handouts und Begleitmaterialien."
+          }
+        }
+      },
+      "admin": {
+        "name": "Administration",
+        "features": {
+          "wizard": {
+            "name": "Fachkongress-Erstellungsassistent",
+            "description": "Schritt-für-Schritt-Assistent führt durch die Einrichtung eines neuen Fachkongresses."
+          },
+          "attendees": {
+            "name": "Teilnehmer-Verwaltung",
+            "description": "Übersicht, Suche, Filter und Export aller Teilnehmer mit Registrierungsstatus."
+          },
+          "badges": {
+            "name": "Badge-Design und Druck",
+            "description": "Namensschilder gestalten und drucken -- mit QR/NFC-Code und individuellem Layout."
+          },
+          "finance": {
+            "name": "Finanz-Übersicht",
+            "description": "Einnahmen, Ausgaben und Zahlungsstatus auf einen Blick -- mit CSV-Export."
+          },
+          "analytics": {
+            "name": "Analytics-Dashboard",
+            "description": "Teilnehmerzahlen, Session-Beliebtheit, Engagement-Metriken und Trends."
+          },
+          "audit": {
+            "name": "Audit-Logs und Sicherheit",
+            "description": "Lückenlose Protokollierung aller Änderungen für Compliance und Nachvollziehbarkeit."
+          }
+        }
+      }
+    }
   }
 }

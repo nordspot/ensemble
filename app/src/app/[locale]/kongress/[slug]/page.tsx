@@ -7,11 +7,11 @@ import { Badge } from '@/components/ui/badge';
 function getCongressBySlug(slug: string) {
   return {
     id: 'demo-1',
-    name: 'Schweizerischer Kardiologie-Kongress 2026',
+    name: 'Schweizerischer Kardiologie-Fachkongress 2026',
     slug,
     subtitle: 'Innovationen in der kardiovaskulären Medizin',
     description:
-      'Der jährliche Schweizerische Kardiologie-Kongress bringt führende Expertinnen und Experten aus der kardiovaskulären Medizin zusammen. Drei Tage voller Wissensaustausch, Networking und Fortbildung erwarten Sie in Bern.',
+      'Der jährliche Schweizerische Kardiologie-Fachkongress bringt führende Expertinnen und Experten aus der kardiovaskulären Medizin zusammen. Drei Tage voller Wissensaustausch, Networking und Fortbildung erwarten Sie in Bern.',
     start_date: '2026-06-15',
     end_date: '2026-06-17',
     venue_name: 'Kursaal Bern',
@@ -177,7 +177,7 @@ export default async function KongressPublicPage({
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <h2 className="text-2xl font-bold text-ensemble-900 dark:text-ensemble-50">
-              Ueber den Kongress
+              Ueber den Fachkongress
             </h2>
             <p className="mt-4 text-ensemble-600 leading-relaxed dark:text-ensemble-400">
               {congress.description}

@@ -153,7 +153,7 @@ export class BeaconScanner {
     this.scanning = true;
 
     try {
-      // Request BLE scan — filters for Apple manufacturer data
+      // Request BLE scan - filters for Apple manufacturer data
       const bluetooth = navigator.bluetooth as unknown as {
         requestLEScan(options: {
           filters: Array<{ manufacturerData: Array<{ companyIdentifier: number }> }>;

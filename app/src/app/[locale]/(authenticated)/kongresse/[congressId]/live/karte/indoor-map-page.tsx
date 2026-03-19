@@ -22,14 +22,14 @@ interface IndoorMapPageProps {
  * Client-side indoor map page.
  *
  * In production, floors/rooms/beaconConfig/nodes/edges would be fetched
- * from the API. Here we provide empty defaults — the components are
+ * from the API. Here we provide empty defaults - the components are
  * fully wired and ready for real data.
  */
 export function IndoorMapPage({ congressId }: IndoorMapPageProps) {
   const t = useTranslations('beacon.map');
   const store = useBeaconStore();
 
-  // Placeholder data — replace with API fetch
+  // Placeholder data - replace with API fetch
   const beaconConfig: BeaconConfig = useMemo(() => new Map(), []);
   const knownBeacons: never[] = useMemo(() => [], []);
   const floors: FloorPlan[] = useMemo(

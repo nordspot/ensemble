@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface FeatureShowcaseProps {
   translations: {
@@ -13,8 +14,17 @@ interface FeatureShowcaseProps {
     section3TitleLine1: string;
     section3TitleLine2: string;
     section3Items: string[];
+    section4TitleLine1: string;
+    section4TitleLine2: string;
+    section4Items: string[];
+    section5TitleLine1: string;
+    section5TitleLine2: string;
+    section5Items: string[];
+    allFeaturesLink: string;
   };
 }
+
+// ── Section 1: Live Dashboard ──────────────────────────────────────────
 
 function LiveDashboardMockup() {
   return (
@@ -103,6 +113,8 @@ function LiveDashboardMockup() {
   );
 }
 
+// ── Section 2: Indoor Map ──────────────────────────────────────────────
+
 function IndoorMapMockup() {
   return (
     <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
@@ -126,7 +138,6 @@ function IndoorMapMockup() {
       {/* SVG Floor Plan */}
       <div className="relative rounded-lg bg-ensemble-50 border border-ensemble-100 overflow-hidden">
         <svg viewBox="0 0 400 240" className="w-full h-auto" fill="none">
-          {/* Background grid */}
           <defs>
             <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
               <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgb(226 232 240)" strokeWidth="0.5" />
@@ -138,7 +149,6 @@ function IndoorMapMockup() {
           <rect x="20" y="20" width="180" height="120" rx="4" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1.5" />
           <text x="110" y="75" textAnchor="middle" className="text-[11px] font-semibold" fill="rgb(71 85 105)">Grosser Saal</text>
           <text x="110" y="90" textAnchor="middle" className="text-[8px]" fill="rgb(148 163 184)">480 Platze</text>
-          {/* Stage indicator */}
           <rect x="40" y="30" width="140" height="12" rx="2" fill="rgb(226 232 240)" />
           <text x="110" y="39" textAnchor="middle" className="text-[7px]" fill="rgb(148 163 184)">Buhne</text>
 
@@ -164,7 +174,6 @@ function IndoorMapMockup() {
           {/* Exhibitor area */}
           <rect x="120" y="155" width="80" height="65" rx="4" fill="rgb(219 234 254)" stroke="rgb(96 165 250)" strokeWidth="1" />
           <text x="160" y="172" textAnchor="middle" className="text-[8px] font-medium" fill="rgb(37 99 235)">Aussteller</text>
-          {/* Booth grid */}
           {[0, 1, 2, 3, 4, 5].map((b) => (
             <rect
               key={b}
@@ -220,6 +229,8 @@ function IndoorMapMockup() {
     </div>
   );
 }
+
+// ── Section 3: AI Chat ─────────────────────────────────────────────────
 
 function AiChatMockup() {
   return (
@@ -299,6 +310,179 @@ function AiChatMockup() {
   );
 }
 
+// ── Section 4: Registration + Badge ────────────────────────────────────
+
+function RegistrationMockup() {
+  return (
+    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
+      {/* Header */}
+      <div className="flex items-center gap-2 mb-4 pb-3 border-b border-ensemble-100">
+        <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
+          <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <rect x="3" y="2" width="10" height="12" rx="1.5" />
+            <path d="M6 5h4M6 7.5h4M6 10h2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div>
+          <span className="text-[10px] font-semibold text-ensemble-900">Fachkongress-Anmeldung</span>
+          <span className="text-[8px] text-ensemble-400 block">Swiss Cardiology Congress 2026</span>
+        </div>
+      </div>
+
+      {/* Ticket selection */}
+      <div className="space-y-2 mb-4">
+        <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Ticket wahlen</span>
+        {[
+          { label: 'Standard', price: 'CHF 450', selected: false },
+          { label: 'VIP', price: 'CHF 890', selected: true },
+          { label: 'Virtuell', price: 'CHF 190', selected: false },
+        ].map((ticket, i) => (
+          <div
+            key={i}
+            className={`flex items-center justify-between rounded-lg px-3 py-2 border transition-colors ${
+              ticket.selected
+                ? 'border-accent-500 bg-accent-500/5'
+                : 'border-ensemble-200 hover:border-ensemble-300'
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <div className={`h-3.5 w-3.5 rounded-full border-2 flex items-center justify-center ${
+                ticket.selected ? 'border-accent-500' : 'border-ensemble-300'
+              }`}>
+                {ticket.selected && <div className="h-1.5 w-1.5 rounded-full bg-accent-500" />}
+              </div>
+              <span className={`text-[10px] font-medium ${ticket.selected ? 'text-accent-600' : 'text-ensemble-700'}`}>
+                {ticket.label}
+              </span>
+            </div>
+            <span className={`text-[10px] font-semibold ${ticket.selected ? 'text-accent-600' : 'text-ensemble-500'}`}>
+              {ticket.price}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Badge preview */}
+      <div className="rounded-lg bg-ensemble-50 border border-ensemble-100 p-3">
+        <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Badge-Vorschau</span>
+        <div className="mt-2 flex items-center gap-3">
+          {/* QR code mockup */}
+          <div className="h-14 w-14 rounded-md bg-white border border-ensemble-200 p-1 shrink-0">
+            <svg viewBox="0 0 40 40" className="w-full h-full">
+              {/* Simplified QR pattern */}
+              <rect x="2" y="2" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
+              <rect x="28" y="2" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
+              <rect x="2" y="28" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
+              <rect x="4" y="4" width="6" height="6" fill="white" rx="0.5" />
+              <rect x="30" y="4" width="6" height="6" fill="white" rx="0.5" />
+              <rect x="4" y="30" width="6" height="6" fill="white" rx="0.5" />
+              <rect x="6" y="6" width="2" height="2" fill="rgb(30 41 59)" />
+              <rect x="32" y="6" width="2" height="2" fill="rgb(30 41 59)" />
+              <rect x="6" y="32" width="2" height="2" fill="rgb(30 41 59)" />
+              {/* Data cells */}
+              {[14,16,18,20,22,24].map((x) => (
+                [14,16,18,20,22,24].map((y) => (
+                  <rect
+                    key={`${x}-${y}`}
+                    x={x}
+                    y={y}
+                    width="1.5"
+                    height="1.5"
+                    fill={Math.random() > 0.4 ? 'rgb(30 41 59)' : 'transparent'}
+                  />
+                ))
+              ))}
+            </svg>
+          </div>
+          <div className="flex-1">
+            <p className="text-[11px] font-semibold text-ensemble-900">Dr. Lisa Schneider</p>
+            <p className="text-[9px] text-ensemble-500">Kantonsspital Zurich</p>
+            <div className="mt-1.5 flex items-center gap-1.5">
+              <span className="text-[8px] font-medium text-white bg-accent-500 rounded px-1.5 py-0.5">VIP</span>
+              <span className="text-[8px] text-ensemble-400">Ticket #2847</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Section 5: Gamification + Networking ───────────────────────────────
+
+function EngagementMockup() {
+  return (
+    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
+      {/* Leaderboard header */}
+      <div className="flex items-center gap-2 mb-4 pb-3 border-b border-ensemble-100">
+        <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+          <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-white" fill="currentColor">
+            <path d="M8 1l2 4.1 4.5.65-3.25 3.17.77 4.48L8 11.27 3.98 13.4l.77-4.48L1.5 5.75 6 5.1z" />
+          </svg>
+        </div>
+        <div>
+          <span className="text-[10px] font-semibold text-ensemble-900">Bestenliste</span>
+          <span className="text-[8px] text-ensemble-400 block">Heute</span>
+        </div>
+      </div>
+
+      {/* Leaderboard entries */}
+      <div className="space-y-2 mb-4">
+        {[
+          { rank: 1, name: 'Dr. M. Weber', pts: 3120, medal: 'text-yellow-500', bg: 'bg-yellow-50' },
+          { rank: 2, name: 'Prof. A. Fischer', pts: 2840, medal: 'text-ensemble-400', bg: 'bg-ensemble-50' },
+          { rank: 3, name: 'Dr. T. Muller', pts: 2650, medal: 'text-orange-400', bg: 'bg-orange-50' },
+        ].map((entry) => (
+          <div key={entry.rank} className={`flex items-center gap-2.5 rounded-lg px-3 py-2 ${entry.bg}`}>
+            <span className={`text-[11px] font-bold ${entry.medal} w-4 text-center`}>{entry.rank}</span>
+            <div className="h-6 w-6 rounded-full bg-ensemble-200 shrink-0 flex items-center justify-center">
+              <span className="text-[7px] font-medium text-ensemble-600">{entry.name.split(' ').pop()?.[0]}</span>
+            </div>
+            <span className="text-[10px] font-medium text-ensemble-800 flex-1">{entry.name}</span>
+            <span className="text-[9px] font-mono font-semibold text-ensemble-500">{entry.pts} Pkt</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Referral link */}
+      <div className="rounded-lg bg-accent-500/5 border border-accent-500/15 p-3 mb-4">
+        <div className="flex items-center gap-2 mb-2">
+          <svg className="h-3.5 w-3.5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+          <span className="text-[9px] font-semibold text-accent-600">Empfehlungslink</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="flex-1 rounded-md bg-white border border-ensemble-200 px-2.5 py-1.5">
+            <span className="text-[8px] font-mono text-ensemble-500 truncate block">ensemble.events/ref/dr-schneider</span>
+          </div>
+          <button className="text-[8px] font-medium text-white bg-accent-500 rounded-md px-2.5 py-1.5 hover:bg-accent-600 transition-colors">
+            Kopieren
+          </button>
+        </div>
+        <div className="flex items-center gap-4 mt-2">
+          <span className="text-[8px] text-ensemble-500">12 Klicks</span>
+          <span className="text-[8px] text-ensemble-500">3 Anmeldungen</span>
+          <span className="text-[8px] text-accent-600 font-medium">+150 Pkt</span>
+        </div>
+      </div>
+
+      {/* NFC contact card preview */}
+      <div className="rounded-lg bg-ensemble-50 border border-ensemble-100 p-3">
+        <div className="flex items-center gap-2 mb-2">
+          <svg className="h-3.5 w-3.5 text-ensemble-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0" />
+          </svg>
+          <span className="text-[9px] font-medium text-ensemble-600">NFC-Kontakttausch</span>
+        </div>
+        <p className="text-[8px] text-ensemble-400">Badge an Badge halten zum sofortigen Austausch der Kontaktdaten.</p>
+      </div>
+    </div>
+  );
+}
+
+// ── Feature Block Layout ───────────────────────────────────────────────
+
 function FeatureBlock({
   titleLine1,
   titleLine2,
@@ -315,7 +499,7 @@ function FeatureBlock({
 }) {
   return (
     <div className={`flex flex-col gap-8 lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center`}>
-      {/* Visual -- on mobile, show first */}
+      {/* Visual - on mobile, show first */}
       <motion.div
         className="flex-1 w-full max-w-md lg:max-w-none order-first lg:order-none"
         initial={{ opacity: 0, x: reverse ? -30 : 30 }}
@@ -352,11 +536,15 @@ function FeatureBlock({
   );
 }
 
+// ── Main Component ─────────────────────────────────────────────────────
+
 export function FeatureShowcase({ translations: t }: FeatureShowcaseProps) {
   const sections = [
     { titleLine1: t.section1TitleLine1, titleLine2: t.section1TitleLine2, items: t.section1Items, visual: <LiveDashboardMockup /> },
     { titleLine1: t.section2TitleLine1, titleLine2: t.section2TitleLine2, items: t.section2Items, visual: <IndoorMapMockup /> },
     { titleLine1: t.section3TitleLine1, titleLine2: t.section3TitleLine2, items: t.section3Items, visual: <AiChatMockup /> },
+    { titleLine1: t.section4TitleLine1, titleLine2: t.section4TitleLine2, items: t.section4Items, visual: <RegistrationMockup /> },
+    { titleLine1: t.section5TitleLine1, titleLine2: t.section5TitleLine2, items: t.section5Items, visual: <EngagementMockup /> },
   ];
 
   return (
@@ -373,6 +561,31 @@ export function FeatureShowcase({ translations: t }: FeatureShowcaseProps) {
             reverse={i % 2 === 1}
           />
         ))}
+
+        {/* All features link */}
+        <motion.div
+          className="text-center pt-4"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5 }}
+        >
+          <Link
+            href="/funktionen"
+            className="inline-flex items-center gap-2 text-lg font-semibold text-accent-500 hover:text-accent-600 transition-colors group"
+          >
+            {t.allFeaturesLink}
+            <svg
+              className="h-5 w-5 transition-transform group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

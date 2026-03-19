@@ -13,6 +13,7 @@ const publicPaths = [
   '/datenschutz',
   '/agb',
   '/kontakt',
+  '/funktionen',
   '/api/auth',
   '/api/congress', // Public GET for published congresses
 ];

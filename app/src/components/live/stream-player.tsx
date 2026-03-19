@@ -59,7 +59,7 @@ export function StreamPlayer({ sessionTitle, streamUrl }: StreamPlayerProps) {
       });
       video.addEventListener('error', () => setHasError(true));
     } else {
-      // HLS.js dynamic import — will gracefully fail if not installed
+      // HLS.js dynamic import - will gracefully fail if not installed
       // @ts-expect-error CDN module has no type declarations
       import(/* webpackIgnore: true */ 'https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.mjs')
         .then((mod) => {
@@ -100,7 +100,7 @@ export function StreamPlayer({ sessionTitle, streamUrl }: StreamPlayerProps) {
           }
         })
         .catch(() => {
-          // HLS.js not available — show fallback
+          // HLS.js not available - show fallback
           setHasError(true);
         });
     }

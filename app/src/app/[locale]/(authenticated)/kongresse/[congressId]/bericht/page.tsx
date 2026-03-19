@@ -21,10 +21,10 @@ export default function ReportPage() {
       if (!res.ok) {
         // If no API endpoint, generate a simple client-side summary
         const reportContent = [
-          `Kongressbericht - ${congressId}`,
+          `Fachkongressbericht - ${congressId}`,
           `Erstellt am: ${new Date().toLocaleDateString('de-CH')}`,
           '',
-          'Dieser Bericht wird nach Abschluss des Kongresses automatisch generiert.',
+          'Dieser Bericht wird nach Abschluss des Fachkongresses automatisch generiert.',
           'Enthalten sind Teilnehmerstatistiken, Session-Auswertungen und Feedback-Zusammenfassungen.',
         ].join('\n');
 

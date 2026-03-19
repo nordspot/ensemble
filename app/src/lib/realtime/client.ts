@@ -1,5 +1,5 @@
 /**
- * RealtimeClient — WebSocket client for connecting to Durable Object Workers.
+ * RealtimeClient - WebSocket client for connecting to Durable Object Workers.
  *
  * Supports automatic reconnection with exponential backoff.
  */
@@ -42,7 +42,7 @@ export class RealtimeClient {
    */
   send(data: unknown): void {
     if (!this.ws || this.ws.readyState !== WebSocket.OPEN) {
-      console.warn('[RealtimeClient] Cannot send — WebSocket not open');
+      console.warn('[RealtimeClient] Cannot send - WebSocket not open');
       return;
     }
     this.ws.send(JSON.stringify(data));
