@@ -3,7 +3,6 @@ import { z } from 'zod';
 import { ERRORS } from '@/lib/api/response';
 import { buildRagSystemPrompt } from '@/lib/ai/rag-system-prompt';
 import { getDb, getRequestAuth } from '@/lib/api/server-helpers';
-import type { D1Database } from '@/lib/db/client';
 import { checkRateLimit, RATE_LIMITS } from '@/lib/security/rate-limiter';
 
 // ── Schema ──────────────────────────────────────────────────
@@ -32,8 +31,7 @@ interface ChunkMetaRow {
 
 // ── Env bindings ────────────────────────────────────────────
 
-interface Env {
-  ENSEMBLE_DB?: D1Database;
+interface CfEnv {
   AI?: {
     run(
       model: string,
@@ -52,8 +50,13 @@ interface Env {
   AI_GATEWAY_TOKEN?: string;
 }
 
-function getEnv(): Env {
-  return globalThis as unknown as Env;
+function getCfEnv(): CfEnv {
+  try {
+    const { getCloudflareContext } = require('@opennextjs/cloudflare');
+    const ctx = getCloudflareContext();
+    if (ctx?.env) return ctx.env as CfEnv;
+  } catch {}
+  return globalThis as unknown as CfEnv;
 }
 
 // ── POST handler ────────────────────────────────────────────
@@ -85,7 +88,7 @@ export async function POST(request: NextRequest) {
   }
 
   const { question, congressId } = parsed.data;
-  const env = getEnv();
+  const env = getCfEnv();
   const db = getDb();
 
   try {

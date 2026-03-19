@@ -2,9 +2,9 @@ import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import bcrypt from 'bcryptjs';
 import { success, ERRORS } from '@/lib/api/response';
+import { getDb } from '@/lib/api/server-helpers';
 import { emailSchema, passwordSchema } from '@/lib/utils/validation';
 import { generateId } from '@/lib/db/client';
-import type { D1Database } from '@/lib/db/client';
 import { checkRateLimit, RATE_LIMITS } from '@/lib/security/rate-limiter';
 
 const registerSchema = z.object({
@@ -39,8 +39,7 @@ export async function POST(request: NextRequest) {
     const passwordHash = await bcrypt.hash(password, 12);
 
     // Access D1 binding
-    const env = globalThis as Record<string, unknown>;
-    const db = env.ENSEMBLE_DB as D1Database | undefined;
+    const db = getDb();
 
     if (!db) {
       // Dev fallback: return success with generated ID

@@ -1,6 +1,5 @@
 import { auth } from './config';
 import { ERRORS } from '@/lib/api/response';
-import type { D1Database } from '@/lib/db/client';
 
 export interface ServerAuth {
   userId: string;
@@ -45,7 +44,5 @@ export async function requireServerRole(minimumRole: string): Promise<ServerAuth
   return serverAuth;
 }
 
-export function getDb(): D1Database | null {
-  const env = globalThis as Record<string, unknown>;
-  return (env.ENSEMBLE_DB as D1Database) ?? null;
-}
+// Re-export getDb from server-helpers for backward compatibility
+export { getDb } from '@/lib/api/server-helpers';

@@ -2,8 +2,8 @@ import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import bcrypt from 'bcryptjs';
 import { success, ERRORS } from '@/lib/api/response';
+import { getDb } from '@/lib/api/server-helpers';
 import { passwordSchema } from '@/lib/utils/validation';
-import type { D1Database } from '@/lib/db/client';
 
 const resetSchema = z.object({
   token: z.string().min(1),
@@ -22,8 +22,7 @@ export async function POST(request: NextRequest) {
 
     const { token, password } = parsed.data;
 
-    const env = globalThis as Record<string, unknown>;
-    const db = env.ENSEMBLE_DB as D1Database | undefined;
+    const db = getDb();
 
     if (!db) {
       // Dev fallback: accept any token

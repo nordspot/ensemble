@@ -1,6 +1,7 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
+import { getDb } from '@/lib/api/server-helpers';
 
 // Ensure type augmentations are loaded
 import './types';
@@ -27,11 +28,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         const { email, password } = parsed.data;
 
-        // Access D1 binding (available on globalThis in CF Workers via OpenNext)
-        const env = globalThis as Record<string, unknown>;
-        const db = env.ENSEMBLE_DB as
-          | import('@/lib/db/client').D1Database
-          | undefined;
+        // Access D1 binding via OpenNext's getCloudflareContext
+        const db = getDb();
 
         if (!db) {
           // Dev fallback: demo admin account

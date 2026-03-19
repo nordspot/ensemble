@@ -2,6 +2,17 @@ import type { D1Database } from '@/lib/db/client';
 import type { UserRole } from '@/types';
 
 export function getDb(): D1Database | null {
+  // Try OpenNext's getCloudflareContext first (production on CF Workers)
+  try {
+    const { getCloudflareContext } = require('@opennextjs/cloudflare');
+    const ctx = getCloudflareContext();
+    if (ctx?.env?.ENSEMBLE_DB) {
+      return ctx.env.ENSEMBLE_DB as D1Database;
+    }
+  } catch {
+    // Not running on Cloudflare Workers
+  }
+  // Fallback: globalThis (for local dev or direct Worker context)
   const env = (globalThis as Record<string, unknown>);
   return (env.ENSEMBLE_DB as D1Database) ?? null;
 }

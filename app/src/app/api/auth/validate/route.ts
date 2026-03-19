@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import bcrypt from 'bcryptjs';
+import { getDb } from '@/lib/api/server-helpers';
 import { checkRateLimit, RATE_LIMITS } from '@/lib/security/rate-limiter';
 import { logAudit } from '@/lib/security/audit';
 
@@ -32,11 +33,8 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { email, password } = schema.parse(body);
 
-    // Access D1 via globalThis (set by OpenNext/Cloudflare)
-    const env = globalThis as Record<string, unknown>;
-    const db = env.ENSEMBLE_DB as
-      | import('@/lib/db/client').D1Database
-      | undefined;
+    // Access D1 via OpenNext's getCloudflareContext
+    const db = getDb();
 
     if (!db) {
       // Development fallback: check for a demo admin account
@@ -73,9 +71,7 @@ export async function POST(request: Request) {
 
     const valid = await bcrypt.compare(password, user.password_hash);
     if (!valid) {
-      const env = globalThis as Record<string, unknown>;
-      const auditDb = env.ENSEMBLE_DB as import('@/lib/db/client').D1Database | undefined;
-      await logAudit(auditDb ?? null, {
+      await logAudit(db ?? null, {
         userId: user.id,
         action: 'login_failed',
         entityType: 'auth',
@@ -85,9 +81,7 @@ export async function POST(request: Request) {
       return NextResponse.json(null);
     }
 
-    const env2 = globalThis as Record<string, unknown>;
-    const auditDb2 = env2.ENSEMBLE_DB as import('@/lib/db/client').D1Database | undefined;
-    await logAudit(auditDb2 ?? null, {
+    await logAudit(db ?? null, {
       userId: user.id,
       action: 'login_success',
       entityType: 'auth',

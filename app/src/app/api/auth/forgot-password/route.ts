@@ -1,8 +1,8 @@
 import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import { success, ERRORS } from '@/lib/api/response';
+import { getDb } from '@/lib/api/server-helpers';
 import { generateId } from '@/lib/db/client';
-import type { D1Database } from '@/lib/db/client';
 
 const forgotSchema = z.object({
   email: z.string().email(),
@@ -20,8 +20,7 @@ export async function POST(request: NextRequest) {
 
     const { email } = parsed.data;
 
-    const env = globalThis as Record<string, unknown>;
-    const db = env.ENSEMBLE_DB as D1Database | undefined;
+    const db = getDb();
 
     if (!db) {
       // Dev fallback: generate token and return it for testing

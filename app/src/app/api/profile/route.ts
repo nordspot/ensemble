@@ -1,8 +1,8 @@
 import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import { success, ERRORS } from '@/lib/api/response';
+import { getDb } from '@/lib/api/server-helpers';
 import { getServerAuth } from '@/lib/auth/get-server-auth';
-import type { D1Database } from '@/lib/db/client';
 
 const updateProfileSchema = z.object({
   full_name: z.string().min(2).max(100).optional(),
@@ -29,8 +29,7 @@ export async function GET() {
     const auth = await getServerAuth();
     if (!auth) return ERRORS.UNAUTHORIZED();
 
-    const env = globalThis as Record<string, unknown>;
-    const db = env.ENSEMBLE_DB as D1Database | undefined;
+    const db = getDb();
 
     if (!db) {
       // Dev fallback
@@ -94,8 +93,7 @@ export async function PATCH(request: NextRequest) {
 
     const data = parsed.data;
 
-    const env = globalThis as Record<string, unknown>;
-    const db = env.ENSEMBLE_DB as D1Database | undefined;
+    const db = getDb();
 
     if (!db) {
       return success({ ok: true, updated: data });
@@ -142,8 +140,7 @@ export async function DELETE() {
     const auth = await getServerAuth();
     if (!auth) return ERRORS.UNAUTHORIZED();
 
-    const env = globalThis as Record<string, unknown>;
-    const db = env.ENSEMBLE_DB as D1Database | undefined;
+    const db = getDb();
 
     if (!db) {
       return success({ ok: true, deleted: true });

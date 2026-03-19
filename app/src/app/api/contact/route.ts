@@ -1,8 +1,8 @@
 import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import { success, ERRORS } from '@/lib/api/response';
+import { getDb } from '@/lib/api/server-helpers';
 import { generateId } from '@/lib/db/client';
-import type { D1Database } from '@/lib/db/client';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name muss mindestens 2 Zeichen haben').max(100),
@@ -47,8 +47,7 @@ export async function POST(request: NextRequest) {
 
     const { name, email, subject, message } = parsed.data;
 
-    const env = globalThis as Record<string, unknown>;
-    const db = env.ENSEMBLE_DB as D1Database | undefined;
+    const db = getDb();
 
     if (!db) {
       console.log('[DEV] Contact form submission:', { name, email, subject, message });
