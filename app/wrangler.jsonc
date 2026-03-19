@@ -47,25 +47,8 @@
     }
   ],
 
-  // Service bindings to other Workers
-  "services": [
-    {
-      "binding": "REALTIME_WORKER",
-      "service": "ensemble-realtime"
-    },
-    {
-      "binding": "TRANSCRIPTION_WORKER",
-      "service": "ensemble-transcription"
-    },
-    {
-      "binding": "EMBEDDING_WORKER",
-      "service": "ensemble-embeddings"
-    },
-    {
-      "binding": "NOTIFICATION_WORKER",
-      "service": "ensemble-notifications"
-    }
-  ],
+  // Service bindings to other Workers (add back when workers are deployed)
+  // "services": [],
 
   // Environment variables (secrets set via dashboard)
   "vars": {
