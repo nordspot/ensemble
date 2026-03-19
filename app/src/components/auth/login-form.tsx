@@ -65,18 +65,22 @@ export function LoginForm({ translations: t }: LoginFormProps) {
         email: parsed.data.email,
         password: parsed.data.password,
         redirect: false,
+        callbackUrl: '/dashboard',
       });
 
       if (result?.error) {
+        setIsLoading(false);
         toast.error(t.loginError);
+      } else if (result?.ok) {
+        // Force a hard navigation to pick up the new session cookie
+        window.location.href = '/dashboard';
       } else {
-        router.push('/dashboard');
-        router.refresh();
+        setIsLoading(false);
+        toast.error(t.loginError);
       }
     } catch {
-      toast.error(t.loginError);
-    } finally {
       setIsLoading(false);
+      toast.error(t.loginError);
     }
   }
 
