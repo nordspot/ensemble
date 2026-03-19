@@ -22,14 +22,14 @@ function ScheduleVisual() {
     <div className="mt-4 space-y-2">
       {[
         { w: '80%', color: 'bg-accent-500/60', label: '09:00' },
-        { w: '65%', color: 'bg-ensemble-500/50', label: '10:30' },
+        { w: '65%', color: 'bg-ensemble-300/50', label: '10:30' },
         { w: '90%', color: 'bg-accent-500/40', label: '11:00' },
-        { w: '55%', color: 'bg-ensemble-400/40', label: '13:00' },
+        { w: '55%', color: 'bg-ensemble-300/40', label: '13:00' },
         { w: '75%', color: 'bg-accent-500/30', label: '14:30' },
-        { w: '60%', color: 'bg-ensemble-500/30', label: '16:00' },
+        { w: '60%', color: 'bg-ensemble-300/30', label: '16:00' },
       ].map((row, i) => (
         <div key={i} className="flex items-center gap-3">
-          <span className="text-[10px] font-mono text-ensemble-500 w-8 shrink-0">{row.label}</span>
+          <span className="text-[10px] font-mono text-ensemble-400 w-8 shrink-0">{row.label}</span>
           <div className={`h-2 rounded-full ${row.color}`} style={{ width: row.w }} />
         </div>
       ))}
@@ -59,7 +59,7 @@ function MapDotVisual() {
     <div className="mt-4 relative h-16">
       <div className="absolute inset-0 grid grid-cols-6 grid-rows-3 gap-px opacity-20">
         {Array.from({ length: 18 }).map((_, i) => (
-          <div key={i} className="border border-ensemble-600 rounded-sm" />
+          <div key={i} className="border border-ensemble-300 rounded-sm" />
         ))}
       </div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -106,23 +106,23 @@ function ChatVisual() {
     <div className="mt-4 space-y-2">
       <div className="flex gap-2 items-start">
         <div className="h-5 w-5 rounded-full bg-accent-500/40 shrink-0 mt-0.5" />
-        <div className="rounded-lg rounded-tl-none bg-ensemble-700/60 px-3 py-1.5 text-[10px] text-ensemble-300">
+        <div className="rounded-lg rounded-tl-none bg-ensemble-200 px-3 py-1.5 text-[10px] text-ensemble-600">
           Wie war die Keynote heute Morgen?
         </div>
       </div>
       <div className="flex gap-2 items-start justify-end">
-        <div className="rounded-lg rounded-tr-none bg-accent-500/20 px-3 py-1.5 text-[10px] text-ensemble-300">
+        <div className="rounded-lg rounded-tr-none bg-accent-500/20 px-3 py-1.5 text-[10px] text-ensemble-600">
           Ausgezeichnet! Die Live-Q&A war besonders gut.
         </div>
-        <div className="h-5 w-5 rounded-full bg-ensemble-500/40 shrink-0 mt-0.5" />
+        <div className="h-5 w-5 rounded-full bg-ensemble-300/40 shrink-0 mt-0.5" />
       </div>
       <div className="flex items-center gap-2 mt-1">
         <div className="flex -space-x-1">
           {[0.6, 0.4, 0.3].map((op, i) => (
-            <div key={i} className="h-4 w-4 rounded-full border border-ensemble-800" style={{ backgroundColor: `rgba(232,89,60,${op})` }} />
+            <div key={i} className="h-4 w-4 rounded-full border border-white" style={{ backgroundColor: `rgba(232,89,60,${op})` }} />
           ))}
         </div>
-        <span className="text-[9px] text-ensemble-500">142 aktiv</span>
+        <span className="text-[9px] text-ensemble-400">142 aktiv</span>
       </div>
     </div>
   );
@@ -136,7 +136,7 @@ function GamificationVisual() {
           <path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.49L10 13.68l-4.94 2.42L6 10.61l-4-3.9 5.61-.87z" />
         </svg>
         <div className="flex-1">
-          <div className="h-1.5 rounded-full bg-ensemble-700/40 overflow-hidden">
+          <div className="h-1.5 rounded-full bg-ensemble-200 overflow-hidden">
             <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-yellow-500/60 to-accent-500/50" />
           </div>
         </div>
@@ -144,13 +144,13 @@ function GamificationVisual() {
       </div>
       <div className="flex gap-2">
         {[
-          { icon: '1.', pts: '3120', color: 'text-yellow-400/70' },
-          { icon: '2.', pts: '2840', color: 'text-ensemble-300/60' },
-          { icon: '3.', pts: '2650', color: 'text-accent-400/60' },
+          { icon: '1.', pts: '3120', color: 'text-yellow-500' },
+          { icon: '2.', pts: '2840', color: 'text-ensemble-500' },
+          { icon: '3.', pts: '2650', color: 'text-accent-400' },
         ].map((entry, i) => (
-          <div key={i} className="flex-1 rounded-md bg-ensemble-700/20 px-2 py-1.5 text-center">
+          <div key={i} className="flex-1 rounded-md bg-ensemble-100 px-2 py-1.5 text-center">
             <span className={`text-[10px] font-semibold ${entry.color}`}>{entry.icon}</span>
-            <div className="text-[9px] font-mono text-ensemble-500 mt-0.5">{entry.pts} Pkt</div>
+            <div className="text-[9px] font-mono text-ensemble-400 mt-0.5">{entry.pts} Pkt</div>
           </div>
         ))}
       </div>
@@ -176,7 +176,7 @@ function CmeVisual() {
       </div>
       <div className="flex gap-1.5 items-center">
         <span className="text-[10px] font-medium text-ensemble-400">12 Credits</span>
-        <span className="text-ensemble-600">&middot;</span>
+        <span className="text-ensemble-300">&middot;</span>
         <span className="text-[10px] text-success">Bestanden</span>
       </div>
     </div>
@@ -212,7 +212,7 @@ export function PlatformSection({ translations: t }: PlatformSectionProps) {
   ];
 
   return (
-    <section id="platform" className="relative bg-ensemble-900 py-24 sm:py-32">
+    <section id="platform" className="relative bg-ensemble-50 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -221,10 +221,10 @@ export function PlatformSection({ translations: t }: PlatformSectionProps) {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-ensemble-900 sm:text-4xl lg:text-5xl">
             {t.title}
           </h2>
-          <p className="mt-4 text-lg text-ensemble-400">
+          <p className="mt-4 text-lg text-ensemble-500">
             {t.subtitle}
           </p>
         </motion.div>
@@ -240,12 +240,12 @@ export function PlatformSection({ translations: t }: PlatformSectionProps) {
             <motion.div
               key={card.key}
               variants={cardVariant}
-              className={`group relative rounded-2xl border border-ensemble-700/40 bg-ensemble-800/30 p-7 backdrop-blur-sm transition-all hover:border-ensemble-600/60 hover:bg-ensemble-800/50 ${card.span}`}
+              className={`group relative rounded-2xl border border-ensemble-200 bg-white shadow-sm p-7 transition-all hover:border-ensemble-300 hover:shadow-md ${card.span}`}
             >
               {/* Hover glow */}
               <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity group-hover:opacity-100 bg-gradient-to-br from-accent-500/5 to-transparent" />
 
-              <h3 className="relative text-sm font-semibold text-ensemble-200 tracking-wide">
+              <h3 className="relative text-sm font-semibold text-ensemble-900 tracking-wide">
                 {card.title}
               </h3>
               <p className="relative mt-1 text-[11px] text-ensemble-500">

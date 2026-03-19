@@ -15,14 +15,14 @@ interface FeatureShowcaseProps {
 
 function LiveDashboardMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-5 backdrop-blur-sm ring-1 ring-accent-500/10">
+    <div className="rounded-xl border border-ensemble-200 bg-ensemble-50 p-5 shadow-lg ring-1 ring-accent-500/10">
       {/* Header bar */}
       <div className="flex items-center gap-2 mb-3">
         <div className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
-        <span className="text-[10px] font-mono text-accent-400">LIVE</span>
+        <span className="text-[10px] font-mono text-accent-500">LIVE</span>
         <div className="ml-auto flex gap-1">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-1.5 w-6 rounded-full bg-ensemble-700" />
+            <div key={i} className="h-1.5 w-6 rounded-full bg-ensemble-200" />
           ))}
         </div>
       </div>
@@ -30,22 +30,22 @@ function LiveDashboardMockup() {
       <div className="space-y-1.5 mb-3">
         {['Die Ergebnisse der Studie zeigen...', 'Signifikante Verbesserung bei...', 'Im Vergleich zur Kontrollgruppe...'].map((line, i) => (
           <div key={i} className="flex gap-2 items-start">
-            <span className="text-[8px] text-ensemble-600 font-mono mt-0.5 shrink-0">
+            <span className="text-[8px] text-ensemble-400 font-mono mt-0.5 shrink-0">
               {`0${i + 1}:${2 + i}${3 + i}`}
             </span>
-            <div className="text-[10px] text-ensemble-400 leading-tight">{line}</div>
+            <div className="text-[10px] text-ensemble-600 leading-tight">{line}</div>
           </div>
         ))}
       </div>
       {/* Q&A bar */}
-      <div className="rounded-lg bg-ensemble-900/60 p-2 flex items-center gap-2">
+      <div className="rounded-lg bg-ensemble-100 p-2 flex items-center gap-2">
         <div className="text-[9px] text-ensemble-500">Q&A</div>
-        <div className="h-4 flex-1 rounded bg-ensemble-800 flex items-center px-2">
-          <span className="text-[8px] text-ensemble-600">Frage stellen...</span>
+        <div className="h-4 flex-1 rounded bg-white flex items-center px-2">
+          <span className="text-[8px] text-ensemble-400">Frage stellen...</span>
         </div>
         <div className="flex gap-0.5">
           {['24', '8'].map((n, i) => (
-            <span key={i} className="text-[8px] bg-ensemble-700/60 rounded px-1 py-0.5 text-ensemble-400">{n}</span>
+            <span key={i} className="text-[8px] bg-ensemble-200 rounded px-1 py-0.5 text-ensemble-500">{n}</span>
           ))}
         </div>
       </div>
@@ -55,25 +55,25 @@ function LiveDashboardMockup() {
 
 function IndoorMapMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-5 backdrop-blur-sm ring-1 ring-accent-500/10">
+    <div className="rounded-xl border border-ensemble-200 bg-ensemble-50 p-5 shadow-lg ring-1 ring-accent-500/10">
       {/* Floor selector */}
       <div className="flex gap-1 mb-3">
         {['EG', 'OG1', 'OG2'].map((f, i) => (
           <div
             key={f}
-            className={`text-[9px] px-2 py-0.5 rounded ${i === 0 ? 'bg-accent-500/20 text-accent-400' : 'bg-ensemble-700/40 text-ensemble-500'}`}
+            className={`text-[9px] px-2 py-0.5 rounded ${i === 0 ? 'bg-accent-500/20 text-accent-500' : 'bg-ensemble-200 text-ensemble-500'}`}
           >
             {f}
           </div>
         ))}
       </div>
       {/* Map grid */}
-      <div className="relative h-28 rounded-lg bg-ensemble-900/40 overflow-hidden">
+      <div className="relative h-28 rounded-lg bg-ensemble-100 overflow-hidden">
         <div className="absolute inset-2 grid grid-cols-4 grid-rows-3 gap-1">
           {Array.from({ length: 12 }).map((_, i) => (
             <div
               key={i}
-              className={`rounded-sm ${[2, 5, 8].includes(i) ? 'bg-ensemble-600/30' : 'bg-ensemble-700/20'}`}
+              className={`rounded-sm ${[2, 5, 8].includes(i) ? 'bg-ensemble-300/50' : 'bg-ensemble-200/50'}`}
             />
           ))}
         </div>
@@ -95,7 +95,7 @@ function IndoorMapMockup() {
       {/* Destination */}
       <div className="mt-2 flex items-center gap-2">
         <div className="h-1.5 w-1.5 rounded-full bg-accent-500" />
-        <span className="text-[9px] text-ensemble-400">Saal 3 &middot; 2 Min</span>
+        <span className="text-[9px] text-ensemble-500">Saal 3 &middot; 2 Min</span>
       </div>
     </div>
   );
@@ -103,11 +103,11 @@ function IndoorMapMockup() {
 
 function AiChatMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-5 backdrop-blur-sm ring-1 ring-accent-500/10">
+    <div className="rounded-xl border border-ensemble-200 bg-ensemble-50 p-5 shadow-lg ring-1 ring-accent-500/10">
       {/* Question */}
       <div className="flex gap-2 items-start mb-3">
-        <div className="h-5 w-5 rounded-full bg-ensemble-600/40 shrink-0 mt-0.5" />
-        <div className="rounded-lg bg-ensemble-700/40 px-3 py-1.5 text-[10px] text-ensemble-300">
+        <div className="h-5 w-5 rounded-full bg-ensemble-300/60 shrink-0 mt-0.5" />
+        <div className="rounded-lg bg-ensemble-200 px-3 py-1.5 text-[10px] text-ensemble-700">
           Welche Studien wurden heute zu Immuntherapie vorgestellt?
         </div>
       </div>
@@ -122,7 +122,7 @@ function AiChatMockup() {
             <circle cx="14" cy="8" r="1" />
           </svg>
         </div>
-        <div className="rounded-lg bg-ensemble-900/60 px-3 py-2 text-[10px] text-ensemble-300 leading-relaxed">
+        <div className="rounded-lg bg-ensemble-100 px-3 py-2 text-[10px] text-ensemble-700 leading-relaxed">
           <p>Heute wurden 3 relevante Studien vorgestellt:</p>
           <ol className="mt-1 ml-3 space-y-0.5 list-decimal">
             <li>CheckMate-901 (Saal 1, 09:30)</li>
@@ -132,7 +132,7 @@ function AiChatMockup() {
           {/* Sources */}
           <div className="mt-2 flex gap-1">
             {['Abstract #12', 'Session B3'].map((s, i) => (
-              <span key={i} className="text-[8px] bg-ensemble-700/60 rounded px-1.5 py-0.5 text-ensemble-500">{s}</span>
+              <span key={i} className="text-[8px] bg-ensemble-200 rounded px-1.5 py-0.5 text-ensemble-500">{s}</span>
             ))}
           </div>
         </div>
@@ -174,12 +174,12 @@ function FeatureBlock({
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <h3 className="font-heading text-2xl font-bold text-white sm:text-3xl">
+        <h3 className="font-heading text-2xl font-bold text-ensemble-900 sm:text-3xl">
           {title}
         </h3>
         <ul className="mt-6 space-y-3">
           {items.map((item, i) => (
-            <li key={i} className="flex items-center gap-3 text-ensemble-300">
+            <li key={i} className="flex items-center gap-3 text-ensemble-600">
               <span className="h-1.5 w-1.5 rounded-full bg-accent-500 shrink-0" />
               <span className="text-sm sm:text-base">{item}</span>
             </li>
@@ -198,7 +198,7 @@ export function FeatureShowcase({ translations: t }: FeatureShowcaseProps) {
   ];
 
   return (
-    <section className="relative bg-ensemble-900 py-24 sm:py-32">
+    <section className="relative bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 lg:px-8 space-y-24 sm:space-y-32">
         {sections.map((section, i) => (
           <FeatureBlock

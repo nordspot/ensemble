@@ -10,13 +10,13 @@ const orgs = ['SGIM', 'Swiss Medtech', 'ETH Events', 'Inselspital', 'Uni Bern', 
 
 export function LogoBar({ label }: LogoBarProps) {
   return (
-    <section className="relative bg-[#0D1326] py-10 sm:py-12">
+    <section className="relative bg-white py-10 sm:py-12">
       {/* Top separator */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ensemble-700/50 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ensemble-200 to-transparent" />
 
       <div className="mx-auto max-w-5xl px-6">
         <motion.p
-          className="text-center text-xs font-medium tracking-wide text-ensemble-500/80"
+          className="text-center text-xs font-medium tracking-wide text-ensemble-400"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -35,11 +35,11 @@ export function LogoBar({ label }: LogoBarProps) {
         >
           {orgs.map((org, i) => (
             <div key={org} className="flex items-center">
-              <span className="text-[13px] font-medium tracking-wide text-ensemble-400/70 select-none">
+              <span className="text-[13px] font-medium tracking-wide text-ensemble-400 hover:text-ensemble-600 transition-colors select-none">
                 {org}
               </span>
               {i < orgs.length - 1 && (
-                <span className="mx-4 text-ensemble-600/50 select-none">&middot;</span>
+                <span className="mx-4 text-ensemble-300 select-none">&middot;</span>
               )}
             </div>
           ))}
@@ -56,7 +56,7 @@ export function LogoBar({ label }: LogoBarProps) {
           {orgs.map((org) => (
             <span
               key={org}
-              className="shrink-0 text-[13px] font-medium tracking-wide text-ensemble-400/70 select-none"
+              className="shrink-0 text-[13px] font-medium tracking-wide text-ensemble-400 select-none"
             >
               {org}
             </span>
@@ -65,7 +65,7 @@ export function LogoBar({ label }: LogoBarProps) {
       </div>
 
       {/* Bottom separator */}
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-ensemble-700/50 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-ensemble-200 to-transparent" />
     </section>
   );
 }

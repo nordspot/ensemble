@@ -226,7 +226,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
       </div>
 
       {/* Bottom gradient fade into next section */}
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0D1326] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }

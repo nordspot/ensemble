@@ -42,18 +42,18 @@ const cardVariant = {
 
 export function SwissSection({ translations: t }: SwissSectionProps) {
   return (
-    <section id="swiss" className="relative bg-[#0D1326] py-24 sm:py-32 overflow-hidden">
+    <section id="swiss" className="relative bg-ensemble-100 py-24 sm:py-32 overflow-hidden">
       {/* Swiss cross background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02]">
-        <svg viewBox="0 0 200 200" className="h-[500px] w-[500px]" fill="white">
-          <rect x="80" y="20" width="40" height="160" />
-          <rect x="20" y="80" width="160" height="40" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.04]">
+        <svg viewBox="0 0 200 200" className="h-[500px] w-[500px]">
+          <rect x="80" y="20" width="40" height="160" fill="#94a3b8" />
+          <rect x="20" y="80" width="160" height="40" fill="#94a3b8" />
         </svg>
       </div>
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
         <motion.h2
-          className="font-heading text-3xl font-bold tracking-tight text-white text-center sm:text-4xl lg:text-5xl"
+          className="font-heading text-3xl font-bold tracking-tight text-ensemble-900 text-center sm:text-4xl lg:text-5xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -73,15 +73,15 @@ export function SwissSection({ translations: t }: SwissSectionProps) {
             <motion.div
               key={i}
               variants={cardVariant}
-              className="group rounded-2xl border border-ensemble-700/40 bg-ensemble-800/20 p-6 transition-all hover:border-ensemble-600/50 hover:bg-ensemble-800/40"
+              className="group rounded-2xl border border-ensemble-200 bg-white shadow-sm p-6 transition-all hover:border-ensemble-300 hover:shadow-md"
             >
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-ensemble-700/30 text-accent-500 transition-colors group-hover:bg-accent-500/10">
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-ensemble-100 text-accent-500 transition-colors group-hover:bg-accent-500/10">
                 {cardIcons[i]}
               </div>
-              <h3 className="text-base font-semibold text-ensemble-100">
+              <h3 className="text-base font-semibold text-ensemble-900">
                 {card.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ensemble-400">
+              <p className="mt-2 text-sm leading-relaxed text-ensemble-500">
                 {card.description}
               </p>
             </motion.div>
