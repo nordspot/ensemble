@@ -199,7 +199,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
           </Link>
           <Link
             href="/kontakt"
-            className="rounded-lg bg-accent-500 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-accent-600 active:scale-[0.97]"
+            className="rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:shadow-md hover:brightness-110 active:scale-[0.97]"
           >
             {t.navDemo}
           </Link>
@@ -237,7 +237,8 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
 
           {/* Subtitle */}
           <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ensemble-500 sm:text-xl"
+            className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-ensemble-500 sm:max-w-2xl sm:text-lg lg:text-xl"
+            style={{ textWrap: 'balance' } as React.CSSProperties}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -254,13 +255,18 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
           >
             <Link
               href="/registrieren"
-              className="inline-flex items-center justify-center rounded-lg bg-accent-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-accent-500/20 transition-all hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/30 active:scale-[0.97]"
+              className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-8 py-4 text-base font-semibold text-white shadow-[0_1px_2px_rgba(0,0,0,0.1),0_4px_12px_rgba(232,89,60,0.25)] transition-all hover:shadow-[0_1px_2px_rgba(0,0,0,0.1),0_8px_24px_rgba(232,89,60,0.35)] hover:brightness-110 active:scale-[0.97]"
             >
-              {t.ctaPrimary}
+              <span className="relative z-10 flex items-center gap-2">
+                {t.ctaPrimary}
+                <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </Link>
             <a
               href="#platform"
-              className="inline-flex items-center justify-center rounded-lg border border-ensemble-300 px-8 py-3.5 text-base font-semibold text-ensemble-700 transition-all hover:border-ensemble-400 hover:text-ensemble-900 active:scale-[0.97]"
+              className="inline-flex items-center justify-center rounded-full border-2 border-ensemble-200 bg-white px-8 py-3.5 text-base font-semibold text-ensemble-700 shadow-sm transition-all hover:border-ensemble-300 hover:bg-ensemble-50 hover:shadow-md active:scale-[0.97]"
             >
               {t.ctaSecondary}
             </a>

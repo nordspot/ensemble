@@ -37,7 +37,7 @@ export function CtaSection({ translations: t }: CtaSectionProps) {
         <div className="mt-10">
           <Link
             href="/registrieren"
-            className="inline-flex items-center justify-center rounded-lg bg-accent-500 px-10 py-4 text-base font-semibold text-white shadow-lg shadow-accent-500/20 transition-all hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/30 active:scale-[0.97]"
+            className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-10 py-4 text-base font-semibold text-white shadow-[0_1px_2px_rgba(0,0,0,0.2),0_4px_16px_rgba(232,89,60,0.4)] transition-all hover:shadow-[0_1px_2px_rgba(0,0,0,0.2),0_8px_28px_rgba(232,89,60,0.5)] hover:brightness-110 active:scale-[0.97]"
           >
             {t.cta}
           </Link>
