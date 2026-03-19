@@ -34,12 +34,6 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: opennext-build
-          path: app/.open-next/
-
   deploy:
     needs: typecheck-and-build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -58,15 +52,9 @@ jobs:
         working-directory: ./app
         run: npm install --legacy-peer-deps
 
-      - name: Build with OpenNext
+      - name: Build and Deploy to Cloudflare
         working-directory: ./app
-        run: npx @opennextjs/cloudflare build
-        env:
-          NODE_ENV: production
-
-      - name: Deploy to Cloudflare Workers
-        working-directory: ./app
-        run: npx wrangler deploy
+        run: npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
