@@ -51,9 +51,17 @@ export function StatsSection({ translations: t }: StatsSectionProps) {
 
   return (
     <section id="stats" className="relative bg-ensemble-900 py-20 sm:py-28 overflow-hidden">
+      {/* Glowing separator line at top */}
+      <div className="absolute inset-x-0 top-0 flex items-center justify-center">
+        <div className="h-px w-full max-w-3xl bg-gradient-to-r from-transparent via-accent-500/40 to-transparent" />
+      </div>
+      <div className="absolute inset-x-0 top-0 flex items-center justify-center">
+        <div className="h-[2px] w-48 bg-gradient-to-r from-transparent via-accent-500/20 to-transparent blur-sm" />
+      </div>
+
       {/* Grid pattern */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)`,
           backgroundSize: '64px 64px',

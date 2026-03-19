@@ -121,7 +121,7 @@ export default async function LandingPage() {
   };
 
   return (
-    <main className="bg-ensemble-900 overflow-x-hidden">
+    <main className="noise-overlay bg-ensemble-900 overflow-x-hidden">
       <HeroSection translations={heroTranslations} />
       <LogoBar label={t('logoBar')} />
       <PlatformSection translations={platformTranslations} />

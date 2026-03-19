@@ -15,7 +15,7 @@ interface FeatureShowcaseProps {
 
 function LiveDashboardMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-4 backdrop-blur-sm">
+    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-5 backdrop-blur-sm ring-1 ring-accent-500/10">
       {/* Header bar */}
       <div className="flex items-center gap-2 mb-3">
         <div className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
@@ -55,7 +55,7 @@ function LiveDashboardMockup() {
 
 function IndoorMapMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-4 backdrop-blur-sm">
+    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-5 backdrop-blur-sm ring-1 ring-accent-500/10">
       {/* Floor selector */}
       <div className="flex gap-1 mb-3">
         {['EG', 'OG1', 'OG2'].map((f, i) => (
@@ -103,7 +103,7 @@ function IndoorMapMockup() {
 
 function AiChatMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-4 backdrop-blur-sm">
+    <div className="rounded-xl border border-ensemble-700/50 bg-ensemble-800/60 p-5 backdrop-blur-sm ring-1 ring-accent-500/10">
       {/* Question */}
       <div className="flex gap-2 items-start mb-3">
         <div className="h-5 w-5 rounded-full bg-ensemble-600/40 shrink-0 mt-0.5" />
@@ -146,7 +146,6 @@ function FeatureBlock({
   items,
   visual,
   reverse,
-  index,
 }: {
   title: string;
   items: string[];
@@ -156,6 +155,17 @@ function FeatureBlock({
 }) {
   return (
     <div className={`flex flex-col gap-8 lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center`}>
+      {/* Visual -- on mobile, show first */}
+      <motion.div
+        className="flex-1 w-full max-w-md lg:max-w-none order-first lg:order-none"
+        initial={{ opacity: 0, x: reverse ? -30 : 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        {visual}
+      </motion.div>
+
       {/* Text */}
       <motion.div
         className="flex-1"
@@ -175,17 +185,6 @@ function FeatureBlock({
             </li>
           ))}
         </ul>
-      </motion.div>
-
-      {/* Visual */}
-      <motion.div
-        className="flex-1 w-full max-w-md lg:max-w-none"
-        initial={{ opacity: 0, x: reverse ? -30 : 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        {visual}
       </motion.div>
     </div>
   );

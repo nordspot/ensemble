@@ -128,21 +128,87 @@ function ChatVisual() {
   );
 }
 
+function GamificationVisual() {
+  return (
+    <div className="mt-4 space-y-2.5">
+      <div className="flex items-center gap-2">
+        <svg viewBox="0 0 20 20" className="h-5 w-5 text-yellow-500/80 shrink-0" fill="currentColor">
+          <path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.49L10 13.68l-4.94 2.42L6 10.61l-4-3.9 5.61-.87z" />
+        </svg>
+        <div className="flex-1">
+          <div className="h-1.5 rounded-full bg-ensemble-700/40 overflow-hidden">
+            <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-yellow-500/60 to-accent-500/50" />
+          </div>
+        </div>
+        <span className="text-[10px] font-mono text-ensemble-400 shrink-0">2&apos;840</span>
+      </div>
+      <div className="flex gap-2">
+        {[
+          { icon: '1.', pts: '3120', color: 'text-yellow-400/70' },
+          { icon: '2.', pts: '2840', color: 'text-ensemble-300/60' },
+          { icon: '3.', pts: '2650', color: 'text-accent-400/60' },
+        ].map((entry, i) => (
+          <div key={i} className="flex-1 rounded-md bg-ensemble-700/20 px-2 py-1.5 text-center">
+            <span className={`text-[10px] font-semibold ${entry.color}`}>{entry.icon}</span>
+            <div className="text-[9px] font-mono text-ensemble-500 mt-0.5">{entry.pts} Pkt</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CmeVisual() {
+  return (
+    <div className="mt-4 flex flex-col items-center gap-2">
+      <div className="relative">
+        <svg viewBox="0 0 40 40" className="h-10 w-10 text-accent-500/50" fill="none" stroke="currentColor" strokeWidth="1.2">
+          <rect x="4" y="6" width="32" height="24" rx="2" />
+          <path d="M4 12h32" />
+          <circle cx="20" cy="22" r="4" />
+          <path d="M17.5 22l1.5 1.5 3-3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <div className="absolute -top-1 -right-1 h-3.5 w-3.5 rounded-full bg-success flex items-center justify-center">
+          <svg viewBox="0 0 12 12" className="h-2 w-2 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M2.5 6l2.5 2.5 4.5-5" />
+          </svg>
+        </div>
+      </div>
+      <div className="flex gap-1.5 items-center">
+        <span className="text-[10px] font-medium text-ensemble-400">12 Credits</span>
+        <span className="text-ensemble-600">&middot;</span>
+        <span className="text-[10px] text-success">Bestanden</span>
+      </div>
+    </div>
+  );
+}
+
 const cardVariant = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
+const cardDescriptions: Record<string, string> = {
+  programSessions: 'Tagesplan & Agenda',
+  liveStreaming: 'Echtzeit-Video',
+  bleNavigation: 'Indoor-Wegfindung',
+  aiKnowledge: 'Smarte Suche',
+  nfcBadges: 'Kontaktlos einchecken',
+  realtimeChat: 'Direkt vernetzen',
+  gamification: 'Punkte & Ranglisten',
+  cmeCertificates: 'Automatisch erfasst',
+};
+
 export function PlatformSection({ translations: t }: PlatformSectionProps) {
   const cards = [
-    { title: t.programSessions, visual: <ScheduleVisual />, span: 'sm:row-span-2' },
-    { title: t.liveStreaming, visual: <WaveformVisual />, span: '' },
-    { title: t.bleNavigation, visual: <MapDotVisual />, span: '' },
-    { title: t.aiKnowledge, visual: <BrainVisual />, span: '' },
-    { title: t.nfcBadges, visual: <TapVisual />, span: '' },
-    { title: t.realtimeChat, visual: <ChatVisual />, span: 'sm:col-span-2' },
-    { title: t.gamification, visual: null, span: '' },
-    { title: t.cmeCertificates, visual: null, span: '' },
+    { key: 'programSessions', title: t.programSessions, visual: <ScheduleVisual />, span: 'sm:row-span-2' },
+    { key: 'liveStreaming', title: t.liveStreaming, visual: <WaveformVisual />, span: '' },
+    { key: 'bleNavigation', title: t.bleNavigation, visual: <MapDotVisual />, span: '' },
+    { key: 'aiKnowledge', title: t.aiKnowledge, visual: <BrainVisual />, span: '' },
+    { key: 'nfcBadges', title: t.nfcBadges, visual: <TapVisual />, span: '' },
+    { key: 'realtimeChat', title: t.realtimeChat, visual: <ChatVisual />, span: 'sm:col-span-2 lg:col-span-2' },
+    { key: 'gamification', title: t.gamification, visual: <GamificationVisual />, span: '' },
+    { key: 'cmeCertificates', title: t.cmeCertificates, visual: <CmeVisual />, span: '' },
   ];
 
   return (
@@ -164,17 +230,17 @@ export function PlatformSection({ translations: t }: PlatformSectionProps) {
         </motion.div>
 
         <motion.div
-          className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 auto-rows-min"
+          className="mt-16 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-min"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-60px' }}
           transition={{ staggerChildren: 0.07 }}
         >
-          {cards.map((card, i) => (
+          {cards.map((card) => (
             <motion.div
-              key={i}
+              key={card.key}
               variants={cardVariant}
-              className={`group relative rounded-2xl border border-ensemble-700/40 bg-ensemble-800/30 p-6 backdrop-blur-sm transition-all hover:border-ensemble-600/60 hover:bg-ensemble-800/50 ${card.span}`}
+              className={`group relative rounded-2xl border border-ensemble-700/40 bg-ensemble-800/30 p-7 backdrop-blur-sm transition-all hover:border-ensemble-600/60 hover:bg-ensemble-800/50 ${card.span}`}
             >
               {/* Hover glow */}
               <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity group-hover:opacity-100 bg-gradient-to-br from-accent-500/5 to-transparent" />
@@ -182,21 +248,11 @@ export function PlatformSection({ translations: t }: PlatformSectionProps) {
               <h3 className="relative text-sm font-semibold text-ensemble-200 tracking-wide">
                 {card.title}
               </h3>
+              <p className="relative mt-1 text-[11px] text-ensemble-500">
+                {cardDescriptions[card.key]}
+              </p>
 
-              {card.visual && (
-                <div className="relative">{card.visual}</div>
-              )}
-
-              {!card.visual && (
-                <div className="mt-3 flex gap-1">
-                  {Array.from({ length: 4 }).map((_, j) => (
-                    <div
-                      key={j}
-                      className="h-1 flex-1 rounded-full bg-ensemble-700/60"
-                    />
-                  ))}
-                </div>
-              )}
+              <div className="relative">{card.visual}</div>
             </motion.div>
           ))}
         </motion.div>

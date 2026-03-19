@@ -22,6 +22,95 @@ interface HeroSectionProps {
   };
 }
 
+function DashboardPreview() {
+  return (
+    <motion.div
+      className="mx-auto mt-16 max-w-4xl px-4 sm:mt-20"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <div
+        className="relative rounded-xl border border-ensemble-700/40 bg-ensemble-800/20 shadow-2xl shadow-black/40 backdrop-blur-sm overflow-hidden"
+        style={{
+          transform: 'perspective(1200px) rotateX(3deg)',
+        }}
+      >
+        {/* Subtle glow */}
+        <div className="absolute -inset-1 rounded-xl bg-gradient-to-b from-accent-500/10 via-transparent to-transparent blur-sm -z-10" />
+
+        {/* Browser chrome */}
+        <div className="flex items-center gap-1.5 px-4 py-2.5 bg-ensemble-800/60 border-b border-ensemble-700/30">
+          <div className="h-2 w-2 rounded-full bg-ensemble-600/50" />
+          <div className="h-2 w-2 rounded-full bg-ensemble-600/50" />
+          <div className="h-2 w-2 rounded-full bg-ensemble-600/50" />
+          <div className="ml-3 h-4 flex-1 max-w-[200px] rounded bg-ensemble-700/30 flex items-center px-2">
+            <span className="text-[8px] text-ensemble-500">app.ensemble.swiss</span>
+          </div>
+        </div>
+
+        {/* Dashboard content */}
+        <div className="flex min-h-[180px] sm:min-h-[240px]">
+          {/* Sidebar */}
+          <div className="w-14 sm:w-16 shrink-0 bg-ensemble-800/40 border-r border-ensemble-700/20 p-2.5 space-y-2.5">
+            <div className="h-5 w-5 rounded bg-accent-500/30 mx-auto" />
+            <div className="h-2 w-8 rounded-full bg-ensemble-600/30 mx-auto" />
+            <div className="h-2 w-8 rounded-full bg-ensemble-600/20 mx-auto" />
+            <div className="h-2 w-8 rounded-full bg-accent-500/20 mx-auto" />
+            <div className="h-2 w-8 rounded-full bg-ensemble-600/20 mx-auto" />
+            <div className="h-2 w-6 rounded-full bg-ensemble-600/15 mx-auto" />
+          </div>
+
+          {/* Main content area */}
+          <div className="flex-1 p-4 sm:p-5 space-y-3">
+            {/* Header row */}
+            <div className="flex items-center gap-3">
+              <div className="h-2.5 w-24 rounded bg-ensemble-600/30" />
+              <div className="ml-auto flex gap-1.5">
+                <div className="h-5 w-14 rounded bg-accent-500/20 flex items-center justify-center">
+                  <span className="text-[7px] text-accent-400">Live</span>
+                </div>
+                <div className="h-5 w-5 rounded bg-ensemble-700/30" />
+              </div>
+            </div>
+
+            {/* Session cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {[
+                { color: 'bg-accent-500/15 border-accent-500/20', time: '09:00', w: '75%' },
+                { color: 'bg-ensemble-500/15 border-ensemble-500/20', time: '10:30', w: '60%' },
+                { color: 'bg-accent-500/10 border-accent-500/15', time: '11:00', w: '85%' },
+                { color: 'bg-ensemble-400/10 border-ensemble-400/15', time: '13:00', w: '50%' },
+                { color: 'bg-accent-500/10 border-accent-500/15', time: '14:30', w: '70%' },
+                { color: 'bg-ensemble-500/10 border-ensemble-500/15', time: '16:00', w: '55%' },
+              ].map((card, i) => (
+                <div key={i} className={`rounded-lg border ${card.color} p-2`}>
+                  <span className="text-[7px] font-mono text-ensemble-500">{card.time}</span>
+                  <div className="mt-1 h-1.5 rounded-full bg-ensemble-600/20" style={{ width: card.w }} />
+                  <div className="mt-1 h-1 w-8 rounded-full bg-ensemble-700/15" />
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom bar */}
+            <div className="flex items-center gap-2 pt-1">
+              <div className="flex -space-x-1">
+                {[0.5, 0.35, 0.25, 0.15].map((op, i) => (
+                  <div key={i} className="h-4 w-4 rounded-full border border-ensemble-800" style={{ backgroundColor: `rgba(232,89,60,${op})` }} />
+                ))}
+              </div>
+              <span className="text-[8px] text-ensemble-500">248 Teilnehmer online</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom fade */}
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-ensemble-900 to-transparent" />
+      </div>
+    </motion.div>
+  );
+}
+
 export function HeroSection({ translations: t }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex flex-col bg-ensemble-900">
@@ -62,7 +151,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
       </nav>
 
       {/* Hero content */}
-      <div className="relative z-10 flex flex-1 items-center justify-center px-6">
+      <div className="relative z-10 flex flex-1 items-center justify-center px-6 pb-8">
         <div className="mx-auto max-w-4xl text-center">
           {/* Eyebrow */}
           <motion.div
@@ -130,6 +219,9 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
           >
             {t.ctaNote}
           </motion.p>
+
+          {/* Dashboard preview */}
+          <DashboardPreview />
         </div>
       </div>
 
