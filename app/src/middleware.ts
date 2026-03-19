@@ -8,6 +8,8 @@ const publicPaths = [
   '/',
   '/anmelden',
   '/registrieren',
+  '/passwort-vergessen',
+  '/passwort-zuruecksetzen',
   '/kongress',
   '/impressum',
   '/datenschutz',
@@ -15,7 +17,9 @@ const publicPaths = [
   '/kontakt',
   '/funktionen',
   '/api/auth',
-  '/api/congress', // Public GET for published congresses
+  '/api/congress',
+  '/api/seed',
+  '/api/contact',
 ];
 
 function isPublicPath(pathname: string): boolean {

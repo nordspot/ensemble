@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { z } from 'zod';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
@@ -32,6 +32,8 @@ interface LoginFormProps {
 
 export function LoginForm({ translations: t }: LoginFormProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || 'de';
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -65,15 +67,14 @@ export function LoginForm({ translations: t }: LoginFormProps) {
         email: parsed.data.email,
         password: parsed.data.password,
         redirect: false,
-        callbackUrl: '/dashboard',
+        callbackUrl: `/${locale}/dashboard`,
       });
 
       if (result?.error) {
         setIsLoading(false);
         toast.error(t.loginError);
       } else if (result?.ok) {
-        // Force a hard navigation to pick up the new session cookie
-        window.location.href = '/dashboard';
+        window.location.href = `/${locale}/dashboard`;
       } else {
         setIsLoading(false);
         toast.error(t.loginError);
