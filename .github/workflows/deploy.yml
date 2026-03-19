@@ -1,0 +1,73 @@
+name: Deploy Ensemble
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  typecheck-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: ./app
+        run: npm install --legacy-peer-deps
+
+      - name: TypeScript check
+        working-directory: ./app
+        run: npx tsc --noEmit
+
+      - name: Lint
+        working-directory: ./app
+        run: npx next lint
+
+      - name: Build with OpenNext
+        working-directory: ./app
+        run: npx @opennextjs/cloudflare build
+        env:
+          NODE_ENV: production
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: opennext-build
+          path: app/.open-next/
+
+  deploy:
+    needs: typecheck-and-build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: ./app
+        run: npm install --legacy-peer-deps
+
+      - name: Build with OpenNext
+        working-directory: ./app
+        run: npx @opennextjs/cloudflare build
+        env:
+          NODE_ENV: production
+
+      - name: Deploy to Cloudflare Workers
+        working-directory: ./app
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}

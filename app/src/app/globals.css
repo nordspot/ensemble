@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-heading: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-ensemble-50: #EEF0F8;
+  --color-ensemble-100: #D8DCF0;
+  --color-ensemble-200: #B1B9E1;
+  --color-ensemble-300: #8A96D2;
+  --color-ensemble-400: #6373C3;
+  --color-ensemble-500: #4456A8;
+  --color-ensemble-600: #364487;
+  --color-ensemble-700: #283366;
+  --color-ensemble-800: #1A2244;
+  --color-ensemble-900: #0A0F1E;
+
+  --color-accent-400: #F0795E;
+  --color-accent-500: #E8593C;
+  --color-accent-600: #D04020;
+
+  --color-success: #059669;
+  --color-warning: #D97706;
+  --color-error: #DC2626;
+  --color-info: #2563EB;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-ensemble-50);
+    color: var(--color-ensemble-900);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  .dark body {
+    background-color: var(--color-ensemble-900);
+    color: var(--color-ensemble-50);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-ensemble-500);
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "common": {
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "search": "Search",
+      "filter": "Filter",
+      "export": "Export"
+    },
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled"
+    },
+    "errors": {
+      "required": "This field is required",
+      "invalid": "Invalid input",
+      "notFound": "Not found",
+      "unauthorized": "Unauthorized",
+      "serverError": "Server error, please try again later"
+    },
+    "nav": {
+      "home": "Home",
+      "schedule": "Schedule",
+      "map": "Map",
+      "chat": "Chat",
+      "profile": "Profile",
+      "settings": "Settings"
+    }
+  },
+  "auth": {
+    "login": "Log in",
+    "loginSubtitle": "Sign in to your Ensemble account",
+    "register": "Register",
+    "registerSubtitle": "Create your Ensemble account",
+    "logout": "Log out",
+    "forgotPassword": "Forgot password?",
+    "resetPassword": "Reset password",
+    "fullName": "Full name",
+    "fullNamePlaceholder": "John Doe",
+    "email": "Email address",
+    "emailPlaceholder": "name@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "At least 8 characters",
+    "confirmPassword": "Confirm password",
+    "confirmPasswordPlaceholder": "Repeat password",
+    "magicLink": "Send login link via email",
+    "orContinueWith": "Or continue with",
+    "noAccount": "No account yet?",
+    "hasAccount": "Already have an account?",
+    "passwordRequirements": "Password requirements",
+    "passwordMinLength": "At least 8 characters",
+    "passwordUppercase": "At least one uppercase letter",
+    "passwordNumber": "At least one number",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "registrationSuccess": "Account created successfully. You can now log in.",
+    "registrationError": "Registration failed. Please try again.",
+    "loginError": "Login failed. Please check your credentials.",
+    "emailInUse": "This email address is already in use."
+  },
+  "congress": {
+    "create": "Create congress",
+    "edit": "Edit congress",
+    "publish": "Publish congress",
+    "archive": "Archive congress",
+    "roles": {
+      "organizer": "Organizer",
+      "speaker": "Speaker",
+      "attendee": "Attendee",
+      "exhibitor": "Exhibitor",
+      "press": "Press"
+    },
+    "settings": {
+      "branding": "Branding",
+      "registration": "Registration",
+      "schedule": "Schedule planning",
+      "features": "Features"
+    }
+  },
+  "schedule": {
+    "dayTabs": "Days",
+    "trackFilter": "Filter by track",
+    "addToCalendar": "Add to calendar",
+    "noSessions": "No sessions found",
+    "mySchedule": "My schedule",
+    "conflicts": "Schedule conflicts"
+  },
+  "session": {
+    "types": {
+      "keynote": "Keynote",
+      "talk": "Talk",
+      "workshop": "Workshop",
+      "poster": "Poster",
+      "panel": "Panel discussion",
+      "social": "Social event",
+      "break": "Break"
+    },
+    "details": "Details",
+    "speakers": "Speakers",
+    "room": "Room",
+    "materials": "Materials",
+    "qa": "Q&A",
+    "poll": "Poll",
+    "feedback": "Feedback"
+  },
+  "chat": {
+    "channels": "Channels",
+    "newMessage": "New message",
+    "search": "Search messages",
+    "moderation": "Moderation",
+    "directMessage": "Direct message",
+    "groupChat": "Group chat",
+    "typeMessage": "Type a message..."
+  },
+  "map": {
+    "floors": "Floors",
+    "navigate": "Navigate",
+    "yourLocation": "Your location",
+    "beaconOptIn": "Enable location services",
+    "roomOccupancy": "Room occupancy",
+    "findPerson": "Find person"
+  },
+  "registration": {
+    "form": "Registration form",
+    "tickets": "Tickets",
+    "payment": "Payment",
+    "confirmation": "Confirmation",
+    "earlyBird": "Early bird",
+    "regular": "Regular",
+    "vip": "VIP",
+    "virtual": "Virtual",
+    "title": "Congress Registration",
+    "subtitle": "Secure your spot",
+    "steps": {
+      "personal": "Personal Data",
+      "ticket": "Ticket Selection",
+      "sessions": "Pre-select Sessions",
+      "review": "Review & Payment"
+    },
+    "fields": {
+      "firstName": "First Name",
+      "firstNamePlaceholder": "John",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "name@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+41 79 123 45 67",
+      "organization": "Organization",
+      "organizationPlaceholder": "Company / Clinic",
+      "title": "Title",
+      "titlePlaceholder": "Dr.",
+      "dietary": "Dietary Requirements",
+      "dietaryPlaceholder": "Vegetarian, allergies, etc.",
+      "accessibility": "Accessibility Needs",
+      "accessibilityPlaceholder": "Wheelchair, hearing aid, etc."
+    },
+    "ticketTypes": {
+      "early_bird": "Early Bird",
+      "standard": "Standard",
+      "vip": "VIP",
+      "virtual": "Virtual"
+    },
+    "ticketDescriptions": {
+      "early_bird": "Full access at a reduced rate",
+      "standard": "Full access to all sessions",
+      "vip": "Premium access with exclusive events",
+      "virtual": "Online attendance with livestream"
+    },
+    "noBookableSessions": "No bookable sessions available at this time.",
+    "sessionsSelected": "sessions selected",
+    "total": "Total",
+    "back": "Back",
+    "next": "Next",
+    "toPayment": "Proceed to Payment",
+    "submitting": "Submitting...",
+    "successTitle": "Registration Successful!",
+    "successMessage": "Thank you for registering. You will receive a confirmation email shortly."
+  },
+  "admin": {
+    "attendees": {
+      "title": "Attendees",
+      "subtitle": "Overview of all registrations for this congress",
+      "searchPlaceholder": "Search by name or email...",
+      "loading": "Loading...",
+      "noResults": "No attendees found",
+      "showing": "Showing {from}-{to} of {total}",
+      "prev": "Previous",
+      "next": "Next",
+      "registeredAt": "Registered"
+    },
+    "columns": {
+      "name": "Name",
+      "email": "Email",
+      "ticketType": "Ticket Type",
+      "status": "Status",
+      "payment": "Payment",
+      "checkin": "Check-in"
+    },
+    "payment": {
+      "unpaid": "Unpaid",
+      "paid": "Paid",
+      "refunded": "Refunded",
+      "comp": "Complimentary"
+    },
+    "checkedIn": "Checked in",
+    "notCheckedIn": "Not checked in"
+  },
+  "congressOverview": {
+    "welcome": "Congress Dashboard",
+    "overviewSubtitle": "Overview and quick access",
+    "statusDraft": "Draft",
+    "stats": {
+      "registered": "Registered",
+      "capacity": "Capacity",
+      "sessions": "Sessions",
+      "speakers": "Speakers"
+    },
+    "quickActions": "Quick Actions",
+    "actions": {
+      "viewSchedule": "View Schedule",
+      "checkin": "Check-in",
+      "map": "View Map"
+    },
+    "upcomingSessions": "Upcoming Sessions",
+    "noUpcomingSessions": "No upcoming sessions",
+    "announcements": "Announcements",
+    "noAnnouncements": "No announcements yet"
+  },
+  "exhibitor": {
+    "booth": "Booth",
+    "leads": "Leads",
+    "products": "Products",
+    "analytics": "Analytics",
+    "scanBadge": "Scan badge",
+    "exportLeads": "Export leads"
+  },
+  "ai": {
+    "copilot": "AI assistant",
+    "search": "Smart search",
+    "recommend": "Recommendations",
+    "summarize": "Summarize",
+    "askQuestion": "Ask a question",
+    "sources": "Sources"
+  },
+  "notifications": {
+    "types": "Notification types",
+    "settings": "Notification settings",
+    "empty": "No new notifications",
+    "markAllRead": "Mark all as read"
+  },
+  "speaker": {
+    "directory": "Speaker Directory",
+    "searchPlaceholder": "Search by name or organization...",
+    "sessions": "Sessions",
+    "biography": "Biography",
+    "disclosures": "Disclosures",
+    "uploadPresentation": "Upload Presentation",
+    "uploadDeadline": "Please upload your presentation before the deadline.",
+    "disclosureRequired": "Disclosure of conflicts of interest is required for all speakers.",
+    "noDisclosures": "No disclosures reported",
+    "hasConflicts": "Has conflicts of interest",
+    "noConflicts": "No conflicts",
+    "uploadSuccess": "Presentation uploaded successfully.",
+    "noSpeakers": "No speakers registered yet.",
+    "noResults": "No speakers found.",
+    "submitDisclosure": "Submit disclosure"
+  },
+  "landing": {
+    "hero": "The congress platform for Switzerland",
+    "tagline": "Where expertise comes together.",
+    "features": "Features",
+    "pricing": "Pricing",
+    "cta": "Get started",
+    "about": "About us",
+    "register": "Register",
+    "learnMore": "Learn more",
+    "featuresHeading": "Everything your congress needs",
+    "programTitle": "Programmes & Sessions",
+    "programDesc": "Multi-day programmes with tracks, parallel sessions, and personal schedules. Attendees always stay on top of things.",
+    "streamingTitle": "Live Streaming",
+    "streamingDesc": "Hybrid events with professional live streaming, recording, and on-demand access for a global audience.",
+    "navigationTitle": "Indoor Navigation",
+    "navigationDesc": "Interactive venue maps with real-time navigation to rooms, booths, and points of interest via Bluetooth beacons.",
+    "networkingTitle": "Networking",
+    "networkingDesc": "Intelligent matchmaking, 1:1 meetings, and topic-based group chats. Making connections has never been easier.",
+    "aiTitle": "AI Knowledge Base",
+    "aiDesc": "AI-powered search across all abstracts, presentations, and documents. Cited answers in seconds.",
+    "gamificationTitle": "Gamification",
+    "gamificationDesc": "Points, badges, and leaderboards motivate active participation and measurably increase engagement."
+  }
+}

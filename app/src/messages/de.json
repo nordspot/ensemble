@@ -1,0 +1,959 @@
+{
+  "common": {
+    "actions": {
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "delete": "Loeschen",
+      "edit": "Bearbeiten",
+      "search": "Suchen",
+      "filter": "Filtern",
+      "export": "Exportieren"
+    },
+    "labels": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "location": "Ort",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv",
+      "pending": "Ausstehend",
+      "confirmed": "Bestaetigt",
+      "cancelled": "Abgesagt"
+    },
+    "errors": {
+      "required": "Dieses Feld ist erforderlich",
+      "invalid": "Ungueltige Eingabe",
+      "notFound": "Nicht gefunden",
+      "unauthorized": "Nicht autorisiert",
+      "serverError": "Serverfehler, bitte versuchen Sie es spaeter erneut"
+    },
+    "nav": {
+      "home": "Startseite",
+      "dashboard": "Dashboard",
+      "congresses": "Kongresse",
+      "schedule": "Programm",
+      "live": "Live",
+      "networking": "Networking",
+      "map": "Karte",
+      "chat": "Chat",
+      "gallery": "Galerie",
+      "poster": "Poster",
+      "articles": "Artikel",
+      "exhibition": "Ausstellung",
+      "knowledge": "Wissen",
+      "gamification": "Gamification",
+      "profile": "Profil",
+      "settings": "Einstellungen",
+      "logout": "Abmelden",
+      "notifications": "Benachrichtigungen",
+      "search": "Suchen"
+    },
+    "dashboard": {
+      "welcomeBack": "Willkommen zurueck",
+      "myCongresses": "Meine Kongresse",
+      "upcomingSessions": "Anstehende Sessions",
+      "messages": "Nachrichten",
+      "points": "Punkte",
+      "quickActions": "Schnellaktionen",
+      "createCongress": "Kongress erstellen",
+      "editProfile": "Profil bearbeiten",
+      "recentActivity": "Letzte Aktivitaeten",
+      "noActivity": "Noch keine Aktivitaeten"
+    }
+  },
+  "auth": {
+    "login": "Anmelden",
+    "loginSubtitle": "Melden Sie sich bei Ihrem Ensemble-Konto an",
+    "register": "Registrieren",
+    "registerSubtitle": "Erstellen Sie Ihr Ensemble-Konto",
+    "logout": "Abmelden",
+    "forgotPassword": "Passwort vergessen?",
+    "resetPassword": "Passwort zuruecksetzen",
+    "fullName": "Vollstaendiger Name",
+    "fullNamePlaceholder": "Max Muster",
+    "email": "E-Mail-Adresse",
+    "emailPlaceholder": "name@beispiel.ch",
+    "password": "Passwort",
+    "passwordPlaceholder": "Mindestens 8 Zeichen",
+    "confirmPassword": "Passwort bestaetigen",
+    "confirmPasswordPlaceholder": "Passwort wiederholen",
+    "magicLink": "Anmeldelink per E-Mail senden",
+    "orContinueWith": "Oder weiter mit",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Schon ein Konto?",
+    "passwordRequirements": "Passwortanforderungen",
+    "passwordMinLength": "Mindestens 8 Zeichen",
+    "passwordUppercase": "Mindestens ein Grossbuchstabe",
+    "passwordNumber": "Mindestens eine Zahl",
+    "passwordsDoNotMatch": "Passwoerter stimmen nicht ueberein",
+    "registrationSuccess": "Konto erfolgreich erstellt. Sie koennen sich jetzt anmelden.",
+    "registrationError": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "loginError": "Anmeldung fehlgeschlagen. Bitte pruefen Sie Ihre Zugangsdaten.",
+    "emailInUse": "Diese E-Mail-Adresse wird bereits verwendet."
+  },
+  "congress": {
+    "create": "Kongress erstellen",
+    "edit": "Kongress bearbeiten",
+    "publish": "Kongress veroeffentlichen",
+    "archive": "Kongress archivieren",
+    "roles": {
+      "organizer": "Organisator",
+      "speaker": "Referent",
+      "attendee": "Teilnehmer",
+      "exhibitor": "Aussteller",
+      "press": "Presse"
+    },
+    "settings": {
+      "branding": "Branding",
+      "registration": "Anmeldung",
+      "schedule": "Programmplanung",
+      "features": "Funktionen"
+    }
+  },
+  "schedule": {
+    "title": "Programm",
+    "dayPrefix": "Tag",
+    "dayTabs": "Tage",
+    "allTracks": "Alle",
+    "trackFilter": "Track filtern",
+    "searchPlaceholder": "Sessions durchsuchen...",
+    "noSessions": "Keine Sessions gefunden",
+    "noSessionsDescription": "Fuer den ausgewaehlten Zeitraum oder Filter sind keine Sessions vorhanden.",
+    "addToCalendar": "Zum Kalender hinzufuegen",
+    "mySchedule": "Mein Programm",
+    "myScheduleEmpty": "Noch keine Sessions gemerkt",
+    "myScheduleEmptyDescription": "Merken Sie sich Sessions aus dem Programm, um Ihren persoenlichen Zeitplan zu erstellen.",
+    "addToMySchedule": "Zum Programm hinzufuegen",
+    "removeFromMySchedule": "Aus Programm entfernen",
+    "sessionDetail": "Session-Details",
+    "speakers": "Referenten",
+    "room": "Raum",
+    "materials": "Materialien",
+    "cmeCredits": "CME-Punkte",
+    "bookmark": "Merken",
+    "bookmarked": "Gemerkt",
+    "relatedSessions": "Aehnliche Sessions",
+    "conflicts": "Terminueberschneidungen"
+  },
+  "session": {
+    "types": {
+      "keynote": "Keynote",
+      "talk": "Vortrag",
+      "workshop": "Workshop",
+      "poster": "Poster",
+      "panel": "Podiumsdiskussion",
+      "social": "Networking-Event",
+      "break": "Pause"
+    },
+    "details": "Details",
+    "speakers": "Referenten",
+    "room": "Raum",
+    "materials": "Materialien",
+    "qa": "Fragen & Antworten",
+    "poll": "Abstimmung",
+    "feedback": "Feedback"
+  },
+  "chat": {
+    "channels": "Kanaele",
+    "directMessages": "Direkt",
+    "sessionChats": "Sitzungen",
+    "newMessage": "Neue Nachricht",
+    "newConversation": "Neue Unterhaltung",
+    "search": "Nachrichten durchsuchen",
+    "searchConversations": "Unterhaltungen durchsuchen...",
+    "moderation": "Moderation",
+    "directMessage": "Direktnachricht",
+    "groupChat": "Gruppenchat",
+    "typeMessage": "Nachricht eingeben...",
+    "send": "Senden",
+    "typing": "schreibt",
+    "noMessages": "Noch keine Nachrichten",
+    "selectConversation": "Waehlen Sie eine Unterhaltung aus"
+  },
+  "map": {
+    "floors": "Stockwerke",
+    "navigate": "Navigieren",
+    "yourLocation": "Ihr Standort",
+    "beaconOptIn": "Standortdienste aktivieren",
+    "roomOccupancy": "Raumbelegung",
+    "findPerson": "Person finden"
+  },
+  "registration": {
+    "form": "Anmeldeformular",
+    "tickets": "Tickets",
+    "payment": "Bezahlung",
+    "confirmation": "Bestaetigung",
+    "earlyBird": "Fruehbucher",
+    "regular": "Standard",
+    "vip": "VIP",
+    "virtual": "Virtuell",
+    "title": "Kongress-Anmeldung",
+    "subtitle": "Sichern Sie sich Ihren Platz",
+    "steps": {
+      "personal": "Persoenliche Daten",
+      "ticket": "Ticket-Auswahl",
+      "sessions": "Sessions vormerken",
+      "review": "Zusammenfassung"
+    },
+    "fields": {
+      "firstName": "Vorname",
+      "firstNamePlaceholder": "Max",
+      "lastName": "Nachname",
+      "lastNamePlaceholder": "Muster",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "name@beispiel.ch",
+      "phone": "Telefon",
+      "phonePlaceholder": "+41 79 123 45 67",
+      "organization": "Organisation",
+      "organizationPlaceholder": "Firma / Klinik",
+      "title": "Titel",
+      "titlePlaceholder": "Dr. med.",
+      "dietary": "Ernaehrungsbeduerfnisse",
+      "dietaryPlaceholder": "Vegetarisch, Allergien etc.",
+      "accessibility": "Barrierefreiheit",
+      "accessibilityPlaceholder": "Rollstuhl, Hoerhilfe etc."
+    },
+    "ticketTypes": {
+      "early_bird": "Fruehbucher",
+      "standard": "Standard",
+      "vip": "VIP",
+      "virtual": "Virtuell"
+    },
+    "ticketDescriptions": {
+      "early_bird": "Voller Zugang zum reduzierten Preis",
+      "standard": "Voller Zugang zu allen Sessions",
+      "vip": "Premium-Zugang mit exklusiven Events",
+      "virtual": "Online-Teilnahme mit Livestream"
+    },
+    "noBookableSessions": "Momentan sind keine buchbaren Sessions verfuegbar.",
+    "sessionsSelected": "Sessions ausgewaehlt",
+    "total": "Gesamtbetrag",
+    "back": "Zurueck",
+    "next": "Weiter",
+    "toPayment": "Zur Zahlung",
+    "submitting": "Wird gesendet...",
+    "successTitle": "Anmeldung erfolgreich!",
+    "successMessage": "Vielen Dank fuer Ihre Anmeldung. Sie erhalten in Kuerze eine Bestaetigungs-E-Mail."
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin-Dashboard",
+      "subtitle": "Uebersicht ueber alle Kongresse und Benutzer"
+    },
+    "stats": {
+      "totalCongresses": "Kongresse gesamt",
+      "totalUsers": "Benutzer gesamt",
+      "totalRevenue": "Gesamtumsatz",
+      "activeEvents": "Aktive Events"
+    },
+    "labels": {
+      "registrations": "Anmeldungen"
+    },
+    "status": {
+      "draft": "Entwurf",
+      "published": "Veroeffentlicht",
+      "live": "Live",
+      "completed": "Abgeschlossen",
+      "archived": "Archiviert"
+    },
+    "actions": {
+      "createCongress": "Neuen Kongress erstellen",
+      "manageUsers": "Benutzer verwalten",
+      "viewAll": "Alle anzeigen"
+    },
+    "common": {
+      "save": "Speichern",
+      "cancel": "Abbrechen"
+    },
+    "disciplines": {
+      "medical": "Medizin",
+      "engineering": "Ingenieurwesen",
+      "legal": "Recht",
+      "academic": "Akademisch",
+      "scientific": "Wissenschaft",
+      "other": "Andere"
+    },
+    "congresses": {
+      "title": "Kongresse verwalten",
+      "subtitle": "Alle Kongresse Ihrer Organisation",
+      "searchPlaceholder": "Kongress suchen...",
+      "filterStatus": "Status filtern",
+      "allStatuses": "Alle Status",
+      "noCongresses": "Noch keine Kongresse vorhanden"
+    },
+    "createCongress": {
+      "title": "Neuen Kongress erstellen",
+      "subtitle": "Erfassen Sie die Grunddaten fuer Ihren neuen Kongress",
+      "submit": "Kongress erstellen",
+      "success": "Kongress erfolgreich erstellt",
+      "sections": {
+        "basic": "Grunddaten",
+        "dates": "Datum",
+        "venue": "Veranstaltungsort",
+        "pricing": "Preise & Kapazitaet"
+      },
+      "fields": {
+        "name": "Name",
+        "namePlaceholder": "z.B. Swiss Medical Congress 2026",
+        "slug": "URL-Kuerzel",
+        "slugHint": "Wird automatisch aus dem Namen generiert",
+        "subtitle": "Untertitel",
+        "subtitlePlaceholder": "Kurzbeschreibung des Kongresses",
+        "discipline": "Fachgebiet",
+        "description": "Beschreibung",
+        "descriptionPlaceholder": "Beschreiben Sie den Kongress...",
+        "startDate": "Startdatum",
+        "endDate": "Enddatum",
+        "venueName": "Veranstaltungsort",
+        "venueNamePlaceholder": "z.B. Kursaal Bern",
+        "venueAddress": "Adresse",
+        "venueAddressPlaceholder": "Kornhausstrasse 3",
+        "venueCity": "Stadt",
+        "venueCountry": "Land (ISO-Code)",
+        "maxAttendees": "Max. Teilnehmer",
+        "currency": "Waehrung",
+        "earlyBirdPrice": "Fruehbucherpreis",
+        "regularPrice": "Regulaerer Preis",
+        "priceHint": "Betrag in Waehrungseinheiten (z.B. 290.00)"
+      },
+      "errors": {
+        "endBeforeStart": "Das Enddatum muss nach dem Startdatum liegen",
+        "generic": "Fehler beim Erstellen des Kongresses"
+      }
+    },
+    "congressDetail": {
+      "stats": {
+        "registrations": "Anmeldungen",
+        "sessions": "Sessions",
+        "speakers": "Referenten",
+        "revenue": "Umsatz"
+      },
+      "quickActions": "Schnellaktionen",
+      "actions": {
+        "edit": "Bearbeiten",
+        "publish": "Veroeffentlichen",
+        "manageSessions": "Sessions verwalten",
+        "manageSpeakers": "Referenten verwalten",
+        "settings": "Einstellungen"
+      }
+    },
+    "sessionBuilder": {
+      "title": "Programmplanung",
+      "subtitle": "Sessions erstellen, bearbeiten und organisieren",
+      "sessionsCount": "Sessions",
+      "createSession": "Neue Session erstellen",
+      "editSession": "Session bearbeiten",
+      "deleteSession": "Session loeschen",
+      "sessionCreated": "Session erfolgreich erstellt",
+      "sessionUpdated": "Session erfolgreich aktualisiert",
+      "sessionDeleted": "Session erfolgreich geloescht",
+      "noSessions": "Noch keine Sessions vorhanden",
+      "conflictsDetected": "Raumkonflikte erkannt",
+      "formDescription": "Fuellen Sie die Felder aus, um eine Session zu erstellen oder zu bearbeiten.",
+      "fields": {
+        "title": "Titel",
+        "titlePlaceholder": "z.B. Eroeffnungskeynote",
+        "subtitle": "Untertitel",
+        "type": "Typ",
+        "track": "Track",
+        "room": "Raum",
+        "noTrack": "Kein Track",
+        "noRoom": "Kein Raum",
+        "startTime": "Startzeit",
+        "endTime": "Endzeit",
+        "description": "Beschreibung",
+        "maxAttendees": "Max. Teilnehmer",
+        "cmeCredits": "CME-Punkte",
+        "isBookable": "Buchbar",
+        "isRecorded": "Wird aufgezeichnet"
+      },
+      "errors": {
+        "endBeforeStart": "Die Endzeit muss nach der Startzeit liegen",
+        "generic": "Fehler beim Speichern der Session"
+      }
+    },
+    "sessionTypes": {
+      "keynote": "Keynote",
+      "panel": "Podiumsdiskussion",
+      "workshop": "Workshop",
+      "poster": "Poster",
+      "oral": "Vortrag",
+      "symposium": "Symposium",
+      "live_surgery": "Live-OP",
+      "social": "Networking-Event",
+      "break": "Pause",
+      "other": "Sonstiges"
+    },
+    "speakerAdmin": {
+      "title": "Referenten verwalten",
+      "subtitle": "Uebersicht aller Referenten und deren Status",
+      "inviteSpeaker": "Speaker einladen",
+      "totalSpeakers": "Referenten gesamt",
+      "disclosuresSubmitted": "Offenlegungen eingereicht",
+      "presentationsUploaded": "Praesentationen hochgeladen",
+      "speakerList": "Referentenliste",
+      "disclosureOk": "Offenlegung eingereicht",
+      "disclosurePending": "Offenlegung ausstehend",
+      "presentationOk": "Praesentation hochgeladen",
+      "presentationPending": "Praesentation ausstehend"
+    },
+    "settings": {
+      "title": "Kongress-Einstellungen",
+      "subtitle": "Verwalten Sie alle Einstellungen fuer diesen Kongress",
+      "saved": "Einstellungen gespeichert",
+      "saveFailed": "Fehler beim Speichern",
+      "sections": {
+        "general": "Allgemein",
+        "registration": "Anmeldung",
+        "features": "Funktionen",
+        "branding": "Branding"
+      },
+      "registrationOpen": "Anmeldung geoeffnet",
+      "registrationDeadline": "Anmeldeschluss",
+      "earlyBirdDeadline": "Fruehbucher-Frist",
+      "earlyBirdPrice": "Fruehbucherpreis (CHF)",
+      "regularPrice": "Regulaerer Preis (CHF)",
+      "features": {
+        "qa": "Fragen & Antworten (Q&A)",
+        "polls": "Live-Abstimmungen",
+        "gamification": "Gamification & Punkte",
+        "bleBeacons": "BLE Beacons / Indoor-Navigation"
+      },
+      "logoUpload": "Logo hochladen",
+      "logoHint": "Empfohlen: PNG oder SVG, mind. 256x256px",
+      "accentColor": "Akzentfarbe",
+      "dangerZone": "Gefahrenzone",
+      "dangerZoneDescription": "Unwiderrufliche Aktionen fuer diesen Kongress",
+      "deleteWarning": "Das Loeschen eines Kongresses entfernt alle zugehoerigen Daten unwiderruflich. Diese Aktion kann nicht rueckgaengig gemacht werden.",
+      "deleteConfirmLabel": "Geben Sie \"{name}\" ein, um zu bestaetigen",
+      "deleteCongress": "Kongress endgueltig loeschen",
+      "deleted": "Kongress wurde geloescht",
+      "deleteFailed": "Fehler beim Loeschen des Kongresses"
+    },
+    "attendees": {
+      "title": "Teilnehmer",
+      "subtitle": "Uebersicht aller Anmeldungen fuer diesen Kongress",
+      "searchPlaceholder": "Nach Name oder E-Mail suchen...",
+      "loading": "Wird geladen...",
+      "noResults": "Keine Teilnehmer gefunden",
+      "showing": "Zeige {from}-{to} von {total}",
+      "prev": "Zurueck",
+      "next": "Weiter",
+      "registeredAt": "Anmeldedatum"
+    },
+    "columns": {
+      "name": "Name",
+      "email": "E-Mail",
+      "ticketType": "Ticket-Typ",
+      "status": "Status",
+      "payment": "Zahlung",
+      "checkin": "Check-in"
+    },
+    "payment": {
+      "unpaid": "Offen",
+      "paid": "Bezahlt",
+      "refunded": "Erstattet",
+      "comp": "Kostenlos"
+    },
+    "checkedIn": "Eingecheckt",
+    "notCheckedIn": "Nicht eingecheckt"
+  },
+  "congressOverview": {
+    "welcome": "Kongress-Dashboard",
+    "overviewSubtitle": "Ueberblick und Schnellzugriff",
+    "statusDraft": "Entwurf",
+    "stats": {
+      "registered": "Angemeldet",
+      "capacity": "Auslastung",
+      "sessions": "Sessions",
+      "speakers": "Referenten"
+    },
+    "quickActions": "Schnellaktionen",
+    "actions": {
+      "viewSchedule": "Programm ansehen",
+      "checkin": "Check-in",
+      "map": "Zur Karte"
+    },
+    "upcomingSessions": "Naechste Sessions",
+    "noUpcomingSessions": "Keine anstehenden Sessions",
+    "announcements": "Ankuendigungen",
+    "noAnnouncements": "Noch keine Ankuendigungen"
+  },
+  "exhibitor": {
+    "booth": "Messestand",
+    "leads": "Kontakte",
+    "products": "Produkte",
+    "analytics": "Auswertungen",
+    "scanBadge": "Badge scannen",
+    "exportLeads": "Kontakte exportieren"
+  },
+  "ai": {
+    "copilot": "KI-Assistent",
+    "search": "Intelligente Suche",
+    "recommend": "Empfehlungen",
+    "summarize": "Zusammenfassen",
+    "askQuestion": "Frage stellen",
+    "sources": "Quellen"
+  },
+  "knowledge": {
+    "title": "Wissensbasis",
+    "subtitle": "Stellen Sie Fragen zum wissenschaftlichen Inhalt dieses Kongresses",
+    "placeholder": "Ihre Frage eingeben...",
+    "send": "Senden",
+    "sources": "Quellen",
+    "newQuestion": "Neue Frage",
+    "errorResponse": "Leider konnte die Frage nicht bearbeitet werden. Bitte versuchen Sie es erneut.",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "expand": "Aufklappen",
+    "collapse": "Zuklappen",
+    "goToContext": "Zum Kontext",
+    "noSources": "Keine Quellen verfuegbar",
+    "thinking": "Denkt nach..."
+  },
+  "notifications": {
+    "types": "Benachrichtigungstypen",
+    "settings": "Benachrichtigungseinstellungen",
+    "empty": "Keine neuen Benachrichtigungen",
+    "markAllRead": "Alle als gelesen markieren"
+  },
+  "speaker": {
+    "directory": "Referentenverzeichnis",
+    "searchPlaceholder": "Nach Name oder Organisation suchen...",
+    "sessions": "Sessions",
+    "biography": "Biografie",
+    "disclosures": "Interessenkonflikte",
+    "uploadPresentation": "Praesentation hochladen",
+    "uploadDeadline": "Bitte laden Sie Ihre Praesentation vor Ablauf der Frist hoch.",
+    "disclosureRequired": "Die Offenlegung von Interessenkonflikten ist fuer alle Referenten erforderlich.",
+    "noDisclosures": "Keine Interessenkonflikte gemeldet",
+    "hasConflicts": "Interessenkonflikte vorhanden",
+    "noConflicts": "Keine Konflikte",
+    "uploadSuccess": "Praesentation erfolgreich hochgeladen.",
+    "noSpeakers": "Noch keine Referenten eingetragen.",
+    "noResults": "Keine Referenten gefunden.",
+    "submitDisclosure": "Offenlegung einreichen"
+  },
+  "landing": {
+    "hero": "Die Kongressplattform fuer die Schweiz",
+    "tagline": "Wo Expertise zusammenkommt.",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "cta": "Jetzt loslegen",
+    "about": "Ueber uns",
+    "register": "Registrieren",
+    "learnMore": "Mehr erfahren",
+    "featuresHeading": "Alles, was Ihr Kongress braucht",
+    "programTitle": "Programme & Sessions",
+    "programDesc": "Mehrtaegige Programme mit Tracks, parallelen Sessions und persoenlichen Zeitplaenen. Teilnehmer behalten stets den Ueberblick.",
+    "streamingTitle": "Live Streaming",
+    "streamingDesc": "Hybride Events mit professionellem Live-Streaming, Aufzeichnung und On-Demand-Zugriff fuer ein globales Publikum.",
+    "navigationTitle": "Indoor Navigation",
+    "navigationDesc": "Interaktive Gebaeudekarten mit Echtzeit-Navigation zu Raeumen, Staenden und Points of Interest via Bluetooth Beacons.",
+    "networkingTitle": "Networking",
+    "networkingDesc": "Intelligentes Matchmaking, 1:1-Meetings und themenbezogene Gruppenchats. Kontakte knuepfen leicht gemacht.",
+    "aiTitle": "KI-Wissensbasis",
+    "aiDesc": "KI-gestuetzte Suche ueber alle Abstracts, Praesentationen und Dokumente. Antworten mit Quellenangabe in Sekunden.",
+    "gamificationTitle": "Gamification",
+    "gamificationDesc": "Punkte, Badges und Bestenlisten motivieren zur aktiven Teilnahme und erhoehen das Engagement messbar."
+  },
+  "live": {
+    "qa": {
+      "title": "Fragen & Antworten",
+      "pageTitle": "Fragen & Antworten",
+      "empty": "Noch keine Fragen",
+      "emptyDescription": "Stellen Sie die erste Frage an den Referenten.",
+      "placeholder": "Ihre Frage eingeben...",
+      "anonymousToggle": "Anonym",
+      "anonymous": "Anonym",
+      "answered": "Beantwortet",
+      "pendingApproval": "Wartet auf Freigabe",
+      "markAnswered": "Als beantwortet markieren",
+      "hide": "Frage ausblenden"
+    },
+    "poll": {
+      "title": "Abstimmung",
+      "statusWaiting": "Wartet",
+      "statusActive": "Aktiv",
+      "statusClosed": "Beendet",
+      "submitVote": "Abstimmen",
+      "totalVotes": "{count} Stimmen",
+      "alreadyVoted": "Sie haben bereits abgestimmt"
+    },
+    "wordCloud": {
+      "title": "Wortwolke",
+      "empty": "Noch keine Antworten eingegangen"
+    },
+    "reactions": {
+      "title": "Reaktionen"
+    },
+    "dashboard": {
+      "title": "Live-Dashboard",
+      "subtitle": "Echtzeit-Uebersicht ueber alle laufenden Sessions",
+      "liveNow": "Jetzt live",
+      "noLiveSessions": "Momentan keine Live-Sessions",
+      "comingSoon": "Gleich",
+      "noUpcoming": "Keine Sessions in den naechsten 30 Minuten",
+      "quickActions": "Schnellaktionen",
+      "actionCheckin": "Check-in",
+      "actionQA": "Q&A",
+      "actionMap": "Karte",
+      "announcements": "Ankuendigungen",
+      "noAnnouncements": "Noch keine Ankuendigungen",
+      "watchStream": "Stream ansehen",
+      "roomOccupancy": "Raumbelegung"
+    },
+    "stream": {
+      "defaultTitle": "Live-Stream",
+      "unavailable": "Stream nicht verfuegbar",
+      "unavailableHint": "Der Stream wird in Kuerze gestartet oder ist bereits beendet.",
+      "qualityAuto": "Automatisch",
+      "tabQA": "Q&A",
+      "tabPoll": "Abstimmung"
+    },
+    "transcript": {
+      "title": "Transkription",
+      "defaultTitle": "Live-Transkription",
+      "autoScroll": "Auto-Scroll",
+      "searchPlaceholder": "Im Transkript suchen...",
+      "noResults": "Keine Treffer",
+      "empty": "Noch kein Transkript verfuegbar",
+      "scrollToLatest": "Zum Neuesten",
+      "jumpTo": "Zur Stelle springen",
+      "sessionInfo": "Session-Info",
+      "timeNotAvailable": "Zeit nicht verfuegbar",
+      "roomNotAvailable": "Raum nicht verfuegbar",
+      "speakerNotAvailable": "Referent nicht verfuegbar",
+      "transcriptHint": "Das Transkript wird in Echtzeit erstellt und kann Ungenauigkeiten enthalten."
+    }
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Fotos aus dem Kongress",
+    "empty": "Noch keine Fotos vorhanden",
+    "photoAlt": "Kongressfoto",
+    "myPhotos": "Meine Fotos",
+    "myPhotosTitle": "Meine Fotos",
+    "myPhotosSubtitle": "Verwalten Sie Ihre hochgeladenen Fotos",
+    "backToGallery": "Zurueck zur Galerie",
+    "filterAll": "Alle",
+    "filterFeatured": "Highlights",
+    "public": "Oeffentlich",
+    "private": "Privat",
+    "makePublic": "Oeffentlich machen",
+    "makePrivate": "Privat machen",
+    "deletePhoto": "Foto loeschen",
+    "noOwnPhotos": "Sie haben noch keine Fotos hochgeladen",
+    "uploadButton": "Fotos hochladen",
+    "hideUpload": "Upload ausblenden",
+    "dropzone": "Fotos hierher ziehen oder klicken",
+    "dropzoneHint": "Max. {max} Fotos, je max. {sizeMb} MB (JPEG, PNG, WebP)",
+    "captionPlaceholder": "Bildunterschrift...",
+    "clearAll": "Alle entfernen",
+    "uploadComplete": "Upload abgeschlossen",
+    "uploadPhotos": "{count} Fotos hochladen",
+    "viewerTitle": "Foto-Ansicht",
+    "download": "Herunterladen"
+  },
+  "onDemand": {
+    "title": "Aufzeichnungen",
+    "subtitle": "Sessions als On-Demand-Videos ansehen",
+    "empty": "Noch keine Aufzeichnungen verfuegbar",
+    "emptyHint": "Aufzeichnungen werden nach den Live-Sessions bereitgestellt."
+  },
+  "articles": {
+    "title": "Artikel",
+    "subtitle": "Wissenschaftliche Beitraege und Dokumente",
+    "empty": "Noch keine Artikel eingereicht",
+    "emptyHint": "Reichen Sie den ersten Artikel ein.",
+    "submit": "Artikel einreichen",
+    "submitTitle": "Artikel einreichen",
+    "submitSubtitle": "Laden Sie Ihren wissenschaftlichen Beitrag hoch",
+    "searchPlaceholder": "Nach Titel oder Stichwort suchen...",
+    "fieldTitle": "Titel",
+    "fieldTitlePlaceholder": "Titel des Artikels",
+    "fieldSummary": "Zusammenfassung",
+    "fieldSummaryPlaceholder": "Kurze Zusammenfassung des Artikels...",
+    "fieldKeywords": "Stichwoerter",
+    "keywordPlaceholder": "Stichwort eingeben...",
+    "addKeyword": "Hinzufuegen",
+    "fieldFile": "Datei",
+    "fileDropzone": "Datei hierher ziehen oder klicken",
+    "fileDropzoneHint": "PDF, DOCX oder Markdown, max. {maxMb} MB",
+    "invalidFileType": "Ungueltiger Dateityp. Erlaubt: PDF, DOCX, Markdown.",
+    "fileTooLarge": "Datei zu gross. Maximum: {maxMb} MB.",
+    "cancel": "Abbrechen",
+    "submitButton": "Einreichen",
+    "submitError": "Fehler beim Einreichen des Artikels"
+  },
+  "poster": {
+    "title": "Poster",
+    "subtitle": "Poster-Ausstellung und Abstimmung",
+    "empty": "Noch keine Poster vorhanden",
+    "searchPlaceholder": "Nach Titel oder Autor suchen...",
+    "noPreview": "Keine Vorschau",
+    "categories": {
+      "all": "Alle",
+      "clinical": "Klinisch",
+      "research": "Forschung",
+      "case-study": "Fallstudie",
+      "technology": "Technologie",
+      "education": "Lehre"
+    }
+  },
+  "beacon": {
+    "title": "Standortdienste",
+    "privacyExplanation": "Aktivieren Sie Bluetooth-Beacons fuer Indoor-Navigation und standortbasierte Funktionen. Ihre Position wird nur gemaess der gewaehlten Datenschutzstufe geteilt.",
+    "privacyLevel": "Datenschutzstufe",
+    "privacyOff": "Aus",
+    "privacyNavigation": "Navigation",
+    "privacyFull": "Vollstaendig",
+    "startScanning": "Standort aktivieren",
+    "stopScanning": "Standort deaktivieren",
+    "scanning": "Suche nach Beacons...",
+    "beaconsFound": "{count} Beacons gefunden",
+    "currentZone": "Aktueller Bereich",
+    "notSupported": "Bluetooth wird von diesem Browser nicht unterstuetzt.",
+    "batteryWarning": "Bluetooth-Scanning kann den Akkuverbrauch leicht erhoehen.",
+    "map": {
+      "title": "Gebaeudekarte",
+      "subtitle": "Interaktive Karte mit Indoor-Navigation",
+      "status": {
+        "available": "Verfuegbar",
+        "in-session": "Session laeuft",
+        "full": "Voll"
+      }
+    },
+    "wayfinder": {
+      "navigateTo": "Navigieren zu...",
+      "selectDestination": "Ziel auswaehlen",
+      "startNavigation": "Navigation starten",
+      "cancel": "Abbrechen",
+      "positionRequired": "Ihr Standort muss zuerst erkannt werden."
+    },
+    "nearby": {
+      "title": "{count} Personen in deiner Naehe",
+      "empty": "Keine Personen in der Naehe",
+      "requiresFull": "Aktivieren Sie die Datenschutzstufe \"Vollstaendig\", um Personen in Ihrer Naehe zu sehen.",
+      "optInNotice": "Nur Personen, die ebenfalls die vollstaendige Standortfreigabe aktiviert haben, werden angezeigt."
+    },
+    "occupancy": {
+      "title": "Raumbelegung",
+      "empty": "Keine Raumdaten verfuegbar"
+    }
+  },
+  "nfc": {
+    "title": "Badge scannen",
+    "scanBadge": "Badge scannen",
+    "reading": "Lese NFC-Tag...",
+    "notSupported": "NFC wird von diesem Browser nicht unterstuetzt.",
+    "qrFallback": "QR-Code scannen",
+    "saveContact": "Kontakt speichern",
+    "saving": "Wird gespeichert...",
+    "contactSaved": "Kontakt erfolgreich gespeichert!",
+    "scanAnother": "Weiteren Badge scannen"
+  },
+  "exhibition": {
+    "title": "Ausstellung",
+    "subtitle": "Aussteller und Messstaende",
+    "searchPlaceholder": "Aussteller suchen...",
+    "mapView": "Kartenansicht",
+    "empty": "Noch keine Aussteller vorhanden",
+    "booth": "Stand",
+    "products": "Produkte",
+    "contact": "Kontakt",
+    "visitWebsite": "Webseite besuchen",
+    "bookDemo": "Demo buchen",
+    "demoRequested": "Demo angefragt",
+    "scanBadge": "Badge scannen",
+    "scanning": "Wird gescannt...",
+    "mapLocation": "Standort auf der Karte",
+    "leads": "Kontakte",
+    "noLeads": "Noch keine Kontakte erfasst",
+    "exportLeads": "Kontakte exportieren",
+    "notesPlaceholder": "Notizen hinzufuegen...",
+    "rating": "Bewertung",
+    "saveLead": "Kontakt speichern",
+    "saving": "Wird gespeichert...",
+    "noData": "Keine Daten verfuegbar"
+  },
+  "cme": {
+    "title": "Fortbildungspunkte",
+    "subtitle": "CME-Credits und Evaluationen verwalten",
+    "totalCredits": "Punkte gesamt",
+    "credits": "Punkte",
+    "downloadCertificate": "Zertifikat herunterladen",
+    "missingEvaluations": "Fehlende Evaluationen",
+    "missingEvaluationsHint": "{count} Sessions muessen noch evaluiert werden, um CME-Punkte zu erhalten.",
+    "sessionCredits": "Sessions und Punkte",
+    "noSessions": "Noch keine Sessions besucht",
+    "status": {
+      "attended": "Besucht",
+      "evaluated": "Evaluiert",
+      "credited": "Punkte erhalten"
+    },
+    "evaluateSession": "Session evaluieren",
+    "categories": {
+      "contentQuality": "Inhaltsqualitaet",
+      "speakerEffectiveness": "Referent/in",
+      "relevance": "Relevanz",
+      "organization": "Organisation"
+    },
+    "comments": "Kommentare",
+    "commentsPlaceholder": "Optionale Anmerkungen...",
+    "submitEvaluation": "Evaluation absenden",
+    "submitting": "Wird gesendet...",
+    "evaluationSubmitted": "Evaluation eingereicht",
+    "creditAwarded": "CME-Punkte wurden gutgeschrieben"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "subtitle": "Statistiken und Auswertungen fuer diesen Kongress",
+    "exportCsv": "CSV exportieren",
+    "exportPdf": "PDF exportieren",
+    "stats": {
+      "registrations": "Anmeldungen",
+      "checkins": "Check-ins",
+      "revenue": "Umsatz",
+      "engagement": "Engagement"
+    },
+    "registrationTimeline": "Anmeldungen im Zeitverlauf",
+    "topSessions": "Beliebteste Sessions",
+    "referralFunnel": "Empfehlungs-Trichter",
+    "funnel": {
+      "invites": "Einladungen",
+      "clicks": "Klicks",
+      "conversions": "Anmeldungen"
+    },
+    "topSpeakers": "Beste Referenten",
+    "speaker": "Referent",
+    "sessions": "Sessions",
+    "avgRating": "Bewertung",
+    "noData": "Keine Daten verfuegbar"
+  },
+  "gamification": {
+    "title": "Gamification",
+    "subtitle": "Punkte sammeln, Belohnungen verdienen",
+    "points": "Punkte",
+    "totalPoints": "Gesammelte Punkte",
+    "achievements": "Abzeichen",
+    "noAchievements": "Noch keine Abzeichen verfuegbar",
+    "locked": "Gesperrt",
+    "leaderboard": "Bestenliste",
+    "daily": "Heute",
+    "overall": "Gesamt",
+    "noEntries": "Noch keine Eintraege",
+    "you": "Du",
+    "pts": "Pkt.",
+    "tiers": {
+      "bronze": "Bronze",
+      "silver": "Silber",
+      "gold": "Gold",
+      "diamond": "Diamant"
+    },
+    "pointsToNext": "Noch {points} Punkte bis {tier}",
+    "recentActivity": "Letzte Aktivitaeten",
+    "reasons": {
+      "referral": "Empfehlung",
+      "checkin": "Check-in",
+      "question": "Frage gestellt",
+      "quiz": "Quiz beantwortet",
+      "networking": "Networking",
+      "photo": "Foto hochgeladen",
+      "registration": "Anmeldung",
+      "profile": "Profil vervollstaendigt",
+      "exhibitor_visit": "Aussteller besucht"
+    },
+    "referral": "Empfehlungslink",
+    "shareTitle": "Ensemble-Kongress",
+    "share": "Teilen",
+    "clicks": "Klicks",
+    "conversions": "Anmeldungen",
+    "rewardTiers": "Belohnungsstufen"
+  },
+  "networking": {
+    "title": "Networking",
+    "subtitle": "Kontakte knuepfen und vernetzen",
+    "findAttendees": "Teilnehmer finden",
+    "searchPlaceholder": "Nach Name oder Organisation suchen...",
+    "searchHint": "Suchen Sie nach Teilnehmern, um sich zu vernetzen.",
+    "nfcTap": "NFC-Kontaktaustausch",
+    "nfcHint": "Halten Sie Ihr Geraet an ein anderes Badge, um Kontaktdaten auszutauschen.",
+    "tapToConnect": "Tippen zum Verbinden",
+    "myContacts": "Meine Kontakte",
+    "exportContacts": "Kontakte exportieren",
+    "noContacts": "Noch keine Kontakte gespeichert",
+    "nearbyPeople": "Personen in der Naehe",
+    "nearbyHint": "Aktivieren Sie Bluetooth, um Personen in Ihrer Naehe zu sehen.",
+    "enableBluetooth": "Bluetooth aktivieren",
+    "nfcNotSupported": "NFC wird von diesem Browser nicht unterstuetzt."
+  },
+  "social": {
+    "title": "Social Events",
+    "subtitle": "Gesellschaftliche Veranstaltungen und Rahmenprogramm",
+    "noEvents": "Noch keine Social Events geplant",
+    "rsvp": "Teilnehmen",
+    "types": {
+      "dinner": "Abendessen",
+      "reception": "Empfang",
+      "tour": "Fuehrung",
+      "sport": "Sport",
+      "cultural": "Kulturell"
+    }
+  },
+  "report": {
+    "title": "Kongressbericht",
+    "subtitle": "Zusammenfassung und Ergebnisse",
+    "downloadReport": "Bericht herunterladen",
+    "executiveSummary": "KI-Zusammenfassung",
+    "summaryPlaceholder": "Die KI-generierte Zusammenfassung wird nach Abschluss des Kongresses erstellt.",
+    "stats": {
+      "attendees": "Teilnehmer",
+      "sessions": "Sessions",
+      "speakers": "Referenten",
+      "satisfaction": "Zufriedenheit"
+    },
+    "recordings": "Aufzeichnungen",
+    "noRecordings": "Noch keine Aufzeichnungen verfuegbar",
+    "contentLibrary": "Inhaltsbibliothek",
+    "noContent": "Noch keine Inhalte verfuegbar",
+    "feedbackSummary": "Feedback-Zusammenfassung",
+    "noFeedback": "Noch keine Feedback-Daten verfuegbar"
+  },
+  "setupChecklist": {
+    "title": "Kongress-Einrichtung",
+    "progress": "{completed} von {total} Schritten abgeschlossen",
+    "basicInfo": "Grunddaten (Name, Datum, Ort)",
+    "sessions": "Programm (mind. 1 Session)",
+    "speakers": "Referenten (mind. 1 Referent)",
+    "registration": "Anmeldung geoeffnet",
+    "rooms": "Raeume (mind. 1 Raum)",
+    "branding": "Branding (Logo hochgeladen)",
+    "required": "Erforderlich",
+    "publish": "Veroeffentlichen",
+    "publishHint": "Alle erforderlichen Schritte muessen abgeschlossen sein, um den Kongress zu veroeffentlichen."
+  },
+  "onboarding": {
+    "title": "Erstellen Sie Ihren ersten Kongress",
+    "description": "Willkommen bei Ensemble! Starten Sie mit der Erstellung eines neuen Kongresses oder durchsuchen Sie bestehende Veranstaltungen.",
+    "createCongress": "Kongress erstellen",
+    "browseCongresses": "Kongresse durchsuchen",
+    "dismiss": "Schliessen"
+  },
+  "emptyState": {
+    "noSessions": "Noch keine Sessions",
+    "noSessionsDesc": "Erstellen Sie die erste Session fuer diesen Kongress.",
+    "noSpeakers": "Noch keine Referenten",
+    "noSpeakersDesc": "Laden Sie den ersten Referenten ein.",
+    "addFirst": "Ersten Eintrag erstellen",
+    "import": "Importieren"
+  },
+  "helpTooltips": {
+    "learnMore": "Mehr erfahren"
+  }
+}

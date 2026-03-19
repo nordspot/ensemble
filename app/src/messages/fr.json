@@ -1,0 +1,305 @@
+{
+  "common": {
+    "actions": {
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "delete": "Supprimer",
+      "edit": "Modifier",
+      "search": "Rechercher",
+      "filter": "Filtrer",
+      "export": "Exporter"
+    },
+    "labels": {
+      "name": "Nom",
+      "email": "E-mail",
+      "phone": "Telephone",
+      "date": "Date",
+      "time": "Heure",
+      "location": "Lieu",
+      "status": "Statut"
+    },
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif",
+      "pending": "En attente",
+      "confirmed": "Confirme",
+      "cancelled": "Annule"
+    },
+    "errors": {
+      "required": "Ce champ est obligatoire",
+      "invalid": "Saisie invalide",
+      "notFound": "Non trouve",
+      "unauthorized": "Non autorise",
+      "serverError": "Erreur serveur, veuillez reessayer plus tard"
+    },
+    "nav": {
+      "home": "Accueil",
+      "schedule": "Programme",
+      "map": "Plan",
+      "chat": "Chat",
+      "profile": "Profil",
+      "settings": "Parametres"
+    }
+  },
+  "auth": {
+    "login": "Se connecter",
+    "loginSubtitle": "Connectez-vous a votre compte Ensemble",
+    "register": "S'inscrire",
+    "registerSubtitle": "Creez votre compte Ensemble",
+    "logout": "Se deconnecter",
+    "forgotPassword": "Mot de passe oublie ?",
+    "resetPassword": "Reinitialiser le mot de passe",
+    "fullName": "Nom complet",
+    "fullNamePlaceholder": "Jean Dupont",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "nom@exemple.ch",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Au moins 8 caracteres",
+    "confirmPassword": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Repetez le mot de passe",
+    "magicLink": "Envoyer un lien de connexion par e-mail",
+    "orContinueWith": "Ou continuer avec",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Deja un compte ?",
+    "passwordRequirements": "Exigences du mot de passe",
+    "passwordMinLength": "Au moins 8 caracteres",
+    "passwordUppercase": "Au moins une majuscule",
+    "passwordNumber": "Au moins un chiffre",
+    "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
+    "registrationSuccess": "Compte cree avec succes. Vous pouvez maintenant vous connecter.",
+    "registrationError": "L'inscription a echoue. Veuillez reessayer.",
+    "loginError": "La connexion a echoue. Veuillez verifier vos identifiants.",
+    "emailInUse": "Cette adresse e-mail est deja utilisee."
+  },
+  "congress": {
+    "create": "Creer un congres",
+    "edit": "Modifier le congres",
+    "publish": "Publier le congres",
+    "archive": "Archiver le congres",
+    "roles": {
+      "organizer": "Organisateur",
+      "speaker": "Intervenant",
+      "attendee": "Participant",
+      "exhibitor": "Exposant",
+      "press": "Presse"
+    },
+    "settings": {
+      "branding": "Image de marque",
+      "registration": "Inscription",
+      "schedule": "Planification du programme",
+      "features": "Fonctionnalites"
+    }
+  },
+  "schedule": {
+    "dayTabs": "Jours",
+    "trackFilter": "Filtrer par session",
+    "addToCalendar": "Ajouter au calendrier",
+    "noSessions": "Aucune session trouvee",
+    "mySchedule": "Mon programme",
+    "conflicts": "Conflits d'horaire"
+  },
+  "session": {
+    "types": {
+      "keynote": "Keynote",
+      "talk": "Conference",
+      "workshop": "Atelier",
+      "poster": "Poster",
+      "panel": "Table ronde",
+      "social": "Evenement social",
+      "break": "Pause"
+    },
+    "details": "Details",
+    "speakers": "Intervenants",
+    "room": "Salle",
+    "materials": "Supports",
+    "qa": "Questions & Reponses",
+    "poll": "Sondage",
+    "feedback": "Retours"
+  },
+  "chat": {
+    "channels": "Canaux",
+    "newMessage": "Nouveau message",
+    "search": "Rechercher des messages",
+    "moderation": "Moderation",
+    "directMessage": "Message direct",
+    "groupChat": "Discussion de groupe",
+    "typeMessage": "Saisissez un message..."
+  },
+  "map": {
+    "floors": "Etages",
+    "navigate": "Naviguer",
+    "yourLocation": "Votre position",
+    "beaconOptIn": "Activer les services de localisation",
+    "roomOccupancy": "Occupation des salles",
+    "findPerson": "Trouver une personne"
+  },
+  "registration": {
+    "form": "Formulaire d'inscription",
+    "tickets": "Billets",
+    "payment": "Paiement",
+    "confirmation": "Confirmation",
+    "earlyBird": "Tarif early bird",
+    "regular": "Tarif standard",
+    "vip": "VIP",
+    "virtual": "Virtuel",
+    "title": "Inscription au congres",
+    "subtitle": "Reservez votre place",
+    "steps": {
+      "personal": "Donnees personnelles",
+      "ticket": "Choix du billet",
+      "sessions": "Pre-selection des sessions",
+      "review": "Resume et paiement"
+    },
+    "fields": {
+      "firstName": "Prenom",
+      "firstNamePlaceholder": "Jean",
+      "lastName": "Nom",
+      "lastNamePlaceholder": "Dupont",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "nom@exemple.ch",
+      "phone": "Telephone",
+      "phonePlaceholder": "+41 79 123 45 67",
+      "organization": "Organisation",
+      "organizationPlaceholder": "Entreprise / Clinique",
+      "title": "Titre",
+      "titlePlaceholder": "Dr.",
+      "dietary": "Besoins alimentaires",
+      "dietaryPlaceholder": "Vegetarien, allergies, etc.",
+      "accessibility": "Accessibilite",
+      "accessibilityPlaceholder": "Fauteuil roulant, aide auditive, etc."
+    },
+    "ticketTypes": {
+      "early_bird": "Early Bird",
+      "standard": "Standard",
+      "vip": "VIP",
+      "virtual": "Virtuel"
+    },
+    "ticketDescriptions": {
+      "early_bird": "Acces complet a tarif reduit",
+      "standard": "Acces complet a toutes les sessions",
+      "vip": "Acces premium avec evenements exclusifs",
+      "virtual": "Participation en ligne avec livestream"
+    },
+    "noBookableSessions": "Aucune session reservable disponible pour le moment.",
+    "sessionsSelected": "sessions selectionnees",
+    "total": "Total",
+    "back": "Retour",
+    "next": "Suivant",
+    "toPayment": "Passer au paiement",
+    "submitting": "Envoi en cours...",
+    "successTitle": "Inscription reussie !",
+    "successMessage": "Merci pour votre inscription. Vous recevrez un e-mail de confirmation sous peu."
+  },
+  "admin": {
+    "attendees": {
+      "title": "Participants",
+      "subtitle": "Apercu de toutes les inscriptions pour ce congres",
+      "searchPlaceholder": "Rechercher par nom ou e-mail...",
+      "loading": "Chargement...",
+      "noResults": "Aucun participant trouve",
+      "showing": "Affichage {from}-{to} sur {total}",
+      "prev": "Precedent",
+      "next": "Suivant",
+      "registeredAt": "Date d'inscription"
+    },
+    "columns": {
+      "name": "Nom",
+      "email": "E-mail",
+      "ticketType": "Type de billet",
+      "status": "Statut",
+      "payment": "Paiement",
+      "checkin": "Check-in"
+    },
+    "payment": {
+      "unpaid": "Impaye",
+      "paid": "Paye",
+      "refunded": "Rembourse",
+      "comp": "Gratuit"
+    },
+    "checkedIn": "Enregistre",
+    "notCheckedIn": "Non enregistre"
+  },
+  "congressOverview": {
+    "welcome": "Tableau de bord du congres",
+    "overviewSubtitle": "Vue d'ensemble et acces rapide",
+    "statusDraft": "Brouillon",
+    "stats": {
+      "registered": "Inscrits",
+      "capacity": "Capacite",
+      "sessions": "Sessions",
+      "speakers": "Intervenants"
+    },
+    "quickActions": "Actions rapides",
+    "actions": {
+      "viewSchedule": "Voir le programme",
+      "checkin": "Check-in",
+      "map": "Voir le plan"
+    },
+    "upcomingSessions": "Prochaines sessions",
+    "noUpcomingSessions": "Aucune session a venir",
+    "announcements": "Annonces",
+    "noAnnouncements": "Aucune annonce pour le moment"
+  },
+  "exhibitor": {
+    "booth": "Stand",
+    "leads": "Contacts",
+    "products": "Produits",
+    "analytics": "Statistiques",
+    "scanBadge": "Scanner le badge",
+    "exportLeads": "Exporter les contacts"
+  },
+  "ai": {
+    "copilot": "Assistant IA",
+    "search": "Recherche intelligente",
+    "recommend": "Recommandations",
+    "summarize": "Resumer",
+    "askQuestion": "Poser une question",
+    "sources": "Sources"
+  },
+  "notifications": {
+    "types": "Types de notifications",
+    "settings": "Parametres de notifications",
+    "empty": "Aucune nouvelle notification",
+    "markAllRead": "Tout marquer comme lu"
+  },
+  "speaker": {
+    "directory": "Repertoire des intervenants",
+    "searchPlaceholder": "Rechercher par nom ou organisation...",
+    "sessions": "Sessions",
+    "biography": "Biographie",
+    "disclosures": "Conflits d'interets",
+    "uploadPresentation": "Telecharger la presentation",
+    "uploadDeadline": "Veuillez telecharger votre presentation avant la date limite.",
+    "disclosureRequired": "La declaration des conflits d'interets est obligatoire pour tous les intervenants.",
+    "noDisclosures": "Aucun conflit d'interet declare",
+    "hasConflicts": "Conflits d'interets presents",
+    "noConflicts": "Aucun conflit",
+    "uploadSuccess": "Presentation telechargee avec succes.",
+    "noSpeakers": "Aucun intervenant enregistre pour le moment.",
+    "noResults": "Aucun intervenant trouve.",
+    "submitDisclosure": "Soumettre la declaration"
+  },
+  "landing": {
+    "hero": "La plateforme de congres pour la Suisse",
+    "tagline": "La ou l'expertise se rencontre.",
+    "features": "Fonctionnalites",
+    "pricing": "Tarifs",
+    "cta": "Commencer maintenant",
+    "about": "A propos",
+    "register": "S'inscrire",
+    "learnMore": "En savoir plus",
+    "featuresHeading": "Tout ce dont votre congres a besoin",
+    "programTitle": "Programmes & Sessions",
+    "programDesc": "Programmes multi-jours avec tracks, sessions paralleles et agendas personnels. Les participants gardent toujours la vue d'ensemble.",
+    "streamingTitle": "Streaming en direct",
+    "streamingDesc": "Evenements hybrides avec streaming professionnel, enregistrement et acces a la demande pour un public mondial.",
+    "navigationTitle": "Navigation interieure",
+    "navigationDesc": "Plans interactifs avec navigation en temps reel vers les salles, stands et points d'interet via balises Bluetooth.",
+    "networkingTitle": "Networking",
+    "networkingDesc": "Matchmaking intelligent, reunions 1:1 et chats de groupe thematiques. Creer des contacts n'a jamais ete aussi simple.",
+    "aiTitle": "Base de connaissances IA",
+    "aiDesc": "Recherche IA dans tous les abstracts, presentations et documents. Reponses avec sources en quelques secondes.",
+    "gamificationTitle": "Gamification",
+    "gamificationDesc": "Points, badges et classements motivent la participation active et augmentent l'engagement de maniere mesurable."
+  }
+}

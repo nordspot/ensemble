@@ -1,0 +1,70 @@
+{
+  "name": "ensemble",
+  "compatibility_date": "2025-03-14",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // D1 Database (EU jurisdiction for Swiss/GDPR compliance)
+  "d1_databases": [
+    {
+      "binding": "ENSEMBLE_DB",
+      "database_name": "ensemble-db",
+      "database_id": "8de0d035-94f1-4a69-b2df-b99f6a303304",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // R2 Object Storage (zero egress)
+  "r2_buckets": [
+    {
+      "binding": "ENSEMBLE_R2",
+      "bucket_name": "ensemble-storage"
+    }
+  ],
+
+  // KV Namespace (rate limiting, caching)
+  "kv_namespaces": [
+    {
+      "binding": "ENSEMBLE_KV",
+      "id": "0b57e34b8bae4a5697fbc899d15ded8b"
+    }
+  ],
+
+  // AI bindings
+  "ai": {
+    "binding": "AI"
+  },
+
+  // Vectorize (RAG)
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "ensemble-knowledge"
+    }
+  ],
+
+  // Service bindings to other Workers
+  "services": [
+    {
+      "binding": "REALTIME_WORKER",
+      "service": "ensemble-realtime"
+    },
+    {
+      "binding": "TRANSCRIPTION_WORKER",
+      "service": "ensemble-transcription"
+    },
+    {
+      "binding": "EMBEDDING_WORKER",
+      "service": "ensemble-embeddings"
+    },
+    {
+      "binding": "NOTIFICATION_WORKER",
+      "service": "ensemble-notifications"
+    }
+  ],
+
+  // Environment variables (secrets set via dashboard)
+  "vars": {
+    "NEXT_PUBLIC_APP_URL": "https://ensemble.events",
+    "NEXT_PUBLIC_APP_NAME": "Ensemble"
+  }
+}

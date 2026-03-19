@@ -1,0 +1,16 @@
+name = "ensemble-realtime"
+main = "src/index.ts"
+compatibility_date = "2025-03-14"
+compatibility_flags = ["nodejs_compat"]
+
+[durable_objects]
+bindings = [
+  { name = "CHAT_ROOM", class_name = "ChatRoom" },
+  { name = "SESSION_CHANNEL", class_name = "SessionChannel" },
+  { name = "PRESENCE_ZONE", class_name = "PresenceZone" },
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["ChatRoom", "SessionChannel", "PresenceZone"]
+new_sqlite_classes = ["ChatRoom", "SessionChannel"]
