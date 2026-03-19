@@ -208,18 +208,11 @@ function CategoryPills({
 
 /* ── Feature Card ──────────────────────────────────────────────────── */
 
-function FeatureCard({ feature, domainId, index }: { feature: Feature; domainId: string; index: number }) {
+function FeatureCard({ feature, domainId }: { feature: Feature; domainId: string; index: number }) {
   const meta = DOMAIN_META[domainId];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.35, delay: index * 0.04 }}
-      className="group relative rounded-xl border border-ensemble-100 bg-white p-5 shadow-sm transition-all duration-200 hover:border-ensemble-200 hover:shadow-md"
-    >
-      {/* Colored dot */}
+    <div className="group relative rounded-xl border border-ensemble-100 bg-white p-5 shadow-sm transition-all duration-200 hover:border-ensemble-200 hover:shadow-md">
       <div className="flex items-start gap-3">
         <span
           className={`mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full ${meta?.dot ?? 'bg-ensemble-400'}`}
@@ -233,7 +226,7 @@ function FeatureCard({ feature, domainId, index }: { feature: Feature; domainId:
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

@@ -502,10 +502,10 @@ function FeatureBlock({
       {/* Visual - on mobile, show first */}
       <motion.div
         className="flex-1 w-full max-w-md lg:max-w-none order-first lg:order-none"
-        initial={{ opacity: 0, x: reverse ? -30 : 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.5, delay: 0.15 }}
       >
         {visual}
       </motion.div>
@@ -513,10 +513,10 @@ function FeatureBlock({
       {/* Text */}
       <motion.div
         className="flex-1"
-        initial={{ opacity: 0, x: reverse ? 30 : -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.5 }}
       >
         <h3 className="font-heading text-2xl font-bold text-ensemble-900 sm:text-3xl">
           {titleLine1}
@@ -565,10 +565,10 @@ export function FeatureShowcase({ translations: t }: FeatureShowcaseProps) {
         {/* All features link */}
         <motion.div
           className="text-center pt-4"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
         >
           <Link
             href="/funktionen"
