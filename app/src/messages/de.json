@@ -1057,7 +1057,7 @@
   },
   "funktionen": {
     "title": "Alle Funktionen",
-    "subtitle": "Alles, was Ihr Fachkongress braucht -- von der Registrierung bis zum Zertifikat.",
+    "subtitle": "Alles, was Ihr Fachkongress braucht. Von der Registrierung bis zum Zertifikat.",
     "ctaTitle": "Bereit?",
     "ctaSubtitle": "Starten Sie kostenlos und erleben Sie, wie Ensemble Ihren Fachkongress transformiert.",
     "ctaButton": "Jetzt kostenlos starten",
@@ -1100,7 +1100,7 @@
           },
           "ticketTypes": {
             "name": "Mehrere Tickettypen und Preisstufen",
-            "description": "Standard, VIP, Virtuell, Studenten -- definieren Sie beliebige Ticket-Kategorien mit eigenen Preisen."
+            "description": "Standard, VIP, Virtuell, Studenten und mehr. Definieren Sie beliebige Ticket-Kategorien mit eigenen Preisen."
           },
           "earlyBird": {
             "name": "Frühbucher-Preise mit Countdown",
@@ -1129,7 +1129,7 @@
           },
           "qa": {
             "name": "Live Q&A mit Upvoting",
-            "description": "Teilnehmer stellen Fragen, die Community stimmt ab -- die besten Fragen steigen nach oben."
+            "description": "Teilnehmer stellen Fragen, die Community stimmt ab. Die besten Fragen steigen nach oben."
           },
           "polls": {
             "name": "Interaktive Umfragen und Wortwolken",
@@ -1166,7 +1166,7 @@
           },
           "occupancy": {
             "name": "Raumbelegung in Echtzeit",
-            "description": "Live-Anzeige der Auslastung jedes Raums -- sehen Sie sofort, wo Plätze frei sind."
+            "description": "Live-Anzeige der Auslastung jedes Raums. Sehen Sie sofort, wo Plätze frei sind."
           },
           "checkin": {
             "name": "Automatischer Session-Check-in",
@@ -1191,7 +1191,7 @@
           },
           "nearby": {
             "name": "Personen in der Nähe",
-            "description": "Sehen Sie, wer sich gerade in Ihrer Nähe befindet -- ideal für spontanes Networking."
+            "description": "Sehen Sie, wer sich gerade in Ihrer Nähe befindet. Ideal für spontanes Networking."
           },
           "directory": {
             "name": "Teilnehmer-Verzeichnis",
@@ -1199,7 +1199,7 @@
           },
           "dm": {
             "name": "Direktnachrichten",
-            "description": "Private Nachrichten an andere Teilnehmer senden -- direkt aus dem Profil oder Verzeichnis."
+            "description": "Private Nachrichten an andere Teilnehmer senden, direkt aus dem Profil oder Verzeichnis."
           },
           "vcard": {
             "name": "Kontakt-Export (vCard)",
@@ -1212,7 +1212,7 @@
         "features": {
           "realtime": {
             "name": "Echtzeit-Chat",
-            "description": "Sofortnachrichten über Cloudflare Durable Objects -- unter 50ms Latenz weltweit."
+            "description": "Sofortnachrichten über Cloudflare Durable Objects mit unter 50ms Latenz weltweit."
           },
           "channels": {
             "name": "Gruppen- und Sessionkanäle",
@@ -1228,7 +1228,7 @@
           },
           "moderation": {
             "name": "Moderationstools",
-            "description": "Nachrichten melden, stummschalten und moderieren -- automatisch und manuell."
+            "description": "Nachrichten melden, stummschalten und moderieren, automatisch und manuell."
           },
           "push": {
             "name": "Push-Benachrichtigungen",
@@ -1245,7 +1245,7 @@
           },
           "leads": {
             "name": "Lead-Erfassung per NFC/QR",
-            "description": "Besucher-Kontakte am Messestand erfassen -- per Badge-Scan mit Notizen und Bewertung."
+            "description": "Besucher-Kontakte am Messestand erfassen. Per Badge-Scan mit Notizen und Bewertung."
           },
           "catalogs": {
             "name": "Produkt-Kataloge",
@@ -1253,7 +1253,7 @@
           },
           "sponsorTiers": {
             "name": "Sponsor-Sichtbarkeit (Tiers)",
-            "description": "Gold, Silber, Bronze -- Sponsoren erhalten abgestufte Sichtbarkeit in der gesamten App."
+            "description": "Gold, Silber, Bronze. Sponsoren erhalten abgestufte Sichtbarkeit in der gesamten App."
           },
           "floorplan": {
             "name": "Standplan mit Booth-Nummern",
@@ -1261,7 +1261,7 @@
           },
           "leadExport": {
             "name": "Lead-Export als CSV",
-            "description": "Alle erfassten Kontakte als CSV exportieren -- bereit für CRM-Import."
+            "description": "Alle erfassten Kontakte als CSV exportieren, bereit für CRM-Import."
           }
         }
       },
@@ -1290,7 +1290,7 @@
           },
           "citations": {
             "name": "Quellen-Zitierung",
-            "description": "Jede KI-Antwort mit Quellenangaben -- verlinkt direkt zu Abstracts und Sessions."
+            "description": "Jede KI-Antwort mit Quellenangaben, verlinkt direkt zu Abstracts und Sessions."
           }
         }
       },
@@ -1311,15 +1311,15 @@
           },
           "referral": {
             "name": "Empfehlungsprogramm",
-            "description": "Teilnehmer empfehlen Kollegen -- mit Tracking und Bonus-Punkten für erfolgreiche Anmeldungen."
+            "description": "Teilnehmer empfehlen Kollegen, mit Tracking und Bonus-Punkten für erfolgreiche Anmeldungen."
           },
           "tiers": {
             "name": "Belohnungsstufen",
-            "description": "Bronze, Silber, Gold, Diamant -- steigende Stufen mit exklusiven Belohnungen."
+            "description": "Bronze, Silber, Gold, Diamant. Steigende Stufen mit exklusiven Belohnungen."
           },
           "teams": {
             "name": "Team-Wettbewerbe",
-            "description": "Abteilungen oder Kliniken treten als Team an -- gemeinsam Punkte sammeln."
+            "description": "Abteilungen oder Kliniken treten als Team an und sammeln gemeinsam Punkte."
           }
         }
       },
@@ -1365,11 +1365,11 @@
           },
           "articles": {
             "name": "Artikel- und Paper-Upload",
-            "description": "Wissenschaftliche Beiträge einreichen und durchsuchen -- mit Stichwort-Tags."
+            "description": "Wissenschaftliche Beiträge einreichen und durchsuchen, mit Stichwort-Tags."
           },
           "onDemand": {
             "name": "On-Demand Aufzeichnungen",
-            "description": "Verpasste Sessions als Video-on-Demand nachschauen -- nach dem Fachkongress."
+            "description": "Verpasste Sessions als Video-on-Demand nachschauen, auch nach dem Fachkongress."
           },
           "podcam": {
             "name": "PodCam Video-Interviews",
@@ -1394,11 +1394,11 @@
           },
           "badges": {
             "name": "Badge-Design und Druck",
-            "description": "Namensschilder gestalten und drucken -- mit QR/NFC-Code und individuellem Layout."
+            "description": "Namensschilder gestalten und drucken, mit QR/NFC-Code und individuellem Layout."
           },
           "finance": {
             "name": "Finanz-Übersicht",
-            "description": "Einnahmen, Ausgaben und Zahlungsstatus auf einen Blick -- mit CSV-Export."
+            "description": "Einnahmen, Ausgaben und Zahlungsstatus auf einen Blick, inklusive CSV-Export."
           },
           "analytics": {
             "name": "Analytics-Dashboard",

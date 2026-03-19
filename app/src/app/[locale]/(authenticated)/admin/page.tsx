@@ -54,7 +54,7 @@ const STATUS_BADGE_VARIANT: Record<CongressStatus, 'default' | 'secondary' | 'su
 export default async function AdminDashboardPage() {
   const t = await getTranslations('admin');
 
-  // Placeholder data -- will be replaced with real DB queries
+  // Placeholder data - will be replaced with real DB queries
   const stats = {
     totalCongresses: 12,
     totalUsers: 1843,

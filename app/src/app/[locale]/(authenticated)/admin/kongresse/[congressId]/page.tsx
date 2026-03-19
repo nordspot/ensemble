@@ -32,7 +32,7 @@ export default async function AdminCongressDetailPage({ params }: PageProps) {
   const { congressId } = await params;
   const t = await getTranslations('admin');
 
-  // Placeholder data -- replace with DB query
+  // Placeholder data - replace with DB query
   const congress = {
     id: congressId,
     name: 'Swiss Medical Congress 2026',

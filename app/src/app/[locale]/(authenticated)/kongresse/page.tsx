@@ -10,7 +10,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
-// Placeholder data -- replaced with real DB queries when D1 is available
+// Placeholder data - replaced with real DB queries when D1 is available
 const demoCongresses = [
   {
     id: 'demo-1',

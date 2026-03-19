@@ -38,7 +38,7 @@ const STATUS_BADGE_VARIANT: Record<CongressStatus, 'default' | 'secondary' | 'su
 
 const STATUS_OPTIONS: CongressStatus[] = ['draft', 'published', 'live', 'completed', 'archived'];
 
-// Placeholder data -- replace with API call
+// Placeholder data - replace with API call
 const MOCK_CONGRESSES: CongressListItem[] = [
   { id: '1', name: 'Swiss Medical Congress 2026', slug: 'smc-2026', start_date: '2026-03-20', end_date: '2026-03-22', status: 'live', registrations: 342, venue_city: 'Bern' },
   { id: '2', name: 'Engineering Summit Zurich', slug: 'esz-2026', start_date: '2026-05-15', end_date: '2026-05-17', status: 'published', registrations: 128, venue_city: 'Zürich' },
