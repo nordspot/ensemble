@@ -40,7 +40,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${sourceSerif.variable} ${jetbrainsMono.variable}`}
+        className={`${inter.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} overflow-x-hidden`}
       >
         <SessionProvider>
           <ThemeProvider>
