@@ -176,7 +176,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
       <nav className="relative z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-5 flex items-center justify-between">
           <Link href="/" className="shrink-0">
-            <EnsembleLogo className="h-7 sm:h-8" variant="light" />
+            <EnsembleLogo className="h-14 sm:h-16" variant="light" />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
