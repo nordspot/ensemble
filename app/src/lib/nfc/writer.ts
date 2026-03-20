@@ -4,12 +4,12 @@
 
 import { isSupported } from './reader';
 
-const ENSEMBLE_BASE_URL = 'https://ensemble.app';
+const ENSEMBLE_BASE_URL = 'https://ensemble.events';
 
 /**
  * Write the user's profile URL to an NFC tag.
  *
- * URL format: https://ensemble.app/c/{congressId}/profile/{userId}
+ * URL format: https://ensemble.events/c/{congressId}/profile/{userId}
  */
 export async function writeTag(userId: string, congressId: string): Promise<void> {
   if (!isSupported()) {

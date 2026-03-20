@@ -150,7 +150,7 @@ export async function DELETE() {
     await db
       .prepare(
         `UPDATE profiles
-         SET email = 'deleted_' || id || '@deleted.ensemble.app',
+         SET email = 'deleted_' || id || '@deleted.ensemble.events',
              full_name = 'Geloeschter Benutzer',
              bio = NULL,
              phone = NULL,

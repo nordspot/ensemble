@@ -18,7 +18,7 @@ export function isSupported(): boolean {
  * Read a single NFC tag and parse the ensemble profile URL.
  *
  * Expected NDEF record: URL of the form
- *   https://ensemble.app/c/{congressId}/profile/{userId}
+ *   https://ensemble.events/c/{congressId}/profile/{userId}
  *
  * Returns null if the tag does not contain a valid ensemble URL.
  */

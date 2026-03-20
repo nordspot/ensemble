@@ -38,10 +38,10 @@ export async function POST(request: Request) {
 
     if (!db) {
       // Development fallback: check for a demo admin account
-      if (email === 'admin@ensemble.app' && password === 'Admin123!') {
+      if (email === 'admin@ensemble.events' && password === 'Admin123!') {
         return NextResponse.json({
           id: 'demo-admin-id',
-          email: 'admin@ensemble.app',
+          email: 'admin@ensemble.events',
           name: 'Demo Admin',
           role: 'superadmin',
           organizationId: 'demo-org-id',
