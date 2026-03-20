@@ -6,6 +6,8 @@ import { getDb } from '@/lib/api/server-helpers';
 import { emailSchema, passwordSchema } from '@/lib/utils/validation';
 import { generateId } from '@/lib/db/client';
 import { checkRateLimit, RATE_LIMITS } from '@/lib/security/rate-limiter';
+import { sendEmail } from '@/lib/email/client';
+import { emailLayout } from '@/lib/email/templates/base';
 
 const registerSchema = z.object({
   full_name: z.string().min(2, 'Name muss mindestens 2 Zeichen haben').max(100),
@@ -65,6 +67,20 @@ export async function POST(request: NextRequest) {
       )
       .bind(id, email, full_name, passwordHash, 'attendee')
       .run();
+
+    // Send welcome email (non-blocking)
+    sendEmail({
+      to: email,
+      subject: 'Willkommen bei Ensemble',
+      html: emailLayout(`
+        <h1>Willkommen bei Ensemble</h1>
+        <p>Hallo ${full_name},</p>
+        <p>Ihr Konto wurde erfolgreich erstellt. Sie k\u00f6nnen sich jetzt f\u00fcr Kongresse anmelden und Ihr Programm zusammenstellen.</p>
+        <p style="text-align: center; margin: 24px 0;">
+          <a href="https://ensemble.events/de/dashboard" class="btn">Zum Dashboard</a>
+        </p>
+      `),
+    }).catch((err) => console.error('[EMAIL ERROR] Welcome email failed:', err));
 
     return success({ id, email, full_name }, 201);
   } catch {

@@ -5,6 +5,8 @@ import { getCongress } from '@/lib/db/congresses';
 import { createRegistration, countRegistrations } from '@/lib/db/registrations';
 import { generateId, getFirst, run } from '@/lib/db/client';
 import { getDb } from '@/lib/api/server-helpers';
+import { sendEmail } from '@/lib/email/client';
+import { registrationConfirmationEmail } from '@/lib/email/templates/registration-confirmation';
 
 const TICKET_PRICES: Record<string, number> = {
   early_bird: 29000,
@@ -139,6 +141,30 @@ export async function POST(
 
     // Generate referral code
     const referralCode = generateId().substring(0, 8).toUpperCase();
+
+    // Build venue string
+    const venueParts = [congress.venue_name, congress.venue_city, congress.venue_country].filter(Boolean);
+    const venue = venueParts.length > 0 ? venueParts.join(', ') : 'Wird bekannt gegeben';
+
+    // Build dates string
+    const dates = congress.start_date === congress.end_date
+      ? congress.start_date
+      : `${congress.start_date} – ${congress.end_date}`;
+
+    // Send confirmation email (non-blocking)
+    const attendeeName = `${input.first_name} ${input.last_name}`;
+    sendEmail({
+      to: input.email,
+      subject: `Anmeldung bestätigt: ${congress.name}`,
+      html: registrationConfirmationEmail({
+        name: attendeeName,
+        congressName: congress.name,
+        ticketType: input.ticket_type.replace('_', ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+        dates,
+        venue,
+        registrationId,
+      }),
+    }).catch((err) => console.error('[EMAIL ERROR] Registration confirmation failed:', err));
 
     return success(
       {

@@ -18,6 +18,7 @@ const publicPaths = [
   '/funktionen',
   '/api/auth',
   '/api/congress',
+  '/api/files',
   '/api/seed',
   '/api/contact',
 ];

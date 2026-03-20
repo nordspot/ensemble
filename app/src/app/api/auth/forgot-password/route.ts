@@ -3,6 +3,8 @@ import { z } from 'zod';
 import { success, ERRORS } from '@/lib/api/response';
 import { getDb } from '@/lib/api/server-helpers';
 import { generateId } from '@/lib/db/client';
+import { sendEmail } from '@/lib/email/client';
+import { passwordResetEmail } from '@/lib/email/templates/password-reset';
 
 const forgotSchema = z.object({
   email: z.string().email(),
@@ -59,9 +61,20 @@ export async function POST(request: NextRequest) {
       .bind(generateId(), user.id, token, expiresAt)
       .run();
 
-    // In production: send email via Resend / CF Email Workers
-    // For now, log the token
-    console.log(`[PASSWORD RESET] Token for ${email}: ${token}`);
+    // Look up user name for the email
+    const profile = await db
+      .prepare('SELECT full_name, first_name FROM profiles WHERE id = ?')
+      .bind(user.id)
+      .first<{ full_name: string | null; first_name: string | null }>();
+
+    const name = profile?.full_name ?? profile?.first_name ?? email;
+    const resetUrl = `https://ensemble.events/de/passwort-zuruecksetzen?token=${token}`;
+
+    await sendEmail({
+      to: email,
+      subject: 'Passwort zurücksetzen',
+      html: passwordResetEmail({ name, resetUrl, expiresIn: '1 Stunde' }),
+    });
 
     return success({ ok: true });
   } catch {

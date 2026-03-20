@@ -76,20 +76,33 @@ export function getThumbnailPath(originalPath: string): string {
   return originalPath.replace(/(\.[^.]+)$/, '_thumb$1');
 }
 
+/** Max file size in bytes (50MB) */
+export const MAX_FILE_SIZE = 50 * 1024 * 1024;
+
+/** Allowed MIME types per upload type */
+export const ALLOWED_MIME_TYPES: Record<string, string[]> = {
+  photos: ['image/jpeg', 'image/png', 'image/webp', 'image/gif'],
+  presentations: [
+    'application/pdf',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    'application/vnd.ms-powerpoint',
+  ],
+  posters: ['application/pdf', 'image/jpeg', 'image/png'],
+  documents: [
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'text/plain',
+    'text/markdown',
+  ],
+  avatars: ['image/jpeg', 'image/png', 'image/webp'],
+};
+
 /** Allowed MIME types for photo uploads */
-export const PHOTO_MIME_TYPES = [
-  'image/jpeg',
-  'image/png',
-  'image/webp',
-  'image/heic',
-] as const;
+export const PHOTO_MIME_TYPES = ALLOWED_MIME_TYPES.photos;
 
 /** Allowed MIME types for document uploads */
-export const DOCUMENT_MIME_TYPES = [
-  'application/pdf',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  'text/markdown',
-] as const;
+export const DOCUMENT_MIME_TYPES = ALLOWED_MIME_TYPES.documents;
 
 /** Max file sizes in bytes */
 export const MAX_FILE_SIZES = {
@@ -97,3 +110,30 @@ export const MAX_FILE_SIZES = {
   document: 20 * 1024 * 1024, // 20 MB
   poster: 50 * 1024 * 1024, // 50 MB
 } as const;
+
+/** Check if a MIME type is allowed for the given upload type */
+export function isAllowedMimeType(contentType: string, type: string): boolean {
+  const allowed = ALLOWED_MIME_TYPES[type];
+  if (!allowed) return false;
+  return allowed.includes(contentType);
+}
+
+/** Get R2 bucket binding from Cloudflare context */
+export function getR2(): R2Bucket | null {
+  // Try OpenNext's getCloudflareContext first (production on CF Workers)
+  try {
+    const { getCloudflareContext } = require('@opennextjs/cloudflare');
+    const ctx = getCloudflareContext();
+    if (ctx?.env?.ENSEMBLE_R2) return ctx.env.ENSEMBLE_R2 as R2Bucket;
+  } catch {
+    // Not running on Cloudflare Workers
+  }
+  // Fallback: globalThis (for local dev or direct Worker context)
+  const env = globalThis as Record<string, unknown>;
+  return (env.ENSEMBLE_R2 as R2Bucket) ?? null;
+}
+
+/** Public URL for R2 objects served via the /api/files endpoint */
+export function getPublicUrl(r2Key: string): string {
+  return `https://ensemble.events/api/files/${encodeURIComponent(r2Key)}`;
+}
