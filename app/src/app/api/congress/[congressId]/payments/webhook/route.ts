@@ -11,7 +11,7 @@ const PAYMENT_POINTS = 50;
 
 function getWebhookSecret(): string | null {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line
     const { getCloudflareContext } = require('@opennextjs/cloudflare');
     const ctx = getCloudflareContext();
     if (ctx?.env?.STRIPE_WEBHOOK_SECRET) return ctx.env.STRIPE_WEBHOOK_SECRET as string;

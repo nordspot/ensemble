@@ -15,7 +15,7 @@ interface SendResult {
 // Try to get Resend API key from Cloudflare context
 function getResendKey(): string | null {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line
     const { getCloudflareContext } = require('@opennextjs/cloudflare');
     const ctx = getCloudflareContext();
     if (ctx?.env?.RESEND_API_KEY) return ctx.env.RESEND_API_KEY as string;

@@ -4,7 +4,7 @@
 // Get Stripe secret key from Cloudflare context
 function getStripeKey(): string | null {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line
     const { getCloudflareContext } = require('@opennextjs/cloudflare');
     const ctx = getCloudflareContext();
     if (ctx?.env?.STRIPE_SECRET_KEY) return ctx.env.STRIPE_SECRET_KEY as string;

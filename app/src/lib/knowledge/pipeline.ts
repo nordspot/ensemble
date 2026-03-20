@@ -41,7 +41,7 @@ interface CfEnv {
 
 function getCfEnv(): CfEnv {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line
     const { getCloudflareContext } = require('@opennextjs/cloudflare');
     const ctx = getCloudflareContext();
     if (ctx?.env) return ctx.env as CfEnv;
