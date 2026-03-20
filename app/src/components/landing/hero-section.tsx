@@ -1,8 +1,67 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from '@/i18n/navigation';
 import { EnsembleLogo } from './ensemble-logo';
+
+function TypewriterHeadline({ line1, line2 }: { line1: string; line2: string }) {
+  const [displayedLine1, setDisplayedLine1] = useState('');
+  const [displayedLine2, setDisplayedLine2] = useState('');
+  const [showCursor, setShowCursor] = useState(true);
+  const [phase, setPhase] = useState<'line1' | 'pause' | 'line2' | 'done'>('line1');
+
+  useEffect(() => {
+    const startDelay = setTimeout(() => {
+      let i = 0;
+      const speed = 45; // ms per letter
+
+      // Type line 1
+      const typeLine1 = setInterval(() => {
+        i++;
+        setDisplayedLine1(line1.slice(0, i));
+        if (i >= line1.length) {
+          clearInterval(typeLine1);
+          setPhase('pause');
+
+          // Pause after line 1
+          setTimeout(() => {
+            setPhase('line2');
+            let j = 0;
+            const typeLine2 = setInterval(() => {
+              j++;
+              setDisplayedLine2(line2.slice(0, j));
+              if (j >= line2.length) {
+                clearInterval(typeLine2);
+                setPhase('done');
+                // Hide cursor after a beat
+                setTimeout(() => setShowCursor(false), 800);
+              }
+            }, speed);
+          }, 500); // 500ms pause between lines
+        }
+      }, speed);
+    }, 600); // initial delay
+
+    return () => clearTimeout(startDelay);
+  }, [line1, line2]);
+
+  return (
+    <h1 className="font-heading text-5xl font-bold leading-[1.08] tracking-tight text-ensemble-900 sm:text-6xl lg:text-7xl xl:text-8xl">
+      <span>{displayedLine1}</span>
+      {phase === 'line1' && showCursor && (
+        <span className="inline-block w-[3px] h-[0.85em] bg-accent-500 ml-1 animate-pulse align-baseline" />
+      )}
+      {(phase === 'pause' || phase === 'line2' || phase === 'done') && displayedLine1 && <br />}
+      <span className="bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent">
+        {displayedLine2}
+      </span>
+      {(phase === 'pause' || phase === 'line2') && showCursor && (
+        <span className="inline-block w-[3px] h-[0.85em] bg-accent-500 ml-1 animate-pulse align-baseline" />
+      )}
+    </h1>
+  );
+}
 
 interface HeroSectionProps {
   translations: {
@@ -272,18 +331,9 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
             </span>
           </motion.div>
 
-          {/* Headline */}
-          <div className="mt-8 overflow-hidden">
-            <motion.h1
-              className="font-heading text-5xl font-bold leading-[1.08] tracking-tight text-ensemble-900 sm:text-6xl lg:text-7xl xl:text-8xl"
-              initial={{ clipPath: 'inset(100% 0 0 0)' }}
-              animate={{ clipPath: 'inset(0% 0 0 0)' }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            >
-              {t.headlineLine1}
-              <br />
-              <span className="text-accent-500">{t.headlineLine2}</span>
-            </motion.h1>
+          {/* Headline - typewriter animation */}
+          <div className="mt-8">
+            <TypewriterHeadline line1={t.headlineLine1} line2={t.headlineLine2} />
           </div>
 
           {/* Subtitle */}
