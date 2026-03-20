@@ -19,6 +19,16 @@ export const metadata: Metadata = {
   description: 'Wo Expertise zusammenkommt.',
   icons: {
     icon: '/favicon.svg',
+    apple: '/icons/icon-192.png',
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Ensemble',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
   },
 };
 
@@ -38,6 +48,12 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" content="#0A0F1E" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+      </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} overflow-x-hidden`}
       >

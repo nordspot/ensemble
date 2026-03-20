@@ -3,12 +3,14 @@ import { z } from 'zod';
 import { success, ERRORS } from '@/lib/api/response';
 import { getDb } from '@/lib/api/server-helpers';
 import { generateId } from '@/lib/db/client';
+import { verifyTurnstile } from '@/lib/security/turnstile';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name muss mindestens 2 Zeichen haben').max(100),
   email: z.string().email('Ungültige E-Mail-Adresse'),
   subject: z.string().min(2, 'Betreff muss mindestens 2 Zeichen haben').max(200),
   message: z.string().min(10, 'Nachricht muss mindestens 10 Zeichen haben').max(5000),
+  turnstileToken: z.string().optional(),
 });
 
 // Simple in-memory rate limiter
@@ -45,7 +47,15 @@ export async function POST(request: NextRequest) {
       return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungültige Eingabe');
     }
 
-    const { name, email, subject, message } = parsed.data;
+    const { name, email, subject, message, turnstileToken } = parsed.data;
+
+    // Verify Turnstile CAPTCHA
+    if (turnstileToken) {
+      const turnstileOk = await verifyTurnstile(turnstileToken);
+      if (!turnstileOk) {
+        return ERRORS.VALIDATION_ERROR('CAPTCHA-Verifizierung fehlgeschlagen. Bitte erneut versuchen.');
+      }
+    }
 
     const db = getDb();
 

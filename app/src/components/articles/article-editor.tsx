@@ -84,15 +84,54 @@ export function ArticleEditor({ congressId }: ArticleEditorProps) {
     setError(null);
 
     try {
-      const formData = new FormData();
-      formData.append('title', title.trim());
-      formData.append('summary', summary.trim());
-      formData.append('keywords', JSON.stringify(keywords));
-      formData.append('file', file);
+      // Step 1: Get upload intent
+      const intentRes = await fetch(`/api/congress/${congressId}/upload`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          filename: file.name,
+          contentType: file.type,
+          type: 'documents',
+          fileSize: file.size,
+        }),
+      });
 
+      if (!intentRes.ok) {
+        const err = (await intentRes.json()) as { error?: { message?: string } };
+        throw new Error(err.error?.message ?? 'Upload-Intent fehlgeschlagen');
+      }
+
+      const { data: intentData } = (await intentRes.json()) as {
+        data: { r2Key: string };
+      };
+
+      // Step 2: Upload file to R2
+      const uploadRes = await fetch(`/api/congress/${congressId}/upload`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': file.type,
+          'x-r2-key': intentData.r2Key,
+        },
+        body: file,
+      });
+
+      if (!uploadRes.ok) {
+        const err = (await uploadRes.json()) as { error?: { message?: string } };
+        throw new Error(err.error?.message ?? 'Datei-Upload fehlgeschlagen');
+      }
+
+      // Step 3: Create article record with file_key
       const res = await fetch(`/api/congress/${congressId}/articles`, {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: title.trim(),
+          summary: summary.trim(),
+          keywords,
+          file_key: intentData.r2Key,
+          file_type: file.type,
+          file_size: file.size,
+        }),
       });
 
       if (!res.ok) {

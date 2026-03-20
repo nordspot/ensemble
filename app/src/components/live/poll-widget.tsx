@@ -7,6 +7,8 @@ import { BarChart3, Check, Clock, Lock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useRealtime } from '@/hooks/use-realtime';
+import { sessionChannel } from '@/lib/realtime/channels';
 import { cn } from '@/lib/utils';
 
 // ── Types ────────────────────────────────────────────────────────────────
@@ -43,7 +45,55 @@ export function PollWidget({ congressId, sessionId }: PollWidgetProps) {
   const [hasVoted, setHasVoted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // ── Fetch active poll ───────────────────────────────────────────────
+  // ── WebSocket for real-time updates ─────────────────────────────────
+
+  const doId = sessionChannel(congressId, sessionId);
+
+  const handleServerEvent = useCallback((data: unknown) => {
+    const event = data as {
+      type: string;
+      poll?: PollData;
+      pollId?: string;
+      options?: PollOption[];
+      totalVotes?: number;
+    };
+
+    switch (event.type) {
+      case 'poll_update':
+        if (event.poll) {
+          setPoll(event.poll);
+          if (event.poll.myVote) {
+            setHasVoted(true);
+            setSelectedOption(event.poll.myVote);
+          }
+        }
+        break;
+
+      case 'poll_results':
+        if (event.pollId && poll?.id === event.pollId && event.options) {
+          setPoll((prev) =>
+            prev
+              ? { ...prev, options: event.options!, totalVotes: event.totalVotes ?? prev.totalVotes }
+              : prev
+          );
+        }
+        break;
+
+      case 'poll_closed':
+        if (event.pollId && poll?.id === event.pollId) {
+          setPoll((prev) => (prev ? { ...prev, status: 'closed' } : prev));
+        }
+        break;
+    }
+  }, [poll?.id]);
+
+  const { send: wsSend, isConnected } = useRealtime(
+    'SessionRoom',
+    doId,
+    { onMessage: handleServerEvent },
+  );
+
+  // ── Fetch active poll (initial load) ──────────────────────────────
 
   const fetchPoll = useCallback(async () => {
     try {
@@ -69,8 +119,6 @@ export function PollWidget({ congressId, sessionId }: PollWidgetProps) {
 
   useEffect(() => {
     fetchPoll();
-    const interval = setInterval(fetchPoll, 3000);
-    return () => clearInterval(interval);
   }, [fetchPoll]);
 
   // ── Submit vote ─────────────────────────────────────────────────────
@@ -80,18 +128,28 @@ export function PollWidget({ congressId, sessionId }: PollWidgetProps) {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch(`/api/congress/${congressId}/polls`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'vote',
+      if (isConnected) {
+        wsSend({
+          type: 'vote',
           pollId: poll.id,
           answer: selectedOption,
-        }),
-      });
-      if (res.ok) {
+        });
         setHasVoted(true);
-        await fetchPoll();
+      } else {
+        // Fallback to HTTP
+        const res = await fetch(`/api/congress/${congressId}/polls`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'vote',
+            pollId: poll.id,
+            answer: selectedOption,
+          }),
+        });
+        if (res.ok) {
+          setHasVoted(true);
+          await fetchPoll();
+        }
       }
     } finally {
       setIsSubmitting(false);

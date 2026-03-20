@@ -16,6 +16,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { EmptyState } from '@/components/shared/empty-state';
+import { useRealtime } from '@/hooks/use-realtime';
+import { sessionChannel } from '@/lib/realtime/channels';
 import { cn } from '@/lib/utils';
 
 // ── Types ────────────────────────────────────────────────────────────────
@@ -51,7 +53,49 @@ export function QAPanel({ congressId, sessionId, isModerator = false }: QAPanelP
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [votedIds, setVotedIds] = useState<Set<string>>(new Set());
 
-  // ── Fetch questions ──────────────────────────────────────────────────
+  // ── WebSocket for real-time updates ─────────────────────────────────
+
+  const doId = sessionChannel(congressId, sessionId);
+
+  const handleServerEvent = useCallback((data: unknown) => {
+    const event = data as { type: string; question?: Question; questionId?: string; upvote_count?: number };
+
+    switch (event.type) {
+      case 'question':
+        if (event.question) {
+          setQuestions((prev) => {
+            const idx = prev.findIndex((q) => q.id === event.question!.id);
+            if (idx >= 0) {
+              const next = [...prev];
+              next[idx] = event.question!;
+              return next;
+            }
+            return [...prev, event.question!];
+          });
+        }
+        break;
+
+      case 'upvoted':
+        if (event.questionId) {
+          setQuestions((prev) =>
+            prev.map((q) =>
+              q.id === event.questionId
+                ? { ...q, upvote_count: event.upvote_count ?? q.upvote_count + 1 }
+                : q
+            )
+          );
+        }
+        break;
+    }
+  }, []);
+
+  const { send: wsSend, isConnected } = useRealtime(
+    'SessionRoom',
+    doId,
+    { onMessage: handleServerEvent },
+  );
+
+  // ── Fetch questions (initial load + fallback) ─────────────────────
 
   const fetchQuestions = useCallback(async () => {
     try {
@@ -70,8 +114,6 @@ export function QAPanel({ congressId, sessionId, isModerator = false }: QAPanelP
 
   useEffect(() => {
     fetchQuestions();
-    const interval = setInterval(fetchQuestions, 5000);
-    return () => clearInterval(interval);
   }, [fetchQuestions]);
 
   // ── Sorted by votes ─────────────────────────────────────────────────
@@ -93,18 +135,29 @@ export function QAPanel({ congressId, sessionId, isModerator = false }: QAPanelP
 
     setIsSubmitting(true);
     try {
-      const res = await fetch(`/api/congress/${congressId}/qa`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+      if (isConnected) {
+        wsSend({
+          type: 'question',
           sessionId,
           body: trimmed,
           is_anonymous: isAnonymous,
-        }),
-      });
-      if (res.ok) {
+        });
         setInput('');
-        await fetchQuestions();
+      } else {
+        // Fallback to HTTP
+        const res = await fetch(`/api/congress/${congressId}/qa`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sessionId,
+            body: trimmed,
+            is_anonymous: isAnonymous,
+          }),
+        });
+        if (res.ok) {
+          setInput('');
+          await fetchQuestions();
+        }
       }
     } finally {
       setIsSubmitting(false);
@@ -117,19 +170,35 @@ export function QAPanel({ congressId, sessionId, isModerator = false }: QAPanelP
     if (votedIds.has(questionId)) return;
     setVotedIds((prev) => new Set(prev).add(questionId));
 
+    // Optimistic update
+    setQuestions((prev) =>
+      prev.map((q) =>
+        q.id === questionId ? { ...q, upvote_count: q.upvote_count + 1 } : q
+      )
+    );
+
     try {
-      await fetch(`/api/congress/${congressId}/qa`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'upvote', questionId }),
-      });
-      await fetchQuestions();
+      if (isConnected) {
+        wsSend({ type: 'upvote', questionId });
+      } else {
+        await fetch(`/api/congress/${congressId}/qa`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'upvote', questionId }),
+        });
+      }
     } catch {
       setVotedIds((prev) => {
         const next = new Set(prev);
         next.delete(questionId);
         return next;
       });
+      // Revert optimistic update
+      setQuestions((prev) =>
+        prev.map((q) =>
+          q.id === questionId ? { ...q, upvote_count: q.upvote_count - 1 } : q
+        )
+      );
     }
   };
 

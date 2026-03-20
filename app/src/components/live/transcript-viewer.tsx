@@ -66,7 +66,7 @@ export function TranscriptViewer({
   const fetchTranscript = useCallback(async () => {
     try {
       const res = await fetch(
-        `/api/congress/${congressId}/transcript?sessionId=${sessionId}`
+        `/api/congress/${congressId}/sessions/${sessionId}/transcript`
       );
       if (!res.ok) return;
       const json = await res.json();
@@ -96,13 +96,71 @@ export function TranscriptViewer({
     }
   }, [congressId, sessionId, autoScroll]);
 
+  // SSE for live updates
   useEffect(() => {
     fetchTranscript();
-    if (isLive) {
-      const interval = setInterval(fetchTranscript, 3000);
-      return () => clearInterval(interval);
+
+    if (!isLive) return;
+
+    let eventSource: EventSource | null = null;
+    try {
+      eventSource = new EventSource(
+        `/api/congress/${congressId}/sessions/${sessionId}/transcript?stream=1`
+      );
+
+      eventSource.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data) as {
+            type: string;
+            segments?: TranscriptSegment[];
+            segment?: TranscriptSegment;
+          };
+
+          if (data.type === 'init' && data.segments) {
+            setSegments(data.segments);
+            lastSegmentCountRef.current = data.segments.length;
+            setIsLoading(false);
+          } else if (data.type === 'segment' && data.segment) {
+            setSegments((prev) => {
+              const next = [...prev, data.segment!];
+              if (autoScroll && scrollRef.current) {
+                setTimeout(() => {
+                  scrollRef.current?.scrollTo({
+                    top: scrollRef.current!.scrollHeight,
+                    behavior: 'smooth',
+                  });
+                }, 100);
+              }
+              lastSegmentCountRef.current = next.length;
+              return next;
+            });
+          }
+        } catch {
+          // ignore parse errors
+        }
+      };
+
+      eventSource.onerror = () => {
+        // Fall back to polling on SSE failure
+        eventSource?.close();
+        eventSource = null;
+      };
+    } catch {
+      // SSE not available, fall back to polling
     }
-  }, [fetchTranscript, isLive]);
+
+    // Fallback polling if SSE disconnects
+    const interval = setInterval(() => {
+      if (!eventSource || eventSource.readyState === EventSource.CLOSED) {
+        fetchTranscript();
+      }
+    }, 5000);
+
+    return () => {
+      eventSource?.close();
+      clearInterval(interval);
+    };
+  }, [congressId, sessionId, isLive, fetchTranscript, autoScroll]);
 
   // ── Filter by search ────────────────────────────────────────────────
 

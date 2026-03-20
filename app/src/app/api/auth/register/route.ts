@@ -6,6 +6,7 @@ import { getDb } from '@/lib/api/server-helpers';
 import { emailSchema, passwordSchema } from '@/lib/utils/validation';
 import { generateId } from '@/lib/db/client';
 import { checkRateLimit, RATE_LIMITS } from '@/lib/security/rate-limiter';
+import { verifyTurnstile } from '@/lib/security/turnstile';
 import { sendEmail } from '@/lib/email/client';
 import { emailLayout } from '@/lib/email/templates/base';
 
@@ -13,6 +14,7 @@ const registerSchema = z.object({
   full_name: z.string().min(2, 'Name muss mindestens 2 Zeichen haben').max(100),
   email: emailSchema,
   password: passwordSchema,
+  turnstileToken: z.string().optional(),
 });
 
 export async function POST(request: NextRequest) {
@@ -35,7 +37,15 @@ export async function POST(request: NextRequest) {
       return ERRORS.VALIDATION_ERROR(firstError?.message ?? 'Ungültige Eingabe');
     }
 
-    const { full_name, email, password } = parsed.data;
+    const { full_name, email, password, turnstileToken } = parsed.data;
+
+    // Verify Turnstile CAPTCHA
+    if (turnstileToken) {
+      const turnstileOk = await verifyTurnstile(turnstileToken);
+      if (!turnstileOk) {
+        return ERRORS.VALIDATION_ERROR('CAPTCHA-Verifizierung fehlgeschlagen. Bitte erneut versuchen.');
+      }
+    }
 
     // Hash password
     const passwordHash = await bcrypt.hash(password, 12);

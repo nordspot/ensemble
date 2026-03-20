@@ -87,24 +87,63 @@ export function PhotoUpload({ congressId, onUploadComplete }: PhotoUploadProps) 
       const fp = files[i];
       if (!fp || fp.done || fp.uploading) continue;
 
-      updateFile(i, { uploading: true, progress: 10 });
+      updateFile(i, { uploading: true, progress: 5 });
 
       try {
-        const formData = new FormData();
-        formData.append('file', fp.file);
-        formData.append('caption', fp.caption);
-        formData.append('is_public', fp.isPublic ? '1' : '0');
-
-        updateFile(i, { progress: 40 });
-
-        const res = await fetch(`/api/congress/${congressId}/photos`, {
+        // Step 1: Get upload intent (r2Key) from server
+        const intentRes = await fetch(`/api/congress/${congressId}/upload`, {
           method: 'POST',
-          body: formData,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            filename: fp.file.name,
+            contentType: fp.file.type,
+            type: 'photos',
+            fileSize: fp.file.size,
+          }),
         });
 
-        if (!res.ok) {
-          const err = (await res.json()) as { error?: { message?: string } };
-          throw new Error(err.error?.message ?? 'Upload fehlgeschlagen');
+        if (!intentRes.ok) {
+          const err = (await intentRes.json()) as { error?: { message?: string } };
+          throw new Error(err.error?.message ?? 'Upload-Intent fehlgeschlagen');
+        }
+
+        const { data: intentData } = (await intentRes.json()) as {
+          data: { r2Key: string };
+        };
+
+        updateFile(i, { progress: 20 });
+
+        // Step 2: Upload file to R2 via PUT
+        const uploadRes = await fetch(`/api/congress/${congressId}/upload`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': fp.file.type,
+            'x-r2-key': intentData.r2Key,
+          },
+          body: fp.file,
+        });
+
+        if (!uploadRes.ok) {
+          const err = (await uploadRes.json()) as { error?: { message?: string } };
+          throw new Error(err.error?.message ?? 'Datei-Upload fehlgeschlagen');
+        }
+
+        updateFile(i, { progress: 70 });
+
+        // Step 3: Create photo record with the r2Key
+        const photoRes = await fetch(`/api/congress/${congressId}/photos`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            r2_key: intentData.r2Key,
+            caption: fp.caption || undefined,
+            is_public: fp.isPublic,
+          }),
+        });
+
+        if (!photoRes.ok) {
+          const err = (await photoRes.json()) as { error?: { message?: string } };
+          throw new Error(err.error?.message ?? 'Foto-Eintrag fehlgeschlagen');
         }
 
         updateFile(i, { progress: 100, done: true, uploading: false });
