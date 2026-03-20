@@ -47,7 +47,7 @@ function TypewriterHeadline({ line1, line2 }: { line1: string; line2: string }) 
   }, [line1, line2]);
 
   return (
-    <h1 className="font-heading text-5xl font-bold leading-[1.08] tracking-tight text-ensemble-900 sm:text-6xl lg:text-7xl xl:text-8xl">
+    <h1 className="font-heading text-[2.5rem] font-bold leading-[1.08] tracking-tight text-ensemble-900 sm:text-6xl lg:text-7xl xl:text-8xl">
       <span>{displayedLine1}</span>
       {phase === 'line1' && showCursor && (
         <span className="inline-block w-[3px] h-[0.85em] bg-accent-500 ml-1 animate-pulse align-baseline" />
@@ -100,7 +100,7 @@ function DashboardPreview() {
 
   return (
     <motion.div
-      className="mx-auto mt-16 max-w-4xl px-4 sm:mt-20"
+      className="hidden sm:block mx-auto mt-12 max-w-4xl px-4 sm:mt-20"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
@@ -282,9 +282,9 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
 
       {/* Navigation */}
       <nav className="relative z-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-5 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="shrink-0">
-            <EnsembleLogo className="h-14 sm:h-16" variant="light" />
+            <EnsembleLogo className="h-9 sm:h-14 lg:h-16" variant="light" />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -299,7 +299,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
             </a>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <Link
               href="/anmelden"
               className="hidden sm:block text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors"
@@ -308,7 +308,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
             </Link>
             <Link
               href="/kontakt"
-              className="rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:shadow-md hover:brightness-110 active:scale-[0.97]"
+              className="rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-sm transition-all hover:shadow-md hover:brightness-110 active:scale-[0.97]"
             >
               {t.navDemo}
             </Link>
@@ -317,15 +317,15 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
       </nav>
 
       {/* Hero content */}
-      <div className="relative z-10 flex flex-1 items-center justify-center px-6 pb-8">
-        <div className="mx-auto max-w-4xl text-center">
+      <div className="relative z-10 flex flex-1 items-center justify-center px-4 sm:px-6 pb-8">
+        <div className="mx-auto max-w-4xl text-center w-full">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-ensemble-200 bg-ensemble-100 px-4 py-1.5 text-sm font-medium text-ensemble-600">
+            <span className="inline-flex items-center gap-2 rounded-full border border-ensemble-200 bg-ensemble-100 px-3 py-1 text-xs sm:text-sm font-medium text-ensemble-600">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-500" />
               {t.eyebrow}
             </span>
@@ -338,7 +338,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
 
           {/* Subtitle */}
           <motion.p
-            className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-ensemble-500 sm:max-w-2xl sm:text-lg lg:text-xl"
+            className="mx-auto mt-5 sm:mt-6 max-w-xs text-sm leading-relaxed text-ensemble-500 sm:max-w-2xl sm:text-lg lg:text-xl"
             style={{ textWrap: 'balance' } as React.CSSProperties}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -349,14 +349,14 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
 
           {/* CTAs */}
           <motion.div
-            className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+            className="mt-8 sm:mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.0 }}
           >
             <Link
               href="/registrieren"
-              className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-8 py-4 text-base font-semibold text-white shadow-[0_1px_2px_rgba(0,0,0,0.1),0_4px_12px_rgba(99,102,241,0.25)] transition-all hover:shadow-[0_1px_2px_rgba(0,0,0,0.1),0_8px_24px_rgba(99,102,241,0.35)] hover:brightness-110 active:scale-[0.97]"
+              className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-[0_1px_2px_rgba(0,0,0,0.1),0_4px_12px_rgba(99,102,241,0.25)] transition-all hover:shadow-[0_1px_2px_rgba(0,0,0,0.1),0_8px_24px_rgba(99,102,241,0.35)] hover:brightness-110 active:scale-[0.97]"
             >
               <span className="relative z-10 flex items-center gap-2">
                 {t.ctaPrimary}
@@ -367,7 +367,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
             </Link>
             <Link
               href="/funktionen"
-              className="inline-flex items-center justify-center rounded-full border-2 border-ensemble-200 bg-white px-8 py-3.5 text-base font-semibold text-ensemble-700 shadow-sm transition-all hover:border-ensemble-300 hover:bg-ensemble-50 hover:shadow-md active:scale-[0.97]"
+              className="inline-flex items-center justify-center rounded-full border-2 border-ensemble-200 bg-white px-6 py-2.5 sm:px-8 sm:py-3.5 text-sm sm:text-base font-semibold text-ensemble-700 shadow-sm transition-all hover:border-ensemble-300 hover:bg-ensemble-50 hover:shadow-md active:scale-[0.97]"
             >
               {t.ctaSecondary}
             </Link>
@@ -375,7 +375,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
 
           {/* Note */}
           <motion.p
-            className="mt-5 text-sm text-ensemble-400"
+            className="mt-4 sm:mt-5 text-xs sm:text-sm text-ensemble-400"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.3 }}
