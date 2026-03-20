@@ -188,7 +188,7 @@ function IndoorMapMockup() {
 
       {/* Front layer - OG1 floor plan floating above */}
       <div
-        className="absolute left-6 right-6 top-12 rounded-2xl bg-white/40 border border-white/30 shadow-2xl p-3 overflow-hidden"
+        className="absolute left-6 right-6 top-12 rounded-2xl bg-white/15 backdrop-blur-[2px] border border-white/20 shadow-2xl p-3 overflow-hidden"
         style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(40px)', willChange: 'transform' }}
       >
         <div className="flex items-center gap-1.5 mb-2">
@@ -205,15 +205,15 @@ function IndoorMapMockup() {
           <rect width="320" height="130" fill="url(#grid-og1)" />
 
           {/* Corridor */}
-          <rect x="130" y="10" width="30" height="110" fill="rgba(248,250,252,0.4)" stroke="rgba(203,213,225,0.5)" strokeWidth="0.8" strokeDasharray="3 2" />
+          <rect x="130" y="10" width="30" height="110" fill="rgba(248,250,252,0.15)" stroke="rgba(203,213,225,0.3)" strokeWidth="0.8" strokeDasharray="3 2" />
 
           {/* Saal A - highlighted as destination */}
-          <rect x="170" y="10" width="135" height="55" rx="3" fill="rgba(239,246,255,0.6)" stroke="rgb(59 130 246)" strokeWidth="1.5" />
+          <rect x="170" y="10" width="135" height="55" rx="3" fill="rgba(239,246,255,0.35)" stroke="rgb(59 130 246)" strokeWidth="1.5" />
           <text x="237" y="35" textAnchor="middle" className="text-[10px] font-semibold" fill="rgb(37 99 235)">Saal A</text>
           <text x="237" y="48" textAnchor="middle" className="text-[7px]" fill="rgb(96 165 250)">120 Platze</text>
 
           {/* Saal B */}
-          <rect x="170" y="75" width="135" height="45" rx="3" fill="rgba(241,245,249,0.5)" stroke="rgba(148,163,184,0.6)" strokeWidth="1" />
+          <rect x="170" y="75" width="135" height="45" rx="3" fill="rgba(241,245,249,0.3)" stroke="rgba(148,163,184,0.5)" strokeWidth="1" />
           <text x="237" y="97" textAnchor="middle" className="text-[9px] font-semibold" fill="rgb(71 85 105)">Saal B</text>
           <text x="237" y="108" textAnchor="middle" className="text-[7px]" fill="rgb(148 163 184)">80 Platze</text>
 
