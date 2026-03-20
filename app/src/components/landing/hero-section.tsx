@@ -49,6 +49,8 @@ function DashboardPreview() {
       <div
         className="relative rounded-xl border border-ensemble-200 bg-white shadow-xl overflow-hidden"
         style={{
+          perspective: '800px',
+          transformStyle: 'preserve-3d',
           transform: 'perspective(1200px) rotateX(3deg)',
         }}
       >
@@ -162,29 +164,36 @@ function DashboardPreview() {
           </div>
         </div>
 
-        {/* Floating "Jetzt" pop-out card */}
+        {/* Floating workshop session block - hovers above schedule in 3D */}
         <motion.div
-          className="absolute -bottom-6 -right-4 sm:right-4 z-10 w-56 sm:w-64"
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
+          className="absolute z-10"
+          style={{
+            top: '47%',
+            left: '28%',
+            width: '28%',
+            transform: 'translateZ(30px)',
+          }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 2.0, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="rounded-xl bg-white/85 backdrop-blur-xl border border-white/60 shadow-2xl p-3.5">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+          <div className="relative rounded-lg bg-blue-500/90 backdrop-blur-lg shadow-2xl p-2 sm:p-2.5">
+            {/* Green "Jetzt" badge */}
+            <div className="absolute -top-1.5 -right-1.5 flex items-center gap-1 bg-emerald-500 text-white text-[6px] sm:text-[7px] font-bold uppercase tracking-wider rounded-full px-1.5 py-0.5 shadow-md">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white" />
               </span>
-              <span className="text-[9px] font-semibold text-emerald-600 uppercase tracking-wider">Jetzt</span>
-              <span className="text-[8px] text-ensemble-400 ml-auto font-mono">10:30</span>
+              Jetzt
             </div>
-            <p className="text-[11px] font-semibold text-ensemble-900 leading-snug">Workshop: KI-Diagnostik</p>
-            <p className="text-[9px] text-ensemble-500 mt-0.5">Dr. L. Fischer · Saal B</p>
-            <div className="mt-2 flex items-center gap-2">
-              <div className="flex-1 h-1 rounded-full bg-ensemble-100 overflow-hidden">
-                <div className="h-full w-[35%] rounded-full bg-emerald-500" />
-              </div>
-              <span className="text-[8px] text-ensemble-400">35 Min</span>
+            <div className="text-[8px] sm:text-[9px] font-semibold text-white leading-tight">
+              Workshop: KI-Diagnostik
+            </div>
+            <div className="text-[6px] sm:text-[7px] text-white/80 mt-0.5">
+              Dr. L. Fischer
+            </div>
+            <div className="text-[6px] text-white/60 mt-0.5">
+              Saal B
             </div>
           </div>
         </motion.div>
