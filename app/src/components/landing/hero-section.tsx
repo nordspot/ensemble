@@ -255,7 +255,7 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
           >
             <Link
               href="/registrieren"
-              className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-8 py-4 text-base font-semibold text-white shadow-[0_1px_2px_rgba(0,0,0,0.1),0_4px_12px_rgba(232,89,60,0.25)] transition-all hover:shadow-[0_1px_2px_rgba(0,0,0,0.1),0_8px_24px_rgba(232,89,60,0.35)] hover:brightness-110 active:scale-[0.97]"
+              className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-8 py-4 text-base font-semibold text-white shadow-[0_1px_2px_rgba(0,0,0,0.1),0_4px_12px_rgba(99,102,241,0.25)] transition-all hover:shadow-[0_1px_2px_rgba(0,0,0,0.1),0_8px_24px_rgba(99,102,241,0.35)] hover:brightness-110 active:scale-[0.97]"
             >
               <span className="relative z-10 flex items-center gap-2">
                 {t.ctaPrimary}

@@ -15,7 +15,7 @@
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* True neutral grey scale. No blue/purple tint. Clean and Swiss. */
+  /* True neutral grey scale */
   --color-ensemble-50: #FAFAFA;
   --color-ensemble-100: #F4F4F5;
   --color-ensemble-200: #E4E4E7;
@@ -27,12 +27,12 @@
   --color-ensemble-800: #27272A;
   --color-ensemble-900: #18181B;
 
-  /* Warm coral accent. Energetic but refined. */
-  --color-accent-300: #FDA4A4;
-  --color-accent-400: #F07058;
-  --color-accent-500: #E8593C;
-  --color-accent-600: #CC4425;
-  --color-accent-700: #A33A22;
+  /* Deep indigo accent. Professional, confident, medical/scientific. */
+  --color-accent-300: #A5B4FC;
+  --color-accent-400: #818CF8;
+  --color-accent-500: #6366F1;
+  --color-accent-600: #4F46E5;
+  --color-accent-700: #4338CA;
 
   /* Semantic */
   --color-success: #16A34A;
@@ -54,8 +54,14 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  /* Maziyah Sans only for large display headings (h1, h2).
+     Smaller headings (h3-h6) use Inter for legibility. */
+  h1, h2 {
     font-family: var(--font-heading);
+  }
+
+  h3, h4, h5, h6 {
+    font-family: var(--font-body);
   }
 
   .dark body {
@@ -67,4 +73,13 @@
     outline: 2px solid var(--color-accent-500);
     outline-offset: 2px;
   }
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

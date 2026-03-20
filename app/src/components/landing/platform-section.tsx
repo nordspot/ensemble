@@ -120,7 +120,7 @@ function ChatVisual() {
       <div className="flex items-center gap-2 mt-1">
         <div className="flex -space-x-1">
           {[0.6, 0.4, 0.3].map((op, i) => (
-            <div key={i} className="h-4 w-4 rounded-full border border-white" style={{ backgroundColor: `rgba(232,89,60,${op})` }} />
+            <div key={i} className="h-4 w-4 rounded-full border border-white" style={{ backgroundColor: `rgba(99,102,241,${op})` }} />
           ))}
         </div>
         <span className="text-[9px] text-ensemble-400">142 aktiv</span>

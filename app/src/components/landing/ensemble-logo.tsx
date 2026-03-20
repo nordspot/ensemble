@@ -1,23 +1,31 @@
 'use client';
 
+/* eslint-disable @next/next/no-img-element */
+
 interface EnsembleLogoProps {
   className?: string;
   variant?: 'dark' | 'light';
 }
 
-export function EnsembleLogo({ className = 'h-8', variant = 'dark' }: EnsembleLogoProps) {
-  const textColor = variant === 'dark' ? 'text-white' : 'text-ensemble-900';
+export function EnsembleLogo({ className = 'h-8', variant = 'light' }: EnsembleLogoProps) {
+  const src = variant === 'dark' ? '/images/ensemble-logo-white.svg' : '/images/ensemble-logo-black.svg';
   return (
-    <span className={`font-heading text-[1.2em] tracking-[0.15em] lowercase ${textColor} ${className}`}>
-      ensemble
-    </span>
+    <img
+      src={src}
+      alt="ensemble"
+      className={`${className} w-auto`}
+      style={{ display: 'block' }}
+    />
   );
 }
 
 export function EnsembleLogoIcon({ className = 'h-4' }: { className?: string }) {
   return (
-    <span className={`font-heading text-sm tracking-[0.15em] lowercase text-ensemble-900 ${className}`}>
-      e
-    </span>
+    <img
+      src="/images/ensemble-logo-black.svg"
+      alt="e"
+      className={`${className} w-auto`}
+      style={{ display: 'inline-block' }}
+    />
   );
 }
