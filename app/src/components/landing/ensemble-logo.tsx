@@ -17,7 +17,7 @@ export function EnsembleLogo({ className = 'h-8', variant = 'dark' }: EnsembleLo
         <circle cx="20" cy="30" r="7.5" stroke="#E8593C" strokeWidth="1.2" fill="none" opacity="0.5" />
         <circle cx="20" cy="20" r="2.5" fill="#E8593C" />
       </svg>
-      <span className={`font-body text-[1.1em] font-medium tracking-[0.2em] uppercase ${textColor}`}>
+      <span className={`font-heading text-[1.2em] tracking-[0.15em] uppercase ${textColor}`}>
         ensemble
       </span>
     </div>
