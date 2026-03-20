@@ -28,86 +28,101 @@ interface FeatureShowcaseProps {
 
 function LiveDashboardMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
-      {/* Session header */}
-      <div className="flex items-center gap-2 mb-4">
-        <div className="flex items-center gap-1.5">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
-          </span>
-          <span className="text-[9px] font-semibold text-red-500 uppercase tracking-wider">Live</span>
-        </div>
-        <div className="ml-auto text-[8px] text-ensemble-400 font-mono">09:32</div>
-      </div>
-
-      {/* Session title */}
-      <div className="mb-4">
-        <h4 className="text-[12px] font-semibold text-ensemble-900 leading-tight">
-          Keynote: Die Zukunft der Kardiologie
-        </h4>
-        <p className="text-[10px] text-ensemble-500 mt-0.5">Prof. Dr. Thomas Muller &middot; Grosser Saal</p>
-      </div>
-
-      {/* Transcript preview */}
-      <div className="rounded-lg bg-ensemble-50 p-3 mb-3 border border-ensemble-100">
-        <div className="flex items-center gap-1.5 mb-2">
-          <svg className="h-3 w-3 text-ensemble-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Transkription</span>
-        </div>
-        <div className="space-y-1.5">
-          {[
-            { time: '09:30', text: 'Die interventionelle Kardiologie steht vor einem Paradigmenwechsel...' },
-            { time: '09:31', text: 'Katheterbasierte Verfahren ermoglichen heute minimalinvasive Eingriffe...' },
-            { time: '09:32', text: 'Unsere multizentrische Studie mit 2.400 Patienten zeigt signifikante...' },
-          ].map((line, i) => (
-            <div key={i} className="flex gap-2 items-start">
-              <span className="text-[7px] text-ensemble-400 font-mono mt-0.5 shrink-0 w-7">{line.time}</span>
-              <p className="text-[9px] text-ensemble-700 leading-relaxed">{line.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Q&A sidebar preview */}
-      <div className="rounded-lg bg-ensemble-50 p-3 mb-3 border border-ensemble-100">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Q&A</span>
-          <span className="text-[8px] text-ensemble-400">12 Fragen</span>
-        </div>
-        <div className="space-y-2">
-          {[
-            { q: 'Welche Langzeitdaten liegen zur TAVI vor?', votes: 24 },
-            { q: 'Gibt es Kontraindikationen bei Multimorbiditat?', votes: 18 },
-          ].map((item, i) => (
-            <div key={i} className="flex items-start gap-2">
-              <div className="flex flex-col items-center shrink-0">
-                <svg className="h-3 w-3 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-                </svg>
-                <span className="text-[8px] font-medium text-accent-500">{item.votes}</span>
-              </div>
-              <p className="text-[9px] text-ensemble-700 leading-tight">{item.q}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Reaction bar */}
-      <div className="flex items-center gap-2 pt-1">
-        {[
-          { emoji: '\uD83D\uDC4F', count: 142 },
-          { emoji: '\uD83D\uDCA1', count: 38 },
-          { emoji: '\u2764\uFE0F', count: 67 },
-          { emoji: '\uD83D\uDE4F', count: 12 },
-        ].map((reaction, i) => (
-          <div key={i} className="flex items-center gap-1 rounded-full bg-ensemble-50 border border-ensemble-200 px-2 py-0.5">
-            <span className="text-[10px]">{reaction.emoji}</span>
-            <span className="text-[8px] text-ensemble-500 font-medium">{reaction.count}</span>
+    <div
+      className="relative h-[340px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
+      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
+    >
+      {/* Back layer - faded transcript lines */}
+      <div
+        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/40 shadow-lg p-4"
+        style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
+      >
+        <div className="opacity-60">
+          <div className="flex items-center gap-1.5 mb-3">
+            <svg className="h-3 w-3 text-ensemble-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Transkription</span>
           </div>
-        ))}
+          <div className="space-y-2.5">
+            {[85, 70, 90, 60, 80, 75, 55].map((w, i) => (
+              <div key={i} className="flex gap-2 items-center">
+                <div className="h-2 w-7 rounded bg-ensemble-200" />
+                <div className="h-2 rounded bg-ensemble-200" style={{ width: `${w}%` }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Middle layer - Q&A panel */}
+      <div
+        className="absolute left-6 right-6 top-10 rounded-2xl bg-white/80 backdrop-blur-md border border-white/50 shadow-xl p-4"
+        style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(24px)', willChange: 'transform' }}
+      >
+        <div className="opacity-80">
+          <div className="flex items-center justify-between mb-2.5">
+            <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Q&A</span>
+            <span className="text-[8px] text-ensemble-400">12 Fragen</span>
+          </div>
+          <div className="space-y-2">
+            {[
+              { q: 'Welche Langzeitdaten liegen zur TAVI vor?', votes: 24 },
+              { q: 'Gibt es Kontraindikationen bei Multimorbiditat?', votes: 18 },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="flex flex-col items-center shrink-0">
+                  <svg className="h-3 w-3 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                  </svg>
+                  <span className="text-[8px] font-medium text-accent-500">{item.votes}</span>
+                </div>
+                <p className="text-[9px] text-ensemble-700 leading-tight">{item.q}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Front layer - LIVE session card (hero) */}
+      <div
+        className="absolute left-5 right-5 top-14 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60 shadow-2xl p-5"
+        style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(48px)', willChange: 'transform' }}
+      >
+        {/* Session header */}
+        <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-1.5">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+            </span>
+            <span className="text-[9px] font-semibold text-red-500 uppercase tracking-wider">Live</span>
+          </div>
+          <div className="ml-auto text-[8px] text-ensemble-400 font-mono">09:32</div>
+        </div>
+
+        {/* Session title */}
+        <div className="mb-3">
+          <h4 className="text-[12px] font-semibold text-ensemble-900 leading-tight">
+            Keynote: Die Zukunft der Kardiologie
+          </h4>
+          <p className="text-[10px] text-ensemble-500 mt-0.5">Prof. Dr. Thomas Muller &middot; Grosser Saal</p>
+        </div>
+
+        {/* Reaction bar */}
+        <div className="flex items-center gap-2 pt-1">
+          {[
+            { emoji: '\uD83D\uDC4F', count: 142 },
+            { emoji: '\uD83D\uDCA1', count: 38 },
+            { emoji: '\u2764\uFE0F', count: 67 },
+            { emoji: '\uD83D\uDE4F', count: 12 },
+          ].map((reaction, i) => (
+            <div key={i} className="flex items-center gap-1 rounded-full bg-ensemble-50 border border-ensemble-200 px-2 py-0.5">
+              <span className="text-[10px]">{reaction.emoji}</span>
+              <span className="text-[8px] text-ensemble-500 font-medium">{reaction.count}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -117,114 +132,109 @@ function LiveDashboardMockup() {
 
 function IndoorMapMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
-      {/* Floor selector */}
-      <div className="flex items-center gap-1 mb-4">
-        <span className="text-[8px] text-ensemble-500 font-medium mr-2">Stockwerk:</span>
-        {['EG', 'OG1'].map((f, i) => (
-          <button
-            key={f}
-            className={`text-[9px] px-2.5 py-1 rounded-md font-medium transition-colors ${
-              i === 0
-                ? 'bg-accent-500 text-white shadow-sm'
-                : 'bg-ensemble-100 text-ensemble-500 hover:bg-ensemble-200'
-            }`}
-          >
-            {f}
-          </button>
-        ))}
+    <div
+      className="relative h-[340px] bg-gradient-to-br from-blue-50/30 to-ensemble-50/30 rounded-2xl"
+      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
+    >
+      {/* Back layer - EG ground floor plan (slightly faded) */}
+      <div
+        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/40 shadow-lg p-3 overflow-hidden"
+        style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
+      >
+        <div className="opacity-70">
+          <div className="flex items-center gap-1.5 mb-2">
+            <span className="text-[8px] font-semibold text-ensemble-500 bg-ensemble-100 rounded px-1.5 py-0.5">EG</span>
+            <span className="text-[8px] text-ensemble-400">Erdgeschoss</span>
+          </div>
+          <svg viewBox="0 0 320 170" className="w-full h-auto" fill="none">
+            <defs>
+              <pattern id="grid-eg" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgb(226 232 240)" strokeWidth="0.4" />
+              </pattern>
+            </defs>
+            <rect width="320" height="170" fill="url(#grid-eg)" />
+
+            {/* Main Hall */}
+            <rect x="10" y="10" width="140" height="80" rx="3" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1" />
+            <text x="80" y="48" textAnchor="middle" className="text-[9px] font-semibold" fill="rgb(71 85 105)">Grosser Saal</text>
+            <rect x="25" y="16" width="110" height="10" rx="2" fill="rgb(226 232 240)" />
+            <text x="80" y="24" textAnchor="middle" className="text-[6px]" fill="rgb(148 163 184)">Buhne</text>
+
+            {/* Registration */}
+            <rect x="10" y="120" width="70" height="35" rx="3" fill="rgb(254 243 199)" stroke="rgb(251 191 36)" strokeWidth="0.8" />
+            <text x="45" y="137" textAnchor="middle" className="text-[7px] font-medium" fill="rgb(161 98 7)">Registration</text>
+            <text x="45" y="147" textAnchor="middle" className="text-[6px]" fill="rgb(202 138 4)">Eingang</text>
+
+            {/* Exhibitor area */}
+            <rect x="100" y="105" width="70" height="50" rx="3" fill="rgb(219 234 254)" stroke="rgb(96 165 250)" strokeWidth="0.8" />
+            <text x="135" y="120" textAnchor="middle" className="text-[7px] font-medium" fill="rgb(37 99 235)">Aussteller</text>
+            {[0, 1, 2, 3].map((b) => (
+              <rect key={b} x={108 + (b % 2) * 28} y={126 + Math.floor(b / 2) * 16} width="20" height="10" rx="1.5" fill="rgb(191 219 254)" stroke="rgb(147 197 253)" strokeWidth="0.4" />
+            ))}
+
+            {/* You are here - pulsing blue dot */}
+            <circle cx="135" cy="95" r="8" fill="rgb(59 130 246)" opacity="0.15">
+              <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.2;0.05;0.2" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="135" cy="95" r="4" fill="rgb(59 130 246)" stroke="white" strokeWidth="1.5" />
+
+            {/* "Ihr Standort" label */}
+            <rect x="148" y="88" width="52" height="14" rx="3" fill="rgb(59 130 246)" opacity="0.9" />
+            <text x="174" y="98" textAnchor="middle" className="text-[6px] font-medium" fill="white">Ihr Standort</text>
+          </svg>
+        </div>
       </div>
 
-      {/* SVG Floor Plan */}
-      <div className="relative rounded-lg bg-ensemble-50 border border-ensemble-100 overflow-hidden">
-        <svg viewBox="0 0 400 240" className="w-full h-auto" fill="none">
+      {/* Front layer - OG1 floor plan floating above */}
+      <div
+        className="absolute left-6 right-6 top-12 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60 shadow-2xl p-3 overflow-hidden"
+        style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(40px)', willChange: 'transform' }}
+      >
+        <div className="flex items-center gap-1.5 mb-2">
+          <span className="text-[8px] font-semibold text-white bg-accent-500 rounded px-1.5 py-0.5">OG1</span>
+          <span className="text-[8px] text-ensemble-500">Obergeschoss 1</span>
+        </div>
+        <svg viewBox="0 0 320 130" className="w-full h-auto" fill="none">
           <defs>
-            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgb(226 232 240)" strokeWidth="0.5" />
+            <pattern id="grid-og1" width="16" height="16" patternUnits="userSpaceOnUse">
+              <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgb(226 232 240)" strokeWidth="0.4" />
             </pattern>
           </defs>
-          <rect width="400" height="240" fill="url(#grid)" />
-
-          {/* Main Hall */}
-          <rect x="20" y="20" width="180" height="120" rx="4" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1.5" />
-          <text x="110" y="75" textAnchor="middle" className="text-[11px] font-semibold" fill="rgb(71 85 105)">Grosser Saal</text>
-          <text x="110" y="90" textAnchor="middle" className="text-[8px]" fill="rgb(148 163 184)">480 Platze</text>
-          <rect x="40" y="30" width="140" height="12" rx="2" fill="rgb(226 232 240)" />
-          <text x="110" y="39" textAnchor="middle" className="text-[7px]" fill="rgb(148 163 184)">Buhne</text>
+          <rect width="320" height="130" fill="url(#grid-og1)" />
 
           {/* Corridor */}
-          <rect x="200" y="40" width="40" height="160" fill="rgb(248 250 252)" stroke="rgb(203 213 225)" strokeWidth="1" strokeDasharray="4 2" />
-          <text x="220" y="125" textAnchor="middle" className="text-[7px]" fill="rgb(203 213 225)" transform="rotate(-90, 220, 125)">Korridor</text>
+          <rect x="130" y="10" width="30" height="110" fill="rgb(248 250 252)" stroke="rgb(203 213 225)" strokeWidth="0.8" strokeDasharray="3 2" />
 
-          {/* Saal A */}
-          <rect x="250" y="20" width="130" height="70" rx="4" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1.5" />
-          <text x="315" y="52" textAnchor="middle" className="text-[10px] font-semibold" fill="rgb(71 85 105)">Saal A</text>
-          <text x="315" y="65" textAnchor="middle" className="text-[8px]" fill="rgb(148 163 184)">120 Platze</text>
+          {/* Saal A - highlighted as destination */}
+          <rect x="170" y="10" width="135" height="55" rx="3" fill="rgb(239 246 255)" stroke="rgb(59 130 246)" strokeWidth="1.5" />
+          <text x="237" y="35" textAnchor="middle" className="text-[10px] font-semibold" fill="rgb(37 99 235)">Saal A</text>
+          <text x="237" y="48" textAnchor="middle" className="text-[7px]" fill="rgb(96 165 250)">120 Platze</text>
 
           {/* Saal B */}
-          <rect x="250" y="100" width="130" height="60" rx="4" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1.5" />
-          <text x="315" y="128" textAnchor="middle" className="text-[10px] font-semibold" fill="rgb(71 85 105)">Saal B</text>
-          <text x="315" y="141" textAnchor="middle" className="text-[8px]" fill="rgb(148 163 184)">80 Platze</text>
+          <rect x="170" y="75" width="135" height="45" rx="3" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1" />
+          <text x="237" y="97" textAnchor="middle" className="text-[9px] font-semibold" fill="rgb(71 85 105)">Saal B</text>
+          <text x="237" y="108" textAnchor="middle" className="text-[7px]" fill="rgb(148 163 184)">80 Platze</text>
 
-          {/* Registration desk */}
-          <rect x="20" y="180" width="80" height="40" rx="4" fill="rgb(254 243 199)" stroke="rgb(251 191 36)" strokeWidth="1" />
-          <text x="60" y="198" textAnchor="middle" className="text-[8px] font-medium" fill="rgb(161 98 7)">Registration</text>
-          <text x="60" y="210" textAnchor="middle" className="text-[7px]" fill="rgb(202 138 4)">Eingang</text>
-
-          {/* Exhibitor area */}
-          <rect x="120" y="155" width="80" height="65" rx="4" fill="rgb(219 234 254)" stroke="rgb(96 165 250)" strokeWidth="1" />
-          <text x="160" y="172" textAnchor="middle" className="text-[8px] font-medium" fill="rgb(37 99 235)">Aussteller</text>
-          {[0, 1, 2, 3, 4, 5].map((b) => (
-            <rect
-              key={b}
-              x={130 + (b % 3) * 22}
-              y={178 + Math.floor(b / 3) * 18}
-              width="16"
-              height="12"
-              rx="2"
-              fill="rgb(191 219 254)"
-              stroke="rgb(147 197 253)"
-              strokeWidth="0.5"
-            />
-          ))}
-
-          {/* You are here - pulsing blue dot */}
-          <circle cx="160" cy="140" r="10" fill="rgb(59 130 246)" opacity="0.15">
-            <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.2;0.05;0.2" dur="2s" repeatCount="indefinite" />
-          </circle>
-          <circle cx="160" cy="140" r="5" fill="rgb(59 130 246)" stroke="white" strokeWidth="2" />
-
-          {/* Route line from dot to Saal A */}
+          {/* Dashed route going UP from corridor to Saal A */}
           <path
-            d="M165 140 L220 140 L220 55 L250 55"
+            d="M145 120 L145 38 L170 38"
             stroke="rgb(59 130 246)"
             strokeWidth="2"
-            strokeDasharray="6 4"
-            opacity="0.6"
+            strokeDasharray="5 3"
+            opacity="0.7"
           >
-            <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.5s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;-16" dur="1.5s" repeatCount="indefinite" />
           </path>
 
-          {/* Route destination marker */}
-          <circle cx="250" cy="55" r="4" fill="rgb(59 130 246)" opacity="0.3" />
-          <circle cx="250" cy="55" r="2" fill="rgb(59 130 246)" />
-        </svg>
-      </div>
+          {/* Destination marker on Saal A */}
+          <circle cx="170" cy="38" r="4" fill="rgb(59 130 246)" opacity="0.3" />
+          <circle cx="170" cy="38" r="2" fill="rgb(59 130 246)" />
 
-      {/* Navigation info */}
-      <div className="mt-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="h-2 w-2 rounded-full bg-blue-500" />
-          <span className="text-[9px] text-ensemble-600 font-medium">Ihr Standort</span>
-        </div>
-        <div className="flex items-center gap-1.5 text-[9px] text-ensemble-500">
-          <svg className="h-3 w-3 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <span>Saal A &middot; 2 Min Fussweg</span>
-        </div>
+          {/* "Ziel" label */}
+          <rect x="60" y="105" width="72" height="16" rx="4" fill="rgb(59 130 246)" opacity="0.9" />
+          <text x="96" y="116" textAnchor="middle" className="text-[7px] font-medium" fill="white">Ziel: Saal A, OG1</text>
+        </svg>
       </div>
     </div>
   );
@@ -234,76 +244,91 @@ function IndoorMapMockup() {
 
 function AiChatMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
-      {/* Chat header */}
-      <div className="flex items-center gap-2 mb-4 pb-3 border-b border-ensemble-100">
-        <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
-          <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-white" fill="currentColor">
-            <circle cx="8" cy="8" r="2.5" />
-            <circle cx="8" cy="2.5" r="1.2" />
-            <circle cx="8" cy="13.5" r="1.2" />
-            <circle cx="2.5" cy="8" r="1.2" />
-            <circle cx="13.5" cy="8" r="1.2" />
-          </svg>
-        </div>
-        <div>
-          <span className="text-[10px] font-semibold text-ensemble-900">Ensemble KI-Assistent</span>
-          <div className="flex items-center gap-1">
-            <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-            <span className="text-[8px] text-ensemble-400">Bereit</span>
+    <div
+      className="relative h-[360px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
+      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
+    >
+      {/* Back layer - faded knowledge base text lines */}
+      <div
+        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/40 shadow-lg p-4"
+        style={{ transform: 'rotateY(-6deg) rotateX(3deg) translateZ(0px)', willChange: 'transform' }}
+      >
+        <div className="opacity-50">
+          <div className="text-[7px] font-medium text-ensemble-400 uppercase tracking-wider mb-3">Wissensbasis</div>
+          <div className="space-y-2.5">
+            {[95, 70, 85, 60, 90, 75, 50, 80, 65].map((w, i) => (
+              <div key={i} className="h-1.5 rounded bg-ensemble-200" style={{ width: `${w}%` }} />
+            ))}
           </div>
         </div>
       </div>
 
-      {/* User question */}
-      <div className="flex gap-2 items-start mb-4">
-        <div className="h-6 w-6 rounded-full bg-ensemble-200 shrink-0 flex items-center justify-center">
-          <span className="text-[8px] font-medium text-ensemble-600">TM</span>
-        </div>
-        <div className="rounded-xl rounded-tl-sm bg-ensemble-100 px-3.5 py-2 text-[10px] text-ensemble-800 leading-relaxed">
-          Welche neuen Ergebnisse zur katheterbasierten Mitralklappentherapie wurden heute prasentiert?
+      {/* Middle layer - source citation cards */}
+      <div
+        className="absolute left-6 right-6 top-8 rounded-2xl bg-white/75 backdrop-blur-md border border-white/50 shadow-xl p-4"
+        style={{ transform: 'rotateY(-6deg) rotateX(3deg) translateZ(24px)', willChange: 'transform' }}
+      >
+        <div className="opacity-75">
+          <span className="text-[8px] text-ensemble-400 font-medium uppercase tracking-wider">Quellen</span>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {[
+              { label: 'Abstract #12', color: 'bg-accent-500/10 text-accent-600 border-accent-500/20' },
+              { label: 'Session A1', color: 'bg-ensemble-100 text-ensemble-600 border-ensemble-200' },
+              { label: 'Poster #47', color: 'bg-blue-50 text-blue-600 border-blue-200' },
+            ].map((s, i) => (
+              <span key={i} className={`text-[9px] font-medium rounded-lg px-3 py-1.5 border ${s.color}`}>
+                {s.label}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* AI response */}
-      <div className="flex gap-2 items-start mb-3">
-        <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 shrink-0 flex items-center justify-center">
-          <svg viewBox="0 0 16 16" className="h-3 w-3 text-white" fill="currentColor">
-            <circle cx="8" cy="8" r="2" />
-          </svg>
+      {/* Front layer - AI chat bubble with answer */}
+      <div
+        className="absolute left-5 right-5 top-16 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60 shadow-2xl p-5"
+        style={{ transform: 'rotateY(-6deg) rotateX(3deg) translateZ(48px)', willChange: 'transform' }}
+      >
+        {/* Chat header */}
+        <div className="flex items-center gap-2 mb-3 pb-2 border-b border-ensemble-100/50">
+          <div className="h-5 w-5 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
+            <svg viewBox="0 0 16 16" className="h-3 w-3 text-white" fill="currentColor">
+              <circle cx="8" cy="8" r="2.5" />
+              <circle cx="8" cy="2.5" r="1.2" />
+              <circle cx="8" cy="13.5" r="1.2" />
+              <circle cx="2.5" cy="8" r="1.2" />
+              <circle cx="13.5" cy="8" r="1.2" />
+            </svg>
+          </div>
+          <span className="text-[10px] font-semibold text-ensemble-900">Ensemble KI-Assistent</span>
+          <div className="flex items-center gap-1 ml-auto">
+            <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+            <span className="text-[8px] text-ensemble-400">Bereit</span>
+          </div>
         </div>
-        <div className="rounded-xl rounded-tl-sm bg-accent-500/5 border border-accent-500/10 px-3.5 py-2.5 text-[10px] text-ensemble-800 leading-relaxed flex-1">
+
+        {/* User question (compact) */}
+        <div className="rounded-lg bg-ensemble-100/60 px-3 py-1.5 text-[9px] text-ensemble-700 mb-3">
+          Welche neuen Ergebnisse zur katheterbasierten Mitralklappentherapie wurden heute prasentiert?
+        </div>
+
+        {/* AI response */}
+        <div className="text-[10px] text-ensemble-800 leading-relaxed">
           <p className="font-medium mb-1.5">Heute wurden 3 relevante Prasentationen vorgestellt:</p>
-          <ul className="space-y-1.5 ml-0.5">
+          <ul className="space-y-1 ml-0.5">
             <li className="flex gap-2">
               <span className="text-accent-500 font-bold shrink-0">&bull;</span>
-              <span><strong>CLASP IID-Studie</strong> (09:30, Grosser Saal): Signifikante Reduktion der Mitralregurgitation um 72% nach 2 Jahren</span>
+              <span><strong>CLASP IID-Studie</strong> (09:30): Reduktion der Mitralregurgitation um 72%</span>
             </li>
             <li className="flex gap-2">
               <span className="text-accent-500 font-bold shrink-0">&bull;</span>
-              <span><strong>EXPAND-Registerstudie</strong> (11:00, Saal A): Langzeitdaten zu TEER bei 1.800 Patienten</span>
+              <span><strong>EXPAND-Registerstudie</strong> (11:00): Langzeitdaten zu TEER bei 1.800 Patienten</span>
             </li>
             <li className="flex gap-2">
               <span className="text-accent-500 font-bold shrink-0">&bull;</span>
               <span><strong>Poster #47</strong>: Neuer Device-Prototyp fur sekundare MR</span>
             </li>
           </ul>
-
-          {/* Source badges */}
-          <div className="mt-3 pt-2 border-t border-accent-500/10">
-            <span className="text-[8px] text-ensemble-400 font-medium uppercase tracking-wider">Quellen:</span>
-            <div className="flex flex-wrap gap-1 mt-1">
-              {[
-                { label: 'Abstract #12', color: 'bg-accent-500/10 text-accent-600' },
-                { label: 'Session A1', color: 'bg-ensemble-100 text-ensemble-600' },
-                { label: 'Poster #47', color: 'bg-blue-50 text-blue-600' },
-              ].map((s, i) => (
-                <span key={i} className={`text-[8px] font-medium rounded-md px-2 py-0.5 ${s.color}`}>
-                  {s.label}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -314,62 +339,73 @@ function AiChatMockup() {
 
 function RegistrationMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
-      {/* Header */}
-      <div className="flex items-center gap-2 mb-4 pb-3 border-b border-ensemble-100">
-        <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
-          <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <rect x="3" y="2" width="10" height="12" rx="1.5" />
-            <path d="M6 5h4M6 7.5h4M6 10h2" strokeLinecap="round" />
-          </svg>
+    <div
+      className="relative h-[340px] bg-gradient-to-br from-emerald-50/30 to-ensemble-50/30 rounded-2xl"
+      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
+    >
+      {/* Back layer - ticket selection form */}
+      <div
+        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/40 shadow-lg p-4"
+        style={{ transform: 'rotateY(6deg) rotateX(3deg) translateZ(0px)', willChange: 'transform' }}
+      >
+        {/* Header */}
+        <div className="flex items-center gap-2 mb-3 pb-2 border-b border-ensemble-100/50">
+          <div className="h-5 w-5 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
+            <svg viewBox="0 0 16 16" className="h-3 w-3 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="3" y="2" width="10" height="12" rx="1.5" />
+              <path d="M6 5h4M6 7.5h4M6 10h2" strokeLinecap="round" />
+            </svg>
+          </div>
+          <div>
+            <span className="text-[10px] font-semibold text-ensemble-900">Fachkongress-Anmeldung</span>
+            <span className="text-[7px] text-ensemble-400 block">Swiss Cardiology Congress 2026</span>
+          </div>
         </div>
-        <div>
-          <span className="text-[10px] font-semibold text-ensemble-900">Fachkongress-Anmeldung</span>
-          <span className="text-[8px] text-ensemble-400 block">Swiss Cardiology Congress 2026</span>
-        </div>
-      </div>
 
-      {/* Ticket selection */}
-      <div className="space-y-2 mb-4">
-        <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Ticket wahlen</span>
-        {[
-          { label: 'Standard', price: 'CHF 450', selected: false },
-          { label: 'VIP', price: 'CHF 890', selected: true },
-          { label: 'Virtuell', price: 'CHF 190', selected: false },
-        ].map((ticket, i) => (
-          <div
-            key={i}
-            className={`flex items-center justify-between rounded-lg px-3 py-2 border transition-colors ${
-              ticket.selected
-                ? 'border-accent-500 bg-accent-500/5'
-                : 'border-ensemble-200 hover:border-ensemble-300'
-            }`}
-          >
-            <div className="flex items-center gap-2">
-              <div className={`h-3.5 w-3.5 rounded-full border-2 flex items-center justify-center ${
-                ticket.selected ? 'border-accent-500' : 'border-ensemble-300'
-              }`}>
-                {ticket.selected && <div className="h-1.5 w-1.5 rounded-full bg-accent-500" />}
+        {/* Ticket selection */}
+        <div className="space-y-1.5">
+          <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Ticket wahlen</span>
+          {[
+            { label: 'Standard', price: 'CHF 450', selected: false },
+            { label: 'VIP', price: 'CHF 890', selected: true },
+            { label: 'Virtuell', price: 'CHF 190', selected: false },
+          ].map((ticket, i) => (
+            <div
+              key={i}
+              className={`flex items-center justify-between rounded-lg px-3 py-1.5 border transition-colors ${
+                ticket.selected
+                  ? 'border-accent-500 bg-accent-500/5'
+                  : 'border-ensemble-200'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <div className={`h-3 w-3 rounded-full border-2 flex items-center justify-center ${
+                  ticket.selected ? 'border-accent-500' : 'border-ensemble-300'
+                }`}>
+                  {ticket.selected && <div className="h-1.5 w-1.5 rounded-full bg-accent-500" />}
+                </div>
+                <span className={`text-[9px] font-medium ${ticket.selected ? 'text-accent-600' : 'text-ensemble-700'}`}>
+                  {ticket.label}
+                </span>
               </div>
-              <span className={`text-[10px] font-medium ${ticket.selected ? 'text-accent-600' : 'text-ensemble-700'}`}>
-                {ticket.label}
+              <span className={`text-[9px] font-semibold ${ticket.selected ? 'text-accent-600' : 'text-ensemble-500'}`}>
+                {ticket.price}
               </span>
             </div>
-            <span className={`text-[10px] font-semibold ${ticket.selected ? 'text-accent-600' : 'text-ensemble-500'}`}>
-              {ticket.price}
-            </span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Badge preview */}
-      <div className="rounded-lg bg-ensemble-50 border border-ensemble-100 p-3">
-        <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Badge-Vorschau</span>
-        <div className="mt-2 flex items-center gap-3">
-          {/* QR code mockup */}
-          <div className="h-14 w-14 rounded-md bg-white border border-ensemble-200 p-1 shrink-0">
+      {/* Front layer - generated badge / name tag */}
+      <div
+        className="absolute left-6 right-6 top-20 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60 shadow-2xl p-5"
+        style={{ transform: 'rotateY(6deg) rotateX(3deg) translateZ(36px)', willChange: 'transform' }}
+      >
+        <div className="text-[8px] font-medium text-ensemble-400 uppercase tracking-wider mb-3">Ihr Badge</div>
+        <div className="flex items-start gap-4">
+          {/* QR code */}
+          <div className="h-16 w-16 rounded-lg bg-white border border-ensemble-200 p-1.5 shrink-0 shadow-sm">
             <svg viewBox="0 0 40 40" className="w-full h-full">
-              {/* Simplified QR pattern */}
               <rect x="2" y="2" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
               <rect x="28" y="2" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
               <rect x="2" y="28" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
@@ -379,27 +415,19 @@ function RegistrationMockup() {
               <rect x="6" y="6" width="2" height="2" fill="rgb(30 41 59)" />
               <rect x="32" y="6" width="2" height="2" fill="rgb(30 41 59)" />
               <rect x="6" y="32" width="2" height="2" fill="rgb(30 41 59)" />
-              {/* Data cells */}
-              {[14,16,18,20,22,24].map((x) => (
-                [14,16,18,20,22,24].map((y) => (
-                  <rect
-                    key={`${x}-${y}`}
-                    x={x}
-                    y={y}
-                    width="1.5"
-                    height="1.5"
-                    fill={Math.random() > 0.4 ? 'rgb(30 41 59)' : 'transparent'}
-                  />
+              {[14,17,20,23,26].map((x) => (
+                [14,17,20,23,26].map((y) => (
+                  <rect key={`${x}-${y}`} x={x} y={y} width="2" height="2" fill={(x + y) % 5 < 3 ? 'rgb(30 41 59)' : 'transparent'} />
                 ))
               ))}
             </svg>
           </div>
           <div className="flex-1">
-            <p className="text-[11px] font-semibold text-ensemble-900">Dr. Lisa Schneider</p>
-            <p className="text-[9px] text-ensemble-500">Kantonsspital Zurich</p>
-            <div className="mt-1.5 flex items-center gap-1.5">
-              <span className="text-[8px] font-medium text-white bg-accent-500 rounded px-1.5 py-0.5">VIP</span>
-              <span className="text-[8px] text-ensemble-400">Ticket #2847</span>
+            <p className="text-[13px] font-bold text-ensemble-900">Dr. Lisa Schneider</p>
+            <p className="text-[10px] text-ensemble-500 mt-0.5">Kantonsspital Zurich</p>
+            <div className="mt-2 flex items-center gap-2">
+              <span className="text-[9px] font-semibold text-white bg-accent-500 rounded-md px-2 py-0.5 shadow-sm">VIP</span>
+              <span className="text-[8px] text-ensemble-400 font-mono">Ticket #2847</span>
             </div>
           </div>
         </div>
@@ -412,70 +440,89 @@ function RegistrationMockup() {
 
 function EngagementMockup() {
   return (
-    <div className="rounded-xl border border-ensemble-200 bg-white p-5 shadow-xl">
-      {/* Leaderboard header */}
-      <div className="flex items-center gap-2 mb-4 pb-3 border-b border-ensemble-100">
-        <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
-          <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-white" fill="currentColor">
-            <path d="M8 1l2 4.1 4.5.65-3.25 3.17.77 4.48L8 11.27 3.98 13.4l.77-4.48L1.5 5.75 6 5.1z" />
-          </svg>
-        </div>
-        <div>
-          <span className="text-[10px] font-semibold text-ensemble-900">Bestenliste</span>
-          <span className="text-[8px] text-ensemble-400 block">Heute</span>
-        </div>
-      </div>
-
-      {/* Leaderboard entries */}
-      <div className="space-y-2 mb-4">
-        {[
-          { rank: 1, name: 'Dr. M. Weber', pts: 3120, medal: 'text-yellow-500', bg: 'bg-yellow-50' },
-          { rank: 2, name: 'Prof. A. Fischer', pts: 2840, medal: 'text-ensemble-400', bg: 'bg-ensemble-50' },
-          { rank: 3, name: 'Dr. T. Muller', pts: 2650, medal: 'text-orange-400', bg: 'bg-orange-50' },
-        ].map((entry) => (
-          <div key={entry.rank} className={`flex items-center gap-2.5 rounded-lg px-3 py-2 ${entry.bg}`}>
-            <span className={`text-[11px] font-bold ${entry.medal} w-4 text-center`}>{entry.rank}</span>
-            <div className="h-6 w-6 rounded-full bg-ensemble-200 shrink-0 flex items-center justify-center">
-              <span className="text-[7px] font-medium text-ensemble-600">{entry.name.split(' ').pop()?.[0]}</span>
+    <div
+      className="relative h-[360px] bg-gradient-to-br from-yellow-50/30 to-ensemble-50/30 rounded-2xl"
+      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
+    >
+      {/* Back layer - NFC contact exchange hint */}
+      <div
+        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/55 backdrop-blur-sm border border-white/40 shadow-lg p-4"
+        style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
+      >
+        <div className="opacity-55">
+          <div className="flex flex-col items-center justify-center h-full gap-3">
+            <svg className="h-10 w-10 text-ensemble-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0" />
+            </svg>
+            <div className="text-center">
+              <p className="text-[10px] font-medium text-ensemble-400">NFC-Kontakttausch</p>
+              <p className="text-[8px] text-ensemble-300 mt-1">Badge anhalten</p>
             </div>
-            <span className="text-[10px] font-medium text-ensemble-800 flex-1">{entry.name}</span>
-            <span className="text-[9px] font-mono font-semibold text-ensemble-500">{entry.pts} Pkt</span>
           </div>
-        ))}
-      </div>
-
-      {/* Referral link */}
-      <div className="rounded-lg bg-accent-500/5 border border-accent-500/15 p-3 mb-4">
-        <div className="flex items-center gap-2 mb-2">
-          <svg className="h-3.5 w-3.5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-          </svg>
-          <span className="text-[9px] font-semibold text-accent-600">Empfehlungslink</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="flex-1 rounded-md bg-white border border-ensemble-200 px-2.5 py-1.5">
-            <span className="text-[8px] font-mono text-ensemble-500 truncate block">ensemble.events/ref/dr-schneider</span>
-          </div>
-          <button className="text-[8px] font-medium text-white bg-accent-500 rounded-md px-2.5 py-1.5 hover:bg-accent-600 transition-colors">
-            Kopieren
-          </button>
-        </div>
-        <div className="flex items-center gap-4 mt-2">
-          <span className="text-[8px] text-ensemble-500">12 Klicks</span>
-          <span className="text-[8px] text-ensemble-500">3 Anmeldungen</span>
-          <span className="text-[8px] text-accent-600 font-medium">+150 Pkt</span>
         </div>
       </div>
 
-      {/* NFC contact card preview */}
-      <div className="rounded-lg bg-ensemble-50 border border-ensemble-100 p-3">
-        <div className="flex items-center gap-2 mb-2">
-          <svg className="h-3.5 w-3.5 text-ensemble-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0" />
-          </svg>
-          <span className="text-[9px] font-medium text-ensemble-600">NFC-Kontakttausch</span>
+      {/* Middle layer - referral link card */}
+      <div
+        className="absolute left-6 right-6 top-8 rounded-2xl bg-white/80 backdrop-blur-md border border-white/50 shadow-xl p-4"
+        style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(20px)', willChange: 'transform' }}
+      >
+        <div className="opacity-80">
+          <div className="flex items-center gap-2 mb-2">
+            <svg className="h-3.5 w-3.5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
+            <span className="text-[9px] font-semibold text-accent-600">Empfehlungslink</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="flex-1 rounded-md bg-white/80 border border-ensemble-200 px-2.5 py-1.5">
+              <span className="text-[8px] font-mono text-ensemble-500 truncate block">ensemble.events/ref/dr-schneider</span>
+            </div>
+            <button className="text-[8px] font-medium text-white bg-accent-500 rounded-md px-2.5 py-1.5">
+              Kopieren
+            </button>
+          </div>
+          <div className="flex items-center gap-4 mt-2">
+            <span className="text-[8px] text-ensemble-500">12 Klicks</span>
+            <span className="text-[8px] text-ensemble-500">3 Anmeldungen</span>
+            <span className="text-[8px] text-accent-600 font-medium">+150 Pkt</span>
+          </div>
         </div>
-        <p className="text-[8px] text-ensemble-400">Badge an Badge halten zum sofortigen Austausch der Kontaktdaten.</p>
+      </div>
+
+      {/* Front layer - leaderboard podium */}
+      <div
+        className="absolute left-5 right-5 top-20 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60 shadow-2xl p-5"
+        style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(44px)', willChange: 'transform' }}
+      >
+        {/* Leaderboard header */}
+        <div className="flex items-center gap-2 mb-3">
+          <div className="h-5 w-5 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+            <svg viewBox="0 0 16 16" className="h-3 w-3 text-white" fill="currentColor">
+              <path d="M8 1l2 4.1 4.5.65-3.25 3.17.77 4.48L8 11.27 3.98 13.4l.77-4.48L1.5 5.75 6 5.1z" />
+            </svg>
+          </div>
+          <span className="text-[10px] font-semibold text-ensemble-900">Bestenliste</span>
+          <span className="text-[8px] text-ensemble-400 ml-auto">Heute</span>
+        </div>
+
+        {/* Leaderboard entries */}
+        <div className="space-y-2">
+          {[
+            { rank: 1, name: 'Dr. M. Weber', pts: 3120, medal: 'text-yellow-500', bg: 'bg-yellow-50/80' },
+            { rank: 2, name: 'Prof. A. Fischer', pts: 2840, medal: 'text-ensemble-400', bg: 'bg-ensemble-50/80' },
+            { rank: 3, name: 'Dr. T. Muller', pts: 2650, medal: 'text-orange-400', bg: 'bg-orange-50/80' },
+          ].map((entry) => (
+            <div key={entry.rank} className={`flex items-center gap-2.5 rounded-lg px-3 py-2 ${entry.bg}`}>
+              <span className={`text-[11px] font-bold ${entry.medal} w-4 text-center`}>{entry.rank}</span>
+              <div className="h-6 w-6 rounded-full bg-ensemble-200 shrink-0 flex items-center justify-center">
+                <span className="text-[7px] font-medium text-ensemble-600">{entry.name.split(' ').pop()?.[0]}</span>
+              </div>
+              <span className="text-[10px] font-medium text-ensemble-800 flex-1">{entry.name}</span>
+              <span className="text-[9px] font-mono font-semibold text-ensemble-500">{entry.pts} Pkt</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
