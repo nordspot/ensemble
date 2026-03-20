@@ -133,11 +133,10 @@ export async function POST(request: NextRequest) {
       const placeholders = chunkIds.map(() => '?').join(',');
       const result = await db
         .prepare(
-          `SELECT kc.id, kc.content, ks.title as source_title,
-                  ks.speaker_name, ks.session_title, c.name as congress_name
+          `SELECT kc.id, kc.chunk_text as content, kc.source_title,
+                  kc.speaker_name, kc.session_title, c.name as congress_name
            FROM knowledge_chunks kc
-           JOIN knowledge_sources ks ON kc.source_id = ks.id
-           JOIN congresses c ON ks.congress_id = c.id
+           JOIN congresses c ON kc.congress_id = c.id
            WHERE kc.id IN (${placeholders})`,
         )
         .bind(...chunkIds)
