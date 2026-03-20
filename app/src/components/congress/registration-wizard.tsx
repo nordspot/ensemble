@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { PaymentForm } from './payment-form';
 
 // ── Zod schemas per step ────────────────────────────────────────────────
 
@@ -90,12 +91,17 @@ export function RegistrationWizard({ slug, locale }: RegistrationWizardProps) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [bookableSessions] = useState<BookableSession[]>([]);
+  const [registrationId, setRegistrationId] = useState<string | null>(null);
+  const [paymentClientSecret, setPaymentClientSecret] = useState<string | null>(null);
+  const [paymentAmount, setPaymentAmount] = useState(0);
+  const [paymentCurrency, setPaymentCurrency] = useState('CHF');
 
   const STEPS = [
     t('steps.personal'),
     t('steps.ticket'),
     t('steps.sessions'),
     t('steps.review'),
+    t('steps.payment'),
   ];
 
   const totalSteps = STEPS.length;
@@ -146,12 +152,14 @@ export function RegistrationWizard({ slug, locale }: RegistrationWizardProps) {
     setStep((s) => Math.max(s - 1, 0));
   }
 
-  // ── Submit ──────────────────────────────────────────────────────────
+  // ── Submit registration and proceed to payment ─────────────────────
 
-  async function handleSubmit() {
+  async function handleSubmitAndPay() {
     setSubmitting(true);
+    setErrors({});
     try {
-      const res = await fetch(`/api/congress/${slug}/register`, {
+      // Step 1: Create the registration
+      const regRes = await fetch(`/api/congress/${slug}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -168,8 +176,8 @@ export function RegistrationWizard({ slug, locale }: RegistrationWizardProps) {
         }),
       });
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => null);
+      if (!regRes.ok) {
+        const data = await regRes.json().catch(() => null);
         const msg =
           data && typeof data === 'object' && 'error' in data
             ? (data as { error: { message: string } }).error.message
@@ -178,12 +186,55 @@ export function RegistrationWizard({ slug, locale }: RegistrationWizardProps) {
         return;
       }
 
-      setSubmitted(true);
+      const regData = (await regRes.json()) as {
+        ok: boolean;
+        data: { registration_id: string; amount_cents: number; currency: string };
+      };
+
+      const newRegistrationId = regData.data.registration_id;
+      setRegistrationId(newRegistrationId);
+
+      // Step 2: Create a Stripe PaymentIntent
+      const payRes = await fetch(`/api/congress/${slug}/payments/create-intent`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ registrationId: newRegistrationId }),
+      });
+
+      if (!payRes.ok) {
+        const data = await payRes.json().catch(() => null);
+        const msg =
+          data && typeof data === 'object' && 'error' in data
+            ? (data as { error: { message: string } }).error.message
+            : tCommon('errors.serverError');
+        setErrors({ submit: msg });
+        return;
+      }
+
+      const payData = (await payRes.json()) as {
+        ok: boolean;
+        data: { clientSecret: string; amount: number; currency: string };
+      };
+
+      setPaymentClientSecret(payData.data.clientSecret);
+      setPaymentAmount(payData.data.amount);
+      setPaymentCurrency(payData.data.currency);
+
+      // Move to payment step
+      setStep(4);
     } catch {
       setErrors({ submit: tCommon('errors.serverError') });
     } finally {
       setSubmitting(false);
     }
+  }
+
+  function handlePaymentSuccess() {
+    setSubmitted(true);
+  }
+
+  function handlePaymentError(error: string) {
+    setErrors({ payment: error });
   }
 
   // ── Success state ───────────────────────────────────────────────────
@@ -594,6 +645,37 @@ export function RegistrationWizard({ slug, locale }: RegistrationWizardProps) {
     );
   }
 
+  // ── Step 5: Payment ────────────────────────────────────────────────
+
+  function StepPayment() {
+    if (!paymentClientSecret) {
+      return (
+        <Card>
+          <CardContent className="py-12 text-center">
+            <p className="text-ensemble-500 dark:text-ensemble-400">
+              {t('preparingPayment')}
+            </p>
+          </CardContent>
+        </Card>
+      );
+    }
+
+    return (
+      <div className="space-y-4">
+        <PaymentForm
+          clientSecret={paymentClientSecret}
+          amount={paymentAmount}
+          currency={paymentCurrency}
+          onSuccess={handlePaymentSuccess}
+          onError={handlePaymentError}
+        />
+        {errors.payment && (
+          <p className="text-sm text-error text-center">{errors.payment}</p>
+        )}
+      </div>
+    );
+  }
+
   // ── Render ──────────────────────────────────────────────────────────
 
   const stepComponents = [
@@ -601,6 +683,7 @@ export function RegistrationWizard({ slug, locale }: RegistrationWizardProps) {
     <StepTicket key="ticket" />,
     <StepSessions key="sessions" />,
     <StepReview key="review" />,
+    <StepPayment key="payment" />,
   ];
 
   return (
@@ -612,21 +695,23 @@ export function RegistrationWizard({ slug, locale }: RegistrationWizardProps) {
       </div>
 
       <div className="mt-6 flex justify-between">
-        <Button
-          variant="outline"
-          onClick={handleBack}
-          disabled={step === 0}
-        >
-          {t('back')}
-        </Button>
-
-        {step < totalSteps - 1 ? (
-          <Button onClick={handleNext}>{t('next')}</Button>
-        ) : (
-          <Button onClick={handleSubmit} disabled={submitting}>
-            {submitting ? t('submitting') : t('toPayment')}
+        {step < 4 && (
+          <Button
+            variant="outline"
+            onClick={handleBack}
+            disabled={step === 0}
+          >
+            {t('back')}
           </Button>
         )}
+
+        {step < 3 ? (
+          <Button onClick={handleNext}>{t('next')}</Button>
+        ) : step === 3 ? (
+          <Button onClick={handleSubmitAndPay} disabled={submitting}>
+            {submitting ? t('submitting') : t('toPayment')}
+          </Button>
+        ) : null}
       </div>
     </div>
   );

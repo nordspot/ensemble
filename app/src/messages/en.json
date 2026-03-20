@@ -148,7 +148,8 @@
       "personal": "Personal Data",
       "ticket": "Ticket Selection",
       "sessions": "Pre-select Sessions",
-      "review": "Review & Payment"
+      "review": "Review & Payment",
+      "payment": "Payment"
     },
     "fields": {
       "firstName": "First Name",
@@ -187,8 +188,20 @@
     "next": "Next",
     "toPayment": "Proceed to Payment",
     "submitting": "Submitting...",
+    "preparingPayment": "Preparing payment...",
     "successTitle": "Registration Successful!",
-    "successMessage": "Thank you for registering. You will receive a confirmation email shortly."
+    "successMessage": "Thank you for your registration and payment. You will receive a confirmation email shortly."
+  },
+  "payment": {
+    "title": "Payment",
+    "total": "Total",
+    "cardDetails": "Card Details",
+    "securePayment": "Secure payment via Stripe. Your card details are encrypted.",
+    "loading": "Loading...",
+    "processing": "Processing payment...",
+    "pay": "Pay now",
+    "success": "Payment successful!",
+    "failed": "Payment failed"
   },
   "admin": {
     "attendees": {

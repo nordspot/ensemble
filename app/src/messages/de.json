@@ -198,7 +198,8 @@
       "personal": "Persönliche Daten",
       "ticket": "Ticket-Auswahl",
       "sessions": "Sessions vormerken",
-      "review": "Zusammenfassung"
+      "review": "Zusammenfassung",
+      "payment": "Zahlung"
     },
     "fields": {
       "firstName": "Vorname",
@@ -237,8 +238,20 @@
     "next": "Weiter",
     "toPayment": "Zur Zahlung",
     "submitting": "Wird gesendet...",
+    "preparingPayment": "Zahlung wird vorbereitet...",
     "successTitle": "Anmeldung erfolgreich!",
-    "successMessage": "Vielen Dank für Ihre Anmeldung. Sie erhalten in Kürze eine Bestätigungs-E-Mail."
+    "successMessage": "Vielen Dank für Ihre Anmeldung und Zahlung. Sie erhalten in Kürze eine Bestätigungs-E-Mail."
+  },
+  "payment": {
+    "title": "Zahlung",
+    "total": "Gesamtbetrag",
+    "cardDetails": "Kartendaten",
+    "securePayment": "Sichere Zahlung via Stripe. Ihre Kartendaten werden verschlüsselt übertragen.",
+    "loading": "Wird geladen...",
+    "processing": "Zahlung wird verarbeitet...",
+    "pay": "Jetzt bezahlen",
+    "success": "Zahlung erfolgreich!",
+    "failed": "Zahlung fehlgeschlagen"
   },
   "admin": {
     "dashboard": {

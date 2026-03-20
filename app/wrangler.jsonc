@@ -51,10 +51,14 @@
   // "services": [],
 
   // Environment variables (secrets set via dashboard)
+  // Stripe secrets (set via `wrangler secret put`):
+  //   STRIPE_SECRET_KEY
+  //   STRIPE_WEBHOOK_SECRET
   "vars": {
     "NEXT_PUBLIC_APP_URL": "https://ensemble.events",
     "NEXT_PUBLIC_APP_NAME": "Ensemble",
     "AUTH_URL": "https://ensemble.events",
-    "NEXTAUTH_URL": "https://ensemble.events"
+    "NEXTAUTH_URL": "https://ensemble.events",
+    "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": ""
   }
 }

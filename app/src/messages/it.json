@@ -148,7 +148,8 @@
       "personal": "Dati personali",
       "ticket": "Scelta del biglietto",
       "sessions": "Pre-selezione sessioni",
-      "review": "Riepilogo e pagamento"
+      "review": "Riepilogo e pagamento",
+      "payment": "Pagamento"
     },
     "fields": {
       "firstName": "Nome",
@@ -187,8 +188,20 @@
     "next": "Avanti",
     "toPayment": "Procedi al pagamento",
     "submitting": "Invio in corso...",
+    "preparingPayment": "Preparazione del pagamento...",
     "successTitle": "Registrazione completata!",
-    "successMessage": "Grazie per la registrazione. Riceverete un'e-mail di conferma a breve."
+    "successMessage": "Grazie per la registrazione e il pagamento. Riceverete un'e-mail di conferma a breve."
+  },
+  "payment": {
+    "title": "Pagamento",
+    "total": "Totale",
+    "cardDetails": "Dati della carta",
+    "securePayment": "Pagamento sicuro tramite Stripe. I dati della carta sono crittografati.",
+    "loading": "Caricamento...",
+    "processing": "Elaborazione del pagamento...",
+    "pay": "Paga ora",
+    "success": "Pagamento riuscito!",
+    "failed": "Pagamento fallito"
   },
   "admin": {
     "attendees": {
