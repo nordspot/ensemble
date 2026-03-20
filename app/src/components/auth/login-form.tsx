@@ -63,22 +63,14 @@ export function LoginForm({ translations: t }: LoginFormProps) {
     setIsLoading(true);
 
     try {
-      const result = await signIn('credentials', {
+      // Use redirect: true because CF Workers doesn't support redirect: false properly
+      await signIn('credentials', {
         email: parsed.data.email,
         password: parsed.data.password,
-        redirect: false,
-        callbackUrl: `/${locale}/dashboard`,
+        redirectTo: `/${locale}/dashboard`,
       });
-
-      if (result?.error) {
-        setIsLoading(false);
-        toast.error(t.loginError);
-      } else if (result?.ok) {
-        window.location.href = `/${locale}/dashboard`;
-      } else {
-        setIsLoading(false);
-        toast.error(t.loginError);
-      }
+      // signIn with redirect will navigate away, so this code won't execute on success.
+      // If we reach here, something went wrong.
     } catch {
       setIsLoading(false);
       toast.error(t.loginError);
