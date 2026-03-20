@@ -30,6 +30,7 @@ function isPublicPath(pathname: string): boolean {
 }
 
 export default async function middleware(request: NextRequest) {
+  // Run intl middleware (handles locale detection + redirect)
   const response = intlMiddleware(request);
 
   // Check auth for protected routes
@@ -39,7 +40,6 @@ export default async function middleware(request: NextRequest) {
       request.cookies.get('__Secure-authjs.session-token');
 
     if (!sessionToken) {
-      // Determine locale from path or default
       const localeMatch = request.nextUrl.pathname.match(/^\/(de|fr|it|en)/);
       const locale = localeMatch ? localeMatch[1] : 'de';
       const loginUrl = new URL(`/${locale}/anmelden`, request.url);
@@ -52,5 +52,11 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/(de|fr|it|en)/:path*'],
+  // Match ALL paths except static files and API routes
+  matcher: [
+    '/',
+    '/(de|fr|it|en)/:path*',
+    // Catch paths WITHOUT locale prefix so intl middleware can redirect them
+    '/((?!_next|api|fonts|images|icons|maps|manifest\\.json|favicon\\.ico).*)',
+  ],
 };
