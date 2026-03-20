@@ -26,9 +26,9 @@ function DashboardPreview() {
     // 09:00 row
     { time: '09:00', track: 0, title: 'Keynote: Zukunft der Kardiologie', speaker: 'Prof. Dr. T. Muller', room: 'Grosser Saal', color: 'bg-accent-500', textColor: 'text-white', span: 3 },
     // 10:30 row
-    { time: '10:30', track: 0, title: 'Neue Therapieansatze', speaker: 'Dr. A. Weber', room: 'Saal A', color: 'bg-ensemble-500', textColor: 'text-white', span: 1 },
+    { time: '10:30', track: 0, title: 'Neue Therapieansätze', speaker: 'Dr. A. Weber', room: 'Saal A', color: 'bg-emerald-500', textColor: 'text-white', span: 1 },
     { time: '10:30', track: 1, title: 'Workshop: KI-Diagnostik', speaker: 'Dr. L. Fischer', room: 'Saal B', color: 'bg-blue-500', textColor: 'text-white', span: 1 },
-    { time: '10:30', track: 2, title: 'Poster Session', speaker: 'Diverse', room: 'Foyer', color: 'bg-ensemble-200', textColor: 'text-ensemble-700', span: 1 },
+    { time: '10:30', track: 2, title: 'Poster Session', speaker: 'Diverse', room: 'Foyer', color: 'bg-violet-100', textColor: 'text-violet-700', span: 1 },
     // 12:00 row
     { time: '12:00', track: 0, title: 'Mittagspause & Networking', speaker: '', room: 'Foyer', color: 'bg-ensemble-100', textColor: 'text-ensemble-500', span: 3 },
     // 14:00 row

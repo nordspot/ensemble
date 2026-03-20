@@ -15,23 +15,28 @@
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-ensemble-50: #EEF0F8;
-  --color-ensemble-100: #D8DCF0;
-  --color-ensemble-200: #B1B9E1;
-  --color-ensemble-300: #8A96D2;
-  --color-ensemble-400: #6373C3;
-  --color-ensemble-500: #4456A8;
-  --color-ensemble-600: #364487;
-  --color-ensemble-700: #283366;
-  --color-ensemble-800: #1A2244;
-  --color-ensemble-900: #0A0F1E;
+  /* True neutral grey scale. No blue/purple tint. Clean and Swiss. */
+  --color-ensemble-50: #FAFAFA;
+  --color-ensemble-100: #F4F4F5;
+  --color-ensemble-200: #E4E4E7;
+  --color-ensemble-300: #D4D4D8;
+  --color-ensemble-400: #A1A1AA;
+  --color-ensemble-500: #71717A;
+  --color-ensemble-600: #52525B;
+  --color-ensemble-700: #3F3F46;
+  --color-ensemble-800: #27272A;
+  --color-ensemble-900: #18181B;
 
-  --color-accent-400: #F0795E;
+  /* Warm coral accent. Energetic but refined. */
+  --color-accent-300: #FDA4A4;
+  --color-accent-400: #F07058;
   --color-accent-500: #E8593C;
-  --color-accent-600: #D04020;
+  --color-accent-600: #CC4425;
+  --color-accent-700: #A33A22;
 
-  --color-success: #059669;
-  --color-warning: #D97706;
+  /* Semantic */
+  --color-success: #16A34A;
+  --color-warning: #CA8A04;
   --color-error: #DC2626;
   --color-info: #2563EB;
 }
@@ -43,7 +48,7 @@
 
   body {
     font-family: var(--font-body);
-    background-color: var(--color-ensemble-50);
+    background-color: #FFFFFF;
     color: var(--color-ensemble-900);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -59,7 +64,7 @@
   }
 
   *:focus-visible {
-    outline: 2px solid var(--color-ensemble-500);
+    outline: 2px solid var(--color-accent-500);
     outline-offset: 2px;
   }
 }
