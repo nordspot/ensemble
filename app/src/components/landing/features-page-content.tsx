@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Link } from '@/i18n/navigation';
 import { EnsembleLogo } from './ensemble-logo';
 import { LandingFooter } from './landing-footer';
+import type { LucideIcon } from 'lucide-react';
 import {
   CalendarDays,
   Ticket,
@@ -20,11 +21,78 @@ import {
   Settings,
   ArrowRight,
   ChevronUp,
+  // Feature-specific icons
+  GripVertical,
+  Columns3,
+  AlertTriangle,
+  Bookmark,
+  CalendarPlus,
+  LayoutList,
+  ClipboardList,
+  Tags,
+  Clock,
+  UsersRound,
+  ListOrdered,
+  CreditCard,
+  FileText,
+  MessageCircleQuestion,
+  BarChart3,
+  Video,
+  Heart,
+  Star,
+  Bluetooth,
+  Map,
+  Route,
+  ScanLine,
+  Accessibility,
+  Nfc,
+  QrCode,
+  Radar,
+  Contact,
+  Send,
+  Download,
+  Zap,
+  Hash,
+  MessageSquare as MessageSquareIcon,
+  Paperclip,
+  Shield,
+  Bell,
+  ScanBarcode,
+  Package,
+  Award,
+  MapPinned,
+  FileDown,
+  Database,
+  Search,
+  FileSearch,
+  Languages,
+  Sparkles,
+  Quote,
+  Coins,
+  Medal,
+  BadgeCheck,
+  Share2,
+  TrendingUp,
+  UserCheck,
+  ClipboardCheck,
+  FileCheck,
+  LayoutDashboard,
+  ImagePlus,
+  Presentation,
+  PlayCircle,
+  Camera,
+  FolderOpen,
+  Wand2,
+  UserCog,
+  PiggyBank,
+  BarChart,
+  ScrollText,
 } from 'lucide-react';
 
 /* ── Types ─────────────────────────────────────────────────────────── */
 
 interface Feature {
+  key: string;
   name: string;
   description: string;
 }
@@ -47,6 +115,106 @@ interface FeaturesPageContentProps {
     domains: Domain[];
   };
 }
+
+/* ── Feature Icons ─────────────────────────────────────────────────── */
+
+const FEATURE_ICONS: Record<string, LucideIcon> = {
+  // Programm & Sessions
+  'programm.dragDrop': GripVertical,
+  'programm.multiTrack': Columns3,
+  'programm.conflicts': AlertTriangle,
+  'programm.personalSchedule': Bookmark,
+  'programm.ical': CalendarPlus,
+  'programm.sessionTypes': LayoutList,
+
+  // Registrierung & Ticketing
+  'registrierung.formBuilder': ClipboardList,
+  'registrierung.ticketTypes': Tags,
+  'registrierung.earlyBird': Clock,
+  'registrierung.groupReg': UsersRound,
+  'registrierung.waitlist': ListOrdered,
+  'registrierung.payment': CreditCard,
+
+  // Live-Event
+  'live.transcription': FileText,
+  'live.qa': MessageCircleQuestion,
+  'live.polls': BarChart3,
+  'live.streaming': Video,
+  'live.reactions': Heart,
+  'live.ratings': Star,
+
+  // Indoor-Navigation
+  'navigation.ble': Bluetooth,
+  'navigation.floorplan': Map,
+  'navigation.pathfinding': Route,
+  'navigation.occupancy': Users,
+  'navigation.checkin': ScanLine,
+  'navigation.accessible': Accessibility,
+
+  // Networking & Kontakte
+  'networking.nfc': Nfc,
+  'networking.qr': QrCode,
+  'networking.nearby': Radar,
+  'networking.directory': Contact,
+  'networking.dm': Send,
+  'networking.vcard': Download,
+
+  // Chat & Kommunikation
+  'chat.realtime': Zap,
+  'chat.channels': Hash,
+  'chat.directMessages': MessageSquareIcon,
+  'chat.files': Paperclip,
+  'chat.moderation': Shield,
+  'chat.push': Bell,
+
+  // Ausstellung & Sponsoren
+  'ausstellung.directory': Store,
+  'ausstellung.leads': ScanBarcode,
+  'ausstellung.catalogs': Package,
+  'ausstellung.sponsorTiers': Award,
+  'ausstellung.floorplan': MapPinned,
+  'ausstellung.leadExport': FileDown,
+
+  // KI & Wissen
+  'ki.rag': Database,
+  'ki.search': Search,
+  'ki.summaries': FileSearch,
+  'ki.translation': Languages,
+  'ki.recommendations': Sparkles,
+  'ki.citations': Quote,
+
+  // Gamification
+  'gamification.points': Coins,
+  'gamification.leaderboard': Medal,
+  'gamification.achievements': BadgeCheck,
+  'gamification.referral': Share2,
+  'gamification.tiers': TrendingUp,
+  'gamification.teams': UsersRound,
+
+  // CME / Fortbildung
+  'cme.creditTypes': GraduationCap,
+  'cme.attendance': UserCheck,
+  'cme.evaluations': ClipboardCheck,
+  'cme.certificates': FileCheck,
+  'cme.qrVerify': QrCode,
+  'cme.dashboard': LayoutDashboard,
+
+  // Medien & Inhalte
+  'medien.gallery': ImagePlus,
+  'medien.poster': Presentation,
+  'medien.articles': FileText,
+  'medien.onDemand': PlayCircle,
+  'medien.podcam': Camera,
+  'medien.library': FolderOpen,
+
+  // Administration
+  'admin.wizard': Wand2,
+  'admin.attendees': UserCog,
+  'admin.badges': CreditCard,
+  'admin.finance': PiggyBank,
+  'admin.analytics': BarChart,
+  'admin.audit': ScrollText,
+};
 
 /* ── Domain config ─────────────────────────────────────────────────── */
 
@@ -210,7 +378,8 @@ function CategoryPills({
 
 function FeatureCard({ feature, domainId }: { feature: Feature; domainId: string; index: number }) {
   const meta = DOMAIN_META[domainId];
-  const Icon = meta?.icon ?? CalendarDays;
+  const featureKey = `${domainId}.${feature.key}`;
+  const Icon = FEATURE_ICONS[featureKey] ?? meta?.icon ?? CalendarDays;
 
   return (
     <div className="group relative rounded-xl border border-ensemble-100 bg-white p-5 shadow-sm transition-all duration-200 hover:border-ensemble-200 hover:shadow-md">
@@ -266,7 +435,7 @@ function DomainSection({ domain, index }: { domain: Domain; index: number }) {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {domain.features.map((feature, fi) => (
           <FeatureCard
-            key={fi}
+            key={feature.key}
             feature={feature}
             domainId={domain.id}
             index={fi}
