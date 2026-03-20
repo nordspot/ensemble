@@ -47,7 +47,7 @@ function DashboardPreview() {
       transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
     >
       <div
-        className="relative rounded-xl border border-ensemble-200 bg-white shadow-xl overflow-hidden"
+        className="relative rounded-xl border border-ensemble-200 bg-white shadow-xl"
         style={{
           perspective: '800px',
           transformStyle: 'preserve-3d',
@@ -164,36 +164,49 @@ function DashboardPreview() {
           </div>
         </div>
 
-        {/* Floating workshop session block - hovers above schedule in 3D */}
+        {/* Floating workshop block - pops out above schedule */}
         <motion.div
-          className="absolute z-10"
+          className="absolute z-20"
           style={{
-            top: '47%',
-            left: '28%',
-            width: '28%',
-            transform: 'translateZ(30px)',
+            top: '38%',
+            left: '22%',
+            width: '38%',
+            transform: 'translateZ(60px)',
           }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 2.0, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 10, scale: 0.9 }}
+          animate={{
+            opacity: 1,
+            y: [0, -4, 0],
+            scale: 1,
+          }}
+          transition={{
+            opacity: { duration: 0.5, delay: 1.8 },
+            scale: { duration: 0.5, delay: 1.8 },
+            y: { duration: 3, delay: 2.3, repeat: Infinity, ease: 'easeInOut' },
+          }}
         >
-          <div className="relative rounded-lg bg-blue-500/90 backdrop-blur-lg shadow-2xl p-2 sm:p-2.5">
-            {/* Green "Jetzt" badge */}
-            <div className="absolute -top-1.5 -right-1.5 flex items-center gap-1 bg-emerald-500 text-white text-[6px] sm:text-[7px] font-bold uppercase tracking-wider rounded-full px-1.5 py-0.5 shadow-md">
-              <span className="relative flex h-1.5 w-1.5">
+          {/* Glow behind */}
+          <div className="absolute -inset-3 rounded-2xl bg-blue-500/20 blur-xl" />
+          <div className="relative rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-[0_8px_32px_rgba(59,130,246,0.5)] p-3 sm:p-4">
+            {/* Jetzt badge */}
+            <div className="absolute -top-2.5 -right-2.5 flex items-center gap-1 bg-emerald-500 text-white text-[7px] sm:text-[8px] font-bold uppercase tracking-wider rounded-full px-2.5 py-1 shadow-lg">
+              <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
               </span>
               Jetzt
             </div>
-            <div className="text-[8px] sm:text-[9px] font-semibold text-white leading-tight">
+            <div className="text-[10px] sm:text-[12px] font-bold text-white leading-tight">
               Workshop: KI-Diagnostik
             </div>
-            <div className="text-[6px] sm:text-[7px] text-white/80 mt-0.5">
-              Dr. L. Fischer
+            <div className="text-[8px] sm:text-[9px] text-white/80 mt-1">
+              Dr. L. Fischer · Saal B
             </div>
-            <div className="text-[6px] text-white/60 mt-0.5">
-              Saal B
+            <div className="mt-2 flex items-center gap-2">
+              <div className="flex-1 h-1.5 rounded-full bg-white/20 overflow-hidden">
+                <div className="h-full w-[35%] rounded-full bg-white/80" />
+              </div>
+              <span className="text-[7px] sm:text-[8px] text-white/70 font-mono">35 min</span>
             </div>
           </div>
         </motion.div>

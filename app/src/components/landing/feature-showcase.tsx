@@ -86,7 +86,7 @@ function LiveDashboardMockup() {
 
       {/* Front layer - LIVE session card (hero) */}
       <div
-        className="absolute left-5 right-5 top-14 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-2xl p-5"
+        className="absolute left-5 right-5 top-14 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/50 shadow-2xl p-5"
         style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(48px)', willChange: 'transform' }}
       >
         {/* Session header */}
@@ -188,7 +188,7 @@ function IndoorMapMockup() {
 
       {/* Front layer - OG1 floor plan floating above */}
       <div
-        className="absolute left-6 right-6 top-12 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-2xl p-3 overflow-hidden"
+        className="absolute left-6 right-6 top-12 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/40 shadow-2xl p-3 overflow-hidden"
         style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(40px)', willChange: 'transform' }}
       >
         <div className="flex items-center gap-1.5 mb-2">
@@ -286,7 +286,7 @@ function AiChatMockup() {
 
       {/* Front layer - AI chat bubble with answer */}
       <div
-        className="absolute left-5 right-5 top-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-2xl p-5"
+        className="absolute left-5 right-5 top-16 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/50 shadow-2xl p-5"
         style={{ transform: 'rotateY(6deg) rotateX(3deg) translateZ(48px)', willChange: 'transform' }}
       >
         {/* Chat header */}
@@ -398,7 +398,7 @@ function RegistrationMockup() {
 
       {/* Front layer - generated badge / name tag */}
       <div
-        className="absolute left-6 right-6 top-20 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-2xl p-5"
+        className="absolute left-6 right-6 top-20 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/50 shadow-2xl p-5"
         style={{ transform: 'rotateY(-6deg) rotateX(3deg) translateZ(36px)', willChange: 'transform' }}
       >
         <div className="text-[8px] font-medium text-ensemble-400 uppercase tracking-wider mb-3">Ihr Badge</div>
@@ -503,7 +503,7 @@ function EngagementMockup() {
 
       {/* Front layer - leaderboard podium */}
       <div
-        className="absolute left-5 right-5 top-20 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-2xl p-5"
+        className="absolute left-5 right-5 top-20 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/50 shadow-2xl p-5"
         style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(44px)', willChange: 'transform' }}
       >
         {/* Leaderboard header */}
