@@ -138,10 +138,10 @@ function IndoorMapMockup() {
     >
       {/* Back layer - EG ground floor plan (slightly faded) */}
       <div
-        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/40 shadow-lg p-3 overflow-hidden"
+        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/40 backdrop-blur-sm border border-white/30 shadow-lg p-3 overflow-hidden"
         style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
       >
-        <div className="opacity-70">
+        <div className="opacity-40">
           <div className="flex items-center gap-1.5 mb-2">
             <span className="text-[8px] font-semibold text-ensemble-500 bg-ensemble-100 rounded px-1.5 py-0.5">EG</span>
             <span className="text-[8px] text-ensemble-400">Erdgeschoss</span>
@@ -403,23 +403,34 @@ function RegistrationMockup() {
       >
         <div className="text-[8px] font-medium text-ensemble-400 uppercase tracking-wider mb-3">Ihr Badge</div>
         <div className="flex items-start gap-4">
-          {/* QR code */}
-          <div className="h-16 w-16 rounded-lg bg-white border border-ensemble-200 p-1.5 shrink-0 shadow-sm">
-            <svg viewBox="0 0 40 40" className="w-full h-full">
-              <rect x="2" y="2" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
-              <rect x="28" y="2" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
-              <rect x="2" y="28" width="10" height="10" fill="rgb(30 41 59)" rx="1" />
-              <rect x="4" y="4" width="6" height="6" fill="white" rx="0.5" />
-              <rect x="30" y="4" width="6" height="6" fill="white" rx="0.5" />
-              <rect x="4" y="30" width="6" height="6" fill="white" rx="0.5" />
-              <rect x="6" y="6" width="2" height="2" fill="rgb(30 41 59)" />
-              <rect x="32" y="6" width="2" height="2" fill="rgb(30 41 59)" />
-              <rect x="6" y="32" width="2" height="2" fill="rgb(30 41 59)" />
-              {[14,17,20,23,26].map((x) => (
-                [14,17,20,23,26].map((y) => (
-                  <rect key={`${x}-${y}`} x={x} y={y} width="2" height="2" fill={(x + y) % 5 < 3 ? 'rgb(30 41 59)' : 'transparent'} />
-                ))
-              ))}
+          {/* QR code - dense realistic pattern */}
+          <div className="h-16 w-16 rounded-lg bg-white border border-ensemble-200 p-1 shrink-0 shadow-sm">
+            <svg viewBox="0 0 33 33" className="w-full h-full">
+              {/* 3 position markers */}
+              <rect x="0" y="0" width="9" height="9" fill="#1e293b"/><rect x="1" y="1" width="7" height="7" fill="white"/><rect x="2" y="2" width="5" height="5" fill="#1e293b"/>
+              <rect x="24" y="0" width="9" height="9" fill="#1e293b"/><rect x="25" y="1" width="7" height="7" fill="white"/><rect x="26" y="2" width="5" height="5" fill="#1e293b"/>
+              <rect x="0" y="24" width="9" height="9" fill="#1e293b"/><rect x="1" y="25" width="7" height="7" fill="white"/><rect x="2" y="26" width="5" height="5" fill="#1e293b"/>
+              {/* Timing patterns */}
+              {[10,12,14,16,18,20,22].map(i=><rect key={`th${i}`} x={i} y={6} width="1" height="1" fill={i%2===0?"#1e293b":"white"}/>)}
+              {[10,12,14,16,18,20,22].map(i=><rect key={`tv${i}`} x={6} y={i} width="1" height="1" fill={i%2===0?"#1e293b":"white"}/>)}
+              {/* Dense data modules */}
+              {(() => {
+                const d = '0110100110011010110010110011010011011001010110100110010110101100110100110110010101101001100101101011001101001011010011010110010110011010011011001010110100110010110';
+                const els: React.ReactElement[] = [];
+                let idx = 0;
+                for (let y = 10; y <= 31; y++) {
+                  for (let x = 10; x <= 31; x++) {
+                    if (x >= 24 && y >= 24) continue;
+                    if (d[idx % d.length] === '1') {
+                      els.push(<rect key={`d${x}-${y}`} x={x} y={y} width="1" height="1" fill="#1e293b"/>);
+                    }
+                    idx++;
+                  }
+                }
+                return els;
+              })()}
+              {/* Alignment pattern */}
+              <rect x="20" y="20" width="5" height="5" fill="#1e293b"/><rect x="21" y="21" width="3" height="3" fill="white"/><rect x="22" y="22" width="1" height="1" fill="#1e293b"/>
             </svg>
           </div>
           <div className="flex-1">

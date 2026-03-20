@@ -161,6 +161,33 @@ function DashboardPreview() {
             </div>
           </div>
         </div>
+
+        {/* Floating "Jetzt" pop-out card */}
+        <motion.div
+          className="absolute -bottom-6 -right-4 sm:right-4 z-10 w-56 sm:w-64"
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6, delay: 2.0, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className="rounded-xl bg-white/85 backdrop-blur-xl border border-white/60 shadow-2xl p-3.5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="text-[9px] font-semibold text-emerald-600 uppercase tracking-wider">Jetzt</span>
+              <span className="text-[8px] text-ensemble-400 ml-auto font-mono">10:30</span>
+            </div>
+            <p className="text-[11px] font-semibold text-ensemble-900 leading-snug">Workshop: KI-Diagnostik</p>
+            <p className="text-[9px] text-ensemble-500 mt-0.5">Dr. L. Fischer · Saal B</p>
+            <div className="mt-2 flex items-center gap-2">
+              <div className="flex-1 h-1 rounded-full bg-ensemble-100 overflow-hidden">
+                <div className="h-full w-[35%] rounded-full bg-emerald-500" />
+              </div>
+              <span className="text-[8px] text-ensemble-400">35 Min</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );
