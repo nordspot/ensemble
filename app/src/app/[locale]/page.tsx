@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { HeroSection } from '@/components/landing/hero-section';
 import { LogoBar } from '@/components/landing/logo-bar';
 import { FeatureShowcase } from '@/components/landing/feature-showcase';
+import { MobileShowcase } from '@/components/landing/mobile-showcase';
 import { StatsSection } from '@/components/landing/stats-section';
 import { SwissSection } from '@/components/landing/swiss-section';
 import { CtaSection } from '@/components/landing/cta-section';
@@ -133,6 +134,7 @@ export default async function LandingPage() {
       <HeroSection translations={heroTranslations} />
       <LogoBar label={t('logoBar')} />
       <FeatureShowcase translations={featureShowcaseTranslations} />
+      <MobileShowcase />
       <StatsSection translations={statsTranslations} />
       <SwissSection translations={swissTranslations} />
       <CtaSection translations={ctaTranslations} />
