@@ -86,9 +86,14 @@ export function MobileShowcase() {
                 {/* App header */}
                 <div className="px-4 pt-2 pb-3">
                   <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-[13px] font-bold text-ensemble-900">Swiss Cardiology Congress</h3>
-                      <p className="text-[9px] text-ensemble-400 mt-0.5">15. Juni 2026</p>
+                    <div className="flex items-center gap-2">
+                      {/* ensemble logo */}
+                      <img src="/images/ensemble-logo-black.svg" alt="ensemble" className="h-4 w-auto opacity-80" />
+                      <div className="h-4 w-px bg-ensemble-200" />
+                      <div>
+                        <h3 className="text-[11px] font-bold text-ensemble-900">Swiss Cardiology Congress</h3>
+                        <p className="text-[8px] text-ensemble-400">15. Juni 2026</p>
+                      </div>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="h-6 w-6 rounded-full bg-accent-500/10 flex items-center justify-center">
