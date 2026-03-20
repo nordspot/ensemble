@@ -403,34 +403,39 @@ function RegistrationMockup() {
       >
         <div className="text-[8px] font-medium text-ensemble-400 uppercase tracking-wider mb-3">Ihr Badge</div>
         <div className="flex items-start gap-4">
-          {/* QR code - dense realistic pattern */}
-          <div className="h-16 w-16 rounded-lg bg-white border border-ensemble-200 p-1 shrink-0 shadow-sm">
-            <svg viewBox="0 0 33 33" className="w-full h-full">
-              {/* 3 position markers */}
-              <rect x="0" y="0" width="9" height="9" fill="#1e293b"/><rect x="1" y="1" width="7" height="7" fill="white"/><rect x="2" y="2" width="5" height="5" fill="#1e293b"/>
-              <rect x="24" y="0" width="9" height="9" fill="#1e293b"/><rect x="25" y="1" width="7" height="7" fill="white"/><rect x="26" y="2" width="5" height="5" fill="#1e293b"/>
-              <rect x="0" y="24" width="9" height="9" fill="#1e293b"/><rect x="1" y="25" width="7" height="7" fill="white"/><rect x="2" y="26" width="5" height="5" fill="#1e293b"/>
-              {/* Timing patterns */}
-              {[10,12,14,16,18,20,22].map(i=><rect key={`th${i}`} x={i} y={6} width="1" height="1" fill={i%2===0?"#1e293b":"white"}/>)}
-              {[10,12,14,16,18,20,22].map(i=><rect key={`tv${i}`} x={6} y={i} width="1" height="1" fill={i%2===0?"#1e293b":"white"}/>)}
-              {/* Dense data modules */}
-              {(() => {
-                const d = '0110100110011010110010110011010011011001010110100110010110101100110100110110010101101001100101101011001101001011010011010110010110011010011011001010110100110010110';
-                const els: React.ReactElement[] = [];
-                let idx = 0;
-                for (let y = 10; y <= 31; y++) {
-                  for (let x = 10; x <= 31; x++) {
-                    if (x >= 24 && y >= 24) continue;
-                    if (d[idx % d.length] === '1') {
-                      els.push(<rect key={`d${x}-${y}`} x={x} y={y} width="1" height="1" fill="#1e293b"/>);
-                    }
-                    idx++;
-                  }
-                }
-                return els;
-              })()}
-              {/* Alignment pattern */}
-              <rect x="20" y="20" width="5" height="5" fill="#1e293b"/><rect x="21" y="21" width="3" height="3" fill="white"/><rect x="22" y="22" width="1" height="1" fill="#1e293b"/>
+          {/* QR code - proper pattern */}
+          <div className="h-16 w-16 rounded-lg bg-white border border-ensemble-200 p-1.5 shrink-0 shadow-sm">
+            <svg viewBox="0 0 21 21" className="w-full h-full" shapeRendering="crispEdges">
+              {/* Row-by-row QR Version 1 (21x21) pattern */}
+              {[
+                '111111101001011111111',
+                '100000101101010000001',
+                '101110101100010111001',
+                '101110100011010111001',
+                '101110101010010111001',
+                '100000101010010000001',
+                '111111101010101111111',
+                '000000001110100000000',
+                '110011110100011001011',
+                '010100011011010110010',
+                '011010100110101001110',
+                '001101010011100101001',
+                '110110110100011010110',
+                '000000001011010011010',
+                '111111100010101010111',
+                '100000100110100010010',
+                '101110100101011011101',
+                '101110101001010100110',
+                '101110100110101101001',
+                '100000101100011010100',
+                '111111101011010011011',
+              ].map((row, y) => (
+                <g key={y}>
+                  {row.split('').map((cell, x) => (
+                    cell === '1' ? <rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" fill="#1e293b" /> : null
+                  ))}
+                </g>
+              ))}
             </svg>
           </div>
           <div className="flex-1">
