@@ -173,36 +173,38 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-white to-ensemble-50 pointer-events-none" />
 
       {/* Navigation */}
-      <nav className="relative z-20 flex items-center justify-between px-6 lg:px-12 py-5">
-        <Link href="/" className="shrink-0">
-          <EnsembleLogo className="h-7 sm:h-8" variant="light" />
-        </Link>
-
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#platform" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
-            {t.navPlatform}
-          </a>
-          <a href="#stats" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
-            {t.navPricing}
-          </a>
-          <a href="#swiss" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
-            {t.navAbout}
-          </a>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link
-            href="/anmelden"
-            className="hidden sm:block text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors"
-          >
-            {t.navLogin}
+      <nav className="relative z-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-5 flex items-center justify-between">
+          <Link href="/" className="shrink-0">
+            <EnsembleLogo className="h-7 sm:h-8" variant="light" />
           </Link>
-          <Link
-            href="/kontakt"
-            className="rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:shadow-md hover:brightness-110 active:scale-[0.97]"
-          >
-            {t.navDemo}
-          </Link>
+
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#platform" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
+              {t.navPlatform}
+            </a>
+            <a href="#stats" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
+              {t.navPricing}
+            </a>
+            <a href="#swiss" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
+              {t.navAbout}
+            </a>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <Link
+              href="/anmelden"
+              className="hidden sm:block text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors"
+            >
+              {t.navLogin}
+            </Link>
+            <Link
+              href="/kontakt"
+              className="rounded-full bg-gradient-to-b from-accent-400 to-accent-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:shadow-md hover:brightness-110 active:scale-[0.97]"
+            >
+              {t.navDemo}
+            </Link>
+          </div>
         </div>
       </nav>
 
