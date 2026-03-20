@@ -14,7 +14,7 @@ const loginSchema = z.object({
 function getD1(): unknown | null {
   // Method 1: OpenNext getCloudflareContext
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line
     const { getCloudflareContext } = require('@opennextjs/cloudflare');
     const ctx = getCloudflareContext();
     if (ctx?.env?.ENSEMBLE_DB) return ctx.env.ENSEMBLE_DB;
