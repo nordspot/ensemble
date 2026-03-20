@@ -552,9 +552,9 @@
       "headlineLine1": "Der gesamte Fachkongress.",
       "headlineLine2": "Ein System.",
       "subtitle": "Von der Anmeldung bis zum Zertifikat. Ensemble vereint alle Werkzeuge, die ein professioneller Fachkongress braucht. KI-gestützt. In Echtzeit. Swiss-made.",
-      "ctaPrimary": "Kostenlos starten",
-      "ctaSecondary": "Plattform entdecken",
-      "ctaNote": "Keine Kreditkarte erforderlich · Setup in 10 Minuten"
+      "ctaPrimary": "Demo vereinbaren",
+      "ctaSecondary": "Alle Funktionen",
+      "ctaNote": "Unverbindlich · Persönliche Beratung · In 30 Minuten"
     },
     "logoBar": "Vertraut von führenden Fachkongressveranstaltern",
     "platform": {
@@ -610,14 +610,14 @@
       "allFeaturesLink": "Alle 50+ Funktionen entdecken"
     },
     "stats": {
-      "stat1Value": "50+",
+      "stat1Value": "72",
       "stat1Label": "Funktionen",
       "stat2Value": "4",
       "stat2Label": "Sprachen",
-      "stat3Value": "<3s",
-      "stat3Label": "Ladezeit",
-      "stat4Value": "100%",
-      "stat4Label": "Cloudflare-nativ"
+      "stat3Value": "500+",
+      "stat3Label": "Teilnehmer pro Event",
+      "stat4Value": "10",
+      "stat4Label": "Minuten bis zum Start"
     },
     "swiss": {
       "title": "Swiss Made. Swiss Hosted. Swiss Values.",
@@ -635,8 +635,8 @@
       "headlineLine2": "nächsten Fachkongress?",
       "headline": "Bereit für Ihren nächsten Fachkongress?",
       "subtitle": "Starten Sie kostenlos und erleben Sie, wie Ensemble Ihren Fachkongress transformiert.",
-      "button": "Jetzt kostenlos starten",
-      "alternative": "Oder kontaktieren Sie uns für eine persönliche Demo"
+      "button": "Demo vereinbaren",
+      "alternative": "Persönliches Gespräch"
     },
     "footer": {
       "tagline": "Wo Expertise zusammenkommt.",
@@ -1058,9 +1058,9 @@
   "funktionen": {
     "title": "Alle Funktionen",
     "subtitle": "Alles, was Ihr Fachkongress braucht. Von der Registrierung bis zum Zertifikat.",
-    "ctaTitle": "Bereit?",
-    "ctaSubtitle": "Starten Sie kostenlos und erleben Sie, wie Ensemble Ihren Fachkongress transformiert.",
-    "ctaButton": "Jetzt kostenlos starten",
+    "ctaTitle": "Überzeugt?",
+    "ctaSubtitle": "Vereinbaren Sie eine persönliche Demo und sehen Sie, wie Ensemble Ihren Fachkongress vereinfacht.",
+    "ctaButton": "Demo vereinbaren",
     "domains": {
       "programm": {
         "name": "Programm & Sessions",

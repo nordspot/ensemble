@@ -183,9 +183,9 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
             <a href="#platform" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
               {t.navPlatform}
             </a>
-            <a href="#stats" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
-              {t.navPricing}
-            </a>
+            <Link href="/funktionen" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
+              Funktionen
+            </Link>
             <a href="#swiss" className="text-sm font-medium text-ensemble-600 hover:text-ensemble-900 transition-colors">
               {t.navAbout}
             </a>
@@ -266,12 +266,12 @@ export function HeroSection({ translations: t }: HeroSectionProps) {
                 </svg>
               </span>
             </Link>
-            <a
-              href="#platform"
+            <Link
+              href="/funktionen"
               className="inline-flex items-center justify-center rounded-full border-2 border-ensemble-200 bg-white px-8 py-3.5 text-base font-semibold text-ensemble-700 shadow-sm transition-all hover:border-ensemble-300 hover:bg-ensemble-50 hover:shadow-md active:scale-[0.97]"
             >
               {t.ctaSecondary}
-            </a>
+            </Link>
           </motion.div>
 
           {/* Note */}

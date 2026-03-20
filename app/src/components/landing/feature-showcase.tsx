@@ -518,11 +518,11 @@ function FeatureBlock({
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.5 }}
       >
-        <h3 className="font-heading text-2xl font-bold text-ensemble-900 sm:text-3xl">
+        <h2 className="font-heading text-4xl font-bold text-ensemble-900 sm:text-5xl lg:text-6xl">
           {titleLine1}
           <br />
           <span className="text-accent-500">{titleLine2}</span>
-        </h3>
+        </h2>
         <ul className="mt-6 space-y-3">
           {items.map((item, i) => (
             <li key={i} className="flex items-center gap-3 text-ensemble-600">
