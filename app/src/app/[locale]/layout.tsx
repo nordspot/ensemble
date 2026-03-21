@@ -6,9 +6,14 @@ import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { SessionProvider } from '@/components/providers/session-provider';
 import { Toaster } from 'sonner';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  weight: ['400', '500', '600', '700'],
+});
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains',
@@ -55,7 +60,7 @@ export default async function LocaleLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
       </head>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} overflow-x-hidden`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} overflow-x-hidden`}
       >
         <SessionProvider>
           <ThemeProvider>
