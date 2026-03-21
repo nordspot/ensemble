@@ -68,103 +68,89 @@ interface FeatureShowcaseProps {
 
 function LiveDashboardMockup() {
   return (
-    <div
-      className="relative h-[320px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
-      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
-    >
-      {/* Back layer - faded transcript lines */}
+    <div className="max-w-sm mx-auto" style={{ perspective: '1200px' }}>
       <div
-        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
-        style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
+        className="relative rounded-2xl border border-ensemble-200 shadow-xl bg-white overflow-hidden pb-14"
+        style={{ transform: 'rotateY(6deg) rotateX(2deg)' }}
       >
-        <div className="opacity-30">
-          <div className="flex items-center gap-1.5 mb-3">
-            <svg className="h-3 w-3 text-ensemble-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Transkription</span>
-          </div>
-          <div className="space-y-2.5">
-            {[85, 70, 90, 60, 80, 75, 55].map((w, i) => (
-              <div key={i} className="flex gap-2 items-center">
-                <div className="h-2 w-7 rounded bg-ensemble-200" />
-                <div className="h-2 rounded bg-ensemble-200" style={{ width: `${w}%` }} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Middle layer - Q&A panel */}
-      <div
-        className="absolute left-6 right-6 top-10 rounded-2xl bg-white/50 backdrop-blur-md border border-white/50 shadow-xl p-4"
-        style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(24px)', willChange: 'transform' }}
-      >
-        <div className="opacity-50">
-          <div className="flex items-center justify-between mb-2.5">
-            <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Q&A</span>
-            <span className="text-[8px] text-ensemble-400">12 Fragen</span>
-          </div>
-          <div className="space-y-2">
-            {[
-              { q: 'Welche Langzeitdaten liegen zur TAVI vor?', votes: 24 },
-              { q: 'Gibt es Kontraindikationen bei Multimorbiditat?', votes: 18 },
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <div className="flex flex-col items-center shrink-0">
-                  <svg className="h-3 w-3 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-                  </svg>
-                  <span className="text-[8px] font-medium text-accent-500">{item.votes}</span>
-                </div>
-                <p className="text-[9px] text-ensemble-700 leading-tight">{item.q}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Front layer - LIVE session card (hero) */}
-      <div
-        className="absolute left-5 right-5 top-14 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/50 shadow-2xl p-5"
-        style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(48px)', willChange: 'transform' }}
-      >
-        {/* Session header */}
-        <div className="flex items-center gap-2 mb-3">
-          <div className="flex items-center gap-1.5">
+        <div className="p-5 space-y-4">
+          {/* LIVE header */}
+          <div className="flex items-center gap-2">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
             </span>
             <span className="text-[9px] font-semibold text-red-500 uppercase tracking-wider">Live</span>
+            <span className="ml-auto text-[9px] text-ensemble-400 font-mono">09:32</span>
           </div>
-          <div className="ml-auto text-[8px] text-ensemble-400 font-mono">09:32</div>
-        </div>
 
-        {/* Session title */}
-        <div className="mb-3">
-          <h4 className="text-[12px] font-semibold text-ensemble-900 leading-tight">
-            Keynote: Die Zukunft der Kardiologie
-          </h4>
-          <p className="text-[10px] text-ensemble-500 mt-0.5">Prof. Dr. Thomas Muller &middot; Grosser Saal</p>
-        </div>
+          {/* Session info */}
+          <div>
+            <h4 className="text-[13px] font-bold text-ensemble-900 leading-tight">
+              Keynote: Die Zukunft der Kardiologie
+            </h4>
+            <p className="text-[10px] text-ensemble-500 mt-1">Prof. Dr. Thomas M&uuml;ller &middot; Grosser Saal</p>
+          </div>
 
-        {/* Reaction bar */}
-        <div className="flex items-center gap-2 pt-1">
-          {[
-            { emoji: '\uD83D\uDC4F', count: 142 },
-            { emoji: '\uD83D\uDCA1', count: 38 },
-            { emoji: '\u2764\uFE0F', count: 67 },
-            { emoji: '\uD83D\uDE4F', count: 12 },
-          ].map((reaction, i) => (
-            <div key={i} className="flex items-center gap-1 rounded-full bg-ensemble-50 border border-ensemble-200 px-2 py-0.5">
-              <span className="text-[10px]">{reaction.emoji}</span>
-              <span className="text-[8px] text-ensemble-500 font-medium">{reaction.count}</span>
+          {/* Transcript section */}
+          <div>
+            <div className="text-[8px] font-medium text-ensemble-400 uppercase tracking-wider mb-2">Transkription</div>
+            <div className="space-y-1.5">
+              {[
+                { time: '09:30', text: 'Die interventionelle Kardiologie hat in den letzten Jahren enorme Fortschritte gemacht...' },
+                { time: '09:31', text: 'Besonders die katheterbasierte Mitralklappentherapie zeigt vielversprechende Ergebnisse.' },
+                { time: '09:32', text: 'Lassen Sie mich die aktuellen Studiendaten zusammenfassen.' },
+              ].map((line, i) => (
+                <div key={i} className="flex gap-2 items-start">
+                  <span className="text-[8px] font-mono text-ensemble-300 shrink-0 pt-0.5">{line.time}</span>
+                  <span className="text-[9px] text-ensemble-600 leading-snug">{line.text}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Q&A section */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[8px] font-medium text-ensemble-400 uppercase tracking-wider">Q&A</span>
+              <span className="text-[8px] text-ensemble-300">12 Fragen</span>
+            </div>
+            <div className="space-y-1.5">
+              {[
+                { q: 'Welche Langzeitdaten liegen zur TAVI vor?', votes: 24 },
+                { q: 'Gibt es Kontraindikationen bei Multimorbidit\u00e4t?', votes: 18 },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2 rounded-lg bg-ensemble-50 px-3 py-2">
+                  <div className="flex flex-col items-center shrink-0">
+                    <svg className="h-3 w-3 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                    </svg>
+                    <span className="text-[8px] font-semibold text-accent-500">{item.votes}</span>
+                  </div>
+                  <p className="text-[9px] text-ensemble-700 leading-snug">{item.q}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Reaction bar */}
+          <div className="flex items-center gap-2">
+            {[
+              { emoji: '\uD83D\uDC4F', count: 142 },
+              { emoji: '\uD83D\uDCA1', count: 38 },
+              { emoji: '\u2764\uFE0F', count: 67 },
+              { emoji: '\uD83D\uDE4F', count: 12 },
+            ].map((reaction, i) => (
+              <div key={i} className="flex items-center gap-1 rounded-full bg-ensemble-50 border border-ensemble-200 px-2.5 py-1">
+                <span className="text-[10px]">{reaction.emoji}</span>
+                <span className="text-[8px] text-ensemble-500 font-medium">{reaction.count}</span>
+              </div>
+            ))}
+          </div>
         </div>
+
+        <MockupNavBar active="live" />
       </div>
-      <MockupNavBar active="live" />
     </div>
   );
 }
@@ -173,112 +159,94 @@ function LiveDashboardMockup() {
 
 function IndoorMapMockup() {
   return (
-    <div
-      className="relative h-[320px] bg-gradient-to-br from-blue-50/30 to-ensemble-50/30 rounded-2xl"
-      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
-    >
-      {/* Back layer - EG ground floor plan (slightly faded) */}
+    <div className="max-w-sm mx-auto" style={{ perspective: '1200px' }}>
       <div
-        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg p-3 overflow-hidden"
-        style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
+        className="relative rounded-2xl border border-ensemble-200 shadow-xl bg-white overflow-hidden pb-14"
+        style={{ transform: 'rotateY(-6deg) rotateX(2deg)' }}
       >
-        <div className="opacity-25">
-          <div className="flex items-center gap-1.5 mb-2">
-            <span className="text-[8px] font-semibold text-ensemble-500 bg-ensemble-100 rounded px-1.5 py-0.5">EG</span>
-            <span className="text-[8px] text-ensemble-400">Erdgeschoss</span>
+        <div className="p-5 space-y-3">
+          {/* Floor selector tabs */}
+          <div className="flex items-center gap-2">
+            <span className="text-[9px] font-bold text-white bg-accent-500 rounded px-2.5 py-1">EG</span>
+            <span className="text-[9px] font-medium text-ensemble-400 bg-ensemble-50 rounded px-2.5 py-1 border border-ensemble-200">OG1</span>
           </div>
-          <svg viewBox="0 0 320 170" className="w-full h-auto" fill="none">
+
+          {/* SVG floor plan */}
+          <svg viewBox="0 0 320 220" className="w-full h-auto" fill="none">
             <defs>
-              <pattern id="grid-eg" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgb(226 232 240)" strokeWidth="0.4" />
+              <pattern id="grid-floor" width="16" height="16" patternUnits="userSpaceOnUse">
+                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgb(241 245 249)" strokeWidth="0.5" />
               </pattern>
             </defs>
-            <rect width="320" height="170" fill="url(#grid-eg)" />
+            <rect width="320" height="220" fill="url(#grid-floor)" rx="6" />
 
-            {/* Main Hall */}
-            <rect x="10" y="10" width="140" height="80" rx="3" fill="rgb(241 245 249)" stroke="rgb(148 163 184)" strokeWidth="1" />
-            <text x="80" y="48" textAnchor="middle" className="text-[9px] font-semibold" fill="rgb(71 85 105)">Grosser Saal</text>
-            <rect x="25" y="16" width="110" height="10" rx="2" fill="rgb(226 232 240)" />
-            <text x="80" y="24" textAnchor="middle" className="text-[6px]" fill="rgb(148 163 184)">Buhne</text>
+            {/* Grosser Saal (large room) */}
+            <rect x="10" y="10" width="150" height="85" rx="4" fill="rgb(241 245 249)" stroke="rgb(203 213 225)" strokeWidth="1" />
+            <text x="85" y="45" textAnchor="middle" fontSize="11" fontWeight="600" fill="rgb(71 85 105)">Grosser Saal</text>
+            <rect x="30" y="16" width="110" height="10" rx="2" fill="rgb(226 232 240)" />
+            <text x="85" y="24" textAnchor="middle" fontSize="6" fill="rgb(148 163 184)">B&uuml;hne</text>
 
-            {/* Registration */}
-            <rect x="10" y="120" width="70" height="35" rx="3" fill="rgb(254 243 199)" stroke="rgb(251 191 36)" strokeWidth="0.8" />
-            <text x="45" y="137" textAnchor="middle" className="text-[7px] font-medium" fill="rgb(161 98 7)">Registration</text>
-            <text x="45" y="147" textAnchor="middle" className="text-[6px]" fill="rgb(202 138 4)">Eingang</text>
+            {/* Corridor */}
+            <rect x="10" y="95" width="300" height="24" fill="rgb(248 250 252)" stroke="rgb(226 232 240)" strokeWidth="0.8" strokeDasharray="4 2" />
+            <text x="160" y="110" textAnchor="middle" fontSize="7" fill="rgb(203 213 225)">Korridor</text>
 
-            {/* Exhibitor area */}
-            <rect x="100" y="105" width="70" height="50" rx="3" fill="rgb(219 234 254)" stroke="rgb(96 165 250)" strokeWidth="0.8" />
-            <text x="135" y="120" textAnchor="middle" className="text-[7px] font-medium" fill="rgb(37 99 235)">Aussteller</text>
+            {/* Saal A - destination, highlighted */}
+            <rect x="170" y="10" width="140" height="85" rx="4" fill="rgb(239 246 255)" stroke="rgb(59 130 246)" strokeWidth="1.5" />
+            <text x="240" y="45" textAnchor="middle" fontSize="11" fontWeight="600" fill="rgb(37 99 235)">Saal A</text>
+            <text x="240" y="60" textAnchor="middle" fontSize="7" fill="rgb(96 165 250)">120 Pl&auml;tze</text>
+
+            {/* Saal B */}
+            <rect x="220" y="119" width="90" height="50" rx="4" fill="rgb(241 245 249)" stroke="rgb(203 213 225)" strokeWidth="1" />
+            <text x="265" y="148" textAnchor="middle" fontSize="9" fontWeight="600" fill="rgb(100 116 139)">Saal B</text>
+
+            {/* Registration desk */}
+            <rect x="10" y="119" width="85" height="40" rx="4" fill="rgb(254 243 199)" stroke="rgb(251 191 36)" strokeWidth="0.8" />
+            <text x="52" y="138" textAnchor="middle" fontSize="8" fontWeight="500" fill="rgb(161 98 7)">Registration</text>
+            <text x="52" y="150" textAnchor="middle" fontSize="6" fill="rgb(202 138 4)">Eingang</text>
+
+            {/* Aussteller area */}
+            <rect x="105" y="119" width="105" height="55" rx="4" fill="rgb(219 234 254)" stroke="rgb(147 197 253)" strokeWidth="0.8" />
+            <text x="157" y="138" textAnchor="middle" fontSize="8" fontWeight="500" fill="rgb(37 99 235)">Aussteller</text>
             {[0, 1, 2, 3].map((b) => (
-              <rect key={b} x={108 + (b % 2) * 28} y={126 + Math.floor(b / 2) * 16} width="20" height="10" rx="1.5" fill="rgb(191 219 254)" stroke="rgb(147 197 253)" strokeWidth="0.4" />
+              <rect key={b} x={115 + (b % 2) * 40} y={145 + Math.floor(b / 2) * 14} width="30" height="9" rx="2" fill="rgb(191 219 254)" stroke="rgb(147 197 253)" strokeWidth="0.4" />
             ))}
 
-            {/* You are here - pulsing blue dot */}
-            <circle cx="135" cy="95" r="8" fill="rgb(59 130 246)" opacity="0.15">
-              <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.2;0.05;0.2" dur="2s" repeatCount="indefinite" />
+            {/* Pulsing blue dot - your location */}
+            <circle cx="52" cy="107" r="10" fill="rgb(59 130 246)" opacity="0.12">
+              <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.15;0.04;0.15" dur="2s" repeatCount="indefinite" />
             </circle>
-            <circle cx="135" cy="95" r="4" fill="rgb(59 130 246)" stroke="white" strokeWidth="1.5" />
+            <circle cx="52" cy="107" r="5" fill="rgb(59 130 246)" stroke="white" strokeWidth="2" />
 
-            {/* "Ihr Standort" label */}
-            <rect x="148" y="88" width="52" height="14" rx="3" fill="rgb(59 130 246)" opacity="0.9" />
-            <text x="174" y="98" textAnchor="middle" className="text-[6px] font-medium" fill="white">Ihr Standort</text>
+            {/* Animated dashed route from dot to Saal A */}
+            <path
+              d="M62 107 L240 107 L240 85"
+              stroke="rgb(59 130 246)"
+              strokeWidth="2"
+              strokeDasharray="6 3"
+              opacity="0.6"
+              fill="none"
+            >
+              <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.5s" repeatCount="indefinite" />
+            </path>
+
+            {/* Destination pin */}
+            <circle cx="240" cy="85" r="4" fill="rgb(59 130 246)" opacity="0.3" />
+            <circle cx="240" cy="85" r="2" fill="rgb(59 130 246)" />
           </svg>
+
+          {/* Bottom info bar */}
+          <div className="flex items-center justify-between rounded-lg bg-ensemble-50 px-3 py-2">
+            <div className="flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
+              <span className="text-[9px] font-medium text-ensemble-700">Ihr Standort</span>
+            </div>
+            <span className="text-[9px] font-semibold text-blue-600">Saal A &middot; 2 Min</span>
+          </div>
         </div>
+
+        <MockupNavBar active="karte" />
       </div>
-
-      {/* Front layer - OG1 floor plan floating above */}
-      <div
-        className="absolute left-6 right-6 top-12 rounded-2xl bg-white/15 backdrop-blur-[2px] border border-white/20 shadow-2xl p-3 overflow-hidden"
-        style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(40px)', willChange: 'transform' }}
-      >
-        <div className="flex items-center gap-1.5 mb-2">
-          <span className="text-[8px] font-semibold text-white bg-accent-500 rounded px-1.5 py-0.5">OG1</span>
-          <span className="text-[8px] text-ensemble-500">Obergeschoss 1</span>
-        </div>
-        <svg viewBox="0 0 320 130" className="w-full h-auto" fill="none">
-          <defs>
-            <pattern id="grid-og1" width="16" height="16" patternUnits="userSpaceOnUse">
-              <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgba(148,163,184,0.25)" strokeWidth="0.4" />
-            </pattern>
-          </defs>
-          {/* Transparent grid - no opaque fill */}
-          <rect width="320" height="130" fill="url(#grid-og1)" />
-
-          {/* Corridor */}
-          <rect x="130" y="10" width="30" height="110" fill="rgba(248,250,252,0.15)" stroke="rgba(203,213,225,0.3)" strokeWidth="0.8" strokeDasharray="3 2" />
-
-          {/* Saal A - highlighted as destination */}
-          <rect x="170" y="10" width="135" height="55" rx="3" fill="rgba(239,246,255,0.35)" stroke="rgb(59 130 246)" strokeWidth="1.5" />
-          <text x="237" y="35" textAnchor="middle" className="text-[10px] font-semibold" fill="rgb(37 99 235)">Saal A</text>
-          <text x="237" y="48" textAnchor="middle" className="text-[7px]" fill="rgb(96 165 250)">120 Platze</text>
-
-          {/* Saal B */}
-          <rect x="170" y="75" width="135" height="45" rx="3" fill="rgba(241,245,249,0.3)" stroke="rgba(148,163,184,0.5)" strokeWidth="1" />
-          <text x="237" y="97" textAnchor="middle" className="text-[9px] font-semibold" fill="rgb(71 85 105)">Saal B</text>
-          <text x="237" y="108" textAnchor="middle" className="text-[7px]" fill="rgb(148 163 184)">80 Platze</text>
-
-          {/* Dashed route going UP from corridor to Saal A */}
-          <path
-            d="M145 120 L145 38 L170 38"
-            stroke="rgb(59 130 246)"
-            strokeWidth="2"
-            strokeDasharray="5 3"
-            opacity="0.7"
-          >
-            <animate attributeName="stroke-dashoffset" values="0;-16" dur="1.5s" repeatCount="indefinite" />
-          </path>
-
-          {/* Destination marker on Saal A */}
-          <circle cx="170" cy="38" r="4" fill="rgb(59 130 246)" opacity="0.3" />
-          <circle cx="170" cy="38" r="2" fill="rgb(59 130 246)" />
-
-          {/* "Ziel" label */}
-          <rect x="60" y="105" width="72" height="16" rx="4" fill="rgb(59 130 246)" opacity="0.9" />
-          <text x="96" y="116" textAnchor="middle" className="text-[7px] font-medium" fill="white">Ziel: Saal A, OG1</text>
-        </svg>
-      </div>
-      <MockupNavBar active="karte" />
     </div>
   );
 }
@@ -287,94 +255,76 @@ function IndoorMapMockup() {
 
 function AiChatMockup() {
   return (
-    <div
-      className="relative h-[340px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
-      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
-    >
-      {/* Back layer - faded knowledge base text lines */}
+    <div className="max-w-sm mx-auto" style={{ perspective: '1200px' }}>
       <div
-        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
-        style={{ transform: 'rotateY(6deg) rotateX(3deg) translateZ(0px)', willChange: 'transform' }}
+        className="relative rounded-2xl border border-ensemble-200 shadow-xl bg-white overflow-hidden pb-14"
+        style={{ transform: 'rotateY(6deg) rotateX(2deg)' }}
       >
-        <div className="opacity-30">
-          <div className="text-[7px] font-medium text-ensemble-400 uppercase tracking-wider mb-3">Wissensbasis</div>
-          <div className="space-y-2.5">
-            {[95, 70, 85, 60, 90, 75, 50, 80, 65].map((w, i) => (
-              <div key={i} className="h-1.5 rounded bg-ensemble-200" style={{ width: `${w}%` }} />
-            ))}
+        <div className="p-5 space-y-4">
+          {/* Chat header */}
+          <div className="flex items-center gap-2 pb-3 border-b border-ensemble-100">
+            <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
+              <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-white" fill="currentColor">
+                <circle cx="8" cy="8" r="2.5" />
+                <circle cx="8" cy="2.5" r="1.2" />
+                <circle cx="8" cy="13.5" r="1.2" />
+                <circle cx="2.5" cy="8" r="1.2" />
+                <circle cx="13.5" cy="8" r="1.2" />
+              </svg>
+            </div>
+            <span className="text-[11px] font-semibold text-ensemble-900">Ensemble KI</span>
+            <div className="flex items-center gap-1 ml-auto">
+              <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+              <span className="text-[8px] text-ensemble-400">Bereit</span>
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* Middle layer - source citation cards */}
-      <div
-        className="absolute left-6 right-6 top-8 rounded-2xl bg-white/50 backdrop-blur-md border border-white/50 shadow-xl p-4"
-        style={{ transform: 'rotateY(6deg) rotateX(3deg) translateZ(24px)', willChange: 'transform' }}
-      >
-        <div className="opacity-50">
-          <span className="text-[8px] text-ensemble-400 font-medium uppercase tracking-wider">Quellen</span>
-          <div className="flex flex-wrap gap-2 mt-2">
+          {/* User message - right aligned */}
+          <div className="flex justify-end">
+            <div className="rounded-2xl rounded-br-md bg-ensemble-100 px-3.5 py-2.5 max-w-[85%]">
+              <p className="text-[10px] text-ensemble-700 leading-snug">
+                Welche neuen Ergebnisse zur Mitralklappentherapie wurden heute vorgestellt?
+              </p>
+            </div>
+          </div>
+
+          {/* AI response - left aligned */}
+          <div className="flex justify-start">
+            <div className="rounded-2xl rounded-bl-md bg-accent-50 border border-accent-100 px-3.5 py-2.5 max-w-[90%]">
+              <p className="text-[10px] text-ensemble-800 font-medium mb-2 leading-snug">Heute wurden 3 relevante Pr&auml;sentationen vorgestellt:</p>
+              <ul className="space-y-1.5">
+                <li className="flex gap-2">
+                  <span className="text-accent-500 font-bold shrink-0 text-[10px]">&bull;</span>
+                  <span className="text-[9px] text-ensemble-700 leading-snug"><strong>CLASP IID-Studie</strong> (09:30, Saal A): Reduktion der Mitralregurgitation um 72%</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-accent-500 font-bold shrink-0 text-[10px]">&bull;</span>
+                  <span className="text-[9px] text-ensemble-700 leading-snug"><strong>EXPAND-Registerstudie</strong> (11:00, Saal B): Langzeitdaten zu TEER bei 1.800 Patienten</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-accent-500 font-bold shrink-0 text-[10px]">&bull;</span>
+                  <span className="text-[9px] text-ensemble-700 leading-snug"><strong>Poster #47</strong>: Neuer Device-Prototyp f&uuml;r sekund&auml;re MR</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Source badges */}
+          <div className="flex flex-wrap gap-1.5">
             {[
-              { label: 'Abstract #12', color: 'bg-accent-500/10 text-accent-600 border-accent-500/20' },
-              { label: 'Session A1', color: 'bg-ensemble-100 text-ensemble-600 border-ensemble-200' },
+              { label: 'Abstract #12', color: 'bg-accent-50 text-accent-600 border-accent-200' },
+              { label: 'Session A1', color: 'bg-ensemble-50 text-ensemble-600 border-ensemble-200' },
               { label: 'Poster #47', color: 'bg-blue-50 text-blue-600 border-blue-200' },
             ].map((s, i) => (
-              <span key={i} className={`text-[9px] font-medium rounded-lg px-3 py-1.5 border ${s.color}`}>
+              <span key={i} className={`text-[8px] font-medium rounded-md px-2.5 py-1 border ${s.color}`}>
                 {s.label}
               </span>
             ))}
           </div>
         </div>
+
+        <MockupNavBar active="wissen" />
       </div>
-
-      {/* Front layer - AI chat bubble with answer */}
-      <div
-        className="absolute left-5 right-5 top-16 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/50 shadow-2xl p-5"
-        style={{ transform: 'rotateY(6deg) rotateX(3deg) translateZ(48px)', willChange: 'transform' }}
-      >
-        {/* Chat header */}
-        <div className="flex items-center gap-2 mb-3 pb-2 border-b border-ensemble-100/50">
-          <div className="h-5 w-5 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
-            <svg viewBox="0 0 16 16" className="h-3 w-3 text-white" fill="currentColor">
-              <circle cx="8" cy="8" r="2.5" />
-              <circle cx="8" cy="2.5" r="1.2" />
-              <circle cx="8" cy="13.5" r="1.2" />
-              <circle cx="2.5" cy="8" r="1.2" />
-              <circle cx="13.5" cy="8" r="1.2" />
-            </svg>
-          </div>
-          <span className="text-[10px] font-semibold text-ensemble-900">Ensemble KI-Assistent</span>
-          <div className="flex items-center gap-1 ml-auto">
-            <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-            <span className="text-[8px] text-ensemble-400">Bereit</span>
-          </div>
-        </div>
-
-        {/* User question (compact) */}
-        <div className="rounded-lg bg-ensemble-100/60 px-3 py-1.5 text-[9px] text-ensemble-700 mb-3">
-          Welche neuen Ergebnisse zur katheterbasierten Mitralklappentherapie wurden heute prasentiert?
-        </div>
-
-        {/* AI response */}
-        <div className="text-[10px] text-ensemble-800 leading-relaxed">
-          <p className="font-medium mb-1.5">Heute wurden 3 relevante Prasentationen vorgestellt:</p>
-          <ul className="space-y-1 ml-0.5">
-            <li className="flex gap-2">
-              <span className="text-accent-500 font-bold shrink-0">&bull;</span>
-              <span><strong>CLASP IID-Studie</strong> (09:30): Reduktion der Mitralregurgitation um 72%</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-accent-500 font-bold shrink-0">&bull;</span>
-              <span><strong>EXPAND-Registerstudie</strong> (11:00): Langzeitdaten zu TEER bei 1.800 Patienten</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-accent-500 font-bold shrink-0">&bull;</span>
-              <span><strong>Poster #47</strong>: Neuer Device-Prototyp fur sekundare MR</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <MockupNavBar active="wissen" />
     </div>
   );
 }
@@ -383,116 +333,74 @@ function AiChatMockup() {
 
 function RegistrationMockup() {
   return (
-    <div
-      className="relative h-[320px] bg-gradient-to-br from-emerald-50/30 to-ensemble-50/30 rounded-2xl"
-      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
-    >
-      {/* Back layer - ticket selection form */}
+    <div className="max-w-sm mx-auto" style={{ perspective: '1200px' }}>
       <div
-        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
-        style={{ transform: 'rotateY(-6deg) rotateX(3deg) translateZ(0px)', willChange: 'transform' }}
+        className="relative rounded-2xl border border-ensemble-200 shadow-xl bg-white overflow-hidden pb-14"
+        style={{ transform: 'rotateY(-6deg) rotateX(2deg)' }}
       >
-        {/* Header */}
-        <div className="flex items-center gap-2 mb-3 pb-2 border-b border-ensemble-100/50">
-          <div className="h-5 w-5 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
-            <svg viewBox="0 0 16 16" className="h-3 w-3 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="2" width="10" height="12" rx="1.5" />
-              <path d="M6 5h4M6 7.5h4M6 10h2" strokeLinecap="round" />
-            </svg>
-          </div>
-          <div>
-            <span className="text-[10px] font-semibold text-ensemble-900">Fachkongress-Anmeldung</span>
-            <span className="text-[7px] text-ensemble-400 block">Swiss Cardiology Congress 2026</span>
-          </div>
-        </div>
+        <div className="p-5 space-y-4">
+          {/* Header */}
+          <div className="text-[9px] font-medium text-ensemble-400 uppercase tracking-wider">Ihr Badge</div>
 
-        {/* Ticket selection */}
-        <div className="space-y-1.5">
-          <span className="text-[8px] font-medium text-ensemble-500 uppercase tracking-wider">Ticket wahlen</span>
-          {[
-            { label: 'Standard', price: 'CHF 450', selected: false },
-            { label: 'VIP', price: 'CHF 890', selected: true },
-            { label: 'Virtuell', price: 'CHF 190', selected: false },
-          ].map((ticket, i) => (
-            <div
-              key={i}
-              className={`flex items-center justify-between rounded-lg px-3 py-1.5 border transition-colors ${
-                ticket.selected
-                  ? 'border-accent-500 bg-accent-500/5'
-                  : 'border-ensemble-200'
-              }`}
-            >
-              <div className="flex items-center gap-2">
-                <div className={`h-3 w-3 rounded-full border-2 flex items-center justify-center ${
-                  ticket.selected ? 'border-accent-500' : 'border-ensemble-300'
-                }`}>
-                  {ticket.selected && <div className="h-1.5 w-1.5 rounded-full bg-accent-500" />}
-                </div>
-                <span className={`text-[9px] font-medium ${ticket.selected ? 'text-accent-600' : 'text-ensemble-700'}`}>
-                  {ticket.label}
-                </span>
-              </div>
-              <span className={`text-[9px] font-semibold ${ticket.selected ? 'text-accent-600' : 'text-ensemble-500'}`}>
-                {ticket.price}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Front layer - generated badge / name tag */}
-      <div
-        className="absolute left-6 right-6 top-20 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/50 shadow-2xl p-5"
-        style={{ transform: 'rotateY(-6deg) rotateX(3deg) translateZ(36px)', willChange: 'transform' }}
-      >
-        <div className="text-[8px] font-medium text-ensemble-400 uppercase tracking-wider mb-3">Ihr Badge</div>
-        <div className="flex items-start gap-4">
-          {/* QR code - proper pattern */}
-          <div className="h-16 w-16 rounded-lg bg-white border border-ensemble-200 p-1.5 shrink-0 shadow-sm">
-            <svg viewBox="0 0 21 21" className="w-full h-full" shapeRendering="crispEdges">
-              {/* Row-by-row QR Version 1 (21x21) pattern */}
-              {[
-                '111111101001011111111',
-                '100000101101010000001',
-                '101110101100010111001',
-                '101110100011010111001',
-                '101110101010010111001',
-                '100000101010010000001',
-                '111111101010101111111',
-                '000000001110100000000',
-                '110011110100011001011',
-                '010100011011010110010',
-                '011010100110101001110',
-                '001101010011100101001',
-                '110110110100011010110',
-                '000000001011010011010',
-                '111111100010101010111',
-                '100000100110100010010',
-                '101110100101011011101',
-                '101110101001010100110',
-                '101110100110101101001',
-                '100000101100011010100',
-                '111111101011010011011',
-              ].map((row, y) => (
-                <g key={y}>
-                  {row.split('').map((cell, x) => (
-                    cell === '1' ? <rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" fill="#1e293b" /> : null
+          {/* Badge card */}
+          <div className="rounded-xl border border-ensemble-200 bg-ensemble-50/50 p-4">
+            <div className="flex items-start gap-4">
+              {/* QR code */}
+              <div className="h-20 w-20 rounded-lg bg-white border border-ensemble-200 p-2 shrink-0 shadow-sm">
+                <svg viewBox="0 0 21 21" className="w-full h-full" shapeRendering="crispEdges">
+                  {[
+                    '111111101001011111111',
+                    '100000101101010000001',
+                    '101110101100010111001',
+                    '101110100011010111001',
+                    '101110101010010111001',
+                    '100000101010010000001',
+                    '111111101010101111111',
+                    '000000001110100000000',
+                    '110011110100011001011',
+                    '010100011011010110010',
+                    '011010100110101001110',
+                    '001101010011100101001',
+                    '110110110100011010110',
+                    '000000001011010011010',
+                    '111111100010101010111',
+                    '100000100110100010010',
+                    '101110100101011011101',
+                    '101110101001010100110',
+                    '101110100110101101001',
+                    '100000101100011010100',
+                    '111111101011010011011',
+                  ].map((row, y) => (
+                    <g key={y}>
+                      {row.split('').map((cell, x) => (
+                        cell === '1' ? <rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" fill="#1e293b" /> : null
+                      ))}
+                    </g>
                   ))}
-                </g>
-              ))}
-            </svg>
-          </div>
-          <div className="flex-1">
-            <p className="text-[13px] font-bold text-ensemble-900">Dr. Lisa Schneider</p>
-            <p className="text-[10px] text-ensemble-500 mt-0.5">Kantonsspital Zurich</p>
-            <div className="mt-2 flex items-center gap-2">
-              <span className="text-[9px] font-semibold text-white bg-accent-500 rounded-md px-2 py-0.5 shadow-sm">VIP</span>
-              <span className="text-[8px] text-ensemble-400 font-mono">Ticket #2847</span>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[14px] font-bold text-ensemble-900 leading-tight">Dr. Lisa Schneider</p>
+                <p className="text-[10px] text-ensemble-500 mt-1">Kantonsspital Z&uuml;rich</p>
+                <div className="mt-2.5 flex items-center gap-2">
+                  <span className="text-[9px] font-semibold text-white bg-accent-500 rounded-md px-2.5 py-0.5 shadow-sm">VIP</span>
+                  <span className="text-[8px] text-ensemble-400 font-mono">Ticket #2847</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          {/* Check-in status */}
+          <div className="flex items-center justify-center gap-2 rounded-lg bg-green-50 border border-green-200 px-4 py-3">
+            <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-[11px] font-semibold text-green-700">Check-in bereit</span>
+          </div>
         </div>
+
+        <MockupNavBar active="programm" />
       </div>
-      <MockupNavBar active="programm" />
     </div>
   );
 }
@@ -501,91 +409,67 @@ function RegistrationMockup() {
 
 function EngagementMockup() {
   return (
-    <div
-      className="relative h-[340px] bg-gradient-to-br from-yellow-50/30 to-ensemble-50/30 rounded-2xl"
-      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
-    >
-      {/* Back layer - NFC contact exchange hint */}
+    <div className="max-w-sm mx-auto" style={{ perspective: '1200px' }}>
       <div
-        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
-        style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
+        className="relative rounded-2xl border border-ensemble-200 shadow-xl bg-white overflow-hidden pb-14"
+        style={{ transform: 'rotateY(6deg) rotateX(2deg)' }}
       >
-        <div className="opacity-30">
-          <div className="flex flex-col items-center justify-center h-full gap-3">
-            <svg className="h-10 w-10 text-ensemble-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0" />
-            </svg>
-            <div className="text-center">
-              <p className="text-[10px] font-medium text-ensemble-400">NFC-Kontakttausch</p>
-              <p className="text-[8px] text-ensemble-300 mt-1">Badge anhalten</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Middle layer - referral link card */}
-      <div
-        className="absolute left-6 right-6 top-8 rounded-2xl bg-white/50 backdrop-blur-md border border-white/50 shadow-xl p-4"
-        style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(20px)', willChange: 'transform' }}
-      >
-        <div className="opacity-50">
-          <div className="flex items-center gap-2 mb-2">
-            <svg className="h-3.5 w-3.5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-            </svg>
-            <span className="text-[9px] font-semibold text-accent-600">Empfehlungslink</span>
-          </div>
+        <div className="p-5 space-y-4">
+          {/* Leaderboard header */}
           <div className="flex items-center gap-2">
-            <div className="flex-1 rounded-md bg-white/80 border border-ensemble-200 px-2.5 py-1.5">
-              <span className="text-[8px] font-mono text-ensemble-500 truncate block">ensemble.events/ref/dr-schneider</span>
+            <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+              <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-white" fill="currentColor">
+                <path d="M8 1l2 4.1 4.5.65-3.25 3.17.77 4.48L8 11.27 3.98 13.4l.77-4.48L1.5 5.75 6 5.1z" />
+              </svg>
             </div>
-            <button className="text-[8px] font-medium text-white bg-accent-500 rounded-md px-2.5 py-1.5">
-              Kopieren
-            </button>
+            <span className="text-[11px] font-semibold text-ensemble-900">Bestenliste</span>
+            <span className="text-[9px] text-ensemble-400 ml-auto">Heute</span>
           </div>
-          <div className="flex items-center gap-4 mt-2">
-            <span className="text-[8px] text-ensemble-500">12 Klicks</span>
-            <span className="text-[8px] text-ensemble-500">3 Anmeldungen</span>
-            <span className="text-[8px] text-accent-600 font-medium">+150 Pkt</span>
-          </div>
-        </div>
-      </div>
 
-      {/* Front layer - leaderboard podium */}
-      <div
-        className="absolute left-5 right-5 top-20 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/50 shadow-2xl p-5"
-        style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(44px)', willChange: 'transform' }}
-      >
-        {/* Leaderboard header */}
-        <div className="flex items-center gap-2 mb-3">
-          <div className="h-5 w-5 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
-            <svg viewBox="0 0 16 16" className="h-3 w-3 text-white" fill="currentColor">
-              <path d="M8 1l2 4.1 4.5.65-3.25 3.17.77 4.48L8 11.27 3.98 13.4l.77-4.48L1.5 5.75 6 5.1z" />
-            </svg>
-          </div>
-          <span className="text-[10px] font-semibold text-ensemble-900">Bestenliste</span>
-          <span className="text-[8px] text-ensemble-400 ml-auto">Heute</span>
-        </div>
-
-        {/* Leaderboard entries */}
-        <div className="space-y-2">
-          {[
-            { rank: 1, name: 'Dr. M. Weber', pts: 3120, medal: 'text-yellow-500', bg: 'bg-yellow-50/80' },
-            { rank: 2, name: 'Prof. A. Fischer', pts: 2840, medal: 'text-ensemble-400', bg: 'bg-ensemble-50/80' },
-            { rank: 3, name: 'Dr. T. Muller', pts: 2650, medal: 'text-orange-400', bg: 'bg-orange-50/80' },
-          ].map((entry) => (
-            <div key={entry.rank} className={`flex items-center gap-2.5 rounded-lg px-3 py-2 ${entry.bg}`}>
-              <span className={`text-[11px] font-bold ${entry.medal} w-4 text-center`}>{entry.rank}</span>
-              <div className="h-6 w-6 rounded-full bg-ensemble-200 shrink-0 flex items-center justify-center">
-                <span className="text-[7px] font-medium text-ensemble-600">{entry.name.split(' ').pop()?.[0]}</span>
+          {/* Leaderboard entries */}
+          <div className="space-y-2">
+            {[
+              { rank: 1, name: 'Dr. M. Weber', pts: 3120, medal: 'text-yellow-500', bg: 'bg-yellow-50' },
+              { rank: 2, name: 'Prof. A. Fischer', pts: 2840, medal: 'text-ensemble-400', bg: 'bg-ensemble-50' },
+              { rank: 3, name: 'Dr. T. M\u00fcller', pts: 2650, medal: 'text-orange-400', bg: 'bg-orange-50' },
+            ].map((entry) => (
+              <div key={entry.rank} className={`flex items-center gap-2.5 rounded-lg px-3 py-2.5 ${entry.bg}`}>
+                <span className={`text-[12px] font-bold ${entry.medal} w-5 text-center`}>{entry.rank}</span>
+                <div className="h-7 w-7 rounded-full bg-ensemble-200 shrink-0 flex items-center justify-center">
+                  <span className="text-[8px] font-semibold text-ensemble-600">{entry.name.split(' ').pop()?.[0]}</span>
+                </div>
+                <span className="text-[10px] font-medium text-ensemble-800 flex-1">{entry.name}</span>
+                <span className="text-[9px] font-mono font-semibold text-ensemble-500">{entry.pts} Pkt</span>
               </div>
-              <span className="text-[10px] font-medium text-ensemble-800 flex-1">{entry.name}</span>
-              <span className="text-[9px] font-mono font-semibold text-ensemble-500">{entry.pts} Pkt</span>
+            ))}
+          </div>
+
+          {/* Referral link card */}
+          <div className="rounded-xl border border-ensemble-200 bg-ensemble-50/50 p-3.5">
+            <div className="flex items-center gap-2 mb-2">
+              <svg className="h-3.5 w-3.5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+              <span className="text-[9px] font-semibold text-ensemble-700">Empfehlungslink</span>
             </div>
-          ))}
+            <div className="flex items-center gap-2 mb-2.5">
+              <div className="flex-1 rounded-md bg-white border border-ensemble-200 px-2.5 py-1.5">
+                <span className="text-[8px] font-mono text-ensemble-500 truncate block">ensemble.events/ref/dr-schneider</span>
+              </div>
+              <button className="text-[8px] font-medium text-white bg-accent-500 rounded-md px-2.5 py-1.5 shrink-0">
+                Kopieren
+              </button>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-[9px] text-ensemble-500">12 Klicks</span>
+              <span className="text-[9px] text-ensemble-500">3 Anmeldungen</span>
+              <span className="text-[9px] text-accent-600 font-semibold">+150 Pkt</span>
+            </div>
+          </div>
         </div>
+
+        <MockupNavBar active="chat" />
       </div>
-      <MockupNavBar active="chat" />
     </div>
   );
 }
