@@ -38,3 +38,5 @@ yarn-debug.log*
 *.pem
 ENSEMBLE-MASTER-PROMPT.md
 ensemble.events/
+ensemble.events/
+*.af
