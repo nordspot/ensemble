@@ -25,15 +25,15 @@ const navItems = [
 
 function MockupNavBar({ active }: { active: string }) {
   return (
-    <div className="absolute bottom-0 inset-x-0 z-30 rounded-b-2xl bg-white/90 backdrop-blur-md border-t border-ensemble-100 px-2 py-2 flex items-center justify-around">
+    <div className="absolute bottom-0 inset-x-0 z-30 rounded-b-2xl bg-white border-t border-ensemble-200 px-4 py-3 flex items-center justify-around">
       {navItems.map((item) => {
         const isActive = item.id === active;
         return (
-          <div key={item.id} className="flex flex-col items-center gap-0.5">
-            <div className={isActive ? 'text-accent-500' : 'text-ensemble-300'}>
+          <div key={item.id} className="flex flex-col items-center gap-1">
+            <div className={isActive ? 'text-accent-500' : 'text-ensemble-400'}>
               {item.icon}
             </div>
-            <span className={`text-[7px] font-medium ${isActive ? 'text-accent-500' : 'text-ensemble-400'}`}>
+            <span className={`text-[8px] font-semibold ${isActive ? 'text-accent-500' : 'text-ensemble-400'}`}>
               {item.label}
             </span>
           </div>
@@ -69,12 +69,12 @@ interface FeatureShowcaseProps {
 function LiveDashboardMockup() {
   return (
     <div
-      className="relative h-[400px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[320px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - faded transcript lines */}
       <div
-        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
+        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
         style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
       >
         <div className="opacity-30">
@@ -174,12 +174,12 @@ function LiveDashboardMockup() {
 function IndoorMapMockup() {
   return (
     <div
-      className="relative h-[400px] bg-gradient-to-br from-blue-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[320px] bg-gradient-to-br from-blue-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - EG ground floor plan (slightly faded) */}
       <div
-        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg p-3 overflow-hidden"
+        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg p-3 overflow-hidden"
         style={{ transform: 'rotateY(-8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
       >
         <div className="opacity-25">
@@ -288,12 +288,12 @@ function IndoorMapMockup() {
 function AiChatMockup() {
   return (
     <div
-      className="relative h-[420px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[340px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - faded knowledge base text lines */}
       <div
-        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
+        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
         style={{ transform: 'rotateY(6deg) rotateX(3deg) translateZ(0px)', willChange: 'transform' }}
       >
         <div className="opacity-30">
@@ -384,12 +384,12 @@ function AiChatMockup() {
 function RegistrationMockup() {
   return (
     <div
-      className="relative h-[400px] bg-gradient-to-br from-emerald-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[320px] bg-gradient-to-br from-emerald-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - ticket selection form */}
       <div
-        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
+        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
         style={{ transform: 'rotateY(-6deg) rotateX(3deg) translateZ(0px)', willChange: 'transform' }}
       >
         {/* Header */}
@@ -502,12 +502,12 @@ function RegistrationMockup() {
 function EngagementMockup() {
   return (
     <div
-      className="relative h-[420px] bg-gradient-to-br from-yellow-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[340px] bg-gradient-to-br from-yellow-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - NFC contact exchange hint */}
       <div
-        className="absolute inset-x-4 top-4 bottom-4 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
+        className="absolute inset-x-4 top-4 bottom-14 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 shadow-lg p-4"
         style={{ transform: 'rotateY(8deg) rotateX(4deg) translateZ(0px)', willChange: 'transform' }}
       >
         <div className="opacity-30">
