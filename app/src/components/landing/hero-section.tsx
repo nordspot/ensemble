@@ -47,19 +47,26 @@ function TypewriterHeadline({ line1, line2 }: { line1: string; line2: string }) 
   }, [line1, line2]);
 
   return (
-    <h1 className="font-heading text-[2.5rem] font-bold leading-[1.08] tracking-tight text-ensemble-900 sm:text-6xl lg:text-7xl xl:text-8xl">
-      <span>{displayedLine1}</span>
-      {phase === 'line1' && showCursor && (
-        <span className="inline-block w-[3px] h-[0.85em] bg-accent-500 ml-1 animate-pulse align-baseline" />
-      )}
-      {(phase === 'pause' || phase === 'line2' || phase === 'done') && displayedLine1 && <br />}
-      <span className="bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent">
-        {displayedLine2}
-      </span>
-      {(phase === 'pause' || phase === 'line2') && showCursor && (
-        <span className="inline-block w-[3px] h-[0.85em] bg-accent-500 ml-1 animate-pulse align-baseline" />
-      )}
-    </h1>
+    <div className="relative">
+      {/* Invisible full text to reserve height */}
+      <h1 aria-hidden="true" className="font-heading text-[2.5rem] font-bold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl invisible">
+        {line1}<br />{line2}
+      </h1>
+      {/* Visible animated text overlaid */}
+      <h1 className="absolute inset-0 font-heading text-[2.5rem] font-bold leading-[1.08] tracking-tight text-ensemble-900 sm:text-6xl lg:text-7xl xl:text-8xl">
+        <span>{displayedLine1}</span>
+        {phase === 'line1' && showCursor && (
+          <span className="inline-block w-[3px] h-[0.85em] bg-accent-500 ml-1 animate-pulse align-baseline" />
+        )}
+        {(phase === 'pause' || phase === 'line2' || phase === 'done') && displayedLine1 && <br />}
+        <span className="bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent">
+          {displayedLine2}
+        </span>
+        {(phase === 'pause' || phase === 'line2') && showCursor && (
+          <span className="inline-block w-[3px] h-[0.85em] bg-accent-500 ml-1 animate-pulse align-baseline" />
+        )}
+      </h1>
+    </div>
   );
 }
 
