@@ -3,6 +3,46 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
+/* ── Bottom App Nav Bar (shared across mockups) ──────────────────────── */
+
+const navItems = [
+  { id: 'programm', label: 'Programm', icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-5 w-5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round"/></svg>
+  )},
+  { id: 'live', label: 'Live', icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-5 w-5"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14" strokeLinecap="round"/></svg>
+  )},
+  { id: 'karte', label: 'Karte', icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-5 w-5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" strokeLinecap="round"/><circle cx="12" cy="10" r="3"/></svg>
+  )},
+  { id: 'chat', label: 'Chat', icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-5 w-5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" strokeLinecap="round" strokeLinejoin="round"/></svg>
+  )},
+  { id: 'wissen', label: 'Wissen', icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-5 w-5"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" strokeLinecap="round"/></svg>
+  )},
+];
+
+function MockupNavBar({ active }: { active: string }) {
+  return (
+    <div className="absolute bottom-0 inset-x-0 z-30 rounded-b-2xl bg-white/90 backdrop-blur-md border-t border-ensemble-100 px-2 py-2 flex items-center justify-around">
+      {navItems.map((item) => {
+        const isActive = item.id === active;
+        return (
+          <div key={item.id} className="flex flex-col items-center gap-0.5">
+            <div className={isActive ? 'text-accent-500' : 'text-ensemble-300'}>
+              {item.icon}
+            </div>
+            <span className={`text-[7px] font-medium ${isActive ? 'text-accent-500' : 'text-ensemble-400'}`}>
+              {item.label}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 interface FeatureShowcaseProps {
   translations: {
     section1TitleLine1: string;
@@ -29,7 +69,7 @@ interface FeatureShowcaseProps {
 function LiveDashboardMockup() {
   return (
     <div
-      className="relative h-[340px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[400px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - faded transcript lines */}
@@ -124,6 +164,7 @@ function LiveDashboardMockup() {
           ))}
         </div>
       </div>
+      <MockupNavBar active="live" />
     </div>
   );
 }
@@ -133,7 +174,7 @@ function LiveDashboardMockup() {
 function IndoorMapMockup() {
   return (
     <div
-      className="relative h-[340px] bg-gradient-to-br from-blue-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[400px] bg-gradient-to-br from-blue-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - EG ground floor plan (slightly faded) */}
@@ -237,6 +278,7 @@ function IndoorMapMockup() {
           <text x="96" y="116" textAnchor="middle" className="text-[7px] font-medium" fill="white">Ziel: Saal A, OG1</text>
         </svg>
       </div>
+      <MockupNavBar active="karte" />
     </div>
   );
 }
@@ -246,7 +288,7 @@ function IndoorMapMockup() {
 function AiChatMockup() {
   return (
     <div
-      className="relative h-[360px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[420px] bg-gradient-to-br from-accent-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - faded knowledge base text lines */}
@@ -332,6 +374,7 @@ function AiChatMockup() {
           </ul>
         </div>
       </div>
+      <MockupNavBar active="wissen" />
     </div>
   );
 }
@@ -341,7 +384,7 @@ function AiChatMockup() {
 function RegistrationMockup() {
   return (
     <div
-      className="relative h-[340px] bg-gradient-to-br from-emerald-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[400px] bg-gradient-to-br from-emerald-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - ticket selection form */}
@@ -449,6 +492,7 @@ function RegistrationMockup() {
           </div>
         </div>
       </div>
+      <MockupNavBar active="programm" />
     </div>
   );
 }
@@ -458,7 +502,7 @@ function RegistrationMockup() {
 function EngagementMockup() {
   return (
     <div
-      className="relative h-[360px] bg-gradient-to-br from-yellow-50/30 to-ensemble-50/30 rounded-2xl"
+      className="relative h-[420px] bg-gradient-to-br from-yellow-50/30 to-ensemble-50/30 rounded-2xl"
       style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
       {/* Back layer - NFC contact exchange hint */}
@@ -541,6 +585,7 @@ function EngagementMockup() {
           ))}
         </div>
       </div>
+      <MockupNavBar active="chat" />
     </div>
   );
 }
