@@ -12,7 +12,7 @@
     "labels": {
       "name": "Nom",
       "email": "E-mail",
-      "phone": "Telephone",
+      "phone": "Téléphone",
       "date": "Date",
       "time": "Heure",
       "location": "Lieu",
@@ -22,64 +22,89 @@
       "active": "Actif",
       "inactive": "Inactif",
       "pending": "En attente",
-      "confirmed": "Confirme",
-      "cancelled": "Annule"
+      "confirmed": "Confirmé",
+      "cancelled": "Annulé"
     },
     "errors": {
       "required": "Ce champ est obligatoire",
       "invalid": "Saisie invalide",
-      "notFound": "Non trouve",
-      "unauthorized": "Non autorise",
-      "serverError": "Erreur serveur, veuillez reessayer plus tard"
+      "notFound": "Non trouvé",
+      "unauthorized": "Non autorisé",
+      "serverError": "Erreur serveur, veuillez réessayer plus tard"
     },
     "nav": {
       "home": "Accueil",
+      "dashboard": "Dashboard",
+      "congresses": "Congrès spécialisés",
       "schedule": "Programme",
+      "live": "Live",
+      "networking": "Networking",
       "map": "Plan",
       "chat": "Chat",
+      "gallery": "Galerie",
+      "poster": "Poster",
+      "articles": "Articles",
+      "exhibition": "Exposition",
+      "knowledge": "Savoir",
+      "gamification": "Gamification",
       "profile": "Profil",
-      "settings": "Parametres"
+      "settings": "Paramètres",
+      "logout": "Se déconnecter",
+      "notifications": "Notifications",
+      "search": "Rechercher"
+    },
+    "dashboard": {
+      "welcomeBack": "Bon retour",
+      "myCongresses": "Mes congrès spécialisés",
+      "upcomingSessions": "Sessions à venir",
+      "messages": "Messages",
+      "points": "Points",
+      "quickActions": "Actions rapides",
+      "createCongress": "Créer un congrès spécialisé",
+      "editProfile": "Modifier le profil",
+      "recentActivity": "Activité récente",
+      "noActivity": "Aucune activité pour le moment"
     }
   },
   "auth": {
     "login": "Se connecter",
-    "loginSubtitle": "Connectez-vous a votre compte Ensemble",
+    "loginSubtitle": "Connectez-vous à votre compte ensemble",
     "register": "S'inscrire",
-    "registerSubtitle": "Creez votre compte Ensemble",
-    "logout": "Se deconnecter",
-    "forgotPassword": "Mot de passe oublie ?",
-    "resetPassword": "Reinitialiser le mot de passe",
+    "registerSubtitle": "Créez votre compte ensemble",
+    "logout": "Se déconnecter",
+    "forgotPassword": "Mot de passe oublié ?",
+    "resetPassword": "Réinitialiser le mot de passe",
     "fullName": "Nom complet",
     "fullNamePlaceholder": "Jean Dupont",
     "email": "Adresse e-mail",
     "emailPlaceholder": "nom@exemple.ch",
     "password": "Mot de passe",
-    "passwordPlaceholder": "Au moins 8 caracteres",
+    "passwordPlaceholder": "Au moins 8 caractères",
     "confirmPassword": "Confirmer le mot de passe",
-    "confirmPasswordPlaceholder": "Repetez le mot de passe",
+    "confirmPasswordPlaceholder": "Répétez le mot de passe",
     "magicLink": "Envoyer un lien de connexion par e-mail",
     "orContinueWith": "Ou continuer avec",
     "noAccount": "Pas encore de compte ?",
-    "hasAccount": "Deja un compte ?",
+    "hasAccount": "Déjà un compte ?",
     "passwordRequirements": "Exigences du mot de passe",
-    "passwordMinLength": "Au moins 8 caracteres",
+    "passwordMinLength": "Au moins 8 caractères",
     "passwordUppercase": "Au moins une majuscule",
     "passwordNumber": "Au moins un chiffre",
     "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
-    "registrationSuccess": "Compte cree avec succes. Vous pouvez maintenant vous connecter.",
-    "registrationError": "L'inscription a echoue. Veuillez reessayer.",
-    "loginError": "La connexion a echoue. Veuillez verifier vos identifiants.",
-    "emailInUse": "Cette adresse e-mail est deja utilisee."
+    "registrationSuccess": "Compte créé avec succès. Vous pouvez maintenant vous connecter.",
+    "registrationError": "L'inscription a échoué. Veuillez réessayer.",
+    "loginError": "La connexion a échoué. Veuillez vérifier vos identifiants.",
+    "emailInUse": "Cette adresse e-mail est déjà utilisée."
   },
   "congress": {
-    "create": "Creer un congres",
-    "edit": "Modifier le congres",
-    "publish": "Publier le congres",
-    "archive": "Archiver le congres",
+    "create": "Créer un congrès spécialisé",
+    "edit": "Modifier le congrès spécialisé",
+    "publish": "Publier le congrès spécialisé",
+    "archive": "Archiver le congrès spécialisé",
     "roles": {
       "organizer": "Organisateur",
-      "speaker": "Intervenant",
-      "attendee": "Participant",
+      "speaker": "Intervenant(e)",
+      "attendee": "Participant(e)",
       "exhibitor": "Exposant",
       "press": "Presse"
     },
@@ -87,46 +112,71 @@
       "branding": "Image de marque",
       "registration": "Inscription",
       "schedule": "Planification du programme",
-      "features": "Fonctionnalites"
+      "features": "Fonctionnalités"
     }
   },
   "schedule": {
+    "title": "Programme",
+    "dayPrefix": "Jour",
     "dayTabs": "Jours",
-    "trackFilter": "Filtrer par session",
+    "allTracks": "Tous",
+    "trackFilter": "Filtrer par track",
+    "searchPlaceholder": "Rechercher des sessions...",
+    "noSessions": "Aucune session trouvée",
+    "noSessionsDescription": "Aucune session disponible pour la période ou le filtre sélectionné.",
     "addToCalendar": "Ajouter au calendrier",
-    "noSessions": "Aucune session trouvee",
     "mySchedule": "Mon programme",
+    "myScheduleEmpty": "Aucune session enregistrée",
+    "myScheduleEmptyDescription": "Enregistrez des sessions du programme pour créer votre planning personnel.",
+    "addToMySchedule": "Ajouter à mon programme",
+    "removeFromMySchedule": "Retirer du programme",
+    "sessionDetail": "Détails de la session",
+    "speakers": "Intervenant(e)s",
+    "room": "Salle",
+    "materials": "Supports",
+    "cmeCredits": "Points CME",
+    "bookmark": "Enregistrer",
+    "bookmarked": "Enregistré",
+    "relatedSessions": "Sessions similaires",
     "conflicts": "Conflits d'horaire"
   },
   "session": {
     "types": {
       "keynote": "Keynote",
-      "talk": "Conference",
+      "talk": "Conférence",
       "workshop": "Atelier",
       "poster": "Poster",
       "panel": "Table ronde",
-      "social": "Evenement social",
+      "social": "Événement networking",
       "break": "Pause"
     },
-    "details": "Details",
-    "speakers": "Intervenants",
+    "details": "Détails",
+    "speakers": "Intervenant(e)s",
     "room": "Salle",
     "materials": "Supports",
-    "qa": "Questions & Reponses",
+    "qa": "Questions & Réponses",
     "poll": "Sondage",
     "feedback": "Retours"
   },
   "chat": {
     "channels": "Canaux",
+    "directMessages": "Direct",
+    "sessionChats": "Sessions",
     "newMessage": "Nouveau message",
+    "newConversation": "Nouvelle conversation",
     "search": "Rechercher des messages",
-    "moderation": "Moderation",
+    "searchConversations": "Rechercher des conversations...",
+    "moderation": "Modération",
     "directMessage": "Message direct",
     "groupChat": "Discussion de groupe",
-    "typeMessage": "Saisissez un message..."
+    "typeMessage": "Saisissez un message...",
+    "send": "Envoyer",
+    "typing": "écrit",
+    "noMessages": "Aucun message pour le moment",
+    "selectConversation": "Sélectionnez une conversation"
   },
   "map": {
-    "floors": "Etages",
+    "floors": "Étages",
     "navigate": "Naviguer",
     "yourLocation": "Votre position",
     "beaconOptIn": "Activer les services de localisation",
@@ -142,31 +192,31 @@
     "regular": "Tarif standard",
     "vip": "VIP",
     "virtual": "Virtuel",
-    "title": "Inscription au congres",
-    "subtitle": "Reservez votre place",
+    "title": "Inscription au congrès spécialisé",
+    "subtitle": "Réservez votre place",
     "steps": {
-      "personal": "Donnees personnelles",
+      "personal": "Données personnelles",
       "ticket": "Choix du billet",
-      "sessions": "Pre-selection des sessions",
-      "review": "Resume et paiement",
+      "sessions": "Pré-sélection des sessions",
+      "review": "Résumé",
       "payment": "Paiement"
     },
     "fields": {
-      "firstName": "Prenom",
+      "firstName": "Prénom",
       "firstNamePlaceholder": "Jean",
       "lastName": "Nom",
       "lastNamePlaceholder": "Dupont",
       "email": "Adresse e-mail",
       "emailPlaceholder": "nom@exemple.ch",
-      "phone": "Telephone",
+      "phone": "Téléphone",
       "phonePlaceholder": "+41 79 123 45 67",
       "organization": "Organisation",
       "organizationPlaceholder": "Entreprise / Clinique",
       "title": "Titre",
-      "titlePlaceholder": "Dr.",
+      "titlePlaceholder": "Dr",
       "dietary": "Besoins alimentaires",
-      "dietaryPlaceholder": "Vegetarien, allergies, etc.",
-      "accessibility": "Accessibilite",
+      "dietaryPlaceholder": "Végétarien, allergies, etc.",
+      "accessibility": "Accessibilité",
       "accessibilityPlaceholder": "Fauteuil roulant, aide auditive, etc."
     },
     "ticketTypes": {
@@ -176,42 +226,236 @@
       "virtual": "Virtuel"
     },
     "ticketDescriptions": {
-      "early_bird": "Acces complet a tarif reduit",
-      "standard": "Acces complet a toutes les sessions",
-      "vip": "Acces premium avec evenements exclusifs",
+      "early_bird": "Accès complet à tarif réduit",
+      "standard": "Accès complet à toutes les sessions",
+      "vip": "Accès premium avec événements exclusifs",
       "virtual": "Participation en ligne avec livestream"
     },
-    "noBookableSessions": "Aucune session reservable disponible pour le moment.",
-    "sessionsSelected": "sessions selectionnees",
+    "noBookableSessions": "Aucune session réservable disponible pour le moment.",
+    "sessionsSelected": "sessions sélectionnées",
     "total": "Total",
     "back": "Retour",
     "next": "Suivant",
     "toPayment": "Passer au paiement",
     "submitting": "Envoi en cours...",
-    "preparingPayment": "Preparation du paiement...",
-    "successTitle": "Inscription reussie !",
+    "preparingPayment": "Préparation du paiement...",
+    "successTitle": "Inscription réussie !",
     "successMessage": "Merci pour votre inscription et paiement. Vous recevrez un e-mail de confirmation sous peu."
   },
   "payment": {
     "title": "Paiement",
     "total": "Total",
-    "cardDetails": "Donnees de carte",
-    "securePayment": "Paiement securise via Stripe. Vos donnees de carte sont chiffrees.",
+    "cardDetails": "Données de carte",
+    "securePayment": "Paiement sécurisé via Stripe. Vos données de carte sont chiffrées.",
     "loading": "Chargement...",
     "processing": "Traitement du paiement...",
     "pay": "Payer maintenant",
-    "success": "Paiement reussi !",
-    "failed": "Echec du paiement"
+    "success": "Paiement réussi !",
+    "failed": "Échec du paiement"
   },
   "admin": {
+    "dashboard": {
+      "title": "Dashboard admin",
+      "subtitle": "Vue d'ensemble de tous les congrès spécialisés et utilisateurs"
+    },
+    "stats": {
+      "totalCongresses": "Total des congrès spécialisés",
+      "totalUsers": "Total des utilisateurs",
+      "totalRevenue": "Chiffre d'affaires total",
+      "activeEvents": "Événements actifs"
+    },
+    "labels": {
+      "registrations": "Inscriptions"
+    },
+    "status": {
+      "draft": "Brouillon",
+      "published": "Publié",
+      "live": "Live",
+      "completed": "Terminé",
+      "archived": "Archivé"
+    },
+    "actions": {
+      "createCongress": "Créer un nouveau congrès spécialisé",
+      "manageUsers": "Gérer les utilisateurs",
+      "viewAll": "Tout afficher"
+    },
+    "common": {
+      "save": "Enregistrer",
+      "cancel": "Annuler"
+    },
+    "disciplines": {
+      "medical": "Médecine",
+      "engineering": "Ingénierie",
+      "legal": "Droit",
+      "academic": "Académique",
+      "scientific": "Sciences",
+      "other": "Autre"
+    },
+    "congresses": {
+      "title": "Gérer les congrès spécialisés",
+      "subtitle": "Tous les congrès spécialisés de votre organisation",
+      "searchPlaceholder": "Rechercher un congrès spécialisé...",
+      "filterStatus": "Filtrer par statut",
+      "allStatuses": "Tous les statuts",
+      "noCongresses": "Aucun congrès spécialisé pour le moment"
+    },
+    "createCongress": {
+      "title": "Créer un nouveau congrès spécialisé",
+      "subtitle": "Saisissez les informations de base pour votre nouveau congrès spécialisé",
+      "submit": "Créer le congrès spécialisé",
+      "success": "Congrès spécialisé créé avec succès",
+      "sections": {
+        "basic": "Informations de base",
+        "dates": "Dates",
+        "venue": "Lieu de l'événement",
+        "pricing": "Tarifs & capacité"
+      },
+      "fields": {
+        "name": "Nom",
+        "namePlaceholder": "p. ex. Swiss Medical Congress 2026",
+        "slug": "URL abrégée",
+        "slugHint": "Générée automatiquement à partir du nom",
+        "subtitle": "Sous-titre",
+        "subtitlePlaceholder": "Description courte du congrès spécialisé",
+        "discipline": "Discipline",
+        "description": "Description",
+        "descriptionPlaceholder": "Décrivez le congrès spécialisé...",
+        "startDate": "Date de début",
+        "endDate": "Date de fin",
+        "venueName": "Lieu de l'événement",
+        "venueNamePlaceholder": "p. ex. Kursaal Bern",
+        "venueAddress": "Adresse",
+        "venueAddressPlaceholder": "Kornhausstrasse 3",
+        "venueCity": "Ville",
+        "venueCountry": "Pays (code ISO)",
+        "maxAttendees": "Participants max.",
+        "currency": "Devise",
+        "earlyBirdPrice": "Prix early bird",
+        "regularPrice": "Prix standard",
+        "priceHint": "Montant en unités monétaires (p. ex. 290.00)"
+      },
+      "errors": {
+        "endBeforeStart": "La date de fin doit être postérieure à la date de début",
+        "generic": "Erreur lors de la création du congrès spécialisé"
+      }
+    },
+    "congressDetail": {
+      "stats": {
+        "registrations": "Inscriptions",
+        "sessions": "Sessions",
+        "speakers": "Intervenant(e)s",
+        "revenue": "Chiffre d'affaires"
+      },
+      "quickActions": "Actions rapides",
+      "actions": {
+        "edit": "Modifier",
+        "publish": "Publier",
+        "manageSessions": "Gérer les sessions",
+        "manageSpeakers": "Gérer les intervenant(e)s",
+        "settings": "Paramètres"
+      }
+    },
+    "sessionBuilder": {
+      "title": "Planification du programme",
+      "subtitle": "Créer, modifier et organiser les sessions",
+      "sessionsCount": "Sessions",
+      "createSession": "Créer une nouvelle session",
+      "editSession": "Modifier la session",
+      "deleteSession": "Supprimer la session",
+      "sessionCreated": "Session créée avec succès",
+      "sessionUpdated": "Session mise à jour avec succès",
+      "sessionDeleted": "Session supprimée avec succès",
+      "noSessions": "Aucune session pour le moment",
+      "conflictsDetected": "Conflits de salle détectés",
+      "formDescription": "Remplissez les champs pour créer ou modifier une session.",
+      "fields": {
+        "title": "Titre",
+        "titlePlaceholder": "p. ex. Keynote d'ouverture",
+        "subtitle": "Sous-titre",
+        "type": "Type",
+        "track": "Track",
+        "room": "Salle",
+        "noTrack": "Pas de track",
+        "noRoom": "Pas de salle",
+        "startTime": "Heure de début",
+        "endTime": "Heure de fin",
+        "description": "Description",
+        "maxAttendees": "Participants max.",
+        "cmeCredits": "Points CME",
+        "isBookable": "Réservable",
+        "isRecorded": "Enregistrée"
+      },
+      "errors": {
+        "endBeforeStart": "L'heure de fin doit être postérieure à l'heure de début",
+        "generic": "Erreur lors de l'enregistrement de la session"
+      }
+    },
+    "sessionTypes": {
+      "keynote": "Keynote",
+      "panel": "Table ronde",
+      "workshop": "Atelier",
+      "poster": "Poster",
+      "oral": "Conférence",
+      "symposium": "Symposium",
+      "live_surgery": "Chirurgie en direct",
+      "social": "Événement networking",
+      "break": "Pause",
+      "other": "Autre"
+    },
+    "speakerAdmin": {
+      "title": "Gérer les intervenant(e)s",
+      "subtitle": "Vue d'ensemble de tous les intervenant(e)s et leur statut",
+      "inviteSpeaker": "Inviter un(e) intervenant(e)",
+      "totalSpeakers": "Total des intervenant(e)s",
+      "disclosuresSubmitted": "Déclarations soumises",
+      "presentationsUploaded": "Présentations téléchargées",
+      "speakerList": "Liste des intervenant(e)s",
+      "disclosureOk": "Déclaration soumise",
+      "disclosurePending": "Déclaration en attente",
+      "presentationOk": "Présentation téléchargée",
+      "presentationPending": "Présentation en attente"
+    },
+    "settings": {
+      "title": "Paramètres du congrès spécialisé",
+      "subtitle": "Gérez tous les paramètres de ce congrès spécialisé",
+      "saved": "Paramètres enregistrés",
+      "saveFailed": "Erreur lors de l'enregistrement",
+      "sections": {
+        "general": "Général",
+        "registration": "Inscription",
+        "features": "Fonctionnalités",
+        "branding": "Image de marque"
+      },
+      "registrationOpen": "Inscription ouverte",
+      "registrationDeadline": "Date limite d'inscription",
+      "earlyBirdDeadline": "Délai early bird",
+      "earlyBirdPrice": "Prix early bird (CHF)",
+      "regularPrice": "Prix standard (CHF)",
+      "features": {
+        "qa": "Questions & Réponses (Q&A)",
+        "polls": "Sondages en direct",
+        "gamification": "Gamification & Points",
+        "bleBeacons": "BLE Beacons / Navigation intérieure"
+      },
+      "logoUpload": "Télécharger le logo",
+      "logoHint": "Recommandé : PNG ou SVG, min. 256x256px",
+      "accentColor": "Couleur d'accent",
+      "dangerZone": "Zone de danger",
+      "dangerZoneDescription": "Actions irréversibles pour ce congrès spécialisé",
+      "deleteWarning": "La suppression d'un congrès spécialisé supprime définitivement toutes les données associées. Cette action est irréversible.",
+      "deleteConfirmLabel": "Saisissez \"{name}\" pour confirmer",
+      "deleteCongress": "Supprimer définitivement le congrès spécialisé",
+      "deleted": "Le congrès spécialisé a été supprimé",
+      "deleteFailed": "Erreur lors de la suppression du congrès spécialisé"
+    },
     "attendees": {
       "title": "Participants",
-      "subtitle": "Apercu de toutes les inscriptions pour ce congres",
+      "subtitle": "Aperçu de toutes les inscriptions pour ce congrès spécialisé",
       "searchPlaceholder": "Rechercher par nom ou e-mail...",
       "loading": "Chargement...",
-      "noResults": "Aucun participant trouve",
+      "noResults": "Aucun participant trouvé",
       "showing": "Affichage {from}-{to} sur {total}",
-      "prev": "Precedent",
+      "prev": "Précédent",
       "next": "Suivant",
       "registeredAt": "Date d'inscription"
     },
@@ -224,23 +468,23 @@
       "checkin": "Check-in"
     },
     "payment": {
-      "unpaid": "Impaye",
-      "paid": "Paye",
-      "refunded": "Rembourse",
+      "unpaid": "Impayé",
+      "paid": "Payé",
+      "refunded": "Remboursé",
       "comp": "Gratuit"
     },
-    "checkedIn": "Enregistre",
-    "notCheckedIn": "Non enregistre"
+    "checkedIn": "Enregistré",
+    "notCheckedIn": "Non enregistré"
   },
   "congressOverview": {
-    "welcome": "Tableau de bord du congres",
-    "overviewSubtitle": "Vue d'ensemble et acces rapide",
+    "welcome": "Dashboard du congrès",
+    "overviewSubtitle": "Vue d'ensemble et accès rapide",
     "statusDraft": "Brouillon",
     "stats": {
       "registered": "Inscrits",
-      "capacity": "Capacite",
+      "capacity": "Capacité",
       "sessions": "Sessions",
-      "speakers": "Intervenants"
+      "speakers": "Intervenant(e)s"
     },
     "quickActions": "Actions rapides",
     "actions": {
@@ -249,12 +493,12 @@
       "map": "Voir le plan"
     },
     "upcomingSessions": "Prochaines sessions",
-    "noUpcomingSessions": "Aucune session a venir",
+    "noUpcomingSessions": "Aucune session à venir",
     "announcements": "Annonces",
     "noAnnouncements": "Aucune annonce pour le moment"
   },
   "exhibitor": {
-    "booth": "Stand",
+    "booth": "Stand d'exposition",
     "leads": "Contacts",
     "products": "Produits",
     "analytics": "Statistiques",
@@ -265,54 +509,941 @@
     "copilot": "Assistant IA",
     "search": "Recherche intelligente",
     "recommend": "Recommandations",
-    "summarize": "Resumer",
+    "summarize": "Résumer",
     "askQuestion": "Poser une question",
     "sources": "Sources"
   },
+  "knowledge": {
+    "title": "Base de connaissances",
+    "subtitle": "Posez des questions sur le contenu scientifique de ce congrès spécialisé",
+    "placeholder": "Saisissez votre question...",
+    "send": "Envoyer",
+    "sources": "Sources",
+    "newQuestion": "Nouvelle question",
+    "errorResponse": "La question n'a malheureusement pas pu être traitée. Veuillez réessayer.",
+    "copy": "Copier",
+    "copied": "Copié",
+    "expand": "Déplier",
+    "collapse": "Replier",
+    "goToContext": "Aller au contexte",
+    "noSources": "Aucune source disponible",
+    "thinking": "Réflexion en cours..."
+  },
   "notifications": {
     "types": "Types de notifications",
-    "settings": "Parametres de notifications",
+    "settings": "Paramètres de notifications",
     "empty": "Aucune nouvelle notification",
     "markAllRead": "Tout marquer comme lu"
   },
   "speaker": {
-    "directory": "Repertoire des intervenants",
+    "directory": "Répertoire des intervenant(e)s",
     "searchPlaceholder": "Rechercher par nom ou organisation...",
     "sessions": "Sessions",
     "biography": "Biographie",
-    "disclosures": "Conflits d'interets",
-    "uploadPresentation": "Telecharger la presentation",
-    "uploadDeadline": "Veuillez telecharger votre presentation avant la date limite.",
-    "disclosureRequired": "La declaration des conflits d'interets est obligatoire pour tous les intervenants.",
-    "noDisclosures": "Aucun conflit d'interet declare",
-    "hasConflicts": "Conflits d'interets presents",
+    "disclosures": "Conflits d'intérêts",
+    "uploadPresentation": "Télécharger la présentation",
+    "uploadDeadline": "Veuillez télécharger votre présentation avant la date limite.",
+    "disclosureRequired": "La déclaration des conflits d'intérêts est obligatoire pour tous les intervenant(e)s.",
+    "noDisclosures": "Aucun conflit d'intérêts déclaré",
+    "hasConflicts": "Conflits d'intérêts présents",
     "noConflicts": "Aucun conflit",
-    "uploadSuccess": "Presentation telechargee avec succes.",
-    "noSpeakers": "Aucun intervenant enregistre pour le moment.",
-    "noResults": "Aucun intervenant trouve.",
-    "submitDisclosure": "Soumettre la declaration"
+    "uploadSuccess": "Présentation téléchargée avec succès.",
+    "noSpeakers": "Aucun(e) intervenant(e) enregistré(e) pour le moment.",
+    "noResults": "Aucun(e) intervenant(e) trouvé(e).",
+    "submitDisclosure": "Soumettre la déclaration"
   },
   "landing": {
-    "hero": "La plateforme de congres pour la Suisse",
-    "tagline": "La ou l'expertise se rencontre.",
-    "features": "Fonctionnalites",
+    "nav": {
+      "platform": "Plateforme",
+      "pricing": "Tarifs",
+      "about": "À propos",
+      "login": "Se connecter",
+      "demo": "Réserver une démo"
+    },
+    "hero": {
+      "eyebrow": "La plateforme de congrès spécialisés de la Suisse",
+      "headlineLine1": "Le congrès spécialisé complet.",
+      "headlineLine2": "Un seul système.",
+      "subtitle": "De l'inscription au certificat. ensemble réunit tous les outils nécessaires à un congrès professionnel. Assisté par IA. En temps réel. Swiss-made.",
+      "ctaPrimary": "Réserver une démo",
+      "ctaSecondary": "Toutes les fonctionnalités",
+      "ctaNote": "Sans engagement · Conseil personnalisé · En 30 minutes"
+    },
+    "logoBar": "La confiance des principaux organisateurs de congrès spécialisés",
+    "platform": {
+      "titleLine1": "Une plateforme.",
+      "titleLine2": "Tout inclus.",
+      "title": "Une plateforme. Tout inclus.",
+      "subtitle": "Pas 10 outils différents, mais un seul système pour tout le cycle de vie du congrès spécialisé.",
+      "programSessions": "Programme & Sessions",
+      "liveStreaming": "Live Streaming & Transcription",
+      "bleNavigation": "BLE Navigation intérieure",
+      "aiKnowledge": "Base de connaissances IA",
+      "nfcBadges": "Badges NFC",
+      "realtimeChat": "Chat en temps réel, Q&A & Sondages",
+      "gamification": "Gamification & Programme de parrainage",
+      "cmeCertificates": "Points CME & Certificats"
+    },
+    "showcase": {
+      "section1TitleLine1": "Chaque session.",
+      "section1TitleLine2": "Live. Intelligente.",
+      "section1Title": "Chaque session. Live. Intelligente.",
+      "section1Item1": "Transcription en temps réel",
+      "section1Item2": "Q&A en direct avec vote",
+      "section1Item3": "Sondages interactifs",
+      "section1Item4": "Enregistrements de sessions",
+      "section2TitleLine1": "Navigation",
+      "section2TitleLine2": "comme à l'aéroport.",
+      "section2Title": "Navigation comme à l'aéroport.",
+      "section2Item1": "Localisation par BLE Beacon",
+      "section2Item2": "Guidage intérieur",
+      "section2Item3": "Occupation des salles en direct",
+      "section2Item4": "Check-in automatique",
+      "section3TitleLine1": "L'IA qui comprend",
+      "section3TitleLine2": "votre congrès.",
+      "section3Title": "L'IA qui comprend votre congrès.",
+      "section3Item1": "Recherche dans le savoir du congrès",
+      "section3Item2": "Résumé des conférences",
+      "section3Item3": "Recommandations intelligentes",
+      "section3Item4": "Traduction multilingue",
+      "section4TitleLine1": "De l'inscription au bilan.",
+      "section4TitleLine2": "Automatisé.",
+      "section4Title": "De l'inscription au bilan. Automatisé.",
+      "section4Item1": "Inscription en ligne",
+      "section4Item2": "Plusieurs types de billets",
+      "section4Item3": "Badges QR-Code",
+      "section4Item4": "Check-in NFC",
+      "section5TitleLine1": "De l'engagement",
+      "section5TitleLine2": "qui enthousiasme.",
+      "section5Title": "De l'engagement qui enthousiasme.",
+      "section5Item1": "Points et classements",
+      "section5Item2": "Programme de parrainage",
+      "section5Item3": "Échange de contacts NFC",
+      "section5Item4": "Points de formation continue",
+      "allFeaturesLink": "Découvrir les 50+ fonctionnalités"
+    },
+    "stats": {
+      "stat1Value": "72",
+      "stat1Label": "Fonctionnalités",
+      "stat2Value": "4",
+      "stat2Label": "Langues",
+      "stat3Value": "500+",
+      "stat3Label": "Participants par événement",
+      "stat4Value": "10",
+      "stat4Label": "Minutes pour démarrer"
+    },
+    "swiss": {
+      "title": "Swiss Made. Swiss Hosted. Swiss Values.",
+      "card1Title": "Données en Suisse",
+      "card1Desc": "Conforme au RGPD et à la nLPD. Toutes les données sont hébergées en Suisse et dans l'UE. Aucun transfert vers des pays tiers.",
+      "card2Title": "Zero-Knowledge Tracking",
+      "card2Desc": "Pas de cookies, pas de tracking. Analyses respectueuses de la vie privée exclusivement via Cloudflare Web Analytics.",
+      "card3Title": "Sécurité entreprise",
+      "card3Desc": "Authentification Auth.js, rate limiting, logs d'audit et chiffrement de bout en bout pour les données sensibles.",
+      "card4Title": "Architecture ouverte",
+      "card4Desc": "Conception API-first, communication en temps réel par WebSocket et extensibilité modulaire pour toute exigence."
+    },
+    "cta": {
+      "headlineLine1": "Prêt pour votre",
+      "headlineLine2": "prochain congrès spécialisé ?",
+      "headline": "Prêt pour votre prochain congrès spécialisé ?",
+      "subtitle": "Commencez gratuitement et découvrez comment ensemble transforme votre congrès spécialisé.",
+      "button": "Réserver une démo",
+      "alternative": "Entretien personnalisé"
+    },
+    "footer": {
+      "tagline": "Là où l'expertise se rencontre.",
+      "colPlatform": "Plateforme",
+      "colResources": "Ressources",
+      "colCompany": "Entreprise",
+      "linkFeatures": "Fonctionnalités",
+      "linkPricing": "Tarifs",
+      "linkIntegrations": "Intégrations",
+      "linkSecurity": "Sécurité",
+      "linkDocs": "Documentation",
+      "linkBlog": "Blog",
+      "linkApi": "API",
+      "linkStatus": "Status",
+      "linkAbout": "À propos",
+      "linkContact": "Contact",
+      "linkCareers": "Carrières",
+      "linkPartners": "Partenaires",
+      "copyright": "© 2026 Ensemble by Nord · Made in Switzerland",
+      "impressum": "Mentions légales",
+      "privacy": "Protection des données",
+      "terms": "CGV"
+    },
+    "hero_legacy": "La plateforme de congrès pour la Suisse",
+    "tagline": "Là où l'expertise se rencontre.",
+    "features": "Fonctionnalités",
     "pricing": "Tarifs",
-    "cta": "Commencer maintenant",
-    "about": "A propos",
+    "cta_legacy": "Commencer maintenant",
+    "about": "À propos",
     "register": "S'inscrire",
     "learnMore": "En savoir plus",
-    "featuresHeading": "Tout ce dont votre congres a besoin",
+    "featuresHeading": "Tout ce dont votre congrès a besoin",
     "programTitle": "Programmes & Sessions",
-    "programDesc": "Programmes multi-jours avec tracks, sessions paralleles et agendas personnels. Les participants gardent toujours la vue d'ensemble.",
+    "programDesc": "Programmes multi-jours avec tracks, sessions parallèles et agendas personnels. Les participants gardent toujours la vue d'ensemble.",
     "streamingTitle": "Streaming en direct",
-    "streamingDesc": "Evenements hybrides avec streaming professionnel, enregistrement et acces a la demande pour un public mondial.",
-    "navigationTitle": "Navigation interieure",
-    "navigationDesc": "Plans interactifs avec navigation en temps reel vers les salles, stands et points d'interet via balises Bluetooth.",
+    "streamingDesc": "Événements hybrides avec streaming professionnel, enregistrement et accès à la demande pour un public mondial.",
+    "navigationTitle": "Navigation intérieure",
+    "navigationDesc": "Plans interactifs avec navigation en temps réel vers les salles, stands et points d'intérêt via balises Bluetooth.",
     "networkingTitle": "Networking",
-    "networkingDesc": "Matchmaking intelligent, reunions 1:1 et chats de groupe thematiques. Creer des contacts n'a jamais ete aussi simple.",
+    "networkingDesc": "Matchmaking intelligent, réunions 1:1 et chats de groupe thématiques. Créer des contacts n'a jamais été aussi simple.",
     "aiTitle": "Base de connaissances IA",
-    "aiDesc": "Recherche IA dans tous les abstracts, presentations et documents. Reponses avec sources en quelques secondes.",
+    "aiDesc": "Recherche IA dans tous les abstracts, présentations et documents. Réponses avec sources en quelques secondes.",
     "gamificationTitle": "Gamification",
-    "gamificationDesc": "Points, badges et classements motivent la participation active et augmentent l'engagement de maniere mesurable."
+    "gamificationDesc": "Points, badges et classements motivent la participation active et augmentent l'engagement de manière mesurable."
+  },
+  "live": {
+    "qa": {
+      "title": "Questions & Réponses",
+      "pageTitle": "Questions & Réponses",
+      "empty": "Aucune question pour le moment",
+      "emptyDescription": "Posez la première question à l'intervenant(e).",
+      "placeholder": "Saisissez votre question...",
+      "anonymousToggle": "Anonyme",
+      "anonymous": "Anonyme",
+      "answered": "Répondu",
+      "pendingApproval": "En attente de validation",
+      "markAnswered": "Marquer comme répondu",
+      "hide": "Masquer la question"
+    },
+    "poll": {
+      "title": "Sondage",
+      "statusWaiting": "En attente",
+      "statusActive": "Actif",
+      "statusClosed": "Terminé",
+      "submitVote": "Voter",
+      "totalVotes": "{count} votes",
+      "alreadyVoted": "Vous avez déjà voté"
+    },
+    "wordCloud": {
+      "title": "Nuage de mots",
+      "empty": "Aucune réponse reçue pour le moment"
+    },
+    "reactions": {
+      "title": "Réactions"
+    },
+    "dashboard": {
+      "title": "Dashboard en direct",
+      "subtitle": "Vue d'ensemble en temps réel de toutes les sessions en cours",
+      "liveNow": "En direct",
+      "noLiveSessions": "Aucune session en direct pour le moment",
+      "comingSoon": "Bientôt",
+      "noUpcoming": "Aucune session dans les 30 prochaines minutes",
+      "quickActions": "Actions rapides",
+      "actionCheckin": "Check-in",
+      "actionQA": "Q&A",
+      "actionMap": "Plan",
+      "announcements": "Annonces",
+      "noAnnouncements": "Aucune annonce pour le moment",
+      "watchStream": "Regarder le stream",
+      "roomOccupancy": "Occupation des salles"
+    },
+    "stream": {
+      "defaultTitle": "Stream en direct",
+      "unavailable": "Stream non disponible",
+      "unavailableHint": "Le stream sera lancé sous peu ou est déjà terminé.",
+      "qualityAuto": "Automatique",
+      "tabQA": "Q&A",
+      "tabPoll": "Sondage"
+    },
+    "transcript": {
+      "title": "Transcription",
+      "defaultTitle": "Transcription en direct",
+      "autoScroll": "Défilement auto",
+      "searchPlaceholder": "Rechercher dans la transcription...",
+      "noResults": "Aucun résultat",
+      "empty": "Aucune transcription disponible pour le moment",
+      "scrollToLatest": "Aller au plus récent",
+      "jumpTo": "Aller au passage",
+      "sessionInfo": "Info session",
+      "timeNotAvailable": "Heure non disponible",
+      "roomNotAvailable": "Salle non disponible",
+      "speakerNotAvailable": "Intervenant(e) non disponible",
+      "transcriptHint": "La transcription est générée en temps réel et peut contenir des inexactitudes."
+    }
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Photos du congrès spécialisé",
+    "empty": "Aucune photo pour le moment",
+    "photoAlt": "Photo du congrès",
+    "myPhotos": "Mes photos",
+    "myPhotosTitle": "Mes photos",
+    "myPhotosSubtitle": "Gérez vos photos téléchargées",
+    "backToGallery": "Retour à la galerie",
+    "filterAll": "Toutes",
+    "filterFeatured": "En vedette",
+    "public": "Publique",
+    "private": "Privée",
+    "makePublic": "Rendre publique",
+    "makePrivate": "Rendre privée",
+    "deletePhoto": "Supprimer la photo",
+    "noOwnPhotos": "Vous n'avez pas encore téléchargé de photos",
+    "uploadButton": "Télécharger des photos",
+    "hideUpload": "Masquer le téléchargement",
+    "dropzone": "Glissez des photos ici ou cliquez",
+    "dropzoneHint": "Max. {max} photos, max. {sizeMb} Mo chacune (JPEG, PNG, WebP)",
+    "captionPlaceholder": "Légende...",
+    "clearAll": "Tout supprimer",
+    "uploadComplete": "Téléchargement terminé",
+    "uploadPhotos": "Télécharger {count} photos",
+    "viewerTitle": "Visionneuse",
+    "download": "Télécharger"
+  },
+  "onDemand": {
+    "title": "Enregistrements",
+    "subtitle": "Regarder les sessions en tant que vidéos à la demande",
+    "empty": "Aucun enregistrement disponible pour le moment",
+    "emptyHint": "Les enregistrements seront mis à disposition après les sessions en direct."
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Contributions scientifiques et documents",
+    "empty": "Aucun article soumis pour le moment",
+    "emptyHint": "Soumettez le premier article.",
+    "submit": "Soumettre un article",
+    "submitTitle": "Soumettre un article",
+    "submitSubtitle": "Téléchargez votre contribution scientifique",
+    "searchPlaceholder": "Rechercher par titre ou mot-clé...",
+    "fieldTitle": "Titre",
+    "fieldTitlePlaceholder": "Titre de l'article",
+    "fieldSummary": "Résumé",
+    "fieldSummaryPlaceholder": "Bref résumé de l'article...",
+    "fieldKeywords": "Mots-clés",
+    "keywordPlaceholder": "Saisir un mot-clé...",
+    "addKeyword": "Ajouter",
+    "fieldFile": "Fichier",
+    "fileDropzone": "Glissez le fichier ici ou cliquez",
+    "fileDropzoneHint": "PDF, DOCX ou Markdown, max. {maxMb} Mo",
+    "invalidFileType": "Type de fichier invalide. Autorisé : PDF, DOCX, Markdown.",
+    "fileTooLarge": "Fichier trop volumineux. Maximum : {maxMb} Mo.",
+    "cancel": "Annuler",
+    "submitButton": "Soumettre",
+    "submitError": "Erreur lors de la soumission de l'article"
+  },
+  "poster": {
+    "title": "Poster",
+    "subtitle": "Exposition de posters et vote",
+    "empty": "Aucun poster pour le moment",
+    "searchPlaceholder": "Rechercher par titre ou auteur...",
+    "noPreview": "Pas d'aperçu",
+    "categories": {
+      "all": "Tous",
+      "clinical": "Clinique",
+      "research": "Recherche",
+      "case-study": "Étude de cas",
+      "technology": "Technologie",
+      "education": "Enseignement"
+    }
+  },
+  "beacon": {
+    "title": "Services de localisation",
+    "privacyExplanation": "Activez les balises Bluetooth pour la navigation intérieure et les fonctionnalités basées sur la localisation. Votre position n'est partagée qu'au niveau de confidentialité choisi.",
+    "privacyLevel": "Niveau de confidentialité",
+    "privacyOff": "Désactivé",
+    "privacyNavigation": "Navigation",
+    "privacyFull": "Complet",
+    "startScanning": "Activer la localisation",
+    "stopScanning": "Désactiver la localisation",
+    "scanning": "Recherche de balises...",
+    "beaconsFound": "{count} balises trouvées",
+    "currentZone": "Zone actuelle",
+    "notSupported": "Le Bluetooth n'est pas pris en charge par ce navigateur.",
+    "batteryWarning": "Le scan Bluetooth peut légèrement augmenter la consommation de batterie.",
+    "map": {
+      "title": "Plan du bâtiment",
+      "subtitle": "Plan interactif avec navigation intérieure",
+      "status": {
+        "available": "Disponible",
+        "in-session": "Session en cours",
+        "full": "Complet"
+      }
+    },
+    "wayfinder": {
+      "navigateTo": "Naviguer vers...",
+      "selectDestination": "Sélectionner la destination",
+      "startNavigation": "Démarrer la navigation",
+      "cancel": "Annuler",
+      "positionRequired": "Votre position doit d'abord être détectée."
+    },
+    "nearby": {
+      "title": "{count} personnes à proximité",
+      "empty": "Aucune personne à proximité",
+      "requiresFull": "Activez le niveau de confidentialité \"Complet\" pour voir les personnes à proximité.",
+      "optInNotice": "Seules les personnes ayant également activé le partage complet de la localisation sont affichées."
+    },
+    "occupancy": {
+      "title": "Occupation des salles",
+      "empty": "Aucune donnée de salle disponible"
+    }
+  },
+  "nfc": {
+    "title": "Scanner le badge",
+    "scanBadge": "Scanner le badge",
+    "reading": "Lecture du tag NFC...",
+    "notSupported": "NFC n'est pas pris en charge par ce navigateur.",
+    "qrFallback": "Scanner le QR code",
+    "saveContact": "Enregistrer le contact",
+    "saving": "Enregistrement...",
+    "contactSaved": "Contact enregistré avec succès !",
+    "scanAnother": "Scanner un autre badge"
+  },
+  "exhibition": {
+    "title": "Exposition",
+    "subtitle": "Exposants et stands",
+    "searchPlaceholder": "Rechercher un exposant...",
+    "mapView": "Vue plan",
+    "empty": "Aucun exposant pour le moment",
+    "booth": "Stand",
+    "products": "Produits",
+    "contact": "Contact",
+    "visitWebsite": "Visiter le site web",
+    "bookDemo": "Réserver une démo",
+    "demoRequested": "Démo demandée",
+    "scanBadge": "Scanner le badge",
+    "scanning": "Scan en cours...",
+    "mapLocation": "Emplacement sur le plan",
+    "leads": "Contacts",
+    "noLeads": "Aucun contact enregistré pour le moment",
+    "exportLeads": "Exporter les contacts",
+    "notesPlaceholder": "Ajouter des notes...",
+    "rating": "Évaluation",
+    "saveLead": "Enregistrer le contact",
+    "saving": "Enregistrement...",
+    "noData": "Aucune donnée disponible"
+  },
+  "cme": {
+    "title": "Points de formation continue",
+    "subtitle": "Gérer les crédits CME et les évaluations",
+    "totalCredits": "Total des points",
+    "credits": "Points",
+    "downloadCertificate": "Télécharger le certificat",
+    "missingEvaluations": "Évaluations manquantes",
+    "missingEvaluationsHint": "{count} sessions doivent encore être évaluées pour obtenir les points CME.",
+    "sessionCredits": "Sessions et points",
+    "noSessions": "Aucune session visitée pour le moment",
+    "status": {
+      "attended": "Présent",
+      "evaluated": "Évalué",
+      "credited": "Points attribués"
+    },
+    "evaluateSession": "Évaluer la session",
+    "categories": {
+      "contentQuality": "Qualité du contenu",
+      "speakerEffectiveness": "Intervenant(e)",
+      "relevance": "Pertinence",
+      "organization": "Organisation"
+    },
+    "comments": "Commentaires",
+    "commentsPlaceholder": "Remarques optionnelles...",
+    "submitEvaluation": "Soumettre l'évaluation",
+    "submitting": "Envoi en cours...",
+    "evaluationSubmitted": "Évaluation soumise",
+    "creditAwarded": "Points CME attribués"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "subtitle": "Statistiques et analyses pour ce congrès spécialisé",
+    "exportCsv": "Exporter en CSV",
+    "exportPdf": "Exporter en PDF",
+    "stats": {
+      "registrations": "Inscriptions",
+      "checkins": "Check-ins",
+      "revenue": "Chiffre d'affaires",
+      "engagement": "Engagement"
+    },
+    "registrationTimeline": "Inscriptions dans le temps",
+    "topSessions": "Sessions les plus populaires",
+    "referralFunnel": "Entonnoir de parrainage",
+    "funnel": {
+      "invites": "Invitations",
+      "clicks": "Clics",
+      "conversions": "Inscriptions"
+    },
+    "topSpeakers": "Meilleur(e)s intervenant(e)s",
+    "speaker": "Intervenant(e)",
+    "sessions": "Sessions",
+    "avgRating": "Évaluation",
+    "noData": "Aucune donnée disponible"
+  },
+  "gamification": {
+    "title": "Gamification",
+    "subtitle": "Collecter des points, gagner des récompenses",
+    "points": "Points",
+    "totalPoints": "Points collectés",
+    "achievements": "Badges",
+    "noAchievements": "Aucun badge disponible pour le moment",
+    "locked": "Verrouillé",
+    "leaderboard": "Classement",
+    "daily": "Aujourd'hui",
+    "overall": "Total",
+    "noEntries": "Aucune entrée pour le moment",
+    "you": "Vous",
+    "pts": "pts",
+    "tiers": {
+      "bronze": "Bronze",
+      "silver": "Argent",
+      "gold": "Or",
+      "diamond": "Diamant"
+    },
+    "pointsToNext": "Encore {points} points jusqu'au niveau {tier}",
+    "recentActivity": "Activité récente",
+    "reasons": {
+      "referral": "Parrainage",
+      "checkin": "Check-in",
+      "question": "Question posée",
+      "quiz": "Quiz répondu",
+      "networking": "Networking",
+      "photo": "Photo téléchargée",
+      "registration": "Inscription",
+      "profile": "Profil complété",
+      "exhibitor_visit": "Visite d'un exposant"
+    },
+    "referral": "Lien de parrainage",
+    "shareTitle": "Congrès spécialisé ensemble",
+    "share": "Partager",
+    "clicks": "Clics",
+    "conversions": "Inscriptions",
+    "rewardTiers": "Niveaux de récompense"
+  },
+  "networking": {
+    "title": "Networking",
+    "subtitle": "Créer des contacts et se connecter",
+    "findAttendees": "Trouver des participants",
+    "searchPlaceholder": "Rechercher par nom ou organisation...",
+    "searchHint": "Recherchez des participants pour vous connecter.",
+    "nfcTap": "Échange de contacts NFC",
+    "nfcHint": "Tenez votre appareil contre un autre badge pour échanger les coordonnées.",
+    "tapToConnect": "Toucher pour se connecter",
+    "myContacts": "Mes contacts",
+    "exportContacts": "Exporter les contacts",
+    "noContacts": "Aucun contact enregistré pour le moment",
+    "nearbyPeople": "Personnes à proximité",
+    "nearbyHint": "Activez le Bluetooth pour voir les personnes à proximité.",
+    "enableBluetooth": "Activer le Bluetooth",
+    "nfcNotSupported": "NFC n'est pas pris en charge par ce navigateur."
+  },
+  "social": {
+    "title": "Événements sociaux",
+    "subtitle": "Événements sociaux et programme-cadre",
+    "noEvents": "Aucun événement social prévu pour le moment",
+    "rsvp": "Participer",
+    "types": {
+      "dinner": "Dîner",
+      "reception": "Réception",
+      "tour": "Visite guidée",
+      "sport": "Sport",
+      "cultural": "Culturel"
+    }
+  },
+  "report": {
+    "title": "Rapport du congrès spécialisé",
+    "subtitle": "Résumé et résultats",
+    "downloadReport": "Télécharger le rapport",
+    "executiveSummary": "Résumé IA",
+    "summaryPlaceholder": "Le résumé généré par l'IA sera créé à la fin du congrès spécialisé.",
+    "stats": {
+      "attendees": "Participants",
+      "sessions": "Sessions",
+      "speakers": "Intervenant(e)s",
+      "satisfaction": "Satisfaction"
+    },
+    "recordings": "Enregistrements",
+    "noRecordings": "Aucun enregistrement disponible pour le moment",
+    "contentLibrary": "Bibliothèque de contenus",
+    "noContent": "Aucun contenu disponible pour le moment",
+    "feedbackSummary": "Résumé des retours",
+    "noFeedback": "Aucune donnée de retour disponible pour le moment"
+  },
+  "setupChecklist": {
+    "title": "Configuration du congrès spécialisé",
+    "progress": "{completed} sur {total} étapes terminées",
+    "basicInfo": "Informations de base (nom, date, lieu)",
+    "sessions": "Programme (min. 1 session)",
+    "speakers": "Intervenant(e)s (min. 1 intervenant(e))",
+    "registration": "Inscription ouverte",
+    "rooms": "Salles (min. 1 salle)",
+    "branding": "Image de marque (logo téléchargé)",
+    "required": "Obligatoire",
+    "publish": "Publier",
+    "publishHint": "Toutes les étapes obligatoires doivent être terminées pour publier le congrès spécialisé."
+  },
+  "onboarding": {
+    "title": "Créez votre premier congrès spécialisé",
+    "description": "Bienvenue sur ensemble ! Commencez par créer un nouveau congrès spécialisé ou parcourez les événements existants.",
+    "createCongress": "Créer un congrès spécialisé",
+    "browseCongresses": "Parcourir les congrès spécialisés",
+    "dismiss": "Fermer"
+  },
+  "emptyState": {
+    "noSessions": "Aucune session pour le moment",
+    "noSessionsDesc": "Créez la première session pour ce congrès spécialisé.",
+    "noSpeakers": "Aucun(e) intervenant(e) pour le moment",
+    "noSpeakersDesc": "Invitez le/la premier(ère) intervenant(e).",
+    "addFirst": "Créer la première entrée",
+    "import": "Importer"
+  },
+  "helpTooltips": {
+    "learnMore": "En savoir plus"
+  },
+  "funktionen": {
+    "title": "Toutes les fonctionnalités",
+    "subtitle": "Tout ce dont votre congrès spécialisé a besoin. De l'inscription au certificat.",
+    "ctaTitle": "Convaincu(e) ?",
+    "ctaSubtitle": "Réservez une démo personnalisée et découvrez comment ensemble simplifie votre congrès spécialisé.",
+    "ctaButton": "Réserver une démo",
+    "domains": {
+      "programm": {
+        "name": "Programme & Sessions",
+        "features": {
+          "dragDrop": {
+            "name": "Planification du programme par glisser-déposer",
+            "description": "Créez et organisez votre programme de manière intuitive par glisser-déposer sur la grille horaire visuelle."
+          },
+          "multiTrack": {
+            "name": "Sessions parallèles multi-track",
+            "description": "Gérez autant de tracks parallèles et d'attributions de salles que nécessaire dans une seule vue."
+          },
+          "conflicts": {
+            "name": "Détection de conflits",
+            "description": "Détection automatique des conflits de salles et d'intervenant(e)s lors de la planification du programme."
+          },
+          "personalSchedule": {
+            "name": "Planning personnel",
+            "description": "Les participants créent leur planning individuel avec des favoris et des rappels."
+          },
+          "ical": {
+            "name": "Export iCal et synchronisation calendrier",
+            "description": "Exportez les sessions directement vers Google Calendar, Outlook ou Apple Calendrier."
+          },
+          "sessionTypes": {
+            "name": "Types de sessions",
+            "description": "Keynote, atelier, poster, table ronde, chirurgie en direct et d'autres formats de sessions configurables."
+          }
+        }
+      },
+      "registrierung": {
+        "name": "Inscription & Billetterie",
+        "features": {
+          "formBuilder": {
+            "name": "Inscription en ligne avec éditeur de formulaires",
+            "description": "Créez des formulaires d'inscription sur mesure avec des champs configurables et une validation."
+          },
+          "ticketTypes": {
+            "name": "Plusieurs types de billets et niveaux de prix",
+            "description": "Standard, VIP, Virtuel, Étudiants et plus. Définissez autant de catégories de billets que nécessaire avec des prix individuels."
+          },
+          "earlyBird": {
+            "name": "Prix early bird avec compte à rebours",
+            "description": "Changement de prix automatique à l'expiration du délai early bird avec compte à rebours en direct."
+          },
+          "groupReg": {
+            "name": "Inscription de groupe par CSV",
+            "description": "Inscrivez des délégations entières par import CSV avec confirmation automatique."
+          },
+          "waitlist": {
+            "name": "Liste d'attente avec progression automatique",
+            "description": "Gestion automatique de la liste d'attente avec notification en cas de disponibilité."
+          },
+          "payment": {
+            "name": "Traitement des paiements",
+            "description": "Intégration avec Stripe et NordPay pour des paiements en ligne sécurisés en CHF et EUR."
+          }
+        }
+      },
+      "live": {
+        "name": "Événement en direct",
+        "features": {
+          "transcription": {
+            "name": "Transcription en temps réel",
+            "description": "Transcription automatique de toutes les conférences en temps réel avec Whisper AI."
+          },
+          "qa": {
+            "name": "Q&A en direct avec vote",
+            "description": "Les participants posent des questions, la communauté vote. Les meilleures questions remontent en haut."
+          },
+          "polls": {
+            "name": "Sondages interactifs et nuages de mots",
+            "description": "Sondages en direct, choix multiples et nuages de mots en texte libre pendant la session."
+          },
+          "streaming": {
+            "name": "Streaming en direct",
+            "description": "Streaming basé sur HLS et WebRTC pour les participants à distance en qualité optimale."
+          },
+          "reactions": {
+            "name": "Réactions emoji en temps réel",
+            "description": "Feedback instantané des participants avec des réactions emoji qui traversent l'écran."
+          },
+          "ratings": {
+            "name": "Évaluations de sessions",
+            "description": "Évaluations détaillées après chaque session pour l'assurance qualité et le retour aux intervenant(e)s."
+          }
+        }
+      },
+      "navigation": {
+        "name": "Navigation intérieure",
+        "features": {
+          "ble": {
+            "name": "Localisation intérieure par BLE Beacon",
+            "description": "Positionnement en temps réel précis dans le bâtiment grâce aux balises Bluetooth Low Energy."
+          },
+          "floorplan": {
+            "name": "Plan du bâtiment SVG avec salles",
+            "description": "Plan de bâtiment interactif avec informations sur les salles, changement d'étage et zoom."
+          },
+          "pathfinding": {
+            "name": "Guidage Dijkstra",
+            "description": "Chemin le plus court vers la prochaine conférence, salle ou stand d'exposition avec itinéraire animé."
+          },
+          "occupancy": {
+            "name": "Occupation des salles en temps réel",
+            "description": "Affichage en direct de l'occupation de chaque salle. Voyez immédiatement où des places sont libres."
+          },
+          "checkin": {
+            "name": "Check-in automatique de session",
+            "description": "En entrant dans une salle, la présence est automatiquement enregistrée via les balises."
+          },
+          "accessible": {
+            "name": "Itinéraires accessibles",
+            "description": "Guidage accessible en fauteuil roulant avec ascenseurs et chemins sans marches."
+          }
+        }
+      },
+      "networking": {
+        "name": "Networking & Contacts",
+        "features": {
+          "nfc": {
+            "name": "Échange de contacts par badge NFC",
+            "description": "Échangez vos coordonnées en rapprochant simplement les badges NFC."
+          },
+          "qr": {
+            "name": "QR Code en alternative",
+            "description": "Pour les appareils sans NFC : scanner le QR code pour un échange de contact instantané."
+          },
+          "nearby": {
+            "name": "Personnes à proximité",
+            "description": "Voyez qui se trouve près de vous. Idéal pour le networking spontané."
+          },
+          "directory": {
+            "name": "Répertoire des participants",
+            "description": "Répertoire consultable de tous les participants avec profil et organisation."
+          },
+          "dm": {
+            "name": "Messages directs",
+            "description": "Envoyez des messages privés à d'autres participants directement depuis le profil ou le répertoire."
+          },
+          "vcard": {
+            "name": "Export de contacts (vCard)",
+            "description": "Exportez vos contacts collectés au format vCard pour Outlook et les systèmes CRM."
+          }
+        }
+      },
+      "chat": {
+        "name": "Chat & Communication",
+        "features": {
+          "realtime": {
+            "name": "Chat en temps réel",
+            "description": "Messages instantanés via Cloudflare Durable Objects avec moins de 50ms de latence dans le monde entier."
+          },
+          "channels": {
+            "name": "Canaux de groupe et de session",
+            "description": "Canaux de chat automatiques pour chaque session, chaque track et des groupes personnalisés."
+          },
+          "directMessages": {
+            "name": "Messages directs",
+            "description": "Communication privée 1:1 entre participants, intervenant(e)s et organisateurs."
+          },
+          "files": {
+            "name": "Envoi de fichiers et d'images",
+            "description": "Partagez des présentations, images et documents directement dans le chat."
+          },
+          "moderation": {
+            "name": "Outils de modération",
+            "description": "Signaler, mettre en sourdine et modérer les messages, automatiquement et manuellement."
+          },
+          "push": {
+            "name": "Notifications push",
+            "description": "Notifications web push et in-app pour les nouveaux messages et annonces."
+          }
+        }
+      },
+      "ausstellung": {
+        "name": "Exposition & Sponsors",
+        "features": {
+          "directory": {
+            "name": "Répertoire des exposants avec profils",
+            "description": "Les exposants se présentent avec logo, description, produits et coordonnées."
+          },
+          "leads": {
+            "name": "Capture de leads par NFC/QR",
+            "description": "Capturer les contacts des visiteurs au stand d'exposition. Par scan de badge avec notes et évaluation."
+          },
+          "catalogs": {
+            "name": "Catalogues de produits",
+            "description": "Catalogues de produits numériques avec images, descriptions et liens de téléchargement."
+          },
+          "sponsorTiers": {
+            "name": "Visibilité sponsors (niveaux)",
+            "description": "Or, Argent, Bronze. Les sponsors bénéficient d'une visibilité graduée dans toute l'application."
+          },
+          "floorplan": {
+            "name": "Plan des stands avec numéros",
+            "description": "Plan d'exposition interactif avec numéros de stands, catégories et guidage."
+          },
+          "leadExport": {
+            "name": "Export des leads en CSV",
+            "description": "Exportez tous les contacts capturés en CSV, prêts pour l'import CRM."
+          }
+        }
+      },
+      "ki": {
+        "name": "IA & Savoir",
+        "features": {
+          "rag": {
+            "name": "Base de connaissances RAG",
+            "description": "Retrieval-Augmented Generation sur tous les contenus du congrès, abstracts et présentations."
+          },
+          "search": {
+            "name": "Recherche dans le savoir du congrès",
+            "description": "Posez des questions en langage naturel et obtenez des réponses précises à partir du savoir du congrès."
+          },
+          "summaries": {
+            "name": "Résumés IA",
+            "description": "Résumés automatiques de sessions, conférences et journées entières de congrès."
+          },
+          "translation": {
+            "name": "Traduction multilingue",
+            "description": "Traduction en temps réel des contenus assistée par IA en allemand, français, italien et anglais."
+          },
+          "recommendations": {
+            "name": "Recommandations intelligentes",
+            "description": "Recommandations de sessions personnalisées basées sur les intérêts et le comportement de visite."
+          },
+          "citations": {
+            "name": "Citation des sources",
+            "description": "Chaque réponse de l'IA avec indication des sources, liées directement aux abstracts et sessions."
+          }
+        }
+      },
+      "gamification": {
+        "name": "Gamification",
+        "features": {
+          "points": {
+            "name": "Système de points pour l'engagement",
+            "description": "Des points pour les check-ins, questions, networking, sondages et autres activités du congrès."
+          },
+          "leaderboard": {
+            "name": "Classements",
+            "description": "Les classements quotidiens et généraux encouragent une compétition amicale."
+          },
+          "achievements": {
+            "name": "Achievements et badges",
+            "description": "Badges numériques pour des jalons comme Première question, Networker ou Lève-tôt."
+          },
+          "referral": {
+            "name": "Programme de parrainage",
+            "description": "Les participants recommandent des collègues, avec suivi et points bonus pour les inscriptions réussies."
+          },
+          "tiers": {
+            "name": "Niveaux de récompense",
+            "description": "Bronze, Argent, Or, Diamant. Des niveaux croissants avec des récompenses exclusives."
+          },
+          "teams": {
+            "name": "Compétitions par équipes",
+            "description": "Les départements ou cliniques participent en équipe et collectent des points ensemble."
+          }
+        }
+      },
+      "cme": {
+        "name": "CME / Formation continue",
+        "features": {
+          "creditTypes": {
+            "name": "Plusieurs types de crédits",
+            "description": "Prise en charge de FMH, ACCME, EAU et d'autres systèmes d'accréditation."
+          },
+          "attendance": {
+            "name": "Vérification automatique de présence",
+            "description": "Les balises BLE et le check-in de session vérifient automatiquement la présence."
+          },
+          "evaluations": {
+            "name": "Évaluations de sessions",
+            "description": "Évaluations obligatoires après chaque session comme condition pour les points CME."
+          },
+          "certificates": {
+            "name": "Génération de certificats (PDF)",
+            "description": "Création automatique de certificats de formation continue en PDF avec QR code."
+          },
+          "qrVerify": {
+            "name": "Code de vérification QR",
+            "description": "Chaque certificat contient un QR code pour vérifier l'authenticité."
+          },
+          "dashboard": {
+            "name": "Dashboard de formation continue",
+            "description": "Vue d'ensemble de toutes les sessions visitées, points collectés et certificats."
+          }
+        }
+      },
+      "medien": {
+        "name": "Médias & Contenus",
+        "features": {
+          "gallery": {
+            "name": "Galerie photo avec lightbox",
+            "description": "Galerie photo commune pour participants et organisateurs avec vue plein écran."
+          },
+          "poster": {
+            "name": "Sessions poster (ePoster)",
+            "description": "Exposition de posters numériques avec zoom, vote et commentaires."
+          },
+          "articles": {
+            "name": "Upload d'articles et papers",
+            "description": "Soumettez et recherchez des contributions scientifiques avec des tags de mots-clés."
+          },
+          "onDemand": {
+            "name": "Enregistrements à la demande",
+            "description": "Regardez les sessions manquées en vidéo à la demande, même après le congrès spécialisé."
+          },
+          "podcam": {
+            "name": "Interviews vidéo PodCam",
+            "description": "Enregistrez de courtes interviews vidéo avec les intervenant(e)s et participants directement sur place."
+          },
+          "library": {
+            "name": "Bibliothèque de documents",
+            "description": "Stockage central pour les présentations, documents et supports d'accompagnement."
+          }
+        }
+      },
+      "admin": {
+        "name": "Administration",
+        "features": {
+          "wizard": {
+            "name": "Assistant de création de congrès",
+            "description": "Un assistant étape par étape guide à travers la configuration d'un nouveau congrès spécialisé."
+          },
+          "attendees": {
+            "name": "Gestion des participants",
+            "description": "Vue d'ensemble, recherche, filtres et export de tous les participants avec statut d'inscription."
+          },
+          "badges": {
+            "name": "Conception et impression de badges",
+            "description": "Créez et imprimez des badges nominatifs avec code QR/NFC et mise en page individuelle."
+          },
+          "finance": {
+            "name": "Vue d'ensemble financière",
+            "description": "Recettes, dépenses et statut de paiement en un coup d'oeil, y compris l'export CSV."
+          },
+          "analytics": {
+            "name": "Dashboard analytics",
+            "description": "Nombre de participants, popularité des sessions, métriques d'engagement et tendances."
+          },
+          "audit": {
+            "name": "Logs d'audit et sécurité",
+            "description": "Journalisation complète de toutes les modifications pour la conformité et la traçabilité."
+          }
+        }
+      }
+    }
   }
 }

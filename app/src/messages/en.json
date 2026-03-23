@@ -34,18 +34,43 @@
     },
     "nav": {
       "home": "Home",
+      "dashboard": "Dashboard",
+      "congresses": "Congresses",
       "schedule": "Schedule",
+      "live": "Live",
+      "networking": "Networking",
       "map": "Map",
       "chat": "Chat",
+      "gallery": "Gallery",
+      "poster": "Posters",
+      "articles": "Articles",
+      "exhibition": "Exhibition",
+      "knowledge": "Knowledge",
+      "gamification": "Gamification",
       "profile": "Profile",
-      "settings": "Settings"
+      "settings": "Settings",
+      "logout": "Log out",
+      "notifications": "Notifications",
+      "search": "Search"
+    },
+    "dashboard": {
+      "welcomeBack": "Welcome back",
+      "myCongresses": "My Congresses",
+      "upcomingSessions": "Upcoming Sessions",
+      "messages": "Messages",
+      "points": "Points",
+      "quickActions": "Quick Actions",
+      "createCongress": "Create Congress",
+      "editProfile": "Edit Profile",
+      "recentActivity": "Recent Activity",
+      "noActivity": "No activity yet"
     }
   },
   "auth": {
     "login": "Log in",
-    "loginSubtitle": "Sign in to your Ensemble account",
+    "loginSubtitle": "Sign in to your ensemble account",
     "register": "Register",
-    "registerSubtitle": "Create your Ensemble account",
+    "registerSubtitle": "Create your ensemble account",
     "logout": "Log out",
     "forgotPassword": "Forgot password?",
     "resetPassword": "Reset password",
@@ -72,10 +97,10 @@
     "emailInUse": "This email address is already in use."
   },
   "congress": {
-    "create": "Create congress",
-    "edit": "Edit congress",
-    "publish": "Publish congress",
-    "archive": "Archive congress",
+    "create": "Create Congress",
+    "edit": "Edit Congress",
+    "publish": "Publish Congress",
+    "archive": "Archive Congress",
     "roles": {
       "organizer": "Organizer",
       "speaker": "Speaker",
@@ -86,17 +111,34 @@
     "settings": {
       "branding": "Branding",
       "registration": "Registration",
-      "schedule": "Schedule planning",
+      "schedule": "Schedule Planning",
       "features": "Features"
     }
   },
   "schedule": {
+    "title": "Schedule",
+    "dayPrefix": "Day",
     "dayTabs": "Days",
-    "trackFilter": "Filter by track",
-    "addToCalendar": "Add to calendar",
+    "allTracks": "All",
+    "trackFilter": "Filter by Track",
+    "searchPlaceholder": "Search sessions...",
     "noSessions": "No sessions found",
-    "mySchedule": "My schedule",
-    "conflicts": "Schedule conflicts"
+    "noSessionsDescription": "No sessions available for the selected time period or filter.",
+    "addToCalendar": "Add to Calendar",
+    "mySchedule": "My Schedule",
+    "myScheduleEmpty": "No sessions bookmarked yet",
+    "myScheduleEmptyDescription": "Bookmark sessions from the schedule to create your personal agenda.",
+    "addToMySchedule": "Add to My Schedule",
+    "removeFromMySchedule": "Remove from My Schedule",
+    "sessionDetail": "Session Details",
+    "speakers": "Speakers",
+    "room": "Room",
+    "materials": "Materials",
+    "cmeCredits": "CME Credits",
+    "bookmark": "Bookmark",
+    "bookmarked": "Bookmarked",
+    "relatedSessions": "Related Sessions",
+    "conflicts": "Schedule Conflicts"
   },
   "session": {
     "types": {
@@ -104,8 +146,8 @@
       "talk": "Talk",
       "workshop": "Workshop",
       "poster": "Poster",
-      "panel": "Panel discussion",
-      "social": "Social event",
+      "panel": "Panel Discussion",
+      "social": "Networking Event",
       "break": "Break"
     },
     "details": "Details",
@@ -118,27 +160,35 @@
   },
   "chat": {
     "channels": "Channels",
-    "newMessage": "New message",
-    "search": "Search messages",
+    "directMessages": "Direct",
+    "sessionChats": "Sessions",
+    "newMessage": "New Message",
+    "newConversation": "New Conversation",
+    "search": "Search Messages",
+    "searchConversations": "Search conversations...",
     "moderation": "Moderation",
-    "directMessage": "Direct message",
-    "groupChat": "Group chat",
-    "typeMessage": "Type a message..."
+    "directMessage": "Direct Message",
+    "groupChat": "Group Chat",
+    "typeMessage": "Type a message...",
+    "send": "Send",
+    "typing": "typing",
+    "noMessages": "No messages yet",
+    "selectConversation": "Select a conversation"
   },
   "map": {
     "floors": "Floors",
     "navigate": "Navigate",
-    "yourLocation": "Your location",
-    "beaconOptIn": "Enable location services",
-    "roomOccupancy": "Room occupancy",
-    "findPerson": "Find person"
+    "yourLocation": "Your Location",
+    "beaconOptIn": "Enable Location Services",
+    "roomOccupancy": "Room Occupancy",
+    "findPerson": "Find Person"
   },
   "registration": {
-    "form": "Registration form",
+    "form": "Registration Form",
     "tickets": "Tickets",
     "payment": "Payment",
     "confirmation": "Confirmation",
-    "earlyBird": "Early bird",
+    "earlyBird": "Early Bird",
     "regular": "Regular",
     "vip": "VIP",
     "virtual": "Virtual",
@@ -148,7 +198,7 @@
       "personal": "Personal Data",
       "ticket": "Ticket Selection",
       "sessions": "Pre-select Sessions",
-      "review": "Review & Payment",
+      "review": "Summary",
       "payment": "Payment"
     },
     "fields": {
@@ -204,6 +254,200 @@
     "failed": "Payment failed"
   },
   "admin": {
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "subtitle": "Overview of all congresses and users"
+    },
+    "stats": {
+      "totalCongresses": "Total Congresses",
+      "totalUsers": "Total Users",
+      "totalRevenue": "Total Revenue",
+      "activeEvents": "Active Events"
+    },
+    "labels": {
+      "registrations": "Registrations"
+    },
+    "status": {
+      "draft": "Draft",
+      "published": "Published",
+      "live": "Live",
+      "completed": "Completed",
+      "archived": "Archived"
+    },
+    "actions": {
+      "createCongress": "Create New Congress",
+      "manageUsers": "Manage Users",
+      "viewAll": "View All"
+    },
+    "common": {
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "disciplines": {
+      "medical": "Medical",
+      "engineering": "Engineering",
+      "legal": "Legal",
+      "academic": "Academic",
+      "scientific": "Scientific",
+      "other": "Other"
+    },
+    "congresses": {
+      "title": "Manage Congresses",
+      "subtitle": "All congresses in your organization",
+      "searchPlaceholder": "Search congresses...",
+      "filterStatus": "Filter by status",
+      "allStatuses": "All Statuses",
+      "noCongresses": "No congresses yet"
+    },
+    "createCongress": {
+      "title": "Create New Congress",
+      "subtitle": "Enter the basic details for your new congress",
+      "submit": "Create Congress",
+      "success": "Congress created successfully",
+      "sections": {
+        "basic": "Basic Details",
+        "dates": "Dates",
+        "venue": "Venue",
+        "pricing": "Pricing & Capacity"
+      },
+      "fields": {
+        "name": "Name",
+        "namePlaceholder": "e.g. Swiss Medical Congress 2026",
+        "slug": "URL Slug",
+        "slugHint": "Automatically generated from the name",
+        "subtitle": "Subtitle",
+        "subtitlePlaceholder": "Brief description of the congress",
+        "discipline": "Discipline",
+        "description": "Description",
+        "descriptionPlaceholder": "Describe the congress...",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "venueName": "Venue",
+        "venueNamePlaceholder": "e.g. Kursaal Bern",
+        "venueAddress": "Address",
+        "venueAddressPlaceholder": "Kornhausstrasse 3",
+        "venueCity": "City",
+        "venueCountry": "Country (ISO code)",
+        "maxAttendees": "Max. Attendees",
+        "currency": "Currency",
+        "earlyBirdPrice": "Early Bird Price",
+        "regularPrice": "Regular Price",
+        "priceHint": "Amount in currency units (e.g. 290.00)"
+      },
+      "errors": {
+        "endBeforeStart": "End date must be after start date",
+        "generic": "Failed to create congress"
+      }
+    },
+    "congressDetail": {
+      "stats": {
+        "registrations": "Registrations",
+        "sessions": "Sessions",
+        "speakers": "Speakers",
+        "revenue": "Revenue"
+      },
+      "quickActions": "Quick Actions",
+      "actions": {
+        "edit": "Edit",
+        "publish": "Publish",
+        "manageSessions": "Manage Sessions",
+        "manageSpeakers": "Manage Speakers",
+        "settings": "Settings"
+      }
+    },
+    "sessionBuilder": {
+      "title": "Schedule Planning",
+      "subtitle": "Create, edit, and organize sessions",
+      "sessionsCount": "Sessions",
+      "createSession": "Create New Session",
+      "editSession": "Edit Session",
+      "deleteSession": "Delete Session",
+      "sessionCreated": "Session created successfully",
+      "sessionUpdated": "Session updated successfully",
+      "sessionDeleted": "Session deleted successfully",
+      "noSessions": "No sessions yet",
+      "conflictsDetected": "Room conflicts detected",
+      "formDescription": "Fill in the fields to create or edit a session.",
+      "fields": {
+        "title": "Title",
+        "titlePlaceholder": "e.g. Opening Keynote",
+        "subtitle": "Subtitle",
+        "type": "Type",
+        "track": "Track",
+        "room": "Room",
+        "noTrack": "No Track",
+        "noRoom": "No Room",
+        "startTime": "Start Time",
+        "endTime": "End Time",
+        "description": "Description",
+        "maxAttendees": "Max. Attendees",
+        "cmeCredits": "CME Credits",
+        "isBookable": "Bookable",
+        "isRecorded": "Will be recorded"
+      },
+      "errors": {
+        "endBeforeStart": "End time must be after start time",
+        "generic": "Failed to save session"
+      }
+    },
+    "sessionTypes": {
+      "keynote": "Keynote",
+      "panel": "Panel Discussion",
+      "workshop": "Workshop",
+      "poster": "Poster",
+      "oral": "Talk",
+      "symposium": "Symposium",
+      "live_surgery": "Live Surgery",
+      "social": "Networking Event",
+      "break": "Break",
+      "other": "Other"
+    },
+    "speakerAdmin": {
+      "title": "Manage Speakers",
+      "subtitle": "Overview of all speakers and their status",
+      "inviteSpeaker": "Invite Speaker",
+      "totalSpeakers": "Total Speakers",
+      "disclosuresSubmitted": "Disclosures Submitted",
+      "presentationsUploaded": "Presentations Uploaded",
+      "speakerList": "Speaker List",
+      "disclosureOk": "Disclosure Submitted",
+      "disclosurePending": "Disclosure Pending",
+      "presentationOk": "Presentation Uploaded",
+      "presentationPending": "Presentation Pending"
+    },
+    "settings": {
+      "title": "Congress Settings",
+      "subtitle": "Manage all settings for this congress",
+      "saved": "Settings saved",
+      "saveFailed": "Failed to save settings",
+      "sections": {
+        "general": "General",
+        "registration": "Registration",
+        "features": "Features",
+        "branding": "Branding"
+      },
+      "registrationOpen": "Registration Open",
+      "registrationDeadline": "Registration Deadline",
+      "earlyBirdDeadline": "Early Bird Deadline",
+      "earlyBirdPrice": "Early Bird Price (CHF)",
+      "regularPrice": "Regular Price (CHF)",
+      "features": {
+        "qa": "Questions & Answers (Q&A)",
+        "polls": "Live Polls",
+        "gamification": "Gamification & Points",
+        "bleBeacons": "BLE Beacons / Indoor Navigation"
+      },
+      "logoUpload": "Upload Logo",
+      "logoHint": "Recommended: PNG or SVG, min. 256x256px",
+      "accentColor": "Accent Color",
+      "dangerZone": "Danger Zone",
+      "dangerZoneDescription": "Irreversible actions for this congress",
+      "deleteWarning": "Deleting a congress permanently removes all associated data. This action cannot be undone.",
+      "deleteConfirmLabel": "Type \"{name}\" to confirm",
+      "deleteCongress": "Permanently Delete Congress",
+      "deleted": "Congress has been deleted",
+      "deleteFailed": "Failed to delete congress"
+    },
     "attendees": {
       "title": "Attendees",
       "subtitle": "Overview of all registrations for this congress",
@@ -258,20 +502,36 @@
     "leads": "Leads",
     "products": "Products",
     "analytics": "Analytics",
-    "scanBadge": "Scan badge",
-    "exportLeads": "Export leads"
+    "scanBadge": "Scan Badge",
+    "exportLeads": "Export Leads"
   },
   "ai": {
-    "copilot": "AI assistant",
-    "search": "Smart search",
+    "copilot": "AI Assistant",
+    "search": "Smart Search",
     "recommend": "Recommendations",
     "summarize": "Summarize",
     "askQuestion": "Ask a question",
     "sources": "Sources"
   },
+  "knowledge": {
+    "title": "Knowledge Base",
+    "subtitle": "Ask questions about the scientific content of this congress",
+    "placeholder": "Enter your question...",
+    "send": "Send",
+    "sources": "Sources",
+    "newQuestion": "New Question",
+    "errorResponse": "Sorry, your question could not be processed. Please try again.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "goToContext": "Go to Context",
+    "noSources": "No sources available",
+    "thinking": "Thinking..."
+  },
   "notifications": {
-    "types": "Notification types",
-    "settings": "Notification settings",
+    "types": "Notification Types",
+    "settings": "Notification Settings",
     "empty": "No new notifications",
     "markAllRead": "Mark all as read"
   },
@@ -290,29 +550,879 @@
     "uploadSuccess": "Presentation uploaded successfully.",
     "noSpeakers": "No speakers registered yet.",
     "noResults": "No speakers found.",
-    "submitDisclosure": "Submit disclosure"
+    "submitDisclosure": "Submit Disclosure"
   },
   "landing": {
-    "hero": "The congress platform for Switzerland",
-    "tagline": "Where expertise comes together.",
-    "features": "Features",
-    "pricing": "Pricing",
-    "cta": "Get started",
-    "about": "About us",
-    "register": "Register",
-    "learnMore": "Learn more",
-    "featuresHeading": "Everything your congress needs",
-    "programTitle": "Programmes & Sessions",
-    "programDesc": "Multi-day programmes with tracks, parallel sessions, and personal schedules. Attendees always stay on top of things.",
-    "streamingTitle": "Live Streaming",
-    "streamingDesc": "Hybrid events with professional live streaming, recording, and on-demand access for a global audience.",
-    "navigationTitle": "Indoor Navigation",
-    "navigationDesc": "Interactive venue maps with real-time navigation to rooms, booths, and points of interest via Bluetooth beacons.",
-    "networkingTitle": "Networking",
-    "networkingDesc": "Intelligent matchmaking, 1:1 meetings, and topic-based group chats. Making connections has never been easier.",
-    "aiTitle": "AI Knowledge Base",
-    "aiDesc": "AI-powered search across all abstracts, presentations, and documents. Cited answers in seconds.",
-    "gamificationTitle": "Gamification",
-    "gamificationDesc": "Points, badges, and leaderboards motivate active participation and measurably increase engagement."
+    "nav": {
+      "platform": "Platform",
+      "pricing": "Pricing",
+      "about": "About Us",
+      "login": "Log in",
+      "demo": "Book a Demo"
+    },
+    "hero": {
+      "eyebrow": "The Congress Platform for Switzerland",
+      "headlineLine1": "Your entire congress.",
+      "headlineLine2": "One platform.",
+      "subtitle": "From registration to certification. ensemble unites all the tools a professional congress needs. AI-powered. Real-time. Swiss-made.",
+      "ctaPrimary": "Book a Demo",
+      "ctaSecondary": "All Features",
+      "ctaNote": "No obligation \u00b7 Personal consultation \u00b7 In 30 minutes"
+    },
+    "logoBar": "Trusted by leading congress organizers",
+    "platform": {
+      "titleLine1": "One platform.",
+      "titleLine2": "Everything included.",
+      "title": "One platform. Everything included.",
+      "subtitle": "Not 10 different tools, but a single system for the entire congress lifecycle.",
+      "programSessions": "Schedule & Sessions",
+      "liveStreaming": "Live Streaming & Transcription",
+      "bleNavigation": "BLE Indoor Navigation",
+      "aiKnowledge": "AI Knowledge Base",
+      "nfcBadges": "NFC Badges",
+      "realtimeChat": "Real-time Chat, Q&A & Polls",
+      "gamification": "Gamification & Referrals",
+      "cmeCertificates": "CME Credits & Certificates"
+    },
+    "showcase": {
+      "section1TitleLine1": "Every session.",
+      "section1TitleLine2": "Live. Intelligent.",
+      "section1Title": "Every session. Live. Intelligent.",
+      "section1Item1": "Real-time Transcription",
+      "section1Item2": "Live Q&A with Voting",
+      "section1Item3": "Interactive Polls",
+      "section1Item4": "Session Recordings",
+      "section2TitleLine1": "Navigation",
+      "section2TitleLine2": "like at the airport.",
+      "section2Title": "Navigation like at the airport.",
+      "section2Item1": "BLE Beacon Positioning",
+      "section2Item2": "Indoor Wayfinding",
+      "section2Item3": "Live Room Occupancy",
+      "section2Item4": "Automatic Check-in",
+      "section3TitleLine1": "AI that understands",
+      "section3TitleLine2": "your congress.",
+      "section3Title": "AI that understands your congress.",
+      "section3Item1": "Search Congress Knowledge",
+      "section3Item2": "Summarize Presentations",
+      "section3Item3": "Smart Recommendations",
+      "section3Item4": "Multilingual Translation",
+      "section4TitleLine1": "Registration to review.",
+      "section4TitleLine2": "Automated.",
+      "section4Title": "Registration to review. Automated.",
+      "section4Item1": "Online Registration",
+      "section4Item2": "Multiple Ticket Types",
+      "section4Item3": "QR Code Badges",
+      "section4Item4": "NFC Check-in",
+      "section5TitleLine1": "Engagement",
+      "section5TitleLine2": "that inspires.",
+      "section5Title": "Engagement that inspires.",
+      "section5Item1": "Points and Leaderboards",
+      "section5Item2": "Referral Program",
+      "section5Item3": "NFC Contact Exchange",
+      "section5Item4": "Continuing Education Credits",
+      "allFeaturesLink": "Discover all 50+ features"
+    },
+    "stats": {
+      "stat1Value": "72",
+      "stat1Label": "Features",
+      "stat2Value": "4",
+      "stat2Label": "Languages",
+      "stat3Value": "500+",
+      "stat3Label": "Attendees per Event",
+      "stat4Value": "10",
+      "stat4Label": "Minutes to Get Started"
+    },
+    "swiss": {
+      "title": "Swiss Made. Swiss Hosted. Swiss Values.",
+      "card1Title": "Data in Switzerland",
+      "card1Desc": "GDPR and nDSG compliant. All data hosted in Switzerland and the EU. No third-country transfers.",
+      "card2Title": "Zero-Knowledge Tracking",
+      "card2Desc": "No cookies, no tracking. Privacy-friendly analytics exclusively via Cloudflare Web Analytics.",
+      "card3Title": "Enterprise Security",
+      "card3Desc": "Auth.js authentication, rate limiting, audit logs, and end-to-end encryption for sensitive data.",
+      "card4Title": "Open Architecture",
+      "card4Desc": "API-first design, WebSocket real-time communication, and modular extensibility for any requirement."
+    },
+    "cta": {
+      "headlineLine1": "Ready for your",
+      "headlineLine2": "next congress?",
+      "headline": "Ready for your next congress?",
+      "subtitle": "Start for free and experience how ensemble transforms your congress.",
+      "button": "Book a Demo",
+      "alternative": "Personal Consultation"
+    },
+    "footer": {
+      "tagline": "Where expertise comes together.",
+      "colPlatform": "Platform",
+      "colResources": "Resources",
+      "colCompany": "Company",
+      "linkFeatures": "Features",
+      "linkPricing": "Pricing",
+      "linkIntegrations": "Integrations",
+      "linkSecurity": "Security",
+      "linkDocs": "Documentation",
+      "linkBlog": "Blog",
+      "linkApi": "API",
+      "linkStatus": "Status",
+      "linkAbout": "About Us",
+      "linkContact": "Contact",
+      "linkCareers": "Careers",
+      "linkPartners": "Partners",
+      "copyright": "\u00a9 2026 Ensemble by Nord \u00b7 Made in Switzerland",
+      "impressum": "Legal Notice",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "live": {
+    "qa": {
+      "title": "Q&A",
+      "pageTitle": "Questions & Answers",
+      "empty": "No questions yet",
+      "emptyDescription": "Be the first to ask a question to the speaker.",
+      "placeholder": "Enter your question...",
+      "anonymousToggle": "Anonymous",
+      "anonymous": "Anonymous",
+      "answered": "Answered",
+      "pendingApproval": "Pending Approval",
+      "markAnswered": "Mark as Answered",
+      "hide": "Hide Question"
+    },
+    "poll": {
+      "title": "Poll",
+      "statusWaiting": "Waiting",
+      "statusActive": "Active",
+      "statusClosed": "Closed",
+      "submitVote": "Vote",
+      "totalVotes": "{count} votes",
+      "alreadyVoted": "You have already voted"
+    },
+    "wordCloud": {
+      "title": "Word Cloud",
+      "empty": "No responses received yet"
+    },
+    "reactions": {
+      "title": "Reactions"
+    },
+    "dashboard": {
+      "title": "Live Dashboard",
+      "subtitle": "Real-time overview of all active sessions",
+      "liveNow": "Live Now",
+      "noLiveSessions": "No live sessions at the moment",
+      "comingSoon": "Coming Up",
+      "noUpcoming": "No sessions in the next 30 minutes",
+      "quickActions": "Quick Actions",
+      "actionCheckin": "Check-in",
+      "actionQA": "Q&A",
+      "actionMap": "Map",
+      "announcements": "Announcements",
+      "noAnnouncements": "No announcements yet",
+      "watchStream": "Watch Stream",
+      "roomOccupancy": "Room Occupancy"
+    },
+    "stream": {
+      "defaultTitle": "Live Stream",
+      "unavailable": "Stream Unavailable",
+      "unavailableHint": "The stream will start shortly or has already ended.",
+      "qualityAuto": "Automatic",
+      "tabQA": "Q&A",
+      "tabPoll": "Poll"
+    },
+    "transcript": {
+      "title": "Transcription",
+      "defaultTitle": "Live Transcription",
+      "autoScroll": "Auto-Scroll",
+      "searchPlaceholder": "Search transcript...",
+      "noResults": "No matches",
+      "empty": "No transcript available yet",
+      "scrollToLatest": "Scroll to Latest",
+      "jumpTo": "Jump to Timestamp",
+      "sessionInfo": "Session Info",
+      "timeNotAvailable": "Time not available",
+      "roomNotAvailable": "Room not available",
+      "speakerNotAvailable": "Speaker not available",
+      "transcriptHint": "The transcript is generated in real time and may contain inaccuracies."
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Photos from the congress",
+    "empty": "No photos yet",
+    "photoAlt": "Congress photo",
+    "myPhotos": "My Photos",
+    "myPhotosTitle": "My Photos",
+    "myPhotosSubtitle": "Manage your uploaded photos",
+    "backToGallery": "Back to Gallery",
+    "filterAll": "All",
+    "filterFeatured": "Featured",
+    "public": "Public",
+    "private": "Private",
+    "makePublic": "Make Public",
+    "makePrivate": "Make Private",
+    "deletePhoto": "Delete Photo",
+    "noOwnPhotos": "You haven't uploaded any photos yet",
+    "uploadButton": "Upload Photos",
+    "hideUpload": "Hide Upload",
+    "dropzone": "Drag photos here or click to select",
+    "dropzoneHint": "Max. {max} photos, max. {sizeMb} MB each (JPEG, PNG, WebP)",
+    "captionPlaceholder": "Caption...",
+    "clearAll": "Clear All",
+    "uploadComplete": "Upload Complete",
+    "uploadPhotos": "Upload {count} photos",
+    "viewerTitle": "Photo Viewer",
+    "download": "Download"
+  },
+  "onDemand": {
+    "title": "Recordings",
+    "subtitle": "Watch sessions as on-demand videos",
+    "empty": "No recordings available yet",
+    "emptyHint": "Recordings will be available after the live sessions."
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Scientific contributions and documents",
+    "empty": "No articles submitted yet",
+    "emptyHint": "Submit the first article.",
+    "submit": "Submit Article",
+    "submitTitle": "Submit Article",
+    "submitSubtitle": "Upload your scientific contribution",
+    "searchPlaceholder": "Search by title or keyword...",
+    "fieldTitle": "Title",
+    "fieldTitlePlaceholder": "Article title",
+    "fieldSummary": "Summary",
+    "fieldSummaryPlaceholder": "Brief summary of the article...",
+    "fieldKeywords": "Keywords",
+    "keywordPlaceholder": "Enter keyword...",
+    "addKeyword": "Add",
+    "fieldFile": "File",
+    "fileDropzone": "Drag file here or click to select",
+    "fileDropzoneHint": "PDF, DOCX, or Markdown, max. {maxMb} MB",
+    "invalidFileType": "Invalid file type. Allowed: PDF, DOCX, Markdown.",
+    "fileTooLarge": "File too large. Maximum: {maxMb} MB.",
+    "cancel": "Cancel",
+    "submitButton": "Submit",
+    "submitError": "Failed to submit article"
+  },
+  "poster": {
+    "title": "Posters",
+    "subtitle": "Poster exhibition and voting",
+    "empty": "No posters yet",
+    "searchPlaceholder": "Search by title or author...",
+    "noPreview": "No preview",
+    "categories": {
+      "all": "All",
+      "clinical": "Clinical",
+      "research": "Research",
+      "case-study": "Case Study",
+      "technology": "Technology",
+      "education": "Education"
+    }
+  },
+  "beacon": {
+    "title": "Location Services",
+    "privacyExplanation": "Enable Bluetooth beacons for indoor navigation and location-based features. Your position is only shared according to the selected privacy level.",
+    "privacyLevel": "Privacy Level",
+    "privacyOff": "Off",
+    "privacyNavigation": "Navigation",
+    "privacyFull": "Full",
+    "startScanning": "Enable Location",
+    "stopScanning": "Disable Location",
+    "scanning": "Scanning for beacons...",
+    "beaconsFound": "{count} beacons found",
+    "currentZone": "Current Zone",
+    "notSupported": "Bluetooth is not supported by this browser.",
+    "batteryWarning": "Bluetooth scanning may slightly increase battery usage.",
+    "map": {
+      "title": "Venue Map",
+      "subtitle": "Interactive map with indoor navigation",
+      "status": {
+        "available": "Available",
+        "in-session": "Session in Progress",
+        "full": "Full"
+      }
+    },
+    "wayfinder": {
+      "navigateTo": "Navigate to...",
+      "selectDestination": "Select Destination",
+      "startNavigation": "Start Navigation",
+      "cancel": "Cancel",
+      "positionRequired": "Your location must be detected first."
+    },
+    "nearby": {
+      "title": "{count} people nearby",
+      "empty": "No people nearby",
+      "requiresFull": "Enable the \"Full\" privacy level to see people near you.",
+      "optInNotice": "Only people who have also enabled full location sharing will be visible."
+    },
+    "occupancy": {
+      "title": "Room Occupancy",
+      "empty": "No room data available"
+    }
+  },
+  "nfc": {
+    "title": "Scan Badge",
+    "scanBadge": "Scan Badge",
+    "reading": "Reading NFC tag...",
+    "notSupported": "NFC is not supported by this browser.",
+    "qrFallback": "Scan QR Code",
+    "saveContact": "Save Contact",
+    "saving": "Saving...",
+    "contactSaved": "Contact saved successfully!",
+    "scanAnother": "Scan Another Badge"
+  },
+  "exhibition": {
+    "title": "Exhibition",
+    "subtitle": "Exhibitors and booths",
+    "searchPlaceholder": "Search exhibitors...",
+    "mapView": "Map View",
+    "empty": "No exhibitors yet",
+    "booth": "Booth",
+    "products": "Products",
+    "contact": "Contact",
+    "visitWebsite": "Visit Website",
+    "bookDemo": "Book Demo",
+    "demoRequested": "Demo Requested",
+    "scanBadge": "Scan Badge",
+    "scanning": "Scanning...",
+    "mapLocation": "Location on Map",
+    "leads": "Leads",
+    "noLeads": "No leads captured yet",
+    "exportLeads": "Export Leads",
+    "notesPlaceholder": "Add notes...",
+    "rating": "Rating",
+    "saveLead": "Save Lead",
+    "saving": "Saving...",
+    "noData": "No data available"
+  },
+  "cme": {
+    "title": "Continuing Education Credits",
+    "subtitle": "Manage CME credits and evaluations",
+    "totalCredits": "Total Credits",
+    "credits": "Credits",
+    "downloadCertificate": "Download Certificate",
+    "missingEvaluations": "Missing Evaluations",
+    "missingEvaluationsHint": "{count} sessions still need to be evaluated to earn CME credits.",
+    "sessionCredits": "Sessions and Credits",
+    "noSessions": "No sessions attended yet",
+    "status": {
+      "attended": "Attended",
+      "evaluated": "Evaluated",
+      "credited": "Credits Awarded"
+    },
+    "evaluateSession": "Evaluate Session",
+    "categories": {
+      "contentQuality": "Content Quality",
+      "speakerEffectiveness": "Speaker Effectiveness",
+      "relevance": "Relevance",
+      "organization": "Organization"
+    },
+    "comments": "Comments",
+    "commentsPlaceholder": "Optional comments...",
+    "submitEvaluation": "Submit Evaluation",
+    "submitting": "Submitting...",
+    "evaluationSubmitted": "Evaluation Submitted",
+    "creditAwarded": "CME credits have been awarded"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "subtitle": "Statistics and reports for this congress",
+    "exportCsv": "Export CSV",
+    "exportPdf": "Export PDF",
+    "stats": {
+      "registrations": "Registrations",
+      "checkins": "Check-ins",
+      "revenue": "Revenue",
+      "engagement": "Engagement"
+    },
+    "registrationTimeline": "Registrations Over Time",
+    "topSessions": "Most Popular Sessions",
+    "referralFunnel": "Referral Funnel",
+    "funnel": {
+      "invites": "Invitations",
+      "clicks": "Clicks",
+      "conversions": "Registrations"
+    },
+    "topSpeakers": "Top Speakers",
+    "speaker": "Speaker",
+    "sessions": "Sessions",
+    "avgRating": "Rating",
+    "noData": "No data available"
+  },
+  "gamification": {
+    "title": "Gamification",
+    "subtitle": "Earn points, unlock rewards",
+    "points": "Points",
+    "totalPoints": "Total Points",
+    "achievements": "Achievements",
+    "noAchievements": "No achievements available yet",
+    "locked": "Locked",
+    "leaderboard": "Leaderboard",
+    "daily": "Today",
+    "overall": "Overall",
+    "noEntries": "No entries yet",
+    "you": "You",
+    "pts": "pts",
+    "tiers": {
+      "bronze": "Bronze",
+      "silver": "Silver",
+      "gold": "Gold",
+      "diamond": "Diamond"
+    },
+    "pointsToNext": "{points} points to {tier}",
+    "recentActivity": "Recent Activity",
+    "reasons": {
+      "referral": "Referral",
+      "checkin": "Check-in",
+      "question": "Asked a Question",
+      "quiz": "Answered Quiz",
+      "networking": "Networking",
+      "photo": "Photo Uploaded",
+      "registration": "Registration",
+      "profile": "Profile Completed",
+      "exhibitor_visit": "Exhibitor Visited"
+    },
+    "referral": "Referral Link",
+    "shareTitle": "ensemble Congress",
+    "share": "Share",
+    "clicks": "Clicks",
+    "conversions": "Registrations",
+    "rewardTiers": "Reward Tiers"
+  },
+  "networking": {
+    "title": "Networking",
+    "subtitle": "Make connections and build your network",
+    "findAttendees": "Find Attendees",
+    "searchPlaceholder": "Search by name or organization...",
+    "searchHint": "Search for attendees to connect with.",
+    "nfcTap": "NFC Contact Exchange",
+    "nfcHint": "Hold your device near another badge to exchange contact information.",
+    "tapToConnect": "Tap to Connect",
+    "myContacts": "My Contacts",
+    "exportContacts": "Export Contacts",
+    "noContacts": "No contacts saved yet",
+    "nearbyPeople": "People Nearby",
+    "nearbyHint": "Enable Bluetooth to see people near you.",
+    "enableBluetooth": "Enable Bluetooth",
+    "nfcNotSupported": "NFC is not supported by this browser."
+  },
+  "social": {
+    "title": "Social Events",
+    "subtitle": "Social events and side program",
+    "noEvents": "No social events planned yet",
+    "rsvp": "RSVP",
+    "types": {
+      "dinner": "Dinner",
+      "reception": "Reception",
+      "tour": "Tour",
+      "sport": "Sport",
+      "cultural": "Cultural"
+    }
+  },
+  "report": {
+    "title": "Congress Report",
+    "subtitle": "Summary and results",
+    "downloadReport": "Download Report",
+    "executiveSummary": "AI Summary",
+    "summaryPlaceholder": "The AI-generated summary will be created after the congress concludes.",
+    "stats": {
+      "attendees": "Attendees",
+      "sessions": "Sessions",
+      "speakers": "Speakers",
+      "satisfaction": "Satisfaction"
+    },
+    "recordings": "Recordings",
+    "noRecordings": "No recordings available yet",
+    "contentLibrary": "Content Library",
+    "noContent": "No content available yet",
+    "feedbackSummary": "Feedback Summary",
+    "noFeedback": "No feedback data available yet"
+  },
+  "setupChecklist": {
+    "title": "Congress Setup",
+    "progress": "{completed} of {total} steps completed",
+    "basicInfo": "Basic Info (Name, Date, Venue)",
+    "sessions": "Schedule (at least 1 session)",
+    "speakers": "Speakers (at least 1 speaker)",
+    "registration": "Registration Open",
+    "rooms": "Rooms (at least 1 room)",
+    "branding": "Branding (Logo uploaded)",
+    "required": "Required",
+    "publish": "Publish",
+    "publishHint": "All required steps must be completed before the congress can be published."
+  },
+  "onboarding": {
+    "title": "Create Your First Congress",
+    "description": "Welcome to ensemble! Get started by creating a new congress or browse existing events.",
+    "createCongress": "Create Congress",
+    "browseCongresses": "Browse Congresses",
+    "dismiss": "Dismiss"
+  },
+  "emptyState": {
+    "noSessions": "No sessions yet",
+    "noSessionsDesc": "Create the first session for this congress.",
+    "noSpeakers": "No speakers yet",
+    "noSpeakersDesc": "Invite the first speaker.",
+    "addFirst": "Create First Entry",
+    "import": "Import"
+  },
+  "helpTooltips": {
+    "learnMore": "Learn more"
+  },
+  "funktionen": {
+    "title": "All Features",
+    "subtitle": "Everything your congress needs. From registration to certification.",
+    "ctaTitle": "Convinced?",
+    "ctaSubtitle": "Book a personal demo and see how ensemble simplifies your congress.",
+    "ctaButton": "Book a Demo",
+    "domains": {
+      "programm": {
+        "name": "Schedule & Sessions",
+        "features": {
+          "dragDrop": {
+            "name": "Drag-and-Drop Schedule Planning",
+            "description": "Create and organize your schedule intuitively with drag-and-drop in a visual time grid."
+          },
+          "multiTrack": {
+            "name": "Multi-Track Parallel Sessions",
+            "description": "Manage any number of parallel tracks and room assignments in a single view."
+          },
+          "conflicts": {
+            "name": "Conflict Detection",
+            "description": "Automatic detection of room and speaker conflicts during schedule planning."
+          },
+          "personalSchedule": {
+            "name": "Personal Schedule",
+            "description": "Attendees create their individual schedule with bookmarks and reminders."
+          },
+          "ical": {
+            "name": "iCal Export and Calendar Sync",
+            "description": "Export sessions directly to Google Calendar, Outlook, or Apple Calendar."
+          },
+          "sessionTypes": {
+            "name": "Session Types",
+            "description": "Keynote, Workshop, Poster, Panel, Live Surgery, and more configurable session formats."
+          }
+        }
+      },
+      "registrierung": {
+        "name": "Registration & Ticketing",
+        "features": {
+          "formBuilder": {
+            "name": "Online Registration with Form Builder",
+            "description": "Create custom registration forms with configurable fields and validation."
+          },
+          "ticketTypes": {
+            "name": "Multiple Ticket Types and Price Tiers",
+            "description": "Standard, VIP, Virtual, Student, and more. Define any ticket categories with individual pricing."
+          },
+          "earlyBird": {
+            "name": "Early Bird Pricing with Countdown",
+            "description": "Automatic price switch after the early bird deadline with a live countdown."
+          },
+          "groupReg": {
+            "name": "Group Registration via CSV",
+            "description": "Register entire delegations via CSV import with automatic confirmation."
+          },
+          "waitlist": {
+            "name": "Waitlist with Auto-Promotion",
+            "description": "Automatic waitlist management with notification when spots become available."
+          },
+          "payment": {
+            "name": "Payment Processing",
+            "description": "Integration with Stripe and NordPay for secure online payments in CHF and EUR."
+          }
+        }
+      },
+      "live": {
+        "name": "Live Event",
+        "features": {
+          "transcription": {
+            "name": "Real-time Transcription",
+            "description": "Automatic transcription of all presentations in real time with Whisper AI."
+          },
+          "qa": {
+            "name": "Live Q&A with Upvoting",
+            "description": "Attendees ask questions, the community votes. The best questions rise to the top."
+          },
+          "polls": {
+            "name": "Interactive Polls and Word Clouds",
+            "description": "Live polls, multiple choice, and free-text word clouds during sessions."
+          },
+          "streaming": {
+            "name": "Live Streaming",
+            "description": "HLS and WebRTC-based streaming for remote attendees in the highest quality."
+          },
+          "reactions": {
+            "name": "Real-time Emoji Reactions",
+            "description": "Instant attendee feedback with emoji reactions that float across the screen."
+          },
+          "ratings": {
+            "name": "Session Ratings",
+            "description": "Detailed ratings after each session for quality assurance and speaker feedback."
+          }
+        }
+      },
+      "navigation": {
+        "name": "Indoor Navigation",
+        "features": {
+          "ble": {
+            "name": "BLE Beacon Indoor Positioning",
+            "description": "Precise real-time positioning inside the venue using Bluetooth Low Energy beacons."
+          },
+          "floorplan": {
+            "name": "SVG Floor Plan with Rooms",
+            "description": "Interactive floor plan with room details, floor switching, and zoom."
+          },
+          "pathfinding": {
+            "name": "Dijkstra Pathfinding",
+            "description": "Shortest path to the next session, room, or booth with an animated route."
+          },
+          "occupancy": {
+            "name": "Real-time Room Occupancy",
+            "description": "Live display of each room's capacity. See instantly where seats are available."
+          },
+          "checkin": {
+            "name": "Automatic Session Check-in",
+            "description": "Attendance is automatically recorded via beacon when entering a room."
+          },
+          "accessible": {
+            "name": "Accessible Routes",
+            "description": "Wheelchair-accessible navigation with elevators and step-free paths."
+          }
+        }
+      },
+      "networking": {
+        "name": "Networking & Contacts",
+        "features": {
+          "nfc": {
+            "name": "NFC Badge Contact Exchange",
+            "description": "Exchange contact information by simply tapping NFC badges together."
+          },
+          "qr": {
+            "name": "QR Code Fallback",
+            "description": "For devices without NFC: scan a QR code for instant contact exchange."
+          },
+          "nearby": {
+            "name": "People Nearby",
+            "description": "See who is currently near you. Ideal for spontaneous networking."
+          },
+          "directory": {
+            "name": "Attendee Directory",
+            "description": "Searchable directory of all attendees with profile and organization."
+          },
+          "dm": {
+            "name": "Direct Messages",
+            "description": "Send private messages to other attendees, directly from their profile or the directory."
+          },
+          "vcard": {
+            "name": "Contact Export (vCard)",
+            "description": "Export your collected contacts as a vCard file for Outlook and CRM systems."
+          }
+        }
+      },
+      "chat": {
+        "name": "Chat & Communication",
+        "features": {
+          "realtime": {
+            "name": "Real-time Chat",
+            "description": "Instant messaging via Cloudflare Durable Objects with under 50ms latency worldwide."
+          },
+          "channels": {
+            "name": "Group and Session Channels",
+            "description": "Automatic chat channels for every session, every track, and custom groups."
+          },
+          "directMessages": {
+            "name": "Direct Messages",
+            "description": "Private 1:1 communication between attendees, speakers, and organizers."
+          },
+          "files": {
+            "name": "File and Image Sharing",
+            "description": "Share presentations, images, and documents directly in the chat."
+          },
+          "moderation": {
+            "name": "Moderation Tools",
+            "description": "Report, mute, and moderate messages, both automatically and manually."
+          },
+          "push": {
+            "name": "Push Notifications",
+            "description": "Web push and in-app notifications for new messages and announcements."
+          }
+        }
+      },
+      "ausstellung": {
+        "name": "Exhibition & Sponsors",
+        "features": {
+          "directory": {
+            "name": "Exhibitor Directory with Profiles",
+            "description": "Exhibitors present themselves with logo, description, products, and contact details."
+          },
+          "leads": {
+            "name": "Lead Capture via NFC/QR",
+            "description": "Capture visitor contacts at the booth. Badge scan with notes and rating."
+          },
+          "catalogs": {
+            "name": "Product Catalogs",
+            "description": "Digital product catalogs with images, descriptions, and download links."
+          },
+          "sponsorTiers": {
+            "name": "Sponsor Visibility (Tiers)",
+            "description": "Gold, Silver, Bronze. Sponsors receive tiered visibility throughout the entire app."
+          },
+          "floorplan": {
+            "name": "Floor Plan with Booth Numbers",
+            "description": "Interactive exhibition floor plan with booth numbers, categories, and wayfinding."
+          },
+          "leadExport": {
+            "name": "Lead Export as CSV",
+            "description": "Export all captured contacts as CSV, ready for CRM import."
+          }
+        }
+      },
+      "ki": {
+        "name": "AI & Knowledge",
+        "features": {
+          "rag": {
+            "name": "RAG Knowledge Base",
+            "description": "Retrieval-Augmented Generation across all congress content, abstracts, and presentations."
+          },
+          "search": {
+            "name": "Search Congress Knowledge",
+            "description": "Ask questions in natural language and receive precise answers from congress knowledge."
+          },
+          "summaries": {
+            "name": "AI Summaries",
+            "description": "Automatic summaries of sessions, presentations, and entire congress days."
+          },
+          "translation": {
+            "name": "Multilingual Translation",
+            "description": "AI-powered real-time translation of content into German, French, Italian, and English."
+          },
+          "recommendations": {
+            "name": "Smart Recommendations",
+            "description": "Personalized session recommendations based on interests and attendance patterns."
+          },
+          "citations": {
+            "name": "Source Citations",
+            "description": "Every AI answer with source references, linked directly to abstracts and sessions."
+          }
+        }
+      },
+      "gamification": {
+        "name": "Gamification",
+        "features": {
+          "points": {
+            "name": "Points System for Engagement",
+            "description": "Points for check-ins, questions, networking, polls, and other congress activities."
+          },
+          "leaderboard": {
+            "name": "Leaderboards",
+            "description": "Daily and overall leaderboards foster friendly competition."
+          },
+          "achievements": {
+            "name": "Achievements and Badges",
+            "description": "Digital badges for milestones like First Question, Networker, or Early Bird."
+          },
+          "referral": {
+            "name": "Referral Program",
+            "description": "Attendees refer colleagues, with tracking and bonus points for successful registrations."
+          },
+          "tiers": {
+            "name": "Reward Tiers",
+            "description": "Bronze, Silver, Gold, Diamond. Rising tiers with exclusive rewards."
+          },
+          "teams": {
+            "name": "Team Competitions",
+            "description": "Departments or clinics compete as teams and earn points together."
+          }
+        }
+      },
+      "cme": {
+        "name": "CME / Continuing Education",
+        "features": {
+          "creditTypes": {
+            "name": "Multiple Credit Types",
+            "description": "Support for FMH, ACCME, EAU, and other accreditation systems."
+          },
+          "attendance": {
+            "name": "Automatic Attendance Verification",
+            "description": "BLE beacons and session check-in verify attendance automatically."
+          },
+          "evaluations": {
+            "name": "Session Evaluations",
+            "description": "Mandatory evaluations after each session as a prerequisite for CME credits."
+          },
+          "certificates": {
+            "name": "Certificate Generation (PDF)",
+            "description": "Automatic creation of continuing education certificates as PDF with QR code."
+          },
+          "qrVerify": {
+            "name": "QR Verification Code",
+            "description": "Every certificate contains a QR code for authenticity verification."
+          },
+          "dashboard": {
+            "name": "Continuing Education Dashboard",
+            "description": "Overview of all attended sessions, earned credits, and certificates."
+          }
+        }
+      },
+      "medien": {
+        "name": "Media & Content",
+        "features": {
+          "gallery": {
+            "name": "Photo Gallery with Lightbox",
+            "description": "Shared photo gallery for attendees and organizers with full-screen view."
+          },
+          "poster": {
+            "name": "Poster Sessions (ePoster)",
+            "description": "Digital poster exhibition with zoom, voting, and comments."
+          },
+          "articles": {
+            "name": "Article and Paper Upload",
+            "description": "Submit and browse scientific contributions with keyword tags."
+          },
+          "onDemand": {
+            "name": "On-Demand Recordings",
+            "description": "Watch missed sessions as video-on-demand, even after the congress."
+          },
+          "podcam": {
+            "name": "PodCam Video Interviews",
+            "description": "Record short video interviews with speakers and attendees on-site."
+          },
+          "library": {
+            "name": "Document Library",
+            "description": "Central repository for presentations, handouts, and supplementary materials."
+          }
+        }
+      },
+      "admin": {
+        "name": "Administration",
+        "features": {
+          "wizard": {
+            "name": "Congress Setup Wizard",
+            "description": "Step-by-step wizard guides you through setting up a new congress."
+          },
+          "attendees": {
+            "name": "Attendee Management",
+            "description": "Overview, search, filter, and export of all attendees with registration status."
+          },
+          "badges": {
+            "name": "Badge Design and Printing",
+            "description": "Design and print name badges with QR/NFC code and custom layout."
+          },
+          "finance": {
+            "name": "Financial Overview",
+            "description": "Revenue, expenses, and payment status at a glance, including CSV export."
+          },
+          "analytics": {
+            "name": "Analytics Dashboard",
+            "description": "Attendee numbers, session popularity, engagement metrics, and trends."
+          },
+          "audit": {
+            "name": "Audit Logs and Security",
+            "description": "Complete logging of all changes for compliance and traceability."
+          }
+        }
+      }
+    }
   }
 }
